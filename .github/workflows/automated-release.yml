@@ -22,7 +22,7 @@ jobs:
 
   build-android:
     name: Build and Create release
-    needs: [ version ]
+    needs: [ generate-version ]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
