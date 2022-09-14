@@ -49,7 +49,7 @@ jobs:
     - run: flutter build linux
     - run: mkdir build/linux-release
     - run: mkdir build/linux-release/linux
-    - run: cp build/linux/x64/release/* build/linux-release/linux/
+    - run: cp -r build/linux/x64/release/* build/linux-release/linux/
     - name: Create a Release in GitHub
       uses: ncipollo/release-action@v1
       with:
