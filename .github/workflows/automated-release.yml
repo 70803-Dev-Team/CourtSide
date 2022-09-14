@@ -13,7 +13,7 @@ jobs:
     - name: Fetch all history for all tags and branches
       run: |
         git fetch --prune --depth=10000 
-        date +%H%M%S-%m%d%y > version.txt
+        TZ='America/Chicago' date +%H%M%S-%m%d%y > version.txt
     - name: Upload version.txt
       uses: actions/upload-artifact@v2
       with:
