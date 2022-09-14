@@ -68,9 +68,9 @@ jobs:
         name: android-aab
         path: build/app/outputs/bundle/release/app-release.aab
 
-  release:
+  create-release:
     name: Build Android and Create Release
-    needs: [ generate-version, build-linux ]
+    needs: [ generate-version, build-linux, build-android ]
     - name: Get linux-release.tar.gz
       uses: actions/download-artifact@v2
       with:
