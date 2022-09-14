@@ -102,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'Hayden: [Your Name Here]',
             ),
             Text(
-              'Sam: ScH!',
+              'Sam: ScH',
             ),
             Text(
               'Sean: [Your Name Here]',
