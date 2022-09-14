@@ -44,16 +44,10 @@ jobs:
     - run: flutter pub get
     - run: flutter build apk --release --split-per-abi
     - run: flutter build appbundle
-    - run: sudo apt-get update -y
-    - run: sudo apt-get install -y ninja-build libgtk-3-dev
-    - run: flutter build linux
-    - run: mkdir build/linux-release
-    - run: mkdir build/linux-release/linux
-    - run: cp -r build/linux/x64/release/* build/linux-release/linux/
     - name: Create a Release in GitHub
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "build/app/outputs/apk/release/*.apk,build/app/outputs/bundle/release/app-release.aab,build/linux-release/linux"
+        artifacts: "build/app/outputs/apk/release/*.apk,build/app/outputs/bundle/release/app-release.aab"
         token: ${{ secrets.GH_TOKEN }}
         tag: ${{ steps.version.outputs.content }}
         commit: ${{ github.sha }}
