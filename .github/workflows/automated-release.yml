@@ -98,7 +98,7 @@ jobs:
     - name: Create a Release in GitHub
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "*.apk,build/app/outputs/bundle/release/app-release.aab,linux-release.tar.gz"
+        artifacts: "*.apk,app-release.aab,linux-release.tar.gz"
         token: ${{ secrets.GH_TOKEN }}
         tag: ${{ steps.version.outputs.content }}
         commit: ${{ github.sha }}
