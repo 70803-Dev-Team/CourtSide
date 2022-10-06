@@ -9,7 +9,6 @@ jobs:
     name: Create Version Number
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
     - name: Create a timestamp for version number
       run: TZ='America/Chicago' date +%H%M%S-%m%d%y > version.txt
     - name: Upload version.txt
@@ -108,5 +107,6 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: android-apk
-    - run: npm install -g firebase-tools
-    - run: firebase appdistribution:distribute app-arm64-v8a-release.apk --token ${{secrets.FIREBASE_TOKEN}} --app ${{secrets.FIREBASE_ANDROID_APP_ID}} --groups "dev-team"
+    - name: Distribute with Firebase
+      run: npm install -g firebase-tools
+      run: firebase appdistribution:distribute app-arm64-v8a-release.apk --token ${{secrets.FIREBASE_TOKEN}} --app ${{secrets.FIREBASE_ANDROID_APP_ID}} --groups "dev-team"
