@@ -18,7 +18,7 @@ jobs:
         path: version.txt
     - uses: actions/checkout@v1
     - name: Generate release notes from git log
-      run: git log -n 3 --oneline > release.txt
+      run: git log -n 5 --oneline --no-merges > release.txt
     - name: Upload release.txt
       uses: actions/upload-artifact@v2
       with:
