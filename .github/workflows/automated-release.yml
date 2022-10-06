@@ -16,6 +16,7 @@ jobs:
       with:
         name: version-date
         path: version.txt
+    - uses: actions/checkout@v1
     - name: Generate release notes from git log
       run: git log -n 3 --oneline > release.txt
     - name: Upload release.txt
