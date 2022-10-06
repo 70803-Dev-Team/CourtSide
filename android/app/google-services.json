@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:101148815080:android:ca85ab44acab44ce38635d",
         "android_client_info": {
-          "package_name": "com.example.court_side"
+          "package_name": "com.example.courtSide"
         }
       },
       "oauth_client": [

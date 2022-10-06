@@ -1,4 +1,4 @@
-# court_side
+# CourtSide
 
 A new Flutter project.
 
