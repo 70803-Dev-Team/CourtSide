@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "101148815080",
+    "project_id": "courtside-70803",
+    "storage_bucket": "courtside-70803.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101148815080:android:ca85ab44acab44ce38635d",
+        "android_client_info": {
+          "package_name": "com.example.courtSide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101148815080-quv92meoo774mentln809ujni4c3v7kd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuFCBxaiXVgXVfxYc9x1X9MkTtZuSESLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101148815080-quv92meoo774mentln809ujni4c3v7kd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

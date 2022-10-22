@@ -6,19 +6,25 @@ on:
 
 jobs:
   generate-version:
-    name: Create Version Number
+    name: Create Version Number and Release Notes
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Fetch all history for all tags and branches
-      run: |
-        git fetch --prune --depth=10000 
-        TZ='America/Chicago' date +%H%M%S-%m%d%y > version.txt
+    - name: Create a timestamp for version number
+      run: TZ='America/Chicago' date +%H%M%S-%m%d%y > version.txt
     - name: Upload version.txt
       uses: actions/upload-artifact@v2
       with:
         name: version-date
         path: version.txt
+    - uses: actions/checkout@v1
+    - name: Generate release notes from git log
+      run: git log -n 5 --oneline --no-merges > release.txt
+    - name: Upload release.txt
+      uses: actions/upload-artifact@v2
+      with:
+        name: release-notes
+        path: release.txt
+
 
   build-linux:
     name: Build for Linux
@@ -96,7 +102,23 @@ jobs:
     - name: Create a Release in GitHub
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "*.apk,build/app/outputs/bundle/release/app-release.aab,linux-release.tar.gz"
+        artifacts: "*.apk,app-release.aab,linux-release.tar.gz"
         token: ${{ secrets.GH_TOKEN }}
         tag: ${{ steps.version.outputs.content }}
         commit: ${{ github.sha }}
+
+  firebase-distribute:
+    name: Firebase App Distribution
+    runs-on: ubuntu-latest
+    needs: [create-release]
+    steps:
+    - name: Get apks
+      uses: actions/download-artifact@v2
+      with:
+        name: android-apk
+    - name: Get release notes
+      uses: actions/download-artifact@v2
+      with:
+        name: release-notes
+    - run: npm install -g firebase-tools
+    - run: firebase appdistribution:distribute app-arm64-v8a-release.apk --token ${{secrets.FIREBASE_TOKEN}} --app ${{secrets.FIREBASE_ANDROID_APP_ID}} --groups "dev-team" --release-notes-file "release.txt"
