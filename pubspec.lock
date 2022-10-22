@@ -15,6 +15,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
+  archive:
+    dependency: transitive
+    description:
+      name: archive
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.3.2"
   analyzer:
     dependency: transitive
     description:
@@ -50,6 +57,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.1"
+  checked_yaml:
+    dependency: transitive
+    description:
+      name: checked_yaml
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
+  cli_util:
+    dependency: transitive
+    description:
+      name: cli_util
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.5"
   clock:
     dependency: transitive
     description:
@@ -132,13 +153,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_lints:
+  flutter_launcher_icons:
     dependency: "direct dev"
     description:
-      name: flutter_lints
+      name: flutter_launcher_icons
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "0.10.0"
   flutter_svg:
     dependency: transitive
     description:
@@ -151,6 +172,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  image:
+    dependency: transitive
+    description:
+      name: image
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.2.2"
+  json_annotation:
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -201,18 +230,10 @@ packages:
   lints:
     dependency: transitive
     description:
-      name: lints
+      name: json_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0"
-  logging:
-    dependency: transitive
-    description:
-      name: logging
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.0"
-  matcher:
+    version: "4.7.0"
     dependency: transitive
     description:
       name: matcher
