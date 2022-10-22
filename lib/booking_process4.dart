@@ -77,7 +77,7 @@ class BookingProcess4 extends StatelessWidget {
                                         width: 12.0,
                                         height: 24.0,
                                         child: SvgPicture.string(
-                                          _svg_vfmad6,
+                                          lessThan,
                                           allowDrawingOutsideViewBox: true,
                                         ),
                                       ),
@@ -102,7 +102,7 @@ class BookingProcess4 extends StatelessWidget {
             child:
                 // Adobe XD layer: 'Background-Rec' (shape)
                 SvgPicture.string(
-              _svg_bg2ak,
+              backgroundRec3,
               allowDrawingOutsideViewBox: true,
               fit: BoxFit.fill,
             ),
@@ -229,7 +229,7 @@ class BookingProcess4 extends StatelessWidget {
                   Pin(start: 55.5, end: 53.5),
                   Pin(size: 1.0, start: 58.5),
                   child: SvgPicture.string(
-                    _svg_njsr03,
+                    greyLine,
                     allowDrawingOutsideViewBox: true,
                     fit: BoxFit.fill,
                   ),
@@ -363,9 +363,9 @@ class BookingProcess4 extends StatelessWidget {
   }
 }
 
-const String _svg_vfmad6 =
+const String lessThan =
     '<svg viewBox="0.0 0.0 12.1 24.0" ><path transform="translate(-9.0, -4.97)" d="M 19.35951995849609 28.96765899658203 C 19.75917816162109 28.96843719482422 20.1464958190918 28.82924652099609 20.4542350769043 28.57424926757812 C 20.80404281616211 28.28423690795898 21.02408218383789 27.8669548034668 21.0657958984375 27.41448593139648 C 21.10751342773438 26.96201133728027 20.96748352050781 26.51153755187988 20.67659759521484 26.16245460510254 L 13.01359462738037 16.99421691894531 L 20.40291976928711 7.808877944946289 C 20.68988800048828 7.455501556396484 20.82415771484375 7.002310752868652 20.77600479125977 6.549644470214844 C 20.72784423828125 6.096977233886719 20.50123596191406 5.682178497314453 20.14634704589844 5.397085189819336 C 19.78856658935547 5.082286834716797 19.31568145751953 4.931017875671387 18.84162521362305 4.979722023010254 C 18.36756896972656 5.028427124023438 17.93532180786133 5.272688865661621 17.64902496337891 5.653657913208008 L 9.387351989746094 15.91660976409912 C 8.868534088134766 16.54778480529785 8.868534088134766 17.45775985717773 9.387351989746094 18.08893585205078 L 17.93981170654297 28.35188484191895 C 18.28783416748047 28.7717170715332 18.81518173217773 29.00044250488281 19.35951995849609 28.96765899658203 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
-const String _svg_bg2ak =
+const String backgroundRec3 =
     '<svg viewBox="0.0 163.5 428.0 761.9" ><path transform="translate(0.0, 163.53)" d="M 15 0 L 413 0 C 421.2842712402344 0 428 10.42056274414062 428 23.27497673034668 L 428 761.8676147460938 L 0 761.8676147460938 L 0 23.27497673034668 C 0 10.42056274414062 6.715728759765625 0 15 0 Z" fill="#ffffff" stroke="#707070" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
-const String _svg_njsr03 =
+const String greyLine =
     '<svg viewBox="71.5 236.5 285.0 1.0" ><path transform="translate(71.5, 236.5)" d="M 0 0 L 285 0" fill="none" fill-opacity="0.25" stroke="#707070" stroke-width="3" stroke-opacity="0.25" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
