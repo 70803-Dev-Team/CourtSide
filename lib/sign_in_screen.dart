@@ -6,6 +6,8 @@ import './sign_in_sign_up_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,13 +16,13 @@ class SignInScreen extends StatelessWidget {
         children: <Widget>[
           // Adobe XD layer: 'Splash-Screen-Backg…' (shape)
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
-                image: const AssetImage(''),
+                image: AssetImage(''),
                 fit: BoxFit.fill,
               ),
             ),
-            margin: EdgeInsets.fromLTRB(-1487.0, 0.0, -368.0, -218.0),
+            margin: const EdgeInsets.fromLTRB(-1487.0, 0.0, -368.0, -218.0),
           ),
           Container(),
           Pinned.fromPins(
@@ -41,12 +43,12 @@ class SignInScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 234.0, start: 20.0),
                   Pin(size: 29.0, middle: 0.5128),
-                  child: Text(
+                  child: const Text(
                     'Email / Phone Number',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0x3c000000),
+                      color: Color(0x3c000000),
                       fontWeight: FontWeight.w500,
                       height: 1,
                     ),
@@ -77,12 +79,12 @@ class SignInScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 104.0, start: 20.0),
                   Pin(size: 29.0, middle: 0.5128),
-                  child: Text(
+                  child: const Text(
                     'Password',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0x3c000000),
+                      color: Color(0x3c000000),
                       fontWeight: FontWeight.w500,
                       height: 1,
                     ),
@@ -106,7 +108,7 @@ class SignInScreen extends StatelessWidget {
                   transition: LinkTransition.Fade,
                   ease: Curves.easeIn,
                   duration: 0.5,
-                  pageBuilder: () => HomeScreen(),
+                  pageBuilder: () => const HomeScreen(),
                 ),
               ],
               child: Stack(
@@ -121,7 +123,7 @@ class SignInScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(25.0),
                         ),
                       ),
-                      Align(
+                      const Align(
                         alignment: Alignment(0.0, 0.048),
                         child: SizedBox(
                           width: 106.0,
@@ -131,7 +133,7 @@ class SignInScreen extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'SF Pro',
                               fontSize: 24,
-                              color: const Color(0xffffffff),
+                              color: Color(0xffffffff),
                               fontWeight: FontWeight.w800,
                             ),
                             softWrap: false,
@@ -154,7 +156,7 @@ class SignInScreen extends StatelessWidget {
                 PageLinkInfo(
                   ease: Curves.easeInOut,
                   duration: 0.5,
-                  pageBuilder: () => SignInSignUpScreen(),
+                  pageBuilder: () => const SignInSignUpScreen(),
                 ),
               ],
               child: Stack(
@@ -175,7 +177,7 @@ class SignInScreen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(64.0, 166.0),
+            offset: const Offset(64.0, 166.0),
             child: SizedBox(
               width: 300.0,
               height: 295.0,
@@ -185,14 +187,14 @@ class SignInScreen extends StatelessWidget {
                 children: <Widget>[
                   // Adobe XD layer: 'Background Circle' (shape)
                   Container(
-                    decoration: BoxDecoration(
-                      color: const Color(0x33ffffff),
+                    decoration: const BoxDecoration(
+                      color: Color(0x33ffffff),
                       borderRadius:
                           BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
                     ),
                   ),
                   Align(
-                    alignment: Alignment(0.04, 0.524),
+                    alignment: const Alignment(0.04, 0.524),
                     child: SizedBox(
                       width: 203.0,
                       height: 100.0,
@@ -212,7 +214,7 @@ class SignInScreen extends StatelessWidget {
                             ),
                           ),
                           Align(
-                            alignment: Alignment(-0.535, -0.995),
+                            alignment: const Alignment(-0.535, -0.995),
                             child: SizedBox(
                               width: 42.0,
                               height: 48.0,
@@ -223,7 +225,7 @@ class SignInScreen extends StatelessWidget {
                             ),
                           ),
                           Align(
-                            alignment: Alignment(0.013, -1.0),
+                            alignment: const Alignment(0.013, -1.0),
                             child: SizedBox(
                               width: 38.0,
                               height: 48.0,
@@ -234,7 +236,7 @@ class SignInScreen extends StatelessWidget {
                             ),
                           ),
                           Align(
-                            alignment: Alignment(0.485, -0.995),
+                            alignment: const Alignment(0.485, -0.995),
                             child: SizedBox(
                               width: 35.0,
                               height: 48.0,
@@ -256,7 +258,7 @@ class SignInScreen extends StatelessWidget {
                             ),
                           ),
                           Align(
-                            alignment: Alignment(-0.527, 1.0),
+                            alignment: const Alignment(-0.527, 1.0),
                             child: SizedBox(
                               width: 41.0,
                               height: 44.0,
@@ -267,7 +269,7 @@ class SignInScreen extends StatelessWidget {
                             ),
                           ),
                           Align(
-                            alignment: Alignment(-0.094, 1.0),
+                            alignment: const Alignment(-0.094, 1.0),
                             child: SizedBox(
                               width: 7.0,
                               height: 44.0,
@@ -278,7 +280,7 @@ class SignInScreen extends StatelessWidget {
                             ),
                           ),
                           Align(
-                            alignment: Alignment(0.251, 1.0),
+                            alignment: const Alignment(0.251, 1.0),
                             child: SizedBox(
                               width: 34.0,
                               height: 44.0,
@@ -302,8 +304,8 @@ class SignInScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 41.2, vertical: 35.4),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 41.2, vertical: 35.4),
                     child: SizedBox.expand(
                         child:
                             // Adobe XD layer: 'Background' (shape)
@@ -314,7 +316,7 @@ class SignInScreen extends StatelessWidget {
                     )),
                   ),
                   Align(
-                    alignment: Alignment(0.0, -0.538),
+                    alignment: const Alignment(0.0, -0.538),
                     child: SizedBox(
                       width: 100.0,
                       height: 100.0,
@@ -323,7 +325,7 @@ class SignInScreen extends StatelessWidget {
                           Stack(
                         children: <Widget>[
                           Transform.translate(
-                            offset: Offset(12.7, 0.0),
+                            offset: const Offset(12.7, 0.0),
                             child: SizedBox(
                               width: 87.0,
                               height: 99.0,
@@ -343,23 +345,23 @@ class SignInScreen extends StatelessWidget {
                                     child: Stack(
                                       children: <Widget>[
                                         Transform.translate(
-                                          offset: Offset(-19.3, 0.0),
+                                          offset: const Offset(-19.3, 0.0),
                                           child: Container(
                                             width: 114.0,
                                             height: 112.0,
-                                            decoration: BoxDecoration(
+                                            decoration: const BoxDecoration(
                                               gradient: LinearGradient(
                                                 begin: Alignment(-1.359, 1.404),
                                                 end: Alignment(1.093, -1.13),
                                                 colors: [
-                                                  const Color(0xff16dbff),
-                                                  const Color(0xff1cdbff),
-                                                  const Color(0xff2ddeff),
-                                                  const Color(0xff49e2ff),
-                                                  const Color(0xff71e9ff),
-                                                  const Color(0xffa3f0ff),
-                                                  const Color(0xffe0faff),
-                                                  const Color(0xffffffff)
+                                                  Color(0xff16dbff),
+                                                  Color(0xff1cdbff),
+                                                  Color(0xff2ddeff),
+                                                  Color(0xff49e2ff),
+                                                  Color(0xff71e9ff),
+                                                  Color(0xffa3f0ff),
+                                                  Color(0xffe0faff),
+                                                  Color(0xffffffff)
                                                 ],
                                                 stops: [
                                                   0.0,
@@ -391,7 +393,7 @@ class SignInScreen extends StatelessWidget {
                             ),
                           ),
                           Transform.translate(
-                            offset: Offset(0.0, 0.5),
+                            offset: const Offset(0.0, 0.5),
                             child: SizedBox(
                               width: 87.0,
                               height: 99.0,
@@ -411,7 +413,7 @@ class SignInScreen extends StatelessWidget {
                                     child: Stack(
                                       children: <Widget>[
                                         Transform.translate(
-                                          offset: Offset(-6.9, -12.4),
+                                          offset: const Offset(-6.9, -12.4),
                                           child: SizedBox(
                                             width: 114.0,
                                             height: 112.0,

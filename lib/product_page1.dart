@@ -6,6 +6,8 @@ import './message_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ProductPage1 extends StatelessWidget {
+  const ProductPage1({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,9 +23,9 @@ class ProductPage1 extends StatelessWidget {
               children: <Widget>[
                 // Adobe XD layer: 'baseball-field-imag…' (shape)
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: const AssetImage(''),
+                      image: AssetImage(''),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -83,8 +85,8 @@ class ProductPage1 extends StatelessWidget {
                                 child: Container(
                                   width: 4.0,
                                   height: 4.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xff000000),
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xff000000),
                                     borderRadius: BorderRadius.all(
                                         Radius.elliptical(9999.0, 9999.0)),
                                   ),
@@ -94,8 +96,8 @@ class ProductPage1 extends StatelessWidget {
                                 Pin(size: 4.0, middle: 0.5),
                                 Pin(size: 4.0, start: 3.0),
                                 child: Container(
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xff000000),
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xff000000),
                                     borderRadius: BorderRadius.all(
                                         Radius.elliptical(9999.0, 9999.0)),
                                   ),
@@ -105,8 +107,8 @@ class ProductPage1 extends StatelessWidget {
                                 Pin(size: 4.0, middle: 0.5),
                                 Pin(size: 4.0, end: 3.0),
                                 child: Container(
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xff000000),
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xff000000),
                                     borderRadius: BorderRadius.all(
                                         Radius.elliptical(9999.0, 9999.0)),
                                   ),
@@ -140,8 +142,8 @@ class ProductPage1 extends StatelessWidget {
                         Pin(size: 11.0, middle: 0.4286),
                         Pin(start: 0.0, end: 0.0),
                         child: Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xffffffff),
+                          decoration: const BoxDecoration(
+                            color: Color(0xffffffff),
                             borderRadius: BorderRadius.all(
                                 Radius.elliptical(9999.0, 9999.0)),
                           ),
@@ -151,8 +153,8 @@ class ProductPage1 extends StatelessWidget {
                         Pin(size: 11.0, middle: 0.619),
                         Pin(start: 0.0, end: 0.0),
                         child: Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xffffffff),
+                          decoration: const BoxDecoration(
+                            color: Color(0xffffffff),
                             borderRadius: BorderRadius.all(
                                 Radius.elliptical(9999.0, 9999.0)),
                           ),
@@ -162,8 +164,8 @@ class ProductPage1 extends StatelessWidget {
                         Pin(size: 11.0, middle: 0.8095),
                         Pin(start: 0.0, end: 0.0),
                         child: Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xffffffff),
+                          decoration: const BoxDecoration(
+                            color: Color(0xffffffff),
                             borderRadius: BorderRadius.all(
                                 Radius.elliptical(9999.0, 9999.0)),
                           ),
@@ -173,8 +175,8 @@ class ProductPage1 extends StatelessWidget {
                         Pin(size: 11.0, end: 0.0),
                         Pin(start: 0.0, end: 0.0),
                         child: Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xffffffff),
+                          decoration: const BoxDecoration(
+                            color: Color(0xffffffff),
                             borderRadius: BorderRadius.all(
                                 Radius.elliptical(9999.0, 9999.0)),
                           ),
@@ -193,7 +195,7 @@ class ProductPage1 extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.easeOut,
                         duration: 0.2,
-                        pageBuilder: () => ViewListingMapView(),
+                        pageBuilder: () => const ViewListingMapView(),
                       ),
                     ],
                     child: Stack(
@@ -257,7 +259,7 @@ class ProductPage1 extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.easeOut,
                         duration: 0.2,
-                        pageBuilder: () => MessageScreen(),
+                        pageBuilder: () => const MessageScreen(),
                       ),
                     ],
                     child: Container(
@@ -270,7 +272,7 @@ class ProductPage1 extends StatelessWidget {
                     ),
                   ),
                 ),
-                Align(
+                const Align(
                   alignment: Alignment(-0.284, -0.026),
                   child: SizedBox(
                     width: 125.0,
@@ -280,7 +282,7 @@ class ProductPage1 extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 24,
-                        color: const Color(0xffe8e8e8),
+                        color: Color(0xffe8e8e8),
                         fontWeight: FontWeight.w800,
                       ),
                       softWrap: false,
@@ -329,7 +331,7 @@ class ProductPage1 extends StatelessWidget {
                 // Adobe XD layer: 'Amenities-Info' (group)
                 Stack(
               children: <Widget>[
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                     width: 74.0,
@@ -339,7 +341,7 @@ class ProductPage1 extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Roboto',
                         fontSize: 16,
-                        color: const Color(0xff343a40),
+                        color: Color(0xff343a40),
                         fontWeight: FontWeight.w900,
                       ),
                       softWrap: false,
@@ -360,12 +362,12 @@ class ProductPage1 extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 125.0, start: 44.0),
                   Pin(size: 18.0, middle: 0.2667),
-                  child: Text(
+                  child: const Text(
                     'Gated-Community',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 15,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w300,
                     ),
                     softWrap: false,
@@ -385,12 +387,12 @@ class ProductPage1 extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(start: 44.0, end: 0.0),
                   Pin(size: 18.0, middle: 0.6333),
-                  child: Text(
+                  child: const Text(
                     'Complimentary Water & Sports Beverages',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 15,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w300,
                     ),
                     softWrap: false,
@@ -410,12 +412,12 @@ class ProductPage1 extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 130.0, start: 44.0),
                   Pin(size: 18.0, end: 2.0),
-                  child: Text(
+                  child: const Text(
                     'Recently renovated',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 15,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w300,
                     ),
                     softWrap: false,
@@ -431,7 +433,7 @@ class ProductPage1 extends StatelessWidget {
                 // Adobe XD layer: 'Description-Info' (group)
                 Stack(
               children: <Widget>[
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                     width: 93.0,
@@ -441,7 +443,7 @@ class ProductPage1 extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 16,
-                        color: const Color(0xff343a40),
+                        color: Color(0xff343a40),
                         fontWeight: FontWeight.w800,
                       ),
                       softWrap: false,
@@ -451,12 +453,12 @@ class ProductPage1 extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(start: 0.0, end: 0.0),
                   Pin(size: 73.0, end: 0.0),
-                  child: Text(
+                  child: const Text(
                     'Located just 3 miles away from LSU, is this wonderful priv-\nate tennis court! Just recently had a resurfacing done on \nthe court, and a new net installed. Take in the wonderful vi-\news of campus while playing your favorite game!',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 14,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w500,
                       height: 1.3571428571428572,
                     ),
@@ -474,7 +476,7 @@ class ProductPage1 extends StatelessWidget {
             child:
                 // Adobe XD layer: 'Listing-Info' (group)
                 Stack(
-              children: <Widget>[
+              children: const <Widget>[
                 Align(
                   alignment: Alignment(-1.0, -0.479),
                   child: SizedBox(
@@ -485,7 +487,7 @@ class ProductPage1 extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 18,
-                        color: const Color(0xff343a40),
+                        color: Color(0xff343a40),
                         fontWeight: FontWeight.w800,
                       ),
                       softWrap: false,
@@ -502,7 +504,7 @@ class ProductPage1 extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 18,
-                        color: const Color(0xff343a40),
+                        color: Color(0xff343a40),
                         fontWeight: FontWeight.w300,
                       ),
                       softWrap: false,
@@ -519,7 +521,7 @@ class ProductPage1 extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 18,
-                        color: const Color(0xff343a40),
+                        color: Color(0xff343a40),
                         fontWeight: FontWeight.w800,
                       ),
                       softWrap: false,
@@ -536,7 +538,7 @@ class ProductPage1 extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 14,
-                        color: const Color(0xff343a40),
+                        color: Color(0xff343a40),
                         fontWeight: FontWeight.w300,
                       ),
                       softWrap: false,

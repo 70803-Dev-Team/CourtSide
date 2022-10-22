@@ -6,6 +6,8 @@ import './booking_process2.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class BookingProcess1 extends StatelessWidget {
+  const BookingProcess1({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,13 +27,13 @@ class BookingProcess1 extends StatelessWidget {
                   color: const Color(0xff3e3e3e),
                 ),
                 Transform.translate(
-                  offset: Offset(16.0, 117.0),
-                  child: Text(
+                  offset: const Offset(16.0, 117.0),
+                  child: const Text(
                     'Bocage Racquet Club',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 30,
-                      color: const Color(0xff2e9eff),
+                      color: Color(0xff2e9eff),
                       letterSpacing: 0.015,
                       fontWeight: FontWeight.w800,
                     ),
@@ -40,7 +42,7 @@ class BookingProcess1 extends StatelessWidget {
                 ),
                 Container(),
                 Transform.translate(
-                  offset: Offset(20.0, 58.0),
+                  offset: const Offset(20.0, 58.0),
                   child: SizedBox(
                     width: 12.0,
                     height: 24.0,
@@ -52,7 +54,7 @@ class BookingProcess1 extends StatelessWidget {
                           transition: LinkTransition.PushRight,
                           ease: Curves.linear,
                           duration: 0.3,
-                          pageBuilder: () => ProductPage(),
+                          pageBuilder: () => const ProductPage(),
                         ),
                       ],
                       child: Stack(
@@ -94,7 +96,7 @@ class BookingProcess1 extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(0.0, 170.0, 0.0, 0.0),
+            padding: const EdgeInsets.fromLTRB(0.0, 170.0, 0.0, 0.0),
             child: SizedBox.expand(
                 child:
                     // Adobe XD layer: 'Background-Rec' (shape)
@@ -110,7 +112,7 @@ class BookingProcess1 extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 color: const Color(0xffe8e8e8),
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(15.0),
                   topRight: Radius.circular(15.0),
                 ),
@@ -185,7 +187,7 @@ class BookingProcess1 extends StatelessWidget {
                         transition: LinkTransition.Fade,
                         ease: Curves.linear,
                         duration: 0.3,
-                        pageBuilder: () => BookingProcess2(),
+                        pageBuilder: () => const BookingProcess2(),
                       ),
                     ],
                     child: Container(
@@ -199,12 +201,12 @@ class BookingProcess1 extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 106.0, middle: 0.5),
                   Pin(size: 29.0, end: 11.0),
-                  child: Text(
+                  child: const Text(
                     'Continue',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xffe8e8e8),
+                      color: Color(0xffe8e8e8),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
@@ -213,19 +215,19 @@ class BookingProcess1 extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 44.0, start: 4.0),
                   Pin(size: 24.0, start: 0.0),
-                  child: Text(
+                  child: const Text(
                     'Total',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 20,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       letterSpacing: 0.01,
                       fontWeight: FontWeight.w500,
                     ),
                     softWrap: false,
                   ),
                 ),
-                Align(
+                const Align(
                   alignment: Alignment.topRight,
                   child: SizedBox(
                     width: 113.0,
@@ -235,7 +237,7 @@ class BookingProcess1 extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 20,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         letterSpacing: 0.01,
                         fontWeight: FontWeight.w800,
                       ),
@@ -256,12 +258,12 @@ class BookingProcess1 extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(start: 26.0, end: 33.0),
                   Pin(size: 38.0, middle: 0.2256),
-                  child: Text(
+                  child: const Text(
                     'Please note that some services are optional\nand are not included in the initial price.',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 16,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       letterSpacing: 0.008,
                       fontWeight: FontWeight.w500,
                     ),
@@ -285,17 +287,17 @@ class BookingProcess1 extends StatelessWidget {
                             Pinned.fromPins(
                               Pin(size: 117.0, start: 34.0),
                               Pin(size: 18.0, middle: 0.3333),
-                              child: Text(
+                              child: const Text(
                                 'Rackets included',
                                 style: TextStyle(
                                   fontFamily: 'SF Pro',
                                   fontSize: 15,
-                                  color: const Color(0xff343a40),
+                                  color: Color(0xff343a40),
                                 ),
                                 softWrap: false,
                               ),
                             ),
-                            Align(
+                            const Align(
                               alignment: Alignment.bottomRight,
                               child: SizedBox(
                                 width: 57.0,
@@ -305,7 +307,7 @@ class BookingProcess1 extends StatelessWidget {
                                   style: TextStyle(
                                     fontFamily: 'SF Pro',
                                     fontSize: 14,
-                                    color: const Color(0xff343a40),
+                                    color: Color(0xff343a40),
                                     fontWeight: FontWeight.w500,
                                   ),
                                   softWrap: false,
@@ -331,7 +333,8 @@ class BookingProcess1 extends StatelessWidget {
                                               color: Colors.transparent,
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.all(2.1),
+                                              padding:
+                                                  const EdgeInsets.all(2.1),
                                               child: SizedBox.expand(
                                                   child: SvgPicture.string(
                                                 _svg_mpf2rt,
@@ -345,7 +348,7 @@ class BookingProcess1 extends StatelessWidget {
                                       ],
                                     ),
                                     Align(
-                                      alignment: Alignment(0.327, -0.14),
+                                      alignment: const Alignment(0.327, -0.14),
                                       child: SizedBox(
                                         width: 12.0,
                                         height: 10.0,
@@ -394,17 +397,17 @@ class BookingProcess1 extends StatelessWidget {
                             Pinned.fromPins(
                               Pin(size: 132.0, start: 33.8),
                               Pin(size: 18.0, middle: 0.3333),
-                              child: Text(
+                              child: const Text(
                                 'Recently renovated',
                                 style: TextStyle(
                                   fontFamily: 'SF Pro',
                                   fontSize: 15,
-                                  color: const Color(0xff343a40),
+                                  color: Color(0xff343a40),
                                 ),
                                 softWrap: false,
                               ),
                             ),
-                            Align(
+                            const Align(
                               alignment: Alignment.bottomRight,
                               child: SizedBox(
                                 width: 57.0,
@@ -414,7 +417,7 @@ class BookingProcess1 extends StatelessWidget {
                                   style: TextStyle(
                                     fontFamily: 'SF Pro',
                                     fontSize: 14,
-                                    color: const Color(0xff343a40),
+                                    color: Color(0xff343a40),
                                     fontWeight: FontWeight.w500,
                                   ),
                                   softWrap: false,
@@ -440,7 +443,8 @@ class BookingProcess1 extends StatelessWidget {
                                               color: Colors.transparent,
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.all(2.1),
+                                              padding:
+                                                  const EdgeInsets.all(2.1),
                                               child: SizedBox.expand(
                                                   child: SvgPicture.string(
                                                 _svg_mpf2rt,
@@ -454,7 +458,7 @@ class BookingProcess1 extends StatelessWidget {
                                       ],
                                     ),
                                     Align(
-                                      alignment: Alignment(0.327, -0.14),
+                                      alignment: const Alignment(0.327, -0.14),
                                       child: SizedBox(
                                         width: 12.0,
                                         height: 10.0,
@@ -494,12 +498,12 @@ class BookingProcess1 extends StatelessWidget {
                             Pinned.fromPins(
                               Pin(start: 32.0, end: 49.0),
                               Pin(size: 18.0, start: 4.5),
-                              child: Text(
+                              child: const Text(
                                 'Complimentary Water & Sports Beverages',
                                 style: TextStyle(
                                   fontFamily: 'SF Pro',
                                   fontSize: 15,
-                                  color: const Color(0xff343a40),
+                                  color: Color(0xff343a40),
                                 ),
                                 softWrap: false,
                               ),
@@ -511,7 +515,7 @@ class BookingProcess1 extends StatelessWidget {
                                 color: Colors.transparent,
                               ),
                             ),
-                            Align(
+                            const Align(
                               alignment: Alignment.bottomRight,
                               child: SizedBox(
                                 width: 57.0,
@@ -521,7 +525,7 @@ class BookingProcess1 extends StatelessWidget {
                                   style: TextStyle(
                                     fontFamily: 'SF Pro',
                                     fontSize: 14,
-                                    color: const Color(0xff343a40),
+                                    color: Color(0xff343a40),
                                     fontWeight: FontWeight.w500,
                                   ),
                                   softWrap: false,
@@ -587,12 +591,12 @@ class BookingProcess1 extends StatelessWidget {
                             Pinned.fromPins(
                               Pin(size: 127.0, start: 31.0),
                               Pin(size: 18.0, start: 6.0),
-                              child: Text(
+                              child: const Text(
                                 'Gated-Community',
                                 style: TextStyle(
                                   fontFamily: 'SF Pro',
                                   fontSize: 15,
-                                  color: const Color(0xff343a40),
+                                  color: Color(0xff343a40),
                                 ),
                                 softWrap: false,
                               ),
@@ -604,7 +608,7 @@ class BookingProcess1 extends StatelessWidget {
                                 color: Colors.transparent,
                               ),
                             ),
-                            Align(
+                            const Align(
                               alignment: Alignment.bottomRight,
                               child: SizedBox(
                                 width: 57.0,
@@ -614,7 +618,7 @@ class BookingProcess1 extends StatelessWidget {
                                   style: TextStyle(
                                     fontFamily: 'SF Pro',
                                     fontSize: 14,
-                                    color: const Color(0xff343a40),
+                                    color: Color(0xff343a40),
                                     fontWeight: FontWeight.w500,
                                   ),
                                   softWrap: false,
@@ -662,7 +666,7 @@ class BookingProcess1 extends StatelessWidget {
                     ],
                   ),
                 ),
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                     width: 123.0,
@@ -672,7 +676,7 @@ class BookingProcess1 extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 24,
-                        color: const Color(0xff343a40),
+                        color: Color(0xff343a40),
                         fontWeight: FontWeight.w900,
                       ),
                       softWrap: false,

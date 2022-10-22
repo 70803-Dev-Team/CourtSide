@@ -38,6 +38,8 @@ dependencies:
   test: ^1.21.4
   firebase_core: ^1.24.0
   adobe_xd: ^2.0.1
+  flutter_lints: ^2.0.1
+  flutter_svg: ^1.1.5
 
 dev_dependencies:
   flutter_test:

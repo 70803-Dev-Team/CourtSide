@@ -10,6 +10,8 @@ import './inbox_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                       Stack(
                     children: <Widget>[
                       Transform.translate(
-                        offset: Offset(7.6, 0.0),
+                        offset: const Offset(7.6, 0.0),
                         child: SizedBox(
                           width: 52.0,
                           height: 60.0,
@@ -60,23 +62,23 @@ class HomeScreen extends StatelessWidget {
                                 child: Stack(
                                   children: <Widget>[
                                     Transform.translate(
-                                      offset: Offset(-11.6, 0.0),
+                                      offset: const Offset(-11.6, 0.0),
                                       child: Container(
                                         width: 68.0,
                                         height: 67.0,
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           gradient: LinearGradient(
                                             begin: Alignment(-1.359, 1.404),
                                             end: Alignment(1.093, -1.13),
                                             colors: [
-                                              const Color(0xff16dbff),
-                                              const Color(0xff1cdbff),
-                                              const Color(0xff2ddeff),
-                                              const Color(0xff49e2ff),
-                                              const Color(0xff71e9ff),
-                                              const Color(0xffa3f0ff),
-                                              const Color(0xffe0faff),
-                                              const Color(0xffffffff)
+                                              Color(0xff16dbff),
+                                              Color(0xff1cdbff),
+                                              Color(0xff2ddeff),
+                                              Color(0xff49e2ff),
+                                              Color(0xff71e9ff),
+                                              Color(0xffa3f0ff),
+                                              Color(0xffe0faff),
+                                              Color(0xffffffff)
                                             ],
                                             stops: [
                                               0.0,
@@ -108,7 +110,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       Transform.translate(
-                        offset: Offset(0.0, 0.3),
+                        offset: const Offset(0.0, 0.3),
                         child: SizedBox(
                           width: 52.0,
                           height: 60.0,
@@ -128,7 +130,7 @@ class HomeScreen extends StatelessWidget {
                                 child: Stack(
                                   children: <Widget>[
                                     Transform.translate(
-                                      offset: Offset(-4.2, -7.4),
+                                      offset: const Offset(-4.2, -7.4),
                                       child: SizedBox(
                                         width: 68.0,
                                         height: 67.0,
@@ -180,7 +182,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                     width: 173.0,
@@ -190,7 +192,7 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 28,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         fontWeight: FontWeight.w800,
                       ),
                       softWrap: false,
@@ -208,7 +210,7 @@ class HomeScreen extends StatelessWidget {
                         transition: LinkTransition.SlideLeft,
                         ease: Curves.easeOut,
                         duration: 0.5,
-                        pageBuilder: () => ProductPage(),
+                        pageBuilder: () => const ProductPage(),
                       ),
                     ],
                     child: Stack(
@@ -216,8 +218,8 @@ class HomeScreen extends StatelessWidget {
                         // Adobe XD layer: 'tennis-court-image3' (shape)
                         Container(
                           decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: const AssetImage(''),
+                            image: const DecorationImage(
+                              image: AssetImage(''),
                               fit: BoxFit.fill,
                             ),
                             borderRadius: BorderRadius.circular(15.0),
@@ -269,8 +271,8 @@ class HomeScreen extends StatelessWidget {
                           Pin(size: 11.0, middle: 0.4675),
                           Pin(size: 11.0, end: 10.0),
                           child: Container(
-                            decoration: BoxDecoration(
-                              color: const Color(0xffffffff),
+                            decoration: const BoxDecoration(
+                              color: Color(0xffffffff),
                               borderRadius: BorderRadius.all(
                                   Radius.elliptical(9999.0, 9999.0)),
                             ),
@@ -280,8 +282,8 @@ class HomeScreen extends StatelessWidget {
                           Pin(size: 11.0, middle: 0.5091),
                           Pin(size: 11.0, end: 10.0),
                           child: Container(
-                            decoration: BoxDecoration(
-                              color: const Color(0xffffffff),
+                            decoration: const BoxDecoration(
+                              color: Color(0xffffffff),
                               borderRadius: BorderRadius.all(
                                   Radius.elliptical(9999.0, 9999.0)),
                             ),
@@ -291,8 +293,8 @@ class HomeScreen extends StatelessWidget {
                           Pin(size: 11.0, middle: 0.5506),
                           Pin(size: 11.0, end: 10.0),
                           child: Container(
-                            decoration: BoxDecoration(
-                              color: const Color(0xffffffff),
+                            decoration: const BoxDecoration(
+                              color: Color(0xffffffff),
                               borderRadius: BorderRadius.all(
                                   Radius.elliptical(9999.0, 9999.0)),
                             ),
@@ -302,8 +304,8 @@ class HomeScreen extends StatelessWidget {
                           Pin(size: 11.0, middle: 0.5922),
                           Pin(size: 11.0, end: 10.0),
                           child: Container(
-                            decoration: BoxDecoration(
-                              color: const Color(0xffffffff),
+                            decoration: const BoxDecoration(
+                              color: Color(0xffffffff),
                               borderRadius: BorderRadius.all(
                                   Radius.elliptical(9999.0, 9999.0)),
                             ),
@@ -316,12 +318,12 @@ class HomeScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 189.0, start: 10.0),
                   Pin(size: 21.0, end: 54.0),
-                  child: Text(
+                  child: const Text(
                     'Bocage Racquet Club',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
@@ -330,12 +332,12 @@ class HomeScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 270.0, start: 10.0),
                   Pin(size: 21.0, end: 27.0),
-                  child: Text(
+                  child: const Text(
                     '7600 Jefferson Hwy, Baton Rouge',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w300,
                     ),
                     softWrap: false,
@@ -344,12 +346,12 @@ class HomeScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 103.0, start: 10.0),
                   Pin(size: 21.0, end: 0.0),
-                  child: Text(
+                  child: const Text(
                     '\$250 / hour',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
@@ -366,7 +368,7 @@ class HomeScreen extends StatelessWidget {
                         transition: LinkTransition.SlideLeft,
                         ease: Curves.easeOut,
                         duration: 0.5,
-                        pageBuilder: () => ProductPage(),
+                        pageBuilder: () => const ProductPage(),
                       ),
                     ],
                     child: Stack(
@@ -417,7 +419,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       Align(
-                        alignment: Alignment(0.007, -0.415),
+                        alignment: const Alignment(0.007, -0.415),
                         child: SizedBox(
                           width: 45.0,
                           height: 45.0,
@@ -442,7 +444,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                               Align(
-                                alignment: Alignment(0.134, -1.0),
+                                alignment: const Alignment(0.134, -1.0),
                                 child: SizedBox(
                                   width: 10.0,
                                   height: 10.0,
@@ -453,7 +455,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                               Align(
-                                alignment: Alignment(-1.0, -0.292),
+                                alignment: const Alignment(-1.0, -0.292),
                                 child: SizedBox(
                                   width: 16.0,
                                   height: 17.0,
@@ -473,7 +475,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                               Align(
-                                alignment: Alignment(-0.069, 1.0),
+                                alignment: const Alignment(-0.069, 1.0),
                                 child: SizedBox(
                                   width: 17.0,
                                   height: 31.0,
@@ -484,7 +486,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                               Align(
-                                alignment: Alignment(1.0, -0.413),
+                                alignment: const Alignment(1.0, -0.413),
                                 child: SizedBox(
                                   width: 11.0,
                                   height: 16.0,
@@ -510,12 +512,12 @@ class HomeScreen extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 7.0, end: 6.0),
                         Pin(size: 21.0, end: 11.0),
-                        child: Text(
+                        child: const Text(
                           'Basketball',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 18,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             letterSpacing: 0.45,
                           ),
                           softWrap: false,
@@ -525,7 +527,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(0.017, -0.397),
+                  alignment: const Alignment(0.017, -0.397),
                   child: SizedBox(
                     width: 100.0,
                     height: 100.0,
@@ -544,19 +546,19 @@ class HomeScreen extends StatelessWidget {
                         Pinned.fromPins(
                           Pin(size: 35.0, middle: 0.5077),
                           Pin(size: 21.0, end: 11.0),
-                          child: Text(
+                          child: const Text(
                             'Golf',
                             style: TextStyle(
                               fontFamily: 'SF Pro',
                               fontSize: 18,
-                              color: const Color(0xff000000),
+                              color: Color(0xff000000),
                               letterSpacing: 0.45,
                             ),
                             softWrap: false,
                           ),
                         ),
                         Align(
-                          alignment: Alignment(-0.005, -0.431),
+                          alignment: const Alignment(-0.005, -0.431),
                           child: SizedBox(
                             width: 56.0,
                             height: 44.0,
@@ -592,7 +594,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       Align(
-                        alignment: Alignment(0.007, -0.329),
+                        alignment: const Alignment(0.007, -0.329),
                         child: SizedBox(
                           width: 52.0,
                           height: 52.0,
@@ -611,12 +613,12 @@ class HomeScreen extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(size: 54.0, middle: 0.5),
                         Pin(size: 21.0, end: 11.0),
-                        child: Text(
+                        child: const Text(
                           'Tennis',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 18,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             letterSpacing: 0.45,
                           ),
                           softWrap: false,
@@ -641,15 +643,15 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       Align(
-                        alignment: Alignment(0.002, -0.36),
+                        alignment: const Alignment(0.002, -0.36),
                         child: SizedBox(
                           width: 46.0,
                           height: 50.0,
                           child: Stack(
                             children: <Widget>[
                               Padding(
-                                padding:
-                                    EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 0.0),
+                                padding: const EdgeInsets.fromLTRB(
+                                    0.0, 4.0, 0.0, 0.0),
                                 child: SizedBox.expand(
                                     child: SvgPicture.string(
                                   _svg_kapr0,
@@ -676,7 +678,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                               Align(
-                                alignment: Alignment(0.251, -1.0),
+                                alignment: const Alignment(0.251, -1.0),
                                 child: SizedBox(
                                   width: 6.0,
                                   height: 13.0,
@@ -711,12 +713,12 @@ class HomeScreen extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(size: 71.0, end: 14.0),
                         Pin(size: 21.0, end: 11.0),
-                        child: Text(
+                        child: const Text(
                           'Baseball',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 18,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             letterSpacing: 0.45,
                           ),
                           softWrap: false,
@@ -726,7 +728,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(0.017, 1.0),
+                  alignment: const Alignment(0.017, 1.0),
                   child: SizedBox(
                     width: 100.0,
                     height: 100.0,
@@ -743,7 +745,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         Align(
-                          alignment: Alignment(-0.042, -0.313),
+                          alignment: const Alignment(-0.042, -0.313),
                           child: SizedBox(
                             width: 58.0,
                             height: 39.0,
@@ -762,12 +764,12 @@ class HomeScreen extends StatelessWidget {
                         Pinned.fromPins(
                           Pin(size: 67.0, middle: 0.5152),
                           Pin(size: 21.0, end: 11.0),
-                          child: Text(
+                          child: const Text(
                             'Football',
                             style: TextStyle(
                               fontFamily: 'SF Pro',
                               fontSize: 18,
-                              color: const Color(0xff000000),
+                              color: Color(0xff000000),
                               letterSpacing: 0.45,
                             ),
                             softWrap: false,
@@ -793,14 +795,14 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       Align(
-                        alignment: Alignment(-0.088, -0.334),
+                        alignment: const Alignment(-0.088, -0.334),
                         child: SizedBox(
                           width: 44.0,
                           height: 44.0,
                           child: Stack(
                             children: <Widget>[
                               Align(
-                                alignment: Alignment(-1.0, -0.287),
+                                alignment: const Alignment(-1.0, -0.287),
                                 child: SizedBox(
                                   width: 13.0,
                                   height: 18.0,
@@ -811,7 +813,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                               Align(
-                                alignment: Alignment(-0.078, 1.0),
+                                alignment: const Alignment(-0.078, 1.0),
                                 child: SizedBox(
                                   width: 18.0,
                                   height: 4.0,
@@ -822,7 +824,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                               Align(
-                                alignment: Alignment(-0.185, 0.438),
+                                alignment: const Alignment(-0.185, 0.438),
                                 child: SizedBox(
                                   width: 22.0,
                                   height: 18.0,
@@ -833,7 +835,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                               Align(
-                                alignment: Alignment(0.98, 0.368),
+                                alignment: const Alignment(0.98, 0.368),
                                 child: SizedBox(
                                   width: 1.0,
                                   height: 1.0,
@@ -862,7 +864,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                               Align(
-                                alignment: Alignment(0.515, -1.0),
+                                alignment: const Alignment(0.515, -1.0),
                                 child: SizedBox(
                                   width: 15.0,
                                   height: 6.0,
@@ -882,7 +884,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                               Align(
-                                alignment: Alignment(-0.563, -0.986),
+                                alignment: const Alignment(-0.563, -0.986),
                                 child: SizedBox(
                                   width: 12.0,
                                   height: 6.0,
@@ -893,7 +895,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ),
                               Align(
-                                alignment: Alignment(1.0, -0.298),
+                                alignment: const Alignment(1.0, -0.298),
                                 child: SizedBox(
                                   width: 17.0,
                                   height: 19.0,
@@ -910,12 +912,12 @@ class HomeScreen extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(size: 59.0, middle: 0.5122),
                         Pin(size: 21.0, end: 11.0),
-                        child: Text(
+                        child: const Text(
                           'Soccer',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 18,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             letterSpacing: 0.45,
                           ),
                           softWrap: false,
@@ -935,7 +937,7 @@ class HomeScreen extends StatelessWidget {
                         transition: LinkTransition.Fade,
                         ease: Curves.easeOut,
                         duration: 0.3,
-                        pageBuilder: () => CategoriesScreen(),
+                        pageBuilder: () => const CategoriesScreen(),
                       ),
                     ],
                     child: Stack(
@@ -955,7 +957,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                     width: 150.0,
@@ -965,7 +967,7 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 28,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         fontWeight: FontWeight.w800,
                       ),
                       softWrap: false,
@@ -985,12 +987,12 @@ class HomeScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 256.0, start: 5.0),
                   Pin(size: 34.0, start: 0.0),
-                  child: Text(
+                  child: const Text(
                     'Recommendations',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 28,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
@@ -1035,8 +1037,8 @@ class HomeScreen extends StatelessWidget {
                                 // Adobe XD layer: 'baseball-field-imag…' (shape)
                                 Container(
                               decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: const AssetImage(''),
+                                image: const DecorationImage(
+                                  image: AssetImage(''),
                                   fit: BoxFit.fill,
                                 ),
                                 borderRadius: BorderRadius.circular(15.0),
@@ -1050,8 +1052,8 @@ class HomeScreen extends StatelessWidget {
                                 // Adobe XD layer: 'tennis-court-image2' (shape)
                                 Container(
                               decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: const AssetImage(''),
+                                image: const DecorationImage(
+                                  image: AssetImage(''),
                                   fit: BoxFit.fill,
                                 ),
                                 borderRadius: BorderRadius.circular(15.0),
@@ -1065,8 +1067,8 @@ class HomeScreen extends StatelessWidget {
                                 // Adobe XD layer: 'bball-court-image2' (shape)
                                 Container(
                               decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: const AssetImage(''),
+                                image: const DecorationImage(
+                                  image: AssetImage(''),
                                   fit: BoxFit.fill,
                                 ),
                                 borderRadius: BorderRadius.circular(15.0),
@@ -1091,12 +1093,12 @@ class HomeScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 98.0, start: 5.0),
                   Pin(size: 34.0, start: 0.0),
-                  child: Text(
+                  child: const Text(
                     'Nearby',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 28,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
@@ -1137,18 +1139,18 @@ class HomeScreen extends StatelessWidget {
                           Pinned.fromPins(
                             Pin(size: 89.0, end: -82.3),
                             Pin(size: 29.0, end: 0.0),
-                            child: Text(
+                            child: const Text(
                               '7.8 Miles',
                               style: TextStyle(
                                 fontFamily: 'SF Pro',
                                 fontSize: 24,
-                                color: const Color(0x80000000),
+                                color: Color(0x80000000),
                                 fontWeight: FontWeight.w300,
                               ),
                               softWrap: false,
                             ),
                           ),
-                          Align(
+                          const Align(
                             alignment: Alignment(0.277, 1.0),
                             child: SizedBox(
                               width: 92.0,
@@ -1158,7 +1160,7 @@ class HomeScreen extends StatelessWidget {
                                 style: TextStyle(
                                   fontFamily: 'SF Pro',
                                   fontSize: 24,
-                                  color: const Color(0x80000000),
+                                  color: Color(0x80000000),
                                   fontWeight: FontWeight.w300,
                                 ),
                                 softWrap: false,
@@ -1168,12 +1170,12 @@ class HomeScreen extends StatelessWidget {
                           Pinned.fromPins(
                             Pin(size: 91.0, start: 5.0),
                             Pin(size: 29.0, end: 0.0),
-                            child: Text(
+                            child: const Text(
                               '3.4 Miles',
                               style: TextStyle(
                                 fontFamily: 'SF Pro',
                                 fontSize: 24,
-                                color: const Color(0x80000000),
+                                color: Color(0x80000000),
                                 fontWeight: FontWeight.w300,
                               ),
                               softWrap: false,
@@ -1187,8 +1189,8 @@ class HomeScreen extends StatelessWidget {
                               width: 188.0,
                               height: 125.0,
                               decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: const AssetImage(''),
+                                image: const DecorationImage(
+                                  image: AssetImage(''),
                                   fit: BoxFit.fill,
                                 ),
                                 borderRadius: BorderRadius.circular(15.0),
@@ -1202,8 +1204,8 @@ class HomeScreen extends StatelessWidget {
                                 // Adobe XD layer: 'sports-complex-imag…' (shape)
                                 Container(
                               decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: const AssetImage(''),
+                                image: const DecorationImage(
+                                  image: AssetImage(''),
                                   fit: BoxFit.fill,
                                 ),
                                 borderRadius: BorderRadius.circular(15.0),
@@ -1217,8 +1219,8 @@ class HomeScreen extends StatelessWidget {
                                 // Adobe XD layer: 'volleyball-court-im…' (shape)
                                 Container(
                               decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: const AssetImage(''),
+                                image: const DecorationImage(
+                                  image: AssetImage(''),
                                   fit: BoxFit.fill,
                                 ),
                                 borderRadius: BorderRadius.circular(15.0),
@@ -1244,14 +1246,14 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     color: const Color(0xfee8e8e8),
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(25.0),
                       topRight: Radius.circular(25.0),
                     ),
                     border:
                         Border.all(width: 1.0, color: const Color(0xfe707070)),
                   ),
-                  margin: EdgeInsets.fromLTRB(41.0, 0.0, 0.0, 0.0),
+                  margin: const EdgeInsets.fromLTRB(41.0, 0.0, 0.0, 0.0),
                 ),
                 Pinned.fromPins(
                   Pin(size: 42.0, end: 22.0),
@@ -1263,16 +1265,16 @@ class HomeScreen extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => ProfileScreen(),
+                        pageBuilder: () => const ProfileScreen(),
                       ),
                     ],
                     child: Stack(
-                      children: <Widget>[],
+                      children: const <Widget>[],
                     ),
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(233.7, 14.0),
+                  offset: const Offset(233.7, 14.0),
                   child: SizedBox(
                     width: 42.0,
                     height: 42.0,
@@ -1283,7 +1285,7 @@ class HomeScreen extends StatelessWidget {
                         PageLinkInfo(
                           ease: Curves.easeInOut,
                           duration: 0.5,
-                          pageBuilder: () => ReservationsScreen(),
+                          pageBuilder: () => const ReservationsScreen(),
                         ),
                       ],
                       child: Stack(
@@ -1307,7 +1309,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           Transform.translate(
-                            offset: Offset(19.4, 10.1),
+                            offset: const Offset(19.4, 10.1),
                             child: SizedBox(
                               width: 23.0,
                               height: 25.0,
@@ -1328,7 +1330,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           Transform.translate(
-                            offset: Offset(5.9, 24.0),
+                            offset: const Offset(5.9, 24.0),
                             child: SizedBox(
                               width: 28.0,
                               height: 18.0,
@@ -1363,7 +1365,7 @@ class HomeScreen extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => SearchScreenMapView(),
+                        pageBuilder: () => const SearchScreenMapView(),
                       ),
                     ],
                     child: Stack(
@@ -1383,8 +1385,8 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                 ),
                                 Padding(
-                                  padding:
-                                      EdgeInsets.fromLTRB(1.0, 2.0, 0.0, 0.0),
+                                  padding: const EdgeInsets.fromLTRB(
+                                      1.0, 2.0, 0.0, 0.0),
                                   child: SizedBox.expand(
                                       child: SvgPicture.string(
                                     _svg_vlehqa,
@@ -1393,7 +1395,7 @@ class HomeScreen extends StatelessWidget {
                                   )),
                                 ),
                                 Align(
-                                  alignment: Alignment(0.038, 0.077),
+                                  alignment: const Alignment(0.038, 0.077),
                                   child: SizedBox(
                                     width: 16.0,
                                     height: 16.0,
@@ -1421,11 +1423,11 @@ class HomeScreen extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => InboxScreen(),
+                        pageBuilder: () => const InboxScreen(),
                       ),
                     ],
                     child: Stack(
-                      children: <Widget>[],
+                      children: const <Widget>[],
                     ),
                   ),
                 ),
@@ -1439,12 +1441,12 @@ class HomeScreen extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 0.0, end: 0.0),
                         Pin(size: 21.0, end: 0.0),
-                        child: Text(
+                        child: const Text(
                           'Home',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 18,
-                            color: const Color(0xff2e9eff),
+                            color: Color(0xff2e9eff),
                             fontWeight: FontWeight.w800,
                           ),
                           softWrap: false,
@@ -1469,7 +1471,7 @@ class HomeScreen extends StatelessWidget {
                                         color: Colors.transparent,
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.symmetric(
+                                        padding: const EdgeInsets.symmetric(
                                             horizontal: 3.0, vertical: 2.0),
                                         child: SizedBox.expand(
                                             child: SvgPicture.string(
@@ -1490,7 +1492,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(-1.0, 0.425),
+                  alignment: const Alignment(-1.0, 0.425),
                   child: SizedBox(
                     width: 89.0,
                     height: 9.0,
