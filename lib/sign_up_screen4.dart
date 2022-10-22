@@ -6,6 +6,8 @@ import './home_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SignUpScreen4 extends StatelessWidget {
+  const SignUpScreen4({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +25,7 @@ class SignUpScreen4 extends StatelessWidget {
             ),
           ),
           Align(
-            alignment: Alignment(0.0, -0.506),
+            alignment: const Alignment(0.0, -0.506),
             child: SizedBox(
               width: 214.0,
               height: 117.0,
@@ -34,12 +36,12 @@ class SignUpScreen4 extends StatelessWidget {
                   Pinned.fromPins(
                     Pin(start: 17.0, end: 16.0),
                     Pin(size: 21.0, end: 0.0),
-                    child: Text(
+                    child: const Text(
                       'Welcome to Courtside!',
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 18,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         fontWeight: FontWeight.w300,
                       ),
                       softWrap: false,
@@ -48,12 +50,12 @@ class SignUpScreen4 extends StatelessWidget {
                   Pinned.fromPins(
                     Pin(start: 0.0, end: 0.0),
                     Pin(size: 86.0, start: 0.0),
-                    child: Text(
+                    child: const Text(
                       'Registration\nComplete!',
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 36,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         fontWeight: FontWeight.w800,
                       ),
                       textAlign: TextAlign.center,
@@ -77,7 +79,7 @@ class SignUpScreen4 extends StatelessWidget {
                 ),
                 Container(),
                 Align(
-                  alignment: Alignment(-0.007, 0.471),
+                  alignment: const Alignment(-0.007, 0.471),
                   child: SizedBox(
                     width: 287.0,
                     height: 4.0,
@@ -140,7 +142,7 @@ class SignUpScreen4 extends StatelessWidget {
                         transition: LinkTransition.PushRight,
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => SignUpScreen3(),
+                        pageBuilder: () => const SignUpScreen3(),
                       ),
                     ],
                     child: Stack(
@@ -174,7 +176,7 @@ class SignUpScreen4 extends StatelessWidget {
                   transition: LinkTransition.SlideUp,
                   ease: Curves.easeInOut,
                   duration: 0.5,
-                  pageBuilder: () => HomeScreen(),
+                  pageBuilder: () => const HomeScreen(),
                 ),
               ],
               child: Stack(
@@ -189,7 +191,7 @@ class SignUpScreen4 extends StatelessWidget {
                           borderRadius: BorderRadius.circular(25.0),
                         ),
                       ),
-                      Align(
+                      const Align(
                         alignment: Alignment(0.0, 0.048),
                         child: SizedBox(
                           width: 106.0,
@@ -199,7 +201,7 @@ class SignUpScreen4 extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'SF Pro',
                               fontSize: 24,
-                              color: const Color(0xffffffff),
+                              color: Color(0xffffffff),
                               fontWeight: FontWeight.w800,
                             ),
                             softWrap: false,

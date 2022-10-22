@@ -7,6 +7,8 @@ import './sign_up_screen3.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SignUpScreen2 extends StatelessWidget {
+  const SignUpScreen2({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +29,7 @@ class SignUpScreen2 extends StatelessWidget {
                 ),
                 Container(),
                 Align(
-                  alignment: Alignment(-0.007, 0.471),
+                  alignment: const Alignment(-0.007, 0.471),
                   child: SizedBox(
                     width: 287.0,
                     height: 4.0,
@@ -88,15 +90,15 @@ class SignUpScreen2 extends StatelessWidget {
                         transition: LinkTransition.Fade,
                         ease: Curves.easeOut,
                         duration: 0.3,
-                        pageBuilder: () => HomeScreen(),
+                        pageBuilder: () => const HomeScreen(),
                       ),
                     ],
-                    child: Text(
+                    child: const Text(
                       'Skip',
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 20,
-                        color: const Color(0xff16b7ff),
+                        color: Color(0xff16b7ff),
                         fontWeight: FontWeight.w300,
                       ),
                       softWrap: false,
@@ -114,7 +116,7 @@ class SignUpScreen2 extends StatelessWidget {
                         transition: LinkTransition.PushRight,
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => SignUpScreen1(),
+                        pageBuilder: () => const SignUpScreen1(),
                       ),
                     ],
                     child: Stack(
@@ -156,18 +158,18 @@ class SignUpScreen2 extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(start: 0.0, end: 0.0),
                   Pin(size: 42.0, end: 0.0),
-                  child: Text(
+                  child: const Text(
                     'Please enter the information that is \nrequested below.',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w300,
                     ),
                     softWrap: false,
                   ),
                 ),
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                     width: 228.0,
@@ -177,7 +179,7 @@ class SignUpScreen2 extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 36,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         fontWeight: FontWeight.w800,
                       ),
                       softWrap: false,
@@ -194,7 +196,7 @@ class SignUpScreen2 extends StatelessWidget {
                 // Adobe XD layer: 'Profile Picture - B…' (group)
                 Stack(
               children: <Widget>[
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                     width: 131.0,
@@ -204,7 +206,7 @@ class SignUpScreen2 extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'SF Pro',
                           fontSize: 18,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                         children: [
                           TextSpan(
@@ -216,7 +218,7 @@ class SignUpScreen2 extends StatelessWidget {
                           TextSpan(
                             text: '*',
                             style: TextStyle(
-                              color: const Color(0xffd12424),
+                              color: Color(0xffd12424),
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -236,7 +238,7 @@ class SignUpScreen2 extends StatelessWidget {
                     border:
                         Border.all(width: 1.0, color: const Color(0xff707070)),
                   ),
-                  margin: EdgeInsets.fromLTRB(0.0, 31.0, 0.0, 0.0),
+                  margin: const EdgeInsets.fromLTRB(0.0, 31.0, 0.0, 0.0),
                 ),
               ],
             ),
@@ -248,7 +250,7 @@ class SignUpScreen2 extends StatelessWidget {
                 // Adobe XD layer: 'First Name - Blank' (group)
                 Stack(
               children: <Widget>[
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                     width: 103.0,
@@ -258,7 +260,7 @@ class SignUpScreen2 extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'SF Pro',
                           fontSize: 18,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                         children: [
                           TextSpan(
@@ -270,7 +272,7 @@ class SignUpScreen2 extends StatelessWidget {
                           TextSpan(
                             text: '*',
                             style: TextStyle(
-                              color: const Color(0xffd12424),
+                              color: Color(0xffd12424),
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -304,7 +306,7 @@ class SignUpScreen2 extends StatelessWidget {
                 // Adobe XD layer: 'Last Name - Blank' (group)
                 Stack(
               children: <Widget>[
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                     width: 102.0,
@@ -314,7 +316,7 @@ class SignUpScreen2 extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'SF Pro',
                           fontSize: 18,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                         children: [
                           TextSpan(
@@ -326,7 +328,7 @@ class SignUpScreen2 extends StatelessWidget {
                           TextSpan(
                             text: '*',
                             style: TextStyle(
-                              color: const Color(0xffd12424),
+                              color: Color(0xffd12424),
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -360,7 +362,7 @@ class SignUpScreen2 extends StatelessWidget {
                 // Adobe XD layer: 'Date of Birth - Bla…' (group)
                 Stack(
               children: <Widget>[
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                     width: 118.0,
@@ -370,7 +372,7 @@ class SignUpScreen2 extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'SF Pro',
                           fontSize: 18,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                         children: [
                           TextSpan(
@@ -382,7 +384,7 @@ class SignUpScreen2 extends StatelessWidget {
                           TextSpan(
                             text: '*',
                             style: TextStyle(
-                              color: const Color(0xffd12424),
+                              color: Color(0xffd12424),
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -423,7 +425,7 @@ class SignUpScreen2 extends StatelessWidget {
                                 color: Colors.transparent,
                               ),
                               Padding(
-                                padding: EdgeInsets.symmetric(
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 3.0, vertical: 2.0),
                                 child: SizedBox.expand(
                                     child: SvgPicture.string(
@@ -433,19 +435,19 @@ class SignUpScreen2 extends StatelessWidget {
                                 )),
                               ),
                               Align(
-                                alignment: Alignment(-0.364, 0.364),
+                                alignment: const Alignment(-0.364, 0.364),
                                 child: Container(
                                   width: 2.0,
                                   height: 2.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xff2e9eff),
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xff2e9eff),
                                     borderRadius: BorderRadius.all(
                                         Radius.elliptical(9999.0, 9999.0)),
                                   ),
                                 ),
                               ),
                               Align(
-                                alignment: Alignment(0.222, 0.364),
+                                alignment: const Alignment(0.222, 0.364),
                                 child: SizedBox(
                                   width: 6.0,
                                   height: 2.0,
@@ -472,7 +474,7 @@ class SignUpScreen2 extends StatelessWidget {
                 // Adobe XD layer: 'Email Address - Bla…' (group)
                 Stack(
               children: <Widget>[
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                     width: 131.0,
@@ -482,7 +484,7 @@ class SignUpScreen2 extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'SF Pro',
                           fontSize: 18,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                         children: [
                           TextSpan(
@@ -494,7 +496,7 @@ class SignUpScreen2 extends StatelessWidget {
                           TextSpan(
                             text: '*',
                             style: TextStyle(
-                              color: const Color(0xffd12424),
+                              color: Color(0xffd12424),
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -528,7 +530,7 @@ class SignUpScreen2 extends StatelessWidget {
                 // Adobe XD layer: 'Phone Number - Blank' (group)
                 Stack(
               children: <Widget>[
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                     width: 138.0,
@@ -538,7 +540,7 @@ class SignUpScreen2 extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'SF Pro',
                           fontSize: 18,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                         ),
                         children: [
                           TextSpan(
@@ -550,7 +552,7 @@ class SignUpScreen2 extends StatelessWidget {
                           TextSpan(
                             text: '*',
                             style: TextStyle(
-                              color: const Color(0xffd12424),
+                              color: Color(0xffd12424),
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -588,7 +590,7 @@ class SignUpScreen2 extends StatelessWidget {
                   transition: LinkTransition.PushLeft,
                   ease: Curves.easeInOut,
                   duration: 0.5,
-                  pageBuilder: () => SignUpScreen3(),
+                  pageBuilder: () => const SignUpScreen3(),
                 ),
               ],
               child: Stack(
@@ -603,7 +605,7 @@ class SignUpScreen2 extends StatelessWidget {
                           borderRadius: BorderRadius.circular(25.0),
                         ),
                       ),
-                      Align(
+                      const Align(
                         alignment: Alignment(0.0, 0.048),
                         child: SizedBox(
                           width: 106.0,
@@ -613,7 +615,7 @@ class SignUpScreen2 extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'SF Pro',
                               fontSize: 24,
-                              color: const Color(0xffffffff),
+                              color: Color(0xffffffff),
                               fontWeight: FontWeight.w800,
                             ),
                             softWrap: false,
@@ -626,7 +628,7 @@ class SignUpScreen2 extends StatelessWidget {
               ),
             ),
           ),
-          Align(
+          const Align(
             alignment: Alignment(0.0, -0.325),
             child: SizedBox(
               width: 132.0,
@@ -636,7 +638,7 @@ class SignUpScreen2 extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Helvetica Neue',
                   fontSize: 20,
-                  color: const Color(0x80707070),
+                  color: Color(0x80707070),
                 ),
               ),
             ),

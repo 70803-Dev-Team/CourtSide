@@ -6,6 +6,8 @@ import './booking_process5.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class BookingProcess4 extends StatelessWidget {
+  const BookingProcess4({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,13 +27,13 @@ class BookingProcess4 extends StatelessWidget {
                   color: const Color(0xff3e3e3e),
                 ),
                 Transform.translate(
-                  offset: Offset(16.0, 117.0),
-                  child: Text(
+                  offset: const Offset(16.0, 117.0),
+                  child: const Text(
                     'Bocage Racquet Club',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 30,
-                      color: const Color(0xff2e9eff),
+                      color: Color(0xff2e9eff),
                       letterSpacing: 0.015,
                       fontWeight: FontWeight.w800,
                     ),
@@ -40,7 +42,7 @@ class BookingProcess4 extends StatelessWidget {
                 ),
                 Container(),
                 Transform.translate(
-                  offset: Offset(20.0, 58.0),
+                  offset: const Offset(20.0, 58.0),
                   child: SizedBox(
                     width: 12.0,
                     height: 24.0,
@@ -52,7 +54,7 @@ class BookingProcess4 extends StatelessWidget {
                           transition: LinkTransition.PushRight,
                           ease: Curves.linear,
                           duration: 0.3,
-                          pageBuilder: () => BookingProcess3(),
+                          pageBuilder: () => const BookingProcess3(),
                         ),
                       ],
                       child: Stack(
@@ -115,7 +117,7 @@ class BookingProcess4 extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     color: const Color(0xffe8e8e8),
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(15.0),
                       topRight: Radius.circular(15.0),
                     ),
@@ -133,7 +135,7 @@ class BookingProcess4 extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.linear,
                         duration: 0.75,
-                        pageBuilder: () => BookingProcess5(),
+                        pageBuilder: () => const BookingProcess5(),
                       ),
                     ],
                     child: Stack(
@@ -145,7 +147,7 @@ class BookingProcess4 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15.0),
                           ),
                         ),
-                        Align(
+                        const Align(
                           alignment: Alignment(0.0, -0.048),
                           child: SizedBox(
                             width: 118.0,
@@ -155,7 +157,7 @@ class BookingProcess4 extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'SF Pro',
                                 fontSize: 24,
-                                color: const Color(0xffe8e8e8),
+                                color: Color(0xffe8e8e8),
                                 fontWeight: FontWeight.w800,
                               ),
                               softWrap: false,
@@ -169,12 +171,12 @@ class BookingProcess4 extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 44.0, start: 34.0),
                   Pin(size: 24.0, start: 10.0),
-                  child: Text(
+                  child: const Text(
                     'Total',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 20,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       letterSpacing: 0.01,
                       fontWeight: FontWeight.w500,
                     ),
@@ -184,12 +186,12 @@ class BookingProcess4 extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 113.0, end: 30.0),
                   Pin(size: 24.0, start: 10.0),
-                  child: Text(
+                  child: const Text(
                     '\$250 / hour',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 20,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       letterSpacing: 0.01,
                       fontWeight: FontWeight.w800,
                     ),
@@ -206,7 +208,7 @@ class BookingProcess4 extends StatelessWidget {
                 // Adobe XD layer: 'Content' (group)
                 Stack(
               children: <Widget>[
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                     width: 254.0,
@@ -216,7 +218,7 @@ class BookingProcess4 extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 24,
-                        color: const Color(0xff343a40),
+                        color: Color(0xff343a40),
                         fontWeight: FontWeight.w900,
                       ),
                       softWrap: false,
@@ -235,12 +237,12 @@ class BookingProcess4 extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 204.0, start: 14.0),
                   Pin(size: 19.0, middle: 0.2216),
-                  child: Text.rich(
+                  child: const Text.rich(
                     TextSpan(
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 16,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         letterSpacing: 0.008,
                       ),
                       children: [
@@ -253,7 +255,7 @@ class BookingProcess4 extends StatelessWidget {
                         TextSpan(
                           text: '*',
                           style: TextStyle(
-                            color: const Color(0xffd12424),
+                            color: Color(0xffd12424),
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -271,8 +273,8 @@ class BookingProcess4 extends StatelessWidget {
                       // Adobe XD layer: 'centurion' (shape)
                       Container(
                     decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: const AssetImage(''),
+                      image: const DecorationImage(
+                        image: AssetImage(''),
                         fit: BoxFit.fill,
                       ),
                       borderRadius: BorderRadius.circular(15.0),
@@ -283,7 +285,7 @@ class BookingProcess4 extends StatelessWidget {
             ),
           ),
           Align(
-            alignment: Alignment(-0.08, 0.251),
+            alignment: const Alignment(-0.08, 0.251),
             child: Container(
               width: 30.0,
               height: 10.0,
@@ -294,12 +296,12 @@ class BookingProcess4 extends StatelessWidget {
             ),
           ),
           Align(
-            alignment: Alignment(0.033, 0.251),
+            alignment: const Alignment(0.033, 0.251),
             child: Container(
               width: 10.0,
               height: 10.0,
-              decoration: BoxDecoration(
-                color: const Color(0xffaaaaad),
+              decoration: const BoxDecoration(
+                color: Color(0xffaaaaad),
                 borderRadius:
                     BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
               ),

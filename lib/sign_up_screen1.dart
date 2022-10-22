@@ -7,6 +7,8 @@ import './sign_up_screen2.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SignUpScreen1 extends StatelessWidget {
+  const SignUpScreen1({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +38,7 @@ class SignUpScreen1 extends StatelessWidget {
                 ),
                 Container(),
                 Align(
-                  alignment: Alignment(-0.007, 0.471),
+                  alignment: const Alignment(-0.007, 0.471),
                   child: SizedBox(
                     width: 287.0,
                     height: 4.0,
@@ -97,15 +99,15 @@ class SignUpScreen1 extends StatelessWidget {
                         transition: LinkTransition.SlideUp,
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => HomeScreen(),
+                        pageBuilder: () => const HomeScreen(),
                       ),
                     ],
-                    child: Text(
+                    child: const Text(
                       'Skip',
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 20,
-                        color: const Color(0xff16b7ff),
+                        color: Color(0xff16b7ff),
                         fontWeight: FontWeight.w300,
                       ),
                       softWrap: false,
@@ -123,7 +125,7 @@ class SignUpScreen1 extends StatelessWidget {
                         transition: LinkTransition.PushDown,
                         ease: Curves.linear,
                         duration: 0.5,
-                        pageBuilder: () => SignInSignUpScreen(),
+                        pageBuilder: () => const SignInSignUpScreen(),
                       ),
                     ],
                     child: Stack(
@@ -156,18 +158,18 @@ class SignUpScreen1 extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(start: 0.0, end: 0.0),
                   Pin(size: 42.0, end: 0.0),
-                  child: Text(
+                  child: const Text(
                     'Choose one option for what\npurpose you want to use Courtside.',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w300,
                     ),
                     softWrap: false,
                   ),
                 ),
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                     width: 182.0,
@@ -177,7 +179,7 @@ class SignUpScreen1 extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 36,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         fontWeight: FontWeight.w800,
                       ),
                       softWrap: false,
@@ -217,14 +219,14 @@ class SignUpScreen1 extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xffffffff),
-                                borderRadius: BorderRadius.all(
+                                borderRadius: const BorderRadius.all(
                                     Radius.elliptical(9999.0, 9999.0)),
                                 border: Border.all(
                                     width: 1.0, color: const Color(0xff2e9eff)),
                               ),
                             ),
                           ),
-                          Align(
+                          const Align(
                             alignment: Alignment(-0.489, 0.045),
                             child: SizedBox(
                               width: 145.0,
@@ -234,7 +236,7 @@ class SignUpScreen1 extends StatelessWidget {
                                 style: TextStyle(
                                   fontFamily: 'SF Pro',
                                   fontSize: 18,
-                                  color: const Color(0xff000000),
+                                  color: Color(0xff000000),
                                   fontWeight: FontWeight.w600,
                                 ),
                                 softWrap: false,
@@ -247,7 +249,7 @@ class SignUpScreen1 extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xff2e9eff),
-                                borderRadius: BorderRadius.all(
+                                borderRadius: const BorderRadius.all(
                                     Radius.elliptical(9999.0, 9999.0)),
                                 border: Border.all(
                                     width: 1.0, color: const Color(0xff2e9eff)),
@@ -278,14 +280,14 @@ class SignUpScreen1 extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xffffffff),
-                                borderRadius: BorderRadius.all(
+                                borderRadius: const BorderRadius.all(
                                     Radius.elliptical(9999.0, 9999.0)),
                                 border: Border.all(
                                     width: 1.0, color: const Color(0x80aaaaad)),
                               ),
                             ),
                           ),
-                          Align(
+                          const Align(
                             alignment: Alignment(-0.513, 0.045),
                             child: SizedBox(
                               width: 134.0,
@@ -295,7 +297,7 @@ class SignUpScreen1 extends StatelessWidget {
                                 style: TextStyle(
                                   fontFamily: 'SF Pro',
                                   fontSize: 18,
-                                  color: const Color(0xff000000),
+                                  color: Color(0xff000000),
                                   fontWeight: FontWeight.w600,
                                 ),
                                 softWrap: false,
@@ -326,7 +328,7 @@ class SignUpScreen1 extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xffffffff),
-                                borderRadius: BorderRadius.all(
+                                borderRadius: const BorderRadius.all(
                                     Radius.elliptical(9999.0, 9999.0)),
                                 border: Border.all(
                                     width: 1.0, color: const Color(0x80aaaaad)),
@@ -336,12 +338,12 @@ class SignUpScreen1 extends StatelessWidget {
                           Pinned.fromPins(
                             Pin(size: 257.0, end: 54.0),
                             Pin(size: 21.0, middle: 0.5227),
-                            child: Text(
+                            child: const Text(
                               'Rent Field / Court & Equipment',
                               style: TextStyle(
                                 fontFamily: 'SF Pro',
                                 fontSize: 18,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                                 fontWeight: FontWeight.w600,
                               ),
                               softWrap: false,
@@ -391,14 +393,14 @@ class SignUpScreen1 extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xffffffff),
-                                borderRadius: BorderRadius.all(
+                                borderRadius: const BorderRadius.all(
                                     Radius.elliptical(9999.0, 9999.0)),
                                 border: Border.all(
                                     width: 1.0, color: const Color(0xff2e9eff)),
                               ),
                             ),
                           ),
-                          Align(
+                          const Align(
                             alignment: Alignment(-0.576, 0.045),
                             child: SizedBox(
                               width: 99.0,
@@ -408,7 +410,7 @@ class SignUpScreen1 extends StatelessWidget {
                                 style: TextStyle(
                                   fontFamily: 'SF Pro',
                                   fontSize: 18,
-                                  color: const Color(0xff000000),
+                                  color: Color(0xff000000),
                                   fontWeight: FontWeight.w600,
                                 ),
                                 softWrap: false,
@@ -421,7 +423,7 @@ class SignUpScreen1 extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xff2e9eff),
-                                borderRadius: BorderRadius.all(
+                                borderRadius: const BorderRadius.all(
                                     Radius.elliptical(9999.0, 9999.0)),
                                 border: Border.all(
                                     width: 1.0, color: const Color(0xff2e9eff)),
@@ -472,14 +474,14 @@ class SignUpScreen1 extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xffffffff),
-                                borderRadius: BorderRadius.all(
+                                borderRadius: const BorderRadius.all(
                                     Radius.elliptical(9999.0, 9999.0)),
                                 border: Border.all(
                                     width: 1.0, color: const Color(0x80aaaaad)),
                               ),
                             ),
                           ),
-                          Align(
+                          const Align(
                             alignment: Alignment(-0.403, 0.045),
                             child: SizedBox(
                               width: 177.0,
@@ -489,7 +491,7 @@ class SignUpScreen1 extends StatelessWidget {
                                 style: TextStyle(
                                   fontFamily: 'SF Pro',
                                   fontSize: 18,
-                                  color: const Color(0xff000000),
+                                  color: Color(0xff000000),
                                   fontWeight: FontWeight.w600,
                                 ),
                                 softWrap: false,
@@ -515,7 +517,7 @@ class SignUpScreen1 extends StatelessWidget {
                   transition: LinkTransition.PushLeft,
                   ease: Curves.easeInOut,
                   duration: 0.5,
-                  pageBuilder: () => SignUpScreen2(),
+                  pageBuilder: () => const SignUpScreen2(),
                 ),
               ],
               child: Stack(
@@ -530,7 +532,7 @@ class SignUpScreen1 extends StatelessWidget {
                           borderRadius: BorderRadius.circular(25.0),
                         ),
                       ),
-                      Align(
+                      const Align(
                         alignment: Alignment(0.0, 0.048),
                         child: SizedBox(
                           width: 106.0,
@@ -540,7 +542,7 @@ class SignUpScreen1 extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'SF Pro',
                               fontSize: 24,
-                              color: const Color(0xffffffff),
+                              color: Color(0xffffffff),
                               fontWeight: FontWeight.w800,
                             ),
                             softWrap: false,

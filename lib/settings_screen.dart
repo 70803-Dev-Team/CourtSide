@@ -5,6 +5,8 @@ import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,12 +26,12 @@ class SettingsScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 116.0, start: 16.0),
                   Pin(size: 34.0, end: 9.0),
-                  child: Text(
+                  child: const Text(
                     'Settings',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 28,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       letterSpacing: 0.014,
                       fontWeight: FontWeight.w800,
                     ),
@@ -48,7 +50,7 @@ class SettingsScreen extends StatelessWidget {
                         transition: LinkTransition.PushRight,
                         ease: Curves.linear,
                         duration: 0.3,
-                        pageBuilder: () => ProfileScreen(),
+                        pageBuilder: () => const ProfileScreen(),
                       ),
                     ],
                     child: Stack(
@@ -98,12 +100,12 @@ class SettingsScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 92.0, start: 34.0),
                   Pin(size: 29.0, middle: 0.4878),
-                  child: Text(
+                  child: const Text(
                     'Text Size',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                     ),
                     textAlign: TextAlign.center,
                     softWrap: false,
@@ -131,7 +133,7 @@ class SettingsScreen extends StatelessWidget {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.symmetric(
+                                  padding: const EdgeInsets.symmetric(
                                       horizontal: 3.0, vertical: 4.0),
                                   child: SizedBox.expand(
                                       child: SvgPicture.string(
@@ -183,12 +185,12 @@ class SettingsScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 74.0, end: 22.0),
                   Pin(size: 21.0, middle: 0.5102),
-                  child: Text(
+                  child: const Text(
                     'Standard',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff2e9eff),
+                      color: Color(0xff2e9eff),
                     ),
                     textAlign: TextAlign.center,
                     softWrap: false,
@@ -210,12 +212,12 @@ class SettingsScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 124.0, start: 34.0),
                   Pin(size: 29.0, middle: 0.4878),
-                  child: Text(
+                  child: const Text(
                     'Geolocation',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                     ),
                     textAlign: TextAlign.center,
                     softWrap: false,
@@ -240,7 +242,7 @@ class SettingsScreen extends StatelessWidget {
                                   color: Colors.transparent,
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.symmetric(
+                                  padding: const EdgeInsets.symmetric(
                                       horizontal: 4.0, vertical: 2.0),
                                   child: SizedBox.expand(
                                       child: SvgPicture.string(
@@ -250,7 +252,7 @@ class SettingsScreen extends StatelessWidget {
                                   )),
                                 ),
                                 Align(
-                                  alignment: Alignment(0.0, -0.294),
+                                  alignment: const Alignment(0.0, -0.294),
                                   child: SizedBox(
                                     width: 7.0,
                                     height: 7.0,
@@ -303,12 +305,12 @@ class SettingsScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 92.0, end: 22.1),
                   Pin(size: 21.0, middle: 0.5102),
-                  child: Text(
+                  child: const Text(
                     'While using',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff2e9eff),
+                      color: Color(0xff2e9eff),
                     ),
                     textAlign: TextAlign.center,
                     softWrap: false,
@@ -330,12 +332,12 @@ class SettingsScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 130.0, start: 34.0),
                   Pin(size: 29.0, middle: 0.4878),
-                  child: Text(
+                  child: const Text(
                     'Notifications',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                     ),
                     textAlign: TextAlign.center,
                     softWrap: false,
@@ -360,7 +362,7 @@ class SettingsScreen extends StatelessWidget {
                                   color: Colors.transparent,
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.symmetric(
+                                  padding: const EdgeInsets.symmetric(
                                       horizontal: 3.0, vertical: 2.0),
                                   child: SizedBox.expand(
                                       child: SvgPicture.string(
@@ -394,12 +396,12 @@ class SettingsScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 126.0, start: 34.0),
                   Pin(size: 29.0, middle: 0.4878),
-                  child: Text(
+                  child: const Text(
                     'Dark Theme',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                     ),
                     textAlign: TextAlign.center,
                     softWrap: false,
@@ -424,7 +426,7 @@ class SettingsScreen extends StatelessWidget {
                                   color: Colors.transparent,
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.all(2.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: SizedBox.expand(
                                       child: SvgPicture.string(
                                     _svg_jn14bs,

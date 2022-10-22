@@ -7,6 +7,8 @@ import './inbox_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,12 +28,12 @@ class ProfileScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 89.0, start: 16.0),
                   Pin(size: 34.0, middle: 0.5472),
-                  child: Text(
+                  child: const Text(
                     'Profile',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 28,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       letterSpacing: 0.014,
                       fontWeight: FontWeight.w800,
                     ),
@@ -180,18 +182,18 @@ class ProfileScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 89.0, middle: 0.2389),
                   Pin(size: 21.0, start: 27.0),
-                  child: Text(
+                  child: const Text(
                     'Edit Profile',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w500,
                     ),
                     softWrap: false,
                   ),
                 ),
-                Align(
+                const Align(
                   alignment: Alignment(-0.494, -0.551),
                   child: SizedBox(
                     width: 108.0,
@@ -201,14 +203,14 @@ class ProfileScreen extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 18,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         fontWeight: FontWeight.w500,
                       ),
                       softWrap: false,
                     ),
                   ),
                 ),
-                Align(
+                const Align(
                   alignment: Alignment(-0.445, -0.229),
                   child: SizedBox(
                     width: 136.0,
@@ -218,14 +220,14 @@ class ProfileScreen extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 18,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         fontWeight: FontWeight.w500,
                       ),
                       softWrap: false,
                     ),
                   ),
                 ),
-                Align(
+                const Align(
                   alignment: Alignment(-0.549, 0.105),
                   child: SizedBox(
                     width: 69.0,
@@ -235,7 +237,7 @@ class ProfileScreen extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 18,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         fontWeight: FontWeight.w500,
                       ),
                       softWrap: false,
@@ -245,12 +247,12 @@ class ProfileScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 149.0, middle: 0.2903),
                   Pin(size: 21.0, end: 55.0),
-                  child: Text(
+                  child: const Text(
                     'Technical Support',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w500,
                     ),
                     softWrap: false,
@@ -287,7 +289,7 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ),
                       Align(
-                        alignment: Alignment(-0.029, 0.086),
+                        alignment: const Alignment(-0.029, 0.086),
                         child: SizedBox(
                           width: 60.0,
                           height: 60.0,
@@ -296,7 +298,7 @@ class ProfileScreen extends StatelessWidget {
                               Stack(
                             children: <Widget>[
                               Transform.translate(
-                                offset: Offset(7.6, 0.0),
+                                offset: const Offset(7.6, 0.0),
                                 child: SizedBox(
                                   width: 52.0,
                                   height: 60.0,
@@ -316,25 +318,25 @@ class ProfileScreen extends StatelessWidget {
                                         child: Stack(
                                           children: <Widget>[
                                             Transform.translate(
-                                              offset: Offset(-11.6, 0.0),
+                                              offset: const Offset(-11.6, 0.0),
                                               child: Container(
                                                 width: 68.0,
                                                 height: 67.0,
-                                                decoration: BoxDecoration(
+                                                decoration: const BoxDecoration(
                                                   gradient: LinearGradient(
                                                     begin: Alignment(
                                                         -1.359, 1.404),
                                                     end:
                                                         Alignment(1.093, -1.13),
                                                     colors: [
-                                                      const Color(0xff16dbff),
-                                                      const Color(0xff1cdbff),
-                                                      const Color(0xff2ddeff),
-                                                      const Color(0xff49e2ff),
-                                                      const Color(0xff71e9ff),
-                                                      const Color(0xffa3f0ff),
-                                                      const Color(0xffe0faff),
-                                                      const Color(0xffffffff)
+                                                      Color(0xff16dbff),
+                                                      Color(0xff1cdbff),
+                                                      Color(0xff2ddeff),
+                                                      Color(0xff49e2ff),
+                                                      Color(0xff71e9ff),
+                                                      Color(0xffa3f0ff),
+                                                      Color(0xffe0faff),
+                                                      Color(0xffffffff)
                                                     ],
                                                     stops: [
                                                       0.0,
@@ -367,7 +369,7 @@ class ProfileScreen extends StatelessWidget {
                                 ),
                               ),
                               Transform.translate(
-                                offset: Offset(0.0, 0.3),
+                                offset: const Offset(0.0, 0.3),
                                 child: SizedBox(
                                   width: 52.0,
                                   height: 60.0,
@@ -387,7 +389,7 @@ class ProfileScreen extends StatelessWidget {
                                         child: Stack(
                                           children: <Widget>[
                                             Transform.translate(
-                                              offset: Offset(-4.2, -7.4),
+                                              offset: const Offset(-4.2, -7.4),
                                               child: SizedBox(
                                                 width: 68.0,
                                                 height: 67.0,
@@ -412,7 +414,7 @@ class ProfileScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                Align(
+                const Align(
                   alignment: Alignment(0.03, 0.462),
                   child: SizedBox(
                     width: 226.0,
@@ -422,7 +424,7 @@ class ProfileScreen extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 20,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         fontWeight: FontWeight.w800,
                       ),
                       softWrap: false,
@@ -432,12 +434,12 @@ class ProfileScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 183.0, middle: 0.5143),
                   Pin(size: 20.0, end: 23.0),
-                  child: Text(
+                  child: const Text(
                     'Personal data & documents ',
                     style: TextStyle(
                       fontFamily: 'Roboto',
                       fontSize: 15,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w100,
                     ),
                     softWrap: false,
@@ -492,7 +494,7 @@ class ProfileScreen extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     color: const Color(0xfee8e8e8),
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(25.0),
                       topRight: Radius.circular(25.0),
                     ),
@@ -508,7 +510,7 @@ class ProfileScreen extends StatelessWidget {
                       Stack(
                     children: <Widget>[
                       Align(
-                        alignment: Alignment(-0.029, -1.0),
+                        alignment: const Alignment(-0.029, -1.0),
                         child: SizedBox(
                           width: 24.0,
                           height: 24.0,
@@ -554,12 +556,12 @@ class ProfileScreen extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 0.0, end: 0.0),
                         Pin(size: 21.0, end: 0.0),
-                        child: Text(
+                        child: const Text(
                           'Profile',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 18,
-                            color: const Color(0xff2e9eff),
+                            color: Color(0xff2e9eff),
                             fontWeight: FontWeight.w800,
                           ),
                           softWrap: false,
@@ -569,7 +571,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(192.7, 14.0),
+                  offset: const Offset(192.7, 14.0),
                   child: SizedBox(
                     width: 42.0,
                     height: 42.0,
@@ -580,7 +582,7 @@ class ProfileScreen extends StatelessWidget {
                         PageLinkInfo(
                           ease: Curves.easeInOut,
                           duration: 0.5,
-                          pageBuilder: () => ReservationsScreen(),
+                          pageBuilder: () => const ReservationsScreen(),
                         ),
                       ],
                       child: Stack(
@@ -604,7 +606,7 @@ class ProfileScreen extends StatelessWidget {
                             ),
                           ),
                           Transform.translate(
-                            offset: Offset(19.4, 10.1),
+                            offset: const Offset(19.4, 10.1),
                             child: SizedBox(
                               width: 23.0,
                               height: 25.0,
@@ -625,7 +627,7 @@ class ProfileScreen extends StatelessWidget {
                             ),
                           ),
                           Transform.translate(
-                            offset: Offset(5.9, 24.0),
+                            offset: const Offset(5.9, 24.0),
                             child: SizedBox(
                               width: 28.0,
                               height: 18.0,
@@ -660,7 +662,7 @@ class ProfileScreen extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => SearchScreenMapView(),
+                        pageBuilder: () => const SearchScreenMapView(),
                       ),
                     ],
                     child: Stack(
@@ -680,8 +682,8 @@ class ProfileScreen extends StatelessWidget {
                                   ),
                                 ),
                                 Padding(
-                                  padding:
-                                      EdgeInsets.fromLTRB(1.0, 2.0, 0.0, 0.0),
+                                  padding: const EdgeInsets.fromLTRB(
+                                      1.0, 2.0, 0.0, 0.0),
                                   child: SizedBox.expand(
                                       child: SvgPicture.string(
                                     _svg_vlehqa,
@@ -690,7 +692,7 @@ class ProfileScreen extends StatelessWidget {
                                   )),
                                 ),
                                 Align(
-                                  alignment: Alignment(0.038, 0.077),
+                                  alignment: const Alignment(0.038, 0.077),
                                   child: SizedBox(
                                     width: 16.0,
                                     height: 16.0,
@@ -718,7 +720,7 @@ class ProfileScreen extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => InboxScreen(),
+                        pageBuilder: () => const InboxScreen(),
                       ),
                     ],
                     child: Stack(
@@ -736,7 +738,7 @@ class ProfileScreen extends StatelessWidget {
                                       color: Colors.transparent,
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.symmetric(
+                                      padding: const EdgeInsets.symmetric(
                                           horizontal: 2.3, vertical: 4.5),
                                       child: SizedBox.expand(
                                           child: SvgPicture.string(

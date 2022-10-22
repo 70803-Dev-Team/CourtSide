@@ -6,6 +6,8 @@ import './booking_process3.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class BookingProcess2 extends StatelessWidget {
+  const BookingProcess2({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,13 +27,13 @@ class BookingProcess2 extends StatelessWidget {
                   color: const Color(0xff3e3e3e),
                 ),
                 Transform.translate(
-                  offset: Offset(16.0, 117.0),
-                  child: Text(
+                  offset: const Offset(16.0, 117.0),
+                  child: const Text(
                     'Bocage Racquet Club',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 30,
-                      color: const Color(0xff2e9eff),
+                      color: Color(0xff2e9eff),
                       letterSpacing: 0.015,
                       fontWeight: FontWeight.w800,
                     ),
@@ -40,7 +42,7 @@ class BookingProcess2 extends StatelessWidget {
                 ),
                 Container(),
                 Transform.translate(
-                  offset: Offset(20.0, 58.0),
+                  offset: const Offset(20.0, 58.0),
                   child: SizedBox(
                     width: 12.0,
                     height: 24.0,
@@ -52,7 +54,7 @@ class BookingProcess2 extends StatelessWidget {
                           transition: LinkTransition.Fade,
                           ease: Curves.linear,
                           duration: 0.3,
-                          pageBuilder: () => BookingProcess1(),
+                          pageBuilder: () => const BookingProcess1(),
                         ),
                       ],
                       child: Stack(
@@ -91,7 +93,7 @@ class BookingProcess2 extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(-0.007, 0.01),
+                  alignment: const Alignment(-0.007, 0.01),
                   child: SizedBox(
                     width: 287.0,
                     height: 4.0,
@@ -148,7 +150,7 @@ class BookingProcess2 extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(0.0, 164.1, 0.0, 0.0),
+            padding: const EdgeInsets.fromLTRB(0.0, 164.1, 0.0, 0.0),
             child: SizedBox.expand(
                 child:
                     // Adobe XD layer: 'Background-Rec' (shape)
@@ -168,7 +170,7 @@ class BookingProcess2 extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     color: const Color(0xffe8e8e8),
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(15.0),
                       topRight: Radius.circular(15.0),
                     ),
@@ -187,7 +189,7 @@ class BookingProcess2 extends StatelessWidget {
                         transition: LinkTransition.Fade,
                         ease: Curves.linear,
                         duration: 0.3,
-                        pageBuilder: () => BookingProcess3(),
+                        pageBuilder: () => const BookingProcess3(),
                       ),
                     ],
                     child: Stack(
@@ -199,7 +201,7 @@ class BookingProcess2 extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15.0),
                           ),
                         ),
-                        Align(
+                        const Align(
                           alignment: Alignment(0.0, -0.048),
                           child: SizedBox(
                             width: 106.0,
@@ -209,7 +211,7 @@ class BookingProcess2 extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'SF Pro',
                                 fontSize: 24,
-                                color: const Color(0xffe8e8e8),
+                                color: Color(0xffe8e8e8),
                                 fontWeight: FontWeight.w800,
                               ),
                               softWrap: false,
@@ -223,12 +225,12 @@ class BookingProcess2 extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 44.0, start: 34.0),
                   Pin(size: 24.0, start: 10.0),
-                  child: Text(
+                  child: const Text(
                     'Total',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 20,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       letterSpacing: 0.01,
                       fontWeight: FontWeight.w500,
                     ),
@@ -238,12 +240,12 @@ class BookingProcess2 extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 113.0, end: 30.0),
                   Pin(size: 24.0, start: 10.0),
-                  child: Text(
+                  child: const Text(
                     '\$250 / hour',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 20,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       letterSpacing: 0.01,
                       fontWeight: FontWeight.w800,
                     ),
@@ -285,7 +287,7 @@ class BookingProcess2 extends StatelessWidget {
                                       color: const Color(0xff2e9eff)),
                                 ),
                               ),
-                              Align(
+                              const Align(
                                 alignment: Alignment(-0.037, 0.0),
                                 child: SizedBox(
                                   width: 18.0,
@@ -295,7 +297,7 @@ class BookingProcess2 extends StatelessWidget {
                                     style: TextStyle(
                                       fontFamily: 'SF Pro',
                                       fontSize: 36,
-                                      color: const Color(0xff2e9eff),
+                                      color: Color(0xff2e9eff),
                                       letterSpacing: 0.018000000000000002,
                                       fontWeight: FontWeight.w800,
                                     ),
@@ -325,7 +327,7 @@ class BookingProcess2 extends StatelessWidget {
                                       color: const Color(0x80000000)),
                                 ),
                               ),
-                              Center(
+                              const Center(
                                 child: SizedBox(
                                   width: 23.0,
                                   height: 43.0,
@@ -334,7 +336,7 @@ class BookingProcess2 extends StatelessWidget {
                                     style: TextStyle(
                                       fontFamily: 'SF Pro',
                                       fontSize: 36,
-                                      color: const Color(0x80000000),
+                                      color: Color(0x80000000),
                                       letterSpacing: 0.018000000000000002,
                                       fontWeight: FontWeight.w800,
                                     ),
@@ -364,7 +366,7 @@ class BookingProcess2 extends StatelessWidget {
                                       color: const Color(0x80000000)),
                                 ),
                               ),
-                              Align(
+                              const Align(
                                 alignment: Alignment(0.013, 0.0),
                                 child: SizedBox(
                                   width: 24.0,
@@ -374,7 +376,7 @@ class BookingProcess2 extends StatelessWidget {
                                     style: TextStyle(
                                       fontFamily: 'SF Pro',
                                       fontSize: 36,
-                                      color: const Color(0x80000000),
+                                      color: Color(0x80000000),
                                       letterSpacing: 0.018000000000000002,
                                       fontWeight: FontWeight.w800,
                                     ),
@@ -386,7 +388,7 @@ class BookingProcess2 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Align(
+                      const Align(
                         alignment: Alignment.topLeft,
                         child: SizedBox(
                           width: 177.0,
@@ -396,7 +398,7 @@ class BookingProcess2 extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'SF Pro',
                                 fontSize: 20,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                                 letterSpacing: 0.01,
                               ),
                               children: [
@@ -409,7 +411,7 @@ class BookingProcess2 extends StatelessWidget {
                                 TextSpan(
                                   text: '*',
                                   style: TextStyle(
-                                    color: const Color(0xffd12424),
+                                    color: Color(0xffd12424),
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
@@ -442,7 +444,7 @@ class BookingProcess2 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Align(
+                      const Align(
                         alignment: Alignment.topLeft,
                         child: SizedBox(
                           width: 128.0,
@@ -452,7 +454,7 @@ class BookingProcess2 extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'SF Pro',
                                 fontSize: 20,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                                 letterSpacing: 0.01,
                               ),
                               children: [
@@ -465,7 +467,7 @@ class BookingProcess2 extends StatelessWidget {
                                 TextSpan(
                                   text: '*',
                                   style: TextStyle(
-                                    color: const Color(0xffd12424),
+                                    color: Color(0xffd12424),
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
@@ -480,12 +482,12 @@ class BookingProcess2 extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(size: 103.0, start: 10.0),
                         Pin(size: 24.0, end: 12.0),
-                        child: Text(
+                        child: const Text(
                           '9/17/2022',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 20,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             letterSpacing: 2,
                             fontWeight: FontWeight.w300,
                           ),
@@ -509,7 +511,7 @@ class BookingProcess2 extends StatelessWidget {
                                       color: Colors.transparent,
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.symmetric(
+                                      padding: const EdgeInsets.symmetric(
                                           horizontal: 3.0, vertical: 2.0),
                                       child: SizedBox.expand(
                                           child: SvgPicture.string(
@@ -519,12 +521,12 @@ class BookingProcess2 extends StatelessWidget {
                                       )),
                                     ),
                                     Align(
-                                      alignment: Alignment(-0.364, 0.364),
+                                      alignment: const Alignment(-0.364, 0.364),
                                       child: Container(
                                         width: 2.0,
                                         height: 2.0,
-                                        decoration: BoxDecoration(
-                                          color: const Color(0xff2e9eff),
+                                        decoration: const BoxDecoration(
+                                          color: Color(0xff2e9eff),
                                           borderRadius: BorderRadius.all(
                                               Radius.elliptical(
                                                   9999.0, 9999.0)),
@@ -532,7 +534,7 @@ class BookingProcess2 extends StatelessWidget {
                                       ),
                                     ),
                                     Align(
-                                      alignment: Alignment(0.222, 0.364),
+                                      alignment: const Alignment(0.222, 0.364),
                                       child: SizedBox(
                                         width: 6.0,
                                         height: 2.0,
@@ -555,19 +557,19 @@ class BookingProcess2 extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(start: 30.0, end: 10.0),
                   Pin(size: 38.0, middle: 0.1641),
-                  child: Text(
+                  child: const Text(
                     'Choose a specific date and time below for the\ntime period that you want to rent.',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 16,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       letterSpacing: 0.008,
                       fontWeight: FontWeight.w300,
                     ),
                     softWrap: false,
                   ),
                 ),
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                     width: 161.0,
@@ -577,7 +579,7 @@ class BookingProcess2 extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 24,
-                        color: const Color(0xff343a40),
+                        color: Color(0xff343a40),
                         fontWeight: FontWeight.w900,
                       ),
                       softWrap: false,
@@ -611,7 +613,7 @@ class BookingProcess2 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Align(
+                      const Align(
                         alignment: Alignment.topLeft,
                         child: SizedBox(
                           width: 118.0,
@@ -621,7 +623,7 @@ class BookingProcess2 extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'SF Pro',
                                 fontSize: 20,
-                                color: const Color(0xff000000),
+                                color: Color(0xff000000),
                                 letterSpacing: 0.01,
                               ),
                               children: [
@@ -634,7 +636,7 @@ class BookingProcess2 extends StatelessWidget {
                                 TextSpan(
                                   text: '*',
                                   style: TextStyle(
-                                    color: const Color(0xffd12424),
+                                    color: Color(0xffd12424),
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
@@ -649,12 +651,12 @@ class BookingProcess2 extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(size: 94.0, start: 10.0),
                         Pin(size: 24.0, end: 12.0),
-                        child: Text(
+                        child: const Text(
                           '10:00 am',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 20,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             letterSpacing: 2,
                             fontWeight: FontWeight.w300,
                           ),
@@ -681,7 +683,7 @@ class BookingProcess2 extends StatelessWidget {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.all(2.0),
+                                      padding: const EdgeInsets.all(2.0),
                                       child: SizedBox.expand(
                                           child: SvgPicture.string(
                                         _svg_m0s4iq,
@@ -690,7 +692,7 @@ class BookingProcess2 extends StatelessWidget {
                                       )),
                                     ),
                                     Align(
-                                      alignment: Alignment(0.222, -0.222),
+                                      alignment: const Alignment(0.222, -0.222),
                                       child: SizedBox(
                                         width: 6.0,
                                         height: 6.0,

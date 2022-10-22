@@ -13,6 +13,8 @@ import './search_screen_map_view1.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SearchScreenMapView extends StatelessWidget {
+  const SearchScreenMapView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +22,7 @@ class SearchScreenMapView extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, -138.0),
+            padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, -138.0),
             child:
                 // Adobe XD layer: 'Map' (group)
                 Stack(
@@ -28,8 +30,8 @@ class SearchScreenMapView extends StatelessWidget {
                 // Adobe XD layer: 'Map' (shape)
                 Container(
                   decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: const AssetImage(''),
+                    image: const DecorationImage(
+                      image: AssetImage(''),
                       fit: BoxFit.cover,
                     ),
                     border:
@@ -37,7 +39,7 @@ class SearchScreenMapView extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(0.069, -0.14),
+                  alignment: const Alignment(0.069, -0.14),
                   child: SizedBox(
                     width: 20.0,
                     height: 55.0,
@@ -54,7 +56,7 @@ class SearchScreenMapView extends StatelessWidget {
                             height: 0.0,
                             decoration: BoxDecoration(
                               color: const Color(0x591473e6),
-                              borderRadius: BorderRadius.all(
+                              borderRadius: const BorderRadius.all(
                                   Radius.elliptical(9999.0, 9999.0)),
                               border: Border.all(
                                   width: 1.0, color: const Color(0x00000000)),
@@ -69,13 +71,13 @@ class SearchScreenMapView extends StatelessWidget {
                               Container(
                             decoration: BoxDecoration(
                               color: const Color(0xff1473e6),
-                              borderRadius: BorderRadius.all(
+                              borderRadius: const BorderRadius.all(
                                   Radius.elliptical(9999.0, 9999.0)),
                               border: Border.all(
                                   width: 3.2, color: const Color(0xffffffff)),
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
-                                  color: const Color(0x33000000),
+                                  color: Color(0x33000000),
                                   offset: Offset(
                                       0.15000000596046448, 0.15000000596046448),
                                   blurRadius: 1,
@@ -89,7 +91,7 @@ class SearchScreenMapView extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(-0.027, 0.01),
+                  alignment: const Alignment(-0.027, 0.01),
                   child: SizedBox(
                     width: 14.0,
                     height: 23.0,
@@ -100,7 +102,7 @@ class SearchScreenMapView extends StatelessWidget {
                         PageLinkInfo(
                           ease: Curves.easeIn,
                           duration: 0.3,
-                          pageBuilder: () => ViewListingMapView(),
+                          pageBuilder: () => const ViewListingMapView(),
                         ),
                       ],
                       child: SvgPicture.string(
@@ -111,7 +113,7 @@ class SearchScreenMapView extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(0.589, 0.272),
+                  alignment: const Alignment(0.589, 0.272),
                   child: SizedBox(
                     width: 14.0,
                     height: 23.0,
@@ -146,7 +148,7 @@ class SearchScreenMapView extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(0.466, -0.173),
+                  alignment: const Alignment(0.466, -0.173),
                   child: SizedBox(
                     width: 16.0,
                     height: 16.0,
@@ -159,7 +161,7 @@ class SearchScreenMapView extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(-0.144, 0.131),
+                  alignment: const Alignment(-0.144, 0.131),
                   child: SizedBox(
                     width: 17.0,
                     height: 15.0,
@@ -172,7 +174,7 @@ class SearchScreenMapView extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(0.367, 0.052),
+                  alignment: const Alignment(0.367, 0.052),
                   child: SizedBox(
                     width: 17.0,
                     height: 15.0,
@@ -183,7 +185,7 @@ class SearchScreenMapView extends StatelessWidget {
                         PageLinkInfo(
                           ease: Curves.easeOut,
                           duration: 0.2,
-                          pageBuilder: () => ViewListingMapView1(),
+                          pageBuilder: () => const ViewListingMapView1(),
                         ),
                       ],
                       child: SvgPicture.string(
@@ -204,7 +206,7 @@ class SearchScreenMapView extends StatelessWidget {
                 children: <Widget>[
                   // Adobe XD layer: 'Display Shape' (shape)
                   Container(
-                    decoration: BoxDecoration(),
+                    decoration: const BoxDecoration(),
                   ),
                 ],
               ),
@@ -219,17 +221,17 @@ class SearchScreenMapView extends StatelessWidget {
               children: <Widget>[
                 // Adobe XD layer: 'Background-Rec' (shape)
                 Container(
-                  decoration: BoxDecoration(
-                    color: const Color(0xffffffff),
+                  decoration: const BoxDecoration(
+                    color: Color(0xffffffff),
                     borderRadius: BorderRadius.only(
                       bottomRight: Radius.circular(25.0),
                       bottomLeft: Radius.circular(25.0),
                     ),
                   ),
-                  margin: EdgeInsets.fromLTRB(1.0, 0.0, 0.0, 0.0),
+                  margin: const EdgeInsets.fromLTRB(1.0, 0.0, 0.0, 0.0),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(0.0, 0.0, 1.0, 45.0),
+                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 1.0, 45.0),
                   child:
                       // Adobe XD layer: 'Status Bar' (group)
                       Stack(
@@ -271,7 +273,7 @@ class SearchScreenMapView extends StatelessWidget {
                                       color: Colors.transparent,
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.all(3.0),
+                                      padding: const EdgeInsets.all(3.0),
                                       child: SizedBox.expand(
                                           child: SvgPicture.string(
                                         _svg_qbv82,
@@ -289,12 +291,12 @@ class SearchScreenMapView extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 31.0, end: 31.0),
                         Pin(size: 21.0, middle: 0.4706),
-                        child: Text(
+                        child: const Text(
                           'Try searching for fields, or courts',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 18,
-                            color: const Color(0xffaaaaaa),
+                            color: Color(0xffaaaaaa),
                             letterSpacing: 0.009000000000000001,
                             fontWeight: FontWeight.w300,
                           ),
@@ -314,15 +316,15 @@ class SearchScreenMapView extends StatelessWidget {
                         transition: LinkTransition.Fade,
                         ease: Curves.easeOut,
                         duration: 0.3,
-                        pageBuilder: () => SearchScreenListView(),
+                        pageBuilder: () => const SearchScreenListView(),
                       ),
                     ],
-                    child: Text(
+                    child: const Text(
                       'List',
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 18,
-                        color: const Color(0xff16b7ff),
+                        color: Color(0xff16b7ff),
                         letterSpacing: 0.009000000000000001,
                         fontWeight: FontWeight.w800,
                       ),
@@ -342,7 +344,7 @@ class SearchScreenMapView extends StatelessWidget {
                         transition: LinkTransition.Fade,
                         ease: Curves.easeOut,
                         duration: 0.3,
-                        pageBuilder: () => SearchScreenFiltersSort(),
+                        pageBuilder: () => const SearchScreenFiltersSort(),
                       ),
                     ],
                     child: Stack(
@@ -387,7 +389,7 @@ class SearchScreenMapView extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     color: const Color(0xfee8e8e8),
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(25.0),
                       topRight: Radius.circular(25.0),
                     ),
@@ -405,11 +407,11 @@ class SearchScreenMapView extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => ProfileScreen(),
+                        pageBuilder: () => const ProfileScreen(),
                       ),
                     ],
                     child: Stack(
-                      children: <Widget>[],
+                      children: const <Widget>[],
                     ),
                   ),
                 ),
@@ -421,7 +423,7 @@ class SearchScreenMapView extends StatelessWidget {
                       Stack(
                     children: <Widget>[
                       Transform.translate(
-                        offset: Offset(19.0, 0.0),
+                        offset: const Offset(19.0, 0.0),
                         child: SizedBox(
                           width: 24.0,
                           height: 24.0,
@@ -442,7 +444,7 @@ class SearchScreenMapView extends StatelessWidget {
                                       color: Colors.transparent,
                                     ),
                                     Transform.translate(
-                                      offset: Offset(0.6, 1.1),
+                                      offset: const Offset(0.6, 1.1),
                                       child: SizedBox(
                                         width: 23.0,
                                         height: 23.0,
@@ -462,12 +464,12 @@ class SearchScreenMapView extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 0.0, end: 0.0),
                         Pin(size: 21.0, end: 0.0),
-                        child: Text(
+                        child: const Text(
                           'Search',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 18,
-                            color: const Color(0xff2e9eff),
+                            color: Color(0xff2e9eff),
                             fontWeight: FontWeight.w800,
                           ),
                           softWrap: false,
@@ -486,16 +488,16 @@ class SearchScreenMapView extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => InboxScreen(),
+                        pageBuilder: () => const InboxScreen(),
                       ),
                     ],
                     child: Stack(
-                      children: <Widget>[],
+                      children: const <Widget>[],
                     ),
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(23.0, 14.0),
+                  offset: const Offset(23.0, 14.0),
                   child: SizedBox(
                     width: 42.0,
                     height: 42.0,
@@ -506,7 +508,7 @@ class SearchScreenMapView extends StatelessWidget {
                         PageLinkInfo(
                           ease: Curves.easeInOut,
                           duration: 0.5,
-                          pageBuilder: () => HomeScreen(),
+                          pageBuilder: () => const HomeScreen(),
                         ),
                       ],
                       child: Stack(
@@ -538,7 +540,7 @@ class SearchScreenMapView extends StatelessWidget {
                                               color: Colors.transparent,
                                             ),
                                             Transform.translate(
-                                              offset: Offset(5.2, 3.5),
+                                              offset: const Offset(5.2, 3.5),
                                               child: SizedBox(
                                                 width: 32.0,
                                                 height: 35.0,
@@ -564,7 +566,7 @@ class SearchScreenMapView extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(-0.282, 0.425),
+                  alignment: const Alignment(-0.282, 0.425),
                   child: SizedBox(
                     width: 91.0,
                     height: 9.0,
@@ -595,7 +597,7 @@ class SearchScreenMapView extends StatelessWidget {
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(192.7, 14.0),
+                  offset: const Offset(192.7, 14.0),
                   child: SizedBox(
                     width: 42.0,
                     height: 42.0,
@@ -606,7 +608,7 @@ class SearchScreenMapView extends StatelessWidget {
                         PageLinkInfo(
                           ease: Curves.easeInOut,
                           duration: 0.5,
-                          pageBuilder: () => ReservationsScreen(),
+                          pageBuilder: () => const ReservationsScreen(),
                         ),
                       ],
                       child: Stack(
@@ -630,7 +632,7 @@ class SearchScreenMapView extends StatelessWidget {
                             ),
                           ),
                           Transform.translate(
-                            offset: Offset(19.4, 10.1),
+                            offset: const Offset(19.4, 10.1),
                             child: SizedBox(
                               width: 23.0,
                               height: 25.0,
@@ -651,7 +653,7 @@ class SearchScreenMapView extends StatelessWidget {
                             ),
                           ),
                           Transform.translate(
-                            offset: Offset(5.9, 24.0),
+                            offset: const Offset(5.9, 24.0),
                             child: SizedBox(
                               width: 28.0,
                               height: 18.0,
@@ -687,7 +689,7 @@ class SearchScreenMapView extends StatelessWidget {
                 PageLinkInfo(
                   ease: Curves.easeIn,
                   duration: 0.3,
-                  pageBuilder: () => SearchScreenMapView1(),
+                  pageBuilder: () => const SearchScreenMapView1(),
                 ),
               ],
               child: SvgPicture.string(

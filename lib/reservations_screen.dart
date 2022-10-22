@@ -9,6 +9,8 @@ import './home_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ReservationsScreen extends StatelessWidget {
+  const ReservationsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,12 +35,12 @@ class ReservationsScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 56.0, start: 24.0),
                   Pin(size: 29.0, start: 11.0),
-                  child: Text(
+                  child: const Text(
                     'Lists',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
@@ -73,12 +75,12 @@ class ReservationsScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 174.0, start: 24.0),
                   Pin(size: 21.0, middle: 0.2429),
-                  child: Text(
+                  child: const Text(
                     'Nothing to show here.',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w300,
                     ),
                     softWrap: false,
@@ -98,7 +100,7 @@ class ReservationsScreen extends StatelessWidget {
                   transition: LinkTransition.PushLeft,
                   ease: Curves.linear,
                   duration: 0.3,
-                  pageBuilder: () => UpNextScreen(),
+                  pageBuilder: () => const UpNextScreen(),
                 ),
               ],
               child: Stack(
@@ -114,12 +116,12 @@ class ReservationsScreen extends StatelessWidget {
                   Pinned.fromPins(
                     Pin(size: 92.0, start: 24.0),
                     Pin(size: 29.0, start: 11.0),
-                    child: Text(
+                    child: const Text(
                       'Up Next',
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 24,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         fontWeight: FontWeight.w800,
                       ),
                       softWrap: false,
@@ -132,8 +134,8 @@ class ReservationsScreen extends StatelessWidget {
                         // Adobe XD layer: 'bball-court-image3' (shape)
                         Container(
                       decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: const AssetImage(''),
+                        image: const DecorationImage(
+                          image: AssetImage(''),
                           fit: BoxFit.fill,
                         ),
                         borderRadius: BorderRadius.circular(10.0),
@@ -145,12 +147,12 @@ class ReservationsScreen extends StatelessWidget {
                   Pinned.fromPins(
                     Pin(size: 270.0, start: 24.0),
                     Pin(size: 21.0, middle: 0.7833),
-                    child: Text(
+                    child: const Text(
                       'Paramount Miami Worldcenter',
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 18,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         fontWeight: FontWeight.w800,
                       ),
                       softWrap: false,
@@ -159,12 +161,12 @@ class ReservationsScreen extends StatelessWidget {
                   Pinned.fromPins(
                     Pin(size: 254.0, start: 49.0),
                     Pin(size: 21.0, end: 33.0),
-                    child: Text(
+                    child: const Text(
                       '851 NE 1st Ave, Miami, FL 33132',
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 18,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         fontWeight: FontWeight.w300,
                       ),
                       softWrap: false,
@@ -173,12 +175,12 @@ class ReservationsScreen extends StatelessWidget {
                   Pinned.fromPins(
                     Pin(size: 102.0, start: 24.0),
                     Pin(size: 21.0, end: 9.0),
-                    child: Text(
+                    child: const Text(
                       '\$750 / hour',
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 18,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         fontWeight: FontWeight.w800,
                       ),
                       softWrap: false,
@@ -187,12 +189,12 @@ class ReservationsScreen extends StatelessWidget {
                   Pinned.fromPins(
                     Pin(size: 92.0, end: 7.0),
                     Pin(size: 24.0, middle: 0.1769),
-                    child: Text(
+                    child: const Text(
                       'Reserved',
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 20,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         fontWeight: FontWeight.w800,
                       ),
                       softWrap: false,
@@ -201,12 +203,12 @@ class ReservationsScreen extends StatelessWidget {
                   Pinned.fromPins(
                     Pin(size: 83.0, end: 11.0),
                     Pin(size: 24.0, middle: 0.3),
-                    child: Text.rich(
+                    child: const Text.rich(
                       TextSpan(
                         style: TextStyle(
                           fontFamily: 'SF Pro',
                           fontSize: 20,
-                          color: const Color(0xff2e9eff),
+                          color: Color(0xff2e9eff),
                         ),
                         children: [
                           TextSpan(
@@ -269,8 +271,8 @@ class ReservationsScreen extends StatelessWidget {
                               children: <Widget>[
                                 Container(
                                   color: Colors.transparent,
-                                  margin:
-                                      EdgeInsets.fromLTRB(1.0, 0.0, 0.0, 0.0),
+                                  margin: const EdgeInsets.fromLTRB(
+                                      1.0, 0.0, 0.0, 0.0),
                                 ),
                                 Pinned.fromPins(
                                   Pin(size: 16.0, start: 0.0),
@@ -282,7 +284,7 @@ class ReservationsScreen extends StatelessWidget {
                                   ),
                                 ),
                                 Align(
-                                  alignment: Alignment(-0.5, -0.294),
+                                  alignment: const Alignment(-0.5, -0.294),
                                   child: SizedBox(
                                     width: 7.0,
                                     height: 7.0,
@@ -316,12 +318,12 @@ class ReservationsScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 179.0, start: 16.0),
                   Pin(size: 34.0, middle: 0.5472),
-                  child: Text(
+                  child: const Text(
                     'Reservations',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 28,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
@@ -363,12 +365,12 @@ class ReservationsScreen extends StatelessWidget {
                     Pinned.fromPins(
                       Pin(size: 108.0, start: 24.0),
                       Pin(size: 29.0, start: 11.0),
-                      child: Text(
+                      child: const Text(
                         'Favorites',
                         style: TextStyle(
                           fontFamily: 'SF Pro',
                           fontSize: 24,
-                          color: const Color(0xff000000),
+                          color: Color(0xff000000),
                           fontWeight: FontWeight.w800,
                         ),
                         softWrap: false,
@@ -409,8 +411,8 @@ class ReservationsScreen extends StatelessWidget {
                       // Adobe XD layer: 'tennis-court-image4' (shape)
                       Container(
                     decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: const AssetImage(''),
+                      image: const DecorationImage(
+                        image: AssetImage(''),
                         fit: BoxFit.fill,
                       ),
                       borderRadius: BorderRadius.circular(15.0),
@@ -420,15 +422,15 @@ class ReservationsScreen extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(0.0, 0.253),
+                  alignment: const Alignment(0.0, 0.253),
                   child:
                       // Adobe XD layer: 'tennis-court-image5' (shape)
                       Container(
                     width: 106.0,
                     height: 107.0,
                     decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: const AssetImage(''),
+                      image: const DecorationImage(
+                        image: AssetImage(''),
                         fit: BoxFit.fill,
                       ),
                       borderRadius: BorderRadius.circular(15.0),
@@ -444,8 +446,8 @@ class ReservationsScreen extends StatelessWidget {
                       // Adobe XD layer: 'tennis-court-image6' (shape)
                       Container(
                     decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: const AssetImage(''),
+                      image: const DecorationImage(
+                        image: AssetImage(''),
                         fit: BoxFit.fill,
                       ),
                       borderRadius: BorderRadius.circular(15.0),
@@ -458,7 +460,7 @@ class ReservationsScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 97.0),
+            padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 97.0),
             child:
                 // Adobe XD layer: 'Display Shape' (group)
                 Stack(
@@ -472,9 +474,9 @@ class ReservationsScreen extends StatelessWidget {
                       child:
                           // Adobe XD layer: 'Display Shape' (shape)
                           Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           image: DecorationImage(
-                            image: const AssetImage(''),
+                            image: AssetImage(''),
                             fit: BoxFit.fill,
                           ),
                         ),
@@ -482,7 +484,7 @@ class ReservationsScreen extends StatelessWidget {
                     ),
                     // Adobe XD layer: 'Display Shape' (shape)
                     Container(
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                     ),
                   ],
                 ),
@@ -500,7 +502,7 @@ class ReservationsScreen extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     color: const Color(0xfee8e8e8),
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(25.0),
                       topRight: Radius.circular(25.0),
                     ),
@@ -518,11 +520,11 @@ class ReservationsScreen extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => ProfileScreen(),
+                        pageBuilder: () => const ProfileScreen(),
                       ),
                     ],
                     child: Stack(
-                      children: <Widget>[],
+                      children: const <Widget>[],
                     ),
                   ),
                 ),
@@ -536,7 +538,7 @@ class ReservationsScreen extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => SearchScreenMapView(),
+                        pageBuilder: () => const SearchScreenMapView(),
                       ),
                     ],
                     child: Stack(
@@ -561,7 +563,7 @@ class ReservationsScreen extends StatelessWidget {
                                       color: Colors.transparent,
                                     ),
                                     Transform.translate(
-                                      offset: Offset(1.0, 2.0),
+                                      offset: const Offset(1.0, 2.0),
                                       child: SizedBox(
                                         width: 41.0,
                                         height: 40.0,
@@ -591,16 +593,16 @@ class ReservationsScreen extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => InboxScreen(),
+                        pageBuilder: () => const InboxScreen(),
                       ),
                     ],
                     child: Stack(
-                      children: <Widget>[],
+                      children: const <Widget>[],
                     ),
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(23.0, 14.0),
+                  offset: const Offset(23.0, 14.0),
                   child: SizedBox(
                     width: 42.0,
                     height: 42.0,
@@ -611,7 +613,7 @@ class ReservationsScreen extends StatelessWidget {
                         PageLinkInfo(
                           ease: Curves.easeInOut,
                           duration: 0.5,
-                          pageBuilder: () => HomeScreen(),
+                          pageBuilder: () => const HomeScreen(),
                         ),
                       ],
                       child: Stack(
@@ -643,7 +645,7 @@ class ReservationsScreen extends StatelessWidget {
                                               color: Colors.transparent,
                                             ),
                                             Transform.translate(
-                                              offset: Offset(5.2, 3.5),
+                                              offset: const Offset(5.2, 3.5),
                                               child: SizedBox(
                                                 width: 32.0,
                                                 height: 35.0,
@@ -669,7 +671,7 @@ class ReservationsScreen extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(-0.271, 0.425),
+                  alignment: const Alignment(-0.271, 0.425),
                   child: SizedBox(
                     width: 96.0,
                     height: 9.0,
@@ -700,7 +702,7 @@ class ReservationsScreen extends StatelessWidget {
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(156.0, 14.0),
+                  offset: const Offset(156.0, 14.0),
                   child: SizedBox(
                     width: 117.0,
                     height: 45.0,
@@ -709,7 +711,7 @@ class ReservationsScreen extends StatelessWidget {
                         Stack(
                       children: <Widget>[
                         Transform.translate(
-                          offset: Offset(44.0, 0.0),
+                          offset: const Offset(44.0, 0.0),
                           child: SizedBox(
                             width: 16.0,
                             height: 17.0,
@@ -730,7 +732,7 @@ class ReservationsScreen extends StatelessWidget {
                           ),
                         ),
                         Transform.translate(
-                          offset: Offset(55.1, 5.8),
+                          offset: const Offset(55.1, 5.8),
                           child: SizedBox(
                             width: 13.0,
                             height: 14.0,
@@ -751,7 +753,7 @@ class ReservationsScreen extends StatelessWidget {
                           ),
                         ),
                         Transform.translate(
-                          offset: Offset(47.4, 13.7),
+                          offset: const Offset(47.4, 13.7),
                           child: SizedBox(
                             width: 16.0,
                             height: 10.0,
@@ -774,12 +776,12 @@ class ReservationsScreen extends StatelessWidget {
                         Pinned.fromPins(
                           Pin(start: 0.0, end: 0.0),
                           Pin(size: 21.0, end: 0.0),
-                          child: Text(
+                          child: const Text(
                             'Reservations',
                             style: TextStyle(
                               fontFamily: 'SF Pro',
                               fontSize: 18,
-                              color: const Color(0xff2e9eff),
+                              color: Color(0xff2e9eff),
                               fontWeight: FontWeight.w800,
                             ),
                             softWrap: false,

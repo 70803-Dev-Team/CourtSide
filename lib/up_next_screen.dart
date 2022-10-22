@@ -5,6 +5,8 @@ import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class UpNextScreen extends StatelessWidget {
+  const UpNextScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,9 +25,9 @@ class UpNextScreen extends StatelessWidget {
                     child:
                         // Adobe XD layer: 'Display Shape' (shape)
                         Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
-                          image: const AssetImage(''),
+                          image: AssetImage(''),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -33,7 +35,7 @@ class UpNextScreen extends StatelessWidget {
                   ),
                   // Adobe XD layer: 'Display Shape' (shape)
                   Container(
-                    decoration: BoxDecoration(),
+                    decoration: const BoxDecoration(),
                   ),
                 ],
               ),
@@ -52,13 +54,13 @@ class UpNextScreen extends StatelessWidget {
                   color: const Color(0xff3e3e3e),
                 ),
                 Transform.translate(
-                  offset: Offset(16.0, 97.0),
-                  child: Text(
+                  offset: const Offset(16.0, 97.0),
+                  child: const Text(
                     'Up Next',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 30,
-                      color: const Color(0xffffffff),
+                      color: Color(0xffffffff),
                       letterSpacing: 0.015,
                       fontWeight: FontWeight.w800,
                     ),
@@ -67,7 +69,7 @@ class UpNextScreen extends StatelessWidget {
                 ),
                 Container(),
                 Transform.translate(
-                  offset: Offset(20.0, 58.0),
+                  offset: const Offset(20.0, 58.0),
                   child: SizedBox(
                     width: 12.0,
                     height: 24.0,
@@ -79,7 +81,7 @@ class UpNextScreen extends StatelessWidget {
                           transition: LinkTransition.PushRight,
                           ease: Curves.linear,
                           duration: 0.3,
-                          pageBuilder: () => ReservationsScreen(),
+                          pageBuilder: () => const ReservationsScreen(),
                         ),
                       ],
                       child: Stack(
@@ -121,14 +123,14 @@ class UpNextScreen extends StatelessWidget {
             ),
           ),
           Container(
-            decoration: BoxDecoration(
-              color: const Color(0xffffffff),
+            decoration: const BoxDecoration(
+              color: Color(0xffffffff),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(15.0),
                 topRight: Radius.circular(15.0),
               ),
             ),
-            margin: EdgeInsets.fromLTRB(0.0, 148.0, 0.0, 0.0),
+            margin: const EdgeInsets.fromLTRB(0.0, 148.0, 0.0, 0.0),
           ),
           Pinned.fromPins(
             Pin(start: 0.0, end: 2.0),
@@ -139,17 +141,17 @@ class UpNextScreen extends StatelessWidget {
               children: <Widget>[
                 Container(
                   color: const Color(0xffffffff),
-                  margin: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 0.0),
+                  margin: const EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 0.0),
                 ),
                 Pinned.fromPins(
                   Pin(size: 338.0, start: 10.0),
                   Pin(size: 28.0, start: 0.0),
-                  child: Text(
+                  child: const Text(
                     'Paramount Miami Worldcenter',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 23,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
@@ -162,8 +164,8 @@ class UpNextScreen extends StatelessWidget {
                       // Adobe XD layer: 'bball-court-image3' (shape)
                       Container(
                     decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: const AssetImage(''),
+                      image: const DecorationImage(
+                        image: AssetImage(''),
                         fit: BoxFit.fill,
                       ),
                       borderRadius: BorderRadius.circular(10.0),
@@ -173,12 +175,12 @@ class UpNextScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 254.0, start: 39.0),
                   Pin(size: 21.0, end: 31.0),
-                  child: Text(
+                  child: const Text(
                     '851 NE 1st Ave, Miami, FL 33132',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w300,
                     ),
                     softWrap: false,
@@ -187,12 +189,12 @@ class UpNextScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 102.0, start: 15.0),
                   Pin(size: 21.0, end: 0.0),
-                  child: Text(
+                  child: const Text(
                     '\$750 / hour',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
@@ -201,18 +203,18 @@ class UpNextScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 100.0, start: 15.0),
                   Pin(size: 26.0, middle: 0.8234),
-                  child: Text(
+                  child: const Text(
                     'Reserved',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 22,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
                   ),
                 ),
-                Align(
+                const Align(
                   alignment: Alignment(-0.286, 0.647),
                   child: SizedBox(
                     width: 90.0,
@@ -222,7 +224,7 @@ class UpNextScreen extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'SF Pro',
                           fontSize: 22,
-                          color: const Color(0xff2e9eff),
+                          color: Color(0xff2e9eff),
                         ),
                         children: [
                           TextSpan(
@@ -260,7 +262,8 @@ class UpNextScreen extends StatelessWidget {
                             children: <Widget>[
                               Container(
                                 color: Colors.transparent,
-                                margin: EdgeInsets.fromLTRB(1.0, 0.0, 0.0, 0.0),
+                                margin: const EdgeInsets.fromLTRB(
+                                    1.0, 0.0, 0.0, 0.0),
                               ),
                               Pinned.fromPins(
                                 Pin(size: 16.0, start: 0.0),
@@ -272,7 +275,7 @@ class UpNextScreen extends StatelessWidget {
                                 ),
                               ),
                               Align(
-                                alignment: Alignment(-0.5, -0.294),
+                                alignment: const Alignment(-0.5, -0.294),
                                 child: SizedBox(
                                   width: 7.0,
                                   height: 7.0,
@@ -299,7 +302,7 @@ class UpNextScreen extends StatelessWidget {
                 // Adobe XD layer: 'Amenities-Info' (group)
                 Stack(
               children: <Widget>[
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                     width: 112.0,
@@ -309,7 +312,7 @@ class UpNextScreen extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 22,
-                        color: const Color(0xff000000),
+                        color: Color(0xff000000),
                         fontWeight: FontWeight.w900,
                       ),
                       softWrap: false,
@@ -330,12 +333,12 @@ class UpNextScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 123.0, start: 48.0),
                   Pin(size: 18.0, middle: 0.2353),
-                  child: Text(
+                  child: const Text(
                     'High-rise Building',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 15,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                     ),
                     softWrap: false,
                   ),
@@ -354,12 +357,12 @@ class UpNextScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(start: 48.0, end: 0.0),
                   Pin(size: 18.0, middle: 0.4893),
-                  child: Text(
+                  child: const Text(
                     'Complimentary Water & Sports Beverages',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 15,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                     ),
                     softWrap: false,
                   ),
@@ -378,12 +381,12 @@ class UpNextScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 123.0, start: 48.0),
                   Pin(size: 18.0, middle: 0.7406),
-                  child: Text(
+                  child: const Text(
                     'New Construction',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 15,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                     ),
                     softWrap: false,
                   ),
@@ -391,18 +394,18 @@ class UpNextScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 133.0, start: 48.0),
                   Pin(size: 18.0, end: 2.5),
-                  child: Text(
+                  child: const Text(
                     'Basketball Included',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 15,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                     ),
                     softWrap: false,
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(15.0, 181.0),
+                  offset: const Offset(15.0, 181.0),
                   child: SizedBox(
                     width: 24.0,
                     height: 24.0,
@@ -457,12 +460,12 @@ class UpNextScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 226.0, start: 47.0),
                   Pin(size: 29.0, middle: 0.4872),
-                  child: Text(
+                  child: const Text(
                     'Cancel Reservation',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xffe8e8e8),
+                      color: Color(0xffe8e8e8),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,

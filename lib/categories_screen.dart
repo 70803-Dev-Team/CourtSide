@@ -5,6 +5,8 @@ import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CategoriesScreen extends StatelessWidget {
+  const CategoriesScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +28,7 @@ class CategoriesScreen extends StatelessWidget {
                     border:
                         Border.all(width: 1.0, color: const Color(0xffaaaaad)),
                   ),
-                  margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
+                  margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
                 ),
                 Pinned.fromPins(
                   Pin(size: 7.1, end: 10.0),
@@ -52,12 +54,12 @@ class CategoriesScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 79.0, start: 54.0),
                   Pin(size: 29.0, middle: 0.2941),
-                  child: Text(
+                  child: const Text(
                     'Softball',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                     ),
                     softWrap: false,
                   ),
@@ -72,7 +74,7 @@ class CategoriesScreen extends StatelessWidget {
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(15.0, 12.5),
+                  offset: const Offset(15.0, 12.5),
                   child: SizedBox(
                     width: 24.0,
                     height: 24.0,
@@ -110,7 +112,7 @@ class CategoriesScreen extends StatelessWidget {
                     border:
                         Border.all(width: 1.0, color: const Color(0xffaaaaad)),
                   ),
-                  margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
+                  margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
                 ),
                 Pinned.fromPins(
                   Pin(size: 7.1, end: 10.0),
@@ -136,12 +138,12 @@ class CategoriesScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 107.0, start: 54.0),
                   Pin(size: 29.0, middle: 0.2941),
-                  child: Text(
+                  child: const Text(
                     'Racketball',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                     ),
                     softWrap: false,
                   ),
@@ -156,7 +158,7 @@ class CategoriesScreen extends StatelessWidget {
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(15.0, 12.0),
+                  offset: const Offset(15.0, 12.0),
                   child: SizedBox(
                     width: 24.0,
                     height: 24.0,
@@ -194,7 +196,7 @@ class CategoriesScreen extends StatelessWidget {
                     border:
                         Border.all(width: 1.0, color: const Color(0xffaaaaad)),
                   ),
-                  margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
+                  margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
                 ),
                 Pinned.fromPins(
                   Pin(size: 7.1, end: 10.0),
@@ -220,12 +222,12 @@ class CategoriesScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 110.0, start: 54.0),
                   Pin(size: 29.0, middle: 0.2941),
-                  child: Text(
+                  child: const Text(
                     'Ping-Pong',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                     ),
                     softWrap: false,
                   ),
@@ -240,7 +242,7 @@ class CategoriesScreen extends StatelessWidget {
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(15.0, 12.5),
+                  offset: const Offset(15.0, 12.5),
                   child: SizedBox(
                     width: 24.0,
                     height: 24.0,
@@ -249,7 +251,7 @@ class CategoriesScreen extends StatelessWidget {
                         Stack(
                       children: <Widget>[
                         Transform.translate(
-                          offset: Offset(4.7, 0.0),
+                          offset: const Offset(4.7, 0.0),
                           child: SizedBox(
                             width: 19.0,
                             height: 19.0,
@@ -268,7 +270,7 @@ class CategoriesScreen extends StatelessWidget {
                           ),
                         ),
                         Transform.translate(
-                          offset: Offset(0.0, 12.2),
+                          offset: const Offset(0.0, 12.2),
                           child: SizedBox(
                             width: 12.0,
                             height: 12.0,
@@ -300,7 +302,7 @@ class CategoriesScreen extends StatelessWidget {
                     border:
                         Border.all(width: 1.0, color: const Color(0xffaaaaad)),
                   ),
-                  margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
+                  margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
                 ),
                 Pinned.fromPins(
                   Pin(size: 7.1, end: 10.0),
@@ -326,12 +328,12 @@ class CategoriesScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 78.0, start: 54.0),
                   Pin(size: 29.0, middle: 0.2941),
-                  child: Text(
+                  child: const Text(
                     'Hockey',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                     ),
                     softWrap: false,
                   ),
@@ -346,7 +348,7 @@ class CategoriesScreen extends StatelessWidget {
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(15.0, 11.5),
+                  offset: const Offset(15.0, 11.5),
                   child: SizedBox(
                     width: 24.0,
                     height: 25.0,
@@ -384,7 +386,7 @@ class CategoriesScreen extends StatelessWidget {
                     border:
                         Border.all(width: 1.0, color: const Color(0xffaaaaad)),
                   ),
-                  margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
+                  margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
                 ),
                 Pinned.fromPins(
                   Pin(size: 7.1, end: 10.0),
@@ -410,12 +412,12 @@ class CategoriesScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 98.0, start: 54.0),
                   Pin(size: 29.0, middle: 0.2941),
-                  child: Text(
+                  child: const Text(
                     'Volleyball',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                     ),
                     softWrap: false,
                   ),
@@ -430,7 +432,7 @@ class CategoriesScreen extends StatelessWidget {
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(15.0, 12.5),
+                  offset: const Offset(15.0, 12.5),
                   child: SizedBox(
                     width: 24.0,
                     height: 24.0,
@@ -466,7 +468,7 @@ class CategoriesScreen extends StatelessWidget {
                     border:
                         Border.all(width: 1.0, color: const Color(0xffaaaaad)),
                   ),
-                  margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
+                  margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
                 ),
                 Pinned.fromPins(
                   Pin(size: 7.1, end: 10.0),
@@ -492,12 +494,12 @@ class CategoriesScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 73.0, start: 54.0),
                   Pin(size: 29.0, middle: 0.2941),
-                  child: Text(
+                  child: const Text(
                     'Soccer',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                     ),
                     softWrap: false,
                   ),
@@ -512,7 +514,7 @@ class CategoriesScreen extends StatelessWidget {
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(15.0, 12.4),
+                  offset: const Offset(15.0, 12.4),
                   child: SizedBox(
                     width: 24.0,
                     height: 24.0,
@@ -548,7 +550,7 @@ class CategoriesScreen extends StatelessWidget {
                     border:
                         Border.all(width: 1.0, color: const Color(0xffaaaaad)),
                   ),
-                  margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
+                  margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
                 ),
                 Pinned.fromPins(
                   Pin(size: 7.1, end: 10.0),
@@ -574,12 +576,12 @@ class CategoriesScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 83.0, start: 54.0),
                   Pin(size: 29.0, middle: 0.2941),
-                  child: Text(
+                  child: const Text(
                     'Football',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                     ),
                     softWrap: false,
                   ),
@@ -594,7 +596,7 @@ class CategoriesScreen extends StatelessWidget {
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(15.0, 16.7),
+                  offset: const Offset(15.0, 16.7),
                   child: SizedBox(
                     width: 24.0,
                     height: 16.0,
@@ -622,7 +624,7 @@ class CategoriesScreen extends StatelessWidget {
                     border:
                         Border.all(width: 1.0, color: const Color(0xffaaaaad)),
                   ),
-                  margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
+                  margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
                 ),
                 Pinned.fromPins(
                   Pin(size: 7.1, end: 10.0),
@@ -648,12 +650,12 @@ class CategoriesScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 88.0, start: 54.0),
                   Pin(size: 29.0, middle: 0.2941),
-                  child: Text(
+                  child: const Text(
                     'Baseball',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                     ),
                     softWrap: false,
                   ),
@@ -668,7 +670,7 @@ class CategoriesScreen extends StatelessWidget {
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(15.0, 11.0),
+                  offset: const Offset(15.0, 11.0),
                   child: SizedBox(
                     width: 24.0,
                     height: 26.0,
@@ -704,7 +706,7 @@ class CategoriesScreen extends StatelessWidget {
                     border:
                         Border.all(width: 1.0, color: const Color(0xffaaaaad)),
                   ),
-                  margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
+                  margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
                 ),
                 Pinned.fromPins(
                   Pin(size: 7.1, end: 10.0),
@@ -730,12 +732,12 @@ class CategoriesScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 66.0, start: 54.0),
                   Pin(size: 29.0, middle: 0.2941),
-                  child: Text(
+                  child: const Text(
                     'Tennis',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                     ),
                     softWrap: false,
                   ),
@@ -750,7 +752,7 @@ class CategoriesScreen extends StatelessWidget {
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(15.0, 13.0),
+                  offset: const Offset(15.0, 13.0),
                   child: SizedBox(
                     width: 24.0,
                     height: 24.0,
@@ -778,7 +780,7 @@ class CategoriesScreen extends StatelessWidget {
                     border:
                         Border.all(width: 1.0, color: const Color(0xffaaaaad)),
                   ),
-                  margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
+                  margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
                 ),
                 Pinned.fromPins(
                   Pin(size: 7.1, end: 10.0),
@@ -804,12 +806,12 @@ class CategoriesScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 43.0, start: 54.0),
                   Pin(size: 29.0, middle: 0.2941),
-                  child: Text(
+                  child: const Text(
                     'Golf',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                     ),
                     softWrap: false,
                   ),
@@ -824,7 +826,7 @@ class CategoriesScreen extends StatelessWidget {
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(15.0, 15.1),
+                  offset: const Offset(15.0, 15.1),
                   child: SizedBox(
                     width: 24.0,
                     height: 19.0,
@@ -852,10 +854,10 @@ class CategoriesScreen extends StatelessWidget {
                     border:
                         Border.all(width: 1.0, color: const Color(0xffaaaaad)),
                   ),
-                  margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
+                  margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
                 ),
                 Transform.translate(
-                  offset: Offset(15.0, 12.0),
+                  offset: const Offset(15.0, 12.0),
                   child: SizedBox(
                     width: 24.0,
                     height: 24.0,
@@ -899,12 +901,12 @@ class CategoriesScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 107.0, start: 54.0),
                   Pin(size: 29.0, middle: 0.2941),
-                  child: Text(
+                  child: const Text(
                     'Basketball',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 24,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                     ),
                     softWrap: false,
                   ),
@@ -934,12 +936,12 @@ class CategoriesScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 151.0, start: 16.0),
                   Pin(size: 34.0, end: 9.0),
-                  child: Text(
+                  child: const Text(
                     'Categories',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 28,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       letterSpacing: 0.014,
                       fontWeight: FontWeight.w800,
                     ),
@@ -958,7 +960,7 @@ class CategoriesScreen extends StatelessWidget {
                         transition: LinkTransition.Fade,
                         ease: Curves.easeOut,
                         duration: 0.3,
-                        pageBuilder: () => HomeScreen(),
+                        pageBuilder: () => const HomeScreen(),
                       ),
                     ],
                     child: Stack(

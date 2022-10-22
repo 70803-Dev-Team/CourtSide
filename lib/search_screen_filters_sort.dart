@@ -5,6 +5,8 @@ import 'package:adobe_xd/page_link.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SearchScreenFiltersSort extends StatelessWidget {
+  const SearchScreenFiltersSort({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,17 +22,17 @@ class SearchScreenFiltersSort extends StatelessWidget {
               children: <Widget>[
                 // Adobe XD layer: 'Background-Rec' (shape)
                 Container(
-                  decoration: BoxDecoration(
-                    color: const Color(0xffffffff),
+                  decoration: const BoxDecoration(
+                    color: Color(0xffffffff),
                     borderRadius: BorderRadius.only(
                       bottomRight: Radius.circular(25.0),
                       bottomLeft: Radius.circular(25.0),
                     ),
                   ),
-                  margin: EdgeInsets.fromLTRB(1.0, 0.0, 0.0, 0.0),
+                  margin: const EdgeInsets.fromLTRB(1.0, 0.0, 0.0, 0.0),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(0.0, 0.0, 1.0, 45.0),
+                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 1.0, 45.0),
                   child:
                       // Adobe XD layer: 'Status Bar' (group)
                       Stack(
@@ -38,7 +40,7 @@ class SearchScreenFiltersSort extends StatelessWidget {
                       // Adobe XD layer: 'BG' (shape)
                       Container(),
                       Padding(
-                        padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 2.0),
+                        padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 2.0),
                         child:
                             // Adobe XD layer: 'Status Bar' (group)
                             Stack(
@@ -60,8 +62,8 @@ class SearchScreenFiltersSort extends StatelessWidget {
                                           width: 1.0,
                                           color: const Color(0x59000000)),
                                     ),
-                                    margin:
-                                        EdgeInsets.fromLTRB(0.0, 0.0, 2.3, 0.0),
+                                    margin: const EdgeInsets.fromLTRB(
+                                        0.0, 0.0, 2.3, 0.0),
                                   ),
                                   Align(
                                     alignment: Alignment.centerRight,
@@ -104,7 +106,7 @@ class SearchScreenFiltersSort extends StatelessWidget {
                               ),
                             ),
                             Align(
-                              alignment: Alignment(0.621, 0.116),
+                              alignment: const Alignment(0.621, 0.116),
                               child: SizedBox(
                                 width: 17.0,
                                 height: 11.0,
@@ -155,7 +157,7 @@ class SearchScreenFiltersSort extends StatelessWidget {
                                       color: Colors.transparent,
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.all(3.0),
+                                      padding: const EdgeInsets.all(3.0),
                                       child: SizedBox.expand(
                                           child: SvgPicture.string(
                                         _svg_qbv82,
@@ -173,12 +175,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 31.0, end: 31.0),
                         Pin(size: 21.0, middle: 0.4706),
-                        child: Text(
+                        child: const Text(
                           'Try searching for fields, or courts',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 18,
-                            color: const Color(0xffaaaaaa),
+                            color: Color(0xffaaaaaa),
                             letterSpacing: 0.009000000000000001,
                             fontWeight: FontWeight.w300,
                           ),
@@ -192,12 +194,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 34.0, end: 10.0),
                   Pin(size: 21.0, middle: 0.6965),
-                  child: Text(
+                  child: const Text(
                     'List',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff16b7ff),
+                      color: Color(0xff16b7ff),
                       letterSpacing: 0.009000000000000001,
                       fontWeight: FontWeight.w800,
                     ),
@@ -255,8 +257,8 @@ class SearchScreenFiltersSort extends StatelessWidget {
             child:
                 // Adobe XD layer: 'Background-Rec' (shape)
                 Container(
-              decoration: BoxDecoration(
-                color: const Color(0xffffffff),
+              decoration: const BoxDecoration(
+                color: Color(0xffffffff),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(25.0),
                   topRight: Radius.circular(25.0),
@@ -282,7 +284,7 @@ class SearchScreenFiltersSort extends StatelessWidget {
                         transition: LinkTransition.Fade,
                         ease: Curves.easeIn,
                         duration: 0.3,
-                        pageBuilder: () => SearchScreenMapView(),
+                        pageBuilder: () => const SearchScreenMapView(),
                       ),
                     ],
                     child: Stack(
@@ -310,12 +312,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 78.0, end: 0.0),
                   Pin(start: 0.0, end: 0.0),
-                  child: Text(
+                  child: const Text(
                     'Filters',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 28,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w600,
                       height: 0.8571428571428571,
                     ),
@@ -338,12 +340,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 125.0, start: 24.0),
                   Pin(start: 0.0, end: 0.0),
-                  child: Text(
+                  child: const Text(
                     'Baton Rouge',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 22,
-                      color: const Color(0xff2e9eff),
+                      color: Color(0xff2e9eff),
                       fontWeight: FontWeight.w500,
                     ),
                     softWrap: false,
@@ -366,7 +368,7 @@ class SearchScreenFiltersSort extends StatelessWidget {
                                 color: Colors.transparent,
                               ),
                               Padding(
-                                padding: EdgeInsets.symmetric(
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 4.0, vertical: 2.0),
                                 child: SizedBox.expand(
                                     child: SvgPicture.string(
@@ -376,7 +378,7 @@ class SearchScreenFiltersSort extends StatelessWidget {
                                 )),
                               ),
                               Align(
-                                alignment: Alignment(0.0, -0.294),
+                                alignment: const Alignment(0.0, -0.294),
                                 child: SizedBox(
                                   width: 7.0,
                                   height: 7.0,
@@ -433,17 +435,17 @@ class SearchScreenFiltersSort extends StatelessWidget {
                 Stack(
               children: <Widget>[
                 Container(
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                 ),
                 Pinned.fromPins(
                   Pin(size: 172.0, start: 30.0),
                   Pin(size: 34.0, start: 7.0),
-                  child: Text(
+                  child: const Text(
                     'Property type',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 28,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w600,
                       height: 0.8571428571428571,
                     ),
@@ -471,12 +473,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 15.0, end: 15.0),
                         Pin(size: 19.0, middle: 0.5),
-                        child: Text(
+                        child: const Text(
                           'Basketball Court',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 16,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             fontWeight: FontWeight.w600,
                             height: 1.5,
                           ),
@@ -507,12 +509,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 15.0, end: 15.0),
                         Pin(size: 19.0, middle: 0.5),
-                        child: Text(
+                        child: const Text(
                           'Volleyball Court',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 16,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             fontWeight: FontWeight.w600,
                             height: 1.5,
                           ),
@@ -526,7 +528,7 @@ class SearchScreenFiltersSort extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(0.185, 0.459),
+                  alignment: const Alignment(0.185, 0.459),
                   child: SizedBox(
                     width: 126.0,
                     height: 39.0,
@@ -545,12 +547,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                         Pinned.fromPins(
                           Pin(start: 15.0, end: 15.0),
                           Pin(size: 19.0, middle: 0.5),
-                          child: Text(
+                          child: const Text(
                             'Tennis Court',
                             style: TextStyle(
                               fontFamily: 'SF Pro',
                               fontSize: 16,
-                              color: const Color(0xff000000),
+                              color: Color(0xff000000),
                               fontWeight: FontWeight.w600,
                               height: 1.5,
                             ),
@@ -582,12 +584,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 15.0, end: 15.0),
                         Pin(size: 19.0, middle: 0.5),
-                        child: Text(
+                        child: const Text(
                           'Baseball Field',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 16,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             fontWeight: FontWeight.w600,
                             height: 1.5,
                           ),
@@ -618,12 +620,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 15.0, end: 15.0),
                         Pin(size: 19.0, middle: 0.5),
-                        child: Text(
+                        child: const Text(
                           'Softball Field',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 16,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             fontWeight: FontWeight.w600,
                             height: 1.5,
                           ),
@@ -637,7 +639,7 @@ class SearchScreenFiltersSort extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(0.405, -0.32),
+                  alignment: const Alignment(0.405, -0.32),
                   child: SizedBox(
                     width: 132.0,
                     height: 39.0,
@@ -656,12 +658,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                         Pinned.fromPins(
                           Pin(start: 15.0, end: 15.0),
                           Pin(size: 19.0, middle: 0.5),
-                          child: Text(
+                          child: const Text(
                             'Football Field',
                             style: TextStyle(
                               fontFamily: 'SF Pro',
                               fontSize: 16,
-                              color: const Color(0xff000000),
+                              color: Color(0xff000000),
                               fontWeight: FontWeight.w600,
                               height: 1.5,
                             ),
@@ -676,7 +678,7 @@ class SearchScreenFiltersSort extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(-0.511, 0.027),
+                  alignment: const Alignment(-0.511, 0.027),
                   child: SizedBox(
                     width: 146.0,
                     height: 39.0,
@@ -695,12 +697,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                         Pinned.fromPins(
                           Pin(start: 15.0, end: 15.0),
                           Pin(size: 19.0, middle: 0.5),
-                          child: Text(
+                          child: const Text(
                             'Swimming Pool',
                             style: TextStyle(
                               fontFamily: 'SF Pro',
                               fontSize: 16,
-                              color: const Color(0xff000000),
+                              color: Color(0xff000000),
                               fontWeight: FontWeight.w600,
                               height: 1.5,
                             ),
@@ -726,17 +728,17 @@ class SearchScreenFiltersSort extends StatelessWidget {
               children: <Widget>[
                 // Adobe XD layer: 'Background-Rec' (shape)
                 Container(
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                 ),
                 Pinned.fromPins(
                   Pin(size: 64.0, start: 30.0),
                   Pin(size: 34.0, start: 22.0),
-                  child: Text(
+                  child: const Text(
                     'Price',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 28,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w600,
                       height: 0.8571428571428571,
                     ),
@@ -757,8 +759,8 @@ class SearchScreenFiltersSort extends StatelessWidget {
                         Pin(size: 20.0, start: 0.0),
                         Pin(start: 1.0, end: 0.0),
                         child: Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xff16b7ff),
+                          decoration: const BoxDecoration(
+                            color: Color(0xff16b7ff),
                             borderRadius: BorderRadius.all(
                                 Radius.elliptical(9999.0, 9999.0)),
                           ),
@@ -768,8 +770,8 @@ class SearchScreenFiltersSort extends StatelessWidget {
                         Pin(size: 20.0, end: 0.0),
                         Pin(start: 0.0, end: 1.0),
                         child: Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xff16b7ff),
+                          decoration: const BoxDecoration(
+                            color: Color(0xff16b7ff),
                             borderRadius: BorderRadius.all(
                                 Radius.elliptical(9999.0, 9999.0)),
                           ),
@@ -801,17 +803,17 @@ class SearchScreenFiltersSort extends StatelessWidget {
                           border: Border.all(
                               width: 1.0, color: const Color(0xff707070)),
                         ),
-                        margin: EdgeInsets.fromLTRB(0.0, 19.0, 0.0, 0.0),
+                        margin: const EdgeInsets.fromLTRB(0.0, 19.0, 0.0, 0.0),
                       ),
                       Pinned.fromPins(
                         Pin(size: 54.0, middle: 0.5),
                         Pin(size: 29.0, end: 8.0),
-                        child: Text(
+                        child: const Text(
                           '\$Min',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 24,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             height: 1,
                           ),
                           textHeightBehavior: TextHeightBehavior(
@@ -823,12 +825,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(size: 36.0, start: 15.0),
                         Pin(size: 19.0, start: 0.0),
-                        child: Text(
+                        child: const Text(
                           'From',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 16,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             fontWeight: FontWeight.w300,
                             height: 1.5,
                           ),
@@ -855,17 +857,17 @@ class SearchScreenFiltersSort extends StatelessWidget {
                           border: Border.all(
                               width: 1.0, color: const Color(0xff707070)),
                         ),
-                        margin: EdgeInsets.fromLTRB(0.0, 19.0, 0.0, 0.0),
+                        margin: const EdgeInsets.fromLTRB(0.0, 19.0, 0.0, 0.0),
                       ),
                       Pinned.fromPins(
                         Pin(size: 18.0, start: 15.0),
                         Pin(size: 19.0, start: 0.0),
-                        child: Text(
+                        child: const Text(
                           'To',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 16,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             fontWeight: FontWeight.w300,
                             height: 1.5,
                           ),
@@ -878,12 +880,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(size: 58.0, middle: 0.5),
                         Pin(size: 29.0, end: 8.0),
-                        child: Text(
+                        child: const Text(
                           '\$Max',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 24,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             height: 1,
                           ),
                           textHeightBehavior: TextHeightBehavior(
@@ -906,17 +908,17 @@ class SearchScreenFiltersSort extends StatelessWidget {
                 Stack(
               children: <Widget>[
                 Container(
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                 ),
                 Pinned.fromPins(
                   Pin(size: 200.0, start: 30.0),
                   Pin(size: 34.0, start: 7.0),
-                  child: Text(
+                  child: const Text(
                     'Equipment type',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 28,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w600,
                       height: 0.8571428571428571,
                     ),
@@ -944,12 +946,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 15.0, end: 15.0),
                         Pin(size: 18.0, middle: 0.5238),
-                        child: Text(
+                        child: const Text(
                           'Golf Clubs',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 15,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             fontWeight: FontWeight.w600,
                             height: 1.5333333333333334,
                           ),
@@ -980,12 +982,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 15.0, end: 15.0),
                         Pin(size: 19.0, middle: 0.5),
-                        child: Text(
+                        child: const Text(
                           'Volleyball Net',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 16,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             fontWeight: FontWeight.w600,
                             height: 1.5,
                           ),
@@ -1016,12 +1018,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 15.0, end: 15.0),
                         Pin(size: 19.0, middle: 0.5),
-                        child: Text(
+                        child: const Text(
                           'Hockey Net',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 16,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             fontWeight: FontWeight.w600,
                             height: 1.5,
                           ),
@@ -1035,7 +1037,7 @@ class SearchScreenFiltersSort extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(0.276, 0.313),
+                  alignment: const Alignment(0.276, 0.313),
                   child: SizedBox(
                     width: 124.0,
                     height: 39.0,
@@ -1054,12 +1056,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                         Pinned.fromPins(
                           Pin(start: 15.0, end: 15.0),
                           Pin(size: 19.0, middle: 0.5),
-                          child: Text(
+                          child: const Text(
                             'Baseball Bat',
                             style: TextStyle(
                               fontFamily: 'SF Pro',
                               fontSize: 16,
-                              color: const Color(0xff000000),
+                              color: Color(0xff000000),
                               fontWeight: FontWeight.w600,
                               height: 1.5,
                             ),
@@ -1074,7 +1076,7 @@ class SearchScreenFiltersSort extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(0.065, -0.12),
+                  alignment: const Alignment(0.065, -0.12),
                   child: SizedBox(
                     width: 118.0,
                     height: 39.0,
@@ -1093,12 +1095,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                         Pinned.fromPins(
                           Pin(start: 15.0, end: 15.0),
                           Pin(size: 19.0, middle: 0.5),
-                          child: Text(
+                          child: const Text(
                             'Softball Bat',
                             style: TextStyle(
                               fontFamily: 'SF Pro',
                               fontSize: 16,
-                              color: const Color(0xff000000),
+                              color: Color(0xff000000),
                               fontWeight: FontWeight.w600,
                               height: 1.5,
                             ),
@@ -1130,12 +1132,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 15.0, end: 15.0),
                         Pin(size: 19.0, middle: 0.5),
-                        child: Text(
+                        child: const Text(
                           'Tennis Raquet',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 16,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             fontWeight: FontWeight.w600,
                             height: 1.5,
                           ),
@@ -1149,7 +1151,7 @@ class SearchScreenFiltersSort extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(0.071, -0.552),
+                  alignment: const Alignment(0.071, -0.552),
                   child: SizedBox(
                     width: 146.0,
                     height: 39.0,
@@ -1168,12 +1170,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                         Pinned.fromPins(
                           Pin(start: 15.0, end: 15.0),
                           Pin(size: 19.0, middle: 0.5),
-                          child: Text(
+                          child: const Text(
                             'Basketball Goal',
                             style: TextStyle(
                               fontFamily: 'SF Pro',
                               fontSize: 16,
-                              color: const Color(0xff000000),
+                              color: Color(0xff000000),
                               fontWeight: FontWeight.w600,
                               height: 1.5,
                             ),
@@ -1199,17 +1201,17 @@ class SearchScreenFiltersSort extends StatelessWidget {
               children: <Widget>[
                 // Adobe XD layer: 'Background-Rec' (shape)
                 Container(
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                 ),
                 Pinned.fromPins(
                   Pin(size: 112.0, start: 30.0),
                   Pin(size: 34.0, start: 22.0),
-                  child: Text(
+                  child: const Text(
                     'Distance',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 28,
-                      color: const Color(0xff000000),
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w600,
                       height: 0.8571428571428571,
                     ),
@@ -1230,8 +1232,8 @@ class SearchScreenFiltersSort extends StatelessWidget {
                         Pin(size: 20.0, start: 0.0),
                         Pin(start: 1.0, end: 0.0),
                         child: Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xff16b7ff),
+                          decoration: const BoxDecoration(
+                            color: Color(0xff16b7ff),
                             borderRadius: BorderRadius.all(
                                 Radius.elliptical(9999.0, 9999.0)),
                           ),
@@ -1241,8 +1243,8 @@ class SearchScreenFiltersSort extends StatelessWidget {
                         Pin(size: 20.0, end: 0.0),
                         Pin(start: 0.0, end: 1.0),
                         child: Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xff16b7ff),
+                          decoration: const BoxDecoration(
+                            color: Color(0xff16b7ff),
                             borderRadius: BorderRadius.all(
                                 Radius.elliptical(9999.0, 9999.0)),
                           ),
@@ -1274,17 +1276,17 @@ class SearchScreenFiltersSort extends StatelessWidget {
                           border: Border.all(
                               width: 1.0, color: const Color(0xff707070)),
                         ),
-                        margin: EdgeInsets.fromLTRB(0.0, 19.0, 0.0, 0.0),
+                        margin: const EdgeInsets.fromLTRB(0.0, 19.0, 0.0, 0.0),
                       ),
                       Pinned.fromPins(
                         Pin(size: 38.0, middle: 0.5),
                         Pin(size: 29.0, end: 8.0),
-                        child: Text(
+                        child: const Text(
                           'Min',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 24,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             height: 1,
                           ),
                           textHeightBehavior: TextHeightBehavior(
@@ -1296,12 +1298,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(size: 26.0, start: 20.0),
                         Pin(size: 19.0, start: 0.0),
-                        child: Text(
+                        child: const Text(
                           'Min',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 16,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             fontWeight: FontWeight.w300,
                             height: 1.5,
                           ),
@@ -1328,17 +1330,17 @@ class SearchScreenFiltersSort extends StatelessWidget {
                           border: Border.all(
                               width: 1.0, color: const Color(0xff707070)),
                         ),
-                        margin: EdgeInsets.fromLTRB(0.0, 19.0, 0.0, 0.0),
+                        margin: const EdgeInsets.fromLTRB(0.0, 19.0, 0.0, 0.0),
                       ),
                       Pinned.fromPins(
                         Pin(size: 30.0, start: 9.0),
                         Pin(size: 19.0, start: 0.0),
-                        child: Text(
+                        child: const Text(
                           'Max',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 16,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             fontWeight: FontWeight.w300,
                             height: 1.5,
                           ),
@@ -1351,12 +1353,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(size: 44.0, middle: 0.5),
                         Pin(size: 29.0, end: 8.0),
-                        child: Text(
+                        child: const Text(
                           'Max',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 24,
-                            color: const Color(0xff000000),
+                            color: Color(0xff000000),
                             height: 1,
                           ),
                           textHeightBehavior: TextHeightBehavior(
@@ -1382,7 +1384,7 @@ class SearchScreenFiltersSort extends StatelessWidget {
                   transition: LinkTransition.Fade,
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => SearchScreenMapView(),
+                  pageBuilder: () => const SearchScreenMapView(),
                 ),
               ],
               child: Stack(
@@ -1393,7 +1395,7 @@ class SearchScreenFiltersSort extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15.0),
                     ),
                   ),
-                  Align(
+                  const Align(
                     alignment: Alignment(0.0, 0.048),
                     child: SizedBox(
                       width: 68.0,
@@ -1403,7 +1405,7 @@ class SearchScreenFiltersSort extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'SF Pro',
                           fontSize: 24,
-                          color: const Color(0xffe8e8e8),
+                          color: Color(0xffe8e8e8),
                           fontWeight: FontWeight.w800,
                         ),
                         softWrap: false,
@@ -1425,7 +1427,7 @@ class SearchScreenFiltersSort extends StatelessWidget {
                   transition: LinkTransition.Fade,
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => SearchScreenMapView(),
+                  pageBuilder: () => const SearchScreenMapView(),
                 ),
               ],
               child: Stack(
@@ -1439,12 +1441,12 @@ class SearchScreenFiltersSort extends StatelessWidget {
                   Pinned.fromPins(
                     Pin(size: 65.0, middle: 0.5042),
                     Pin(start: 9.0, end: 8.0),
-                    child: Text(
+                    child: const Text(
                       'Reset',
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 24,
-                        color: const Color(0xff707070),
+                        color: Color(0xff707070),
                         fontWeight: FontWeight.w600,
                       ),
                     ),

@@ -10,6 +10,8 @@ import './reservations_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SearchScreenListView extends StatelessWidget {
+  const SearchScreenListView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,9 +34,9 @@ class SearchScreenListView extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: const Color(0xffffffff),
                     borderRadius: BorderRadius.circular(5.0),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
-                        color: const Color(0x29000000),
+                        color: Color(0x29000000),
                         offset: Offset(0, 5),
                         blurRadius: 6,
                       ),
@@ -47,9 +49,9 @@ class SearchScreenListView extends StatelessWidget {
                   child:
                       // Adobe XD layer: 'bball-court-image1' (shape)
                       Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
-                        image: const AssetImage(''),
+                        image: AssetImage(''),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -58,12 +60,12 @@ class SearchScreenListView extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 155.0, start: 14.0),
                   Pin(size: 24.0, middle: 0.7531),
-                  child: Text(
+                  child: const Text(
                     'Gentilly Court Park',
                     style: TextStyle(
                       fontFamily: 'Roboto',
                       fontSize: 18,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w900,
                     ),
                     softWrap: false,
@@ -72,12 +74,12 @@ class SearchScreenListView extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 240.0, start: 14.0),
                   Pin(size: 24.0, end: 35.0),
-                  child: Text(
+                  child: const Text(
                     '14443 Gentilly Ct, Baton Rouge',
                     style: TextStyle(
                       fontFamily: 'Roboto',
                       fontSize: 18,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w100,
                     ),
                     softWrap: false,
@@ -86,12 +88,12 @@ class SearchScreenListView extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 84.0, start: 14.0),
                   Pin(size: 24.0, end: 11.0),
-                  child: Text(
+                  child: const Text(
                     '\$75 / hour',
                     style: TextStyle(
                       fontFamily: 'Roboto',
                       fontSize: 18,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w900,
                     ),
                     softWrap: false,
@@ -149,8 +151,8 @@ class SearchScreenListView extends StatelessWidget {
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 3.0),
+                                padding: const EdgeInsets.fromLTRB(
+                                    2.0, 2.0, 2.0, 3.0),
                                 child: SizedBox.expand(
                                     child: SvgPicture.string(
                                   _svg_j4ix70,
@@ -168,12 +170,12 @@ class SearchScreenListView extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 37.0, end: 11.0),
                   Pin(size: 24.0, middle: 0.7197),
-                  child: Text(
+                  child: const Text(
                     '4.97',
                     style: TextStyle(
                       fontFamily: 'Roboto',
                       fontSize: 18,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w900,
                     ),
                     softWrap: false,
@@ -185,9 +187,9 @@ class SearchScreenListView extends StatelessWidget {
                   child:
                       // Adobe XD layer: 'baseball-field-imag…' (shape)
                       Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
-                        image: const AssetImage(''),
+                        image: AssetImage(''),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -206,12 +208,12 @@ class SearchScreenListView extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 57.0, start: 0.0),
                   Pin(start: 0.0, end: 0.0),
-                  child: Text(
+                  child: const Text(
                     'Sort by',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xffe8e8e8),
+                      color: Color(0xffe8e8e8),
                       fontWeight: FontWeight.w300,
                     ),
                     softWrap: false,
@@ -220,19 +222,19 @@ class SearchScreenListView extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 65.0, end: 17.0),
                   Pin(start: 0.0, end: 0.0),
-                  child: Text(
+                  child: const Text(
                     'Default',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xffe8e8e8),
+                      color: Color(0xffe8e8e8),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
                   ),
                 ),
                 Align(
-                  alignment: Alignment(1.0, 0.266),
+                  alignment: const Alignment(1.0, 0.266),
                   child: SizedBox(
                     width: 10.0,
                     height: 6.0,
@@ -275,9 +277,9 @@ class SearchScreenListView extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: const Color(0xffffffff),
                     borderRadius: BorderRadius.circular(5.0),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
-                        color: const Color(0x29000000),
+                        color: Color(0x29000000),
                         offset: Offset(0, 5),
                         blurRadius: 6,
                       ),
@@ -290,9 +292,9 @@ class SearchScreenListView extends StatelessWidget {
                   child:
                       // Adobe XD layer: 'bball-court-image1' (shape)
                       Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
-                        image: const AssetImage(''),
+                        image: AssetImage(''),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -301,12 +303,12 @@ class SearchScreenListView extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 169.0, start: 14.0),
                   Pin(size: 21.0, middle: 0.7521),
-                  child: Text(
+                  child: const Text(
                     'Gentilly Court Park',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
@@ -315,12 +317,12 @@ class SearchScreenListView extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 247.0, start: 14.0),
                   Pin(size: 21.0, end: 36.0),
-                  child: Text(
+                  child: const Text(
                     '14443 Gentilly Ct, Baton Rouge',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w300,
                     ),
                     softWrap: false,
@@ -329,12 +331,12 @@ class SearchScreenListView extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 90.0, start: 14.0),
                   Pin(size: 21.0, end: 12.0),
-                  child: Text(
+                  child: const Text(
                     '\$75 / hour',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
@@ -389,8 +391,8 @@ class SearchScreenListView extends StatelessWidget {
                                 angle: 1.5708,
                                 child: Container(
                                   color: Colors.transparent,
-                                  margin:
-                                      EdgeInsets.fromLTRB(1.0, 0.0, 0.0, 0.0),
+                                  margin: const EdgeInsets.fromLTRB(
+                                      1.0, 0.0, 0.0, 0.0),
                                 ),
                               ),
                               Pinned.fromPins(
@@ -412,12 +414,12 @@ class SearchScreenListView extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 40.0, end: 11.0),
                   Pin(size: 21.0, middle: 0.719),
-                  child: Text(
+                  child: const Text(
                     '4.97',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
@@ -435,14 +437,14 @@ class SearchScreenListView extends StatelessWidget {
               children: <Widget>[
                 // Adobe XD layer: 'Background-Rec' (shape)
                 Container(
-                  decoration: BoxDecoration(
-                    color: const Color(0xffffffff),
+                  decoration: const BoxDecoration(
+                    color: Color(0xffffffff),
                     borderRadius: BorderRadius.only(
                       bottomRight: Radius.circular(25.0),
                       bottomLeft: Radius.circular(25.0),
                     ),
                   ),
-                  margin: EdgeInsets.fromLTRB(1.0, 0.0, 0.0, 0.0),
+                  margin: const EdgeInsets.fromLTRB(1.0, 0.0, 0.0, 0.0),
                 ),
                 Container(),
                 Pinned.fromPins(
@@ -477,7 +479,7 @@ class SearchScreenListView extends StatelessWidget {
                                       color: Colors.transparent,
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.all(3.0),
+                                      padding: const EdgeInsets.all(3.0),
                                       child: SizedBox.expand(
                                           child: SvgPicture.string(
                                         _svg_y2qke1,
@@ -495,12 +497,12 @@ class SearchScreenListView extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 34.0, end: 34.0),
                         Pin(size: 24.0, middle: 0.4286),
-                        child: Text(
+                        child: const Text(
                           'Try searching for fields, or courts',
                           style: TextStyle(
                             fontFamily: 'Roboto',
                             fontSize: 18,
-                            color: const Color(0xffaaaaaa),
+                            color: Color(0xffaaaaaa),
                             letterSpacing: 0.009000000000000001,
                             fontWeight: FontWeight.w100,
                           ),
@@ -519,15 +521,15 @@ class SearchScreenListView extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.easeInOut,
                         duration: 0.3,
-                        pageBuilder: () => SearchScreenMapView(),
+                        pageBuilder: () => const SearchScreenMapView(),
                       ),
                     ],
-                    child: Text(
+                    child: const Text(
                       'Map',
                       style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 18,
-                        color: const Color(0xff2e9eff),
+                        color: Color(0xff2e9eff),
                         letterSpacing: 0.009000000000000001,
                         fontWeight: FontWeight.w800,
                       ),
@@ -547,7 +549,7 @@ class SearchScreenListView extends StatelessWidget {
                         transition: LinkTransition.Fade,
                         ease: Curves.easeOut,
                         duration: 0.3,
-                        pageBuilder: () => SearchScreenFiltersSort(),
+                        pageBuilder: () => const SearchScreenFiltersSort(),
                       ),
                     ],
                     child: Stack(
@@ -593,9 +595,9 @@ class SearchScreenListView extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: const Color(0xffffffff),
                     borderRadius: BorderRadius.circular(5.0),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
-                        color: const Color(0x29000000),
+                        color: Color(0x29000000),
                         offset: Offset(0, 5),
                         blurRadius: 6,
                       ),
@@ -608,9 +610,9 @@ class SearchScreenListView extends StatelessWidget {
                   child:
                       // Adobe XD layer: 'tennis-court-image1' (shape)
                       Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
-                        image: const AssetImage(''),
+                        image: AssetImage(''),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -619,12 +621,12 @@ class SearchScreenListView extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 214.0, start: 14.0),
                   Pin(size: 21.0, middle: 0.7521),
-                  child: Text(
+                  child: const Text(
                     'Quality Court Industries',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
@@ -633,12 +635,12 @@ class SearchScreenListView extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 269.0, start: 14.0),
                   Pin(size: 21.0, end: 36.0),
-                  child: Text(
+                  child: const Text(
                     '5661 Brownfields Dr, Baton Rouge',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w300,
                     ),
                     softWrap: false,
@@ -647,12 +649,12 @@ class SearchScreenListView extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 98.0, start: 14.0),
                   Pin(size: 21.0, end: 12.0),
-                  child: Text(
+                  child: const Text(
                     '\$110 / hour',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
@@ -707,8 +709,8 @@ class SearchScreenListView extends StatelessWidget {
                                 angle: 1.5708,
                                 child: Container(
                                   color: Colors.transparent,
-                                  margin:
-                                      EdgeInsets.fromLTRB(1.0, 0.0, 0.0, 0.0),
+                                  margin: const EdgeInsets.fromLTRB(
+                                      1.0, 0.0, 0.0, 0.0),
                                 ),
                               ),
                               Pinned.fromPins(
@@ -730,12 +732,12 @@ class SearchScreenListView extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 40.0, end: 11.0),
                   Pin(size: 21.0, middle: 0.719),
-                  child: Text(
+                  child: const Text(
                     '4.72',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
                       fontSize: 18,
-                      color: const Color(0xff343a40),
+                      color: Color(0xff343a40),
                       fontWeight: FontWeight.w800,
                     ),
                     softWrap: false,
@@ -755,7 +757,7 @@ class SearchScreenListView extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     color: const Color(0xfee8e8e8),
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(25.0),
                       topRight: Radius.circular(25.0),
                     ),
@@ -773,11 +775,11 @@ class SearchScreenListView extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => ProfileScreen(),
+                        pageBuilder: () => const ProfileScreen(),
                       ),
                     ],
                     child: Stack(
-                      children: <Widget>[],
+                      children: const <Widget>[],
                     ),
                   ),
                 ),
@@ -789,7 +791,7 @@ class SearchScreenListView extends StatelessWidget {
                       Stack(
                     children: <Widget>[
                       Transform.translate(
-                        offset: Offset(19.0, 0.0),
+                        offset: const Offset(19.0, 0.0),
                         child: SizedBox(
                           width: 24.0,
                           height: 24.0,
@@ -810,7 +812,7 @@ class SearchScreenListView extends StatelessWidget {
                                       color: Colors.transparent,
                                     ),
                                     Transform.translate(
-                                      offset: Offset(0.6, 1.1),
+                                      offset: const Offset(0.6, 1.1),
                                       child: SizedBox(
                                         width: 23.0,
                                         height: 23.0,
@@ -830,12 +832,12 @@ class SearchScreenListView extends StatelessWidget {
                       Pinned.fromPins(
                         Pin(start: 0.0, end: 0.0),
                         Pin(size: 21.0, end: 0.0),
-                        child: Text(
+                        child: const Text(
                           'Search',
                           style: TextStyle(
                             fontFamily: 'SF Pro',
                             fontSize: 18,
-                            color: const Color(0xff2e9eff),
+                            color: Color(0xff2e9eff),
                             fontWeight: FontWeight.w800,
                           ),
                           softWrap: false,
@@ -854,16 +856,16 @@ class SearchScreenListView extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => InboxScreen(),
+                        pageBuilder: () => const InboxScreen(),
                       ),
                     ],
                     child: Stack(
-                      children: <Widget>[],
+                      children: const <Widget>[],
                     ),
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(23.0, 14.0),
+                  offset: const Offset(23.0, 14.0),
                   child: SizedBox(
                     width: 42.0,
                     height: 42.0,
@@ -874,7 +876,7 @@ class SearchScreenListView extends StatelessWidget {
                         PageLinkInfo(
                           ease: Curves.easeInOut,
                           duration: 0.5,
-                          pageBuilder: () => HomeScreen(),
+                          pageBuilder: () => const HomeScreen(),
                         ),
                       ],
                       child: Stack(
@@ -906,7 +908,7 @@ class SearchScreenListView extends StatelessWidget {
                                               color: Colors.transparent,
                                             ),
                                             Transform.translate(
-                                              offset: Offset(5.2, 3.5),
+                                              offset: const Offset(5.2, 3.5),
                                               child: SizedBox(
                                                 width: 32.0,
                                                 height: 35.0,
@@ -932,7 +934,7 @@ class SearchScreenListView extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment(-0.282, 0.425),
+                  alignment: const Alignment(-0.282, 0.425),
                   child: SizedBox(
                     width: 91.0,
                     height: 9.0,
@@ -963,7 +965,7 @@ class SearchScreenListView extends StatelessWidget {
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(192.7, 14.0),
+                  offset: const Offset(192.7, 14.0),
                   child: SizedBox(
                     width: 42.0,
                     height: 42.0,
@@ -974,7 +976,7 @@ class SearchScreenListView extends StatelessWidget {
                         PageLinkInfo(
                           ease: Curves.easeInOut,
                           duration: 0.5,
-                          pageBuilder: () => ReservationsScreen(),
+                          pageBuilder: () => const ReservationsScreen(),
                         ),
                       ],
                       child: Stack(
@@ -998,7 +1000,7 @@ class SearchScreenListView extends StatelessWidget {
                             ),
                           ),
                           Transform.translate(
-                            offset: Offset(19.4, 10.1),
+                            offset: const Offset(19.4, 10.1),
                             child: SizedBox(
                               width: 23.0,
                               height: 25.0,
@@ -1019,7 +1021,7 @@ class SearchScreenListView extends StatelessWidget {
                             ),
                           ),
                           Transform.translate(
-                            offset: Offset(5.9, 24.0),
+                            offset: const Offset(5.9, 24.0),
                             child: SizedBox(
                               width: 28.0,
                               height: 18.0,
