@@ -343,7 +343,7 @@ class ViewListingMapView extends StatelessWidget {
                                       2.0, 2.0, 2.0, 3.0),
                                   child: SizedBox.expand(
                                       child: SvgPicture.string(
-                                    yellowStar,
+                                    svgs.yellowStar,
                                     allowDrawingOutsideViewBox: true,
                                     fit: BoxFit.fill,
                                   )),
