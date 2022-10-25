@@ -395,7 +395,7 @@ class ViewListingMapView1 extends StatelessWidget {
                                   Pin(size: 20.0, start: 0.0),
                                   Pin(start: 2.0, end: 3.0),
                                   child: SvgPicture.string(
-                                    yellowStar2,
+                                    svgs.yellowStar2,
                                     allowDrawingOutsideViewBox: true,
                                     fit: BoxFit.fill,
                                   ),
@@ -572,7 +572,7 @@ class ViewListingMapView1 extends StatelessWidget {
                                       padding: const EdgeInsets.all(3.0),
                                       child: SizedBox.expand(
                                           child: SvgPicture.string(
-                                        magnifyingGlass2,
+                                        svgs.magnifyingGlass2,
                                         allowDrawingOutsideViewBox: true,
                                         fit: BoxFit.fill,
                                       )),
