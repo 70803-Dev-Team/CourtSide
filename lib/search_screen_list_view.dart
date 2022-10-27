@@ -568,7 +568,7 @@ class SearchScreenListView extends StatelessWidget {
                                   Pin(start: 4.0, end: 4.0),
                                   Pin(size: 18.0, end: 2.0),
                                   child: SvgPicture.string(
-                                    blueFilter,
+                                    svgs.blueFilter,
                                     allowDrawingOutsideViewBox: true,
                                     fit: BoxFit.fill,
                                   ),
