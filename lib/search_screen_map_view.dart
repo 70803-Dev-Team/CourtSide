@@ -277,7 +277,7 @@ class SearchScreenMapView extends StatelessWidget {
                                       padding: const EdgeInsets.all(3.0),
                                       child: SizedBox.expand(
                                           child: SvgPicture.string(
-                                        magnifyingGlass,
+                                        svgs.magnifyingGlass,
                                         allowDrawingOutsideViewBox: true,
                                         fit: BoxFit.fill,
                                       )),
