@@ -794,7 +794,7 @@ class ViewListingMapView extends StatelessWidget {
                                       child:
                                           // Adobe XD layer: 'Cap' (shape)
                                           SvgPicture.string(
-                                        blackPartialCircle,
+                                        svgs.blackPartialCircle,
                                         allowDrawingOutsideViewBox: true,
                                       ),
                                     ),
@@ -821,7 +821,7 @@ class ViewListingMapView extends StatelessWidget {
                               child:
                                   // Adobe XD layer: 'Wifi' (shape)
                                   SvgPicture.string(
-                                wifiSymbol,
+                                svgs.wifiSymbol,
                                 allowDrawingOutsideViewBox: true,
                                 fit: BoxFit.fill,
                               ),
@@ -834,7 +834,7 @@ class ViewListingMapView extends StatelessWidget {
                                 child:
                                     // Adobe XD layer: 'Cellular Connection' (shape)
                                     SvgPicture.string(
-                                  mobilNetworkStrength,
+                                  svgs.mobilNetworkStrength,
                                   allowDrawingOutsideViewBox: true,
                                 ),
                               ),
