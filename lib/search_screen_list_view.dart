@@ -120,7 +120,7 @@ class SearchScreenListView extends StatelessWidget {
                                 Pin(start: 2.0, end: 2.0),
                                 Pin(size: 17.0, end: 3.0),
                                 child: SvgPicture.string(
-                                  emptyHeart,
+                                  svgs.emptyHeart,
                                   allowDrawingOutsideViewBox: true,
                                   fit: BoxFit.fill,
                                 ),
@@ -363,7 +363,7 @@ class SearchScreenListView extends StatelessWidget {
                                 Pin(start: 2.0, end: 2.0),
                                 Pin(size: 17.0, end: 3.0),
                                 child: SvgPicture.string(
-                                  emptyHeart,
+                                  svgs.emptyHeart,
                                   allowDrawingOutsideViewBox: true,
                                   fit: BoxFit.fill,
                                 ),
@@ -681,7 +681,7 @@ class SearchScreenListView extends StatelessWidget {
                                 Pin(start: 2.0, end: 2.0),
                                 Pin(size: 17.0, end: 3.0),
                                 child: SvgPicture.string(
-                                  emptyHeart,
+                                  svgs.emptyHeart,
                                   allowDrawingOutsideViewBox: true,
                                   fit: BoxFit.fill,
                                 ),
@@ -914,7 +914,7 @@ class SearchScreenListView extends StatelessWidget {
                                                 width: 32.0,
                                                 height: 35.0,
                                                 child: SvgPicture.string(
-                                                  blackHome,
+                                                  svgs.blackHome,
                                                   allowDrawingOutsideViewBox:
                                                       true,
                                                 ),

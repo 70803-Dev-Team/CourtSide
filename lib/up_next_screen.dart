@@ -270,7 +270,7 @@ class UpNextScreen extends StatelessWidget {
                                 Pin(size: 16.0, start: 0.0),
                                 Pin(start: 2.0, end: 2.0),
                                 child: SvgPicture.string(
-                                  mapPin3,
+                                  svgs.mapPin3,
                                   allowDrawingOutsideViewBox: true,
                                   fit: BoxFit.fill,
                                 ),
@@ -281,7 +281,7 @@ class UpNextScreen extends StatelessWidget {
                                   width: 7.0,
                                   height: 7.0,
                                   child: SvgPicture.string(
-                                    smallBlueCircle5,
+                                    svgs.smallBlueCircle5,
                                     allowDrawingOutsideViewBox: true,
                                   ),
                                 ),
