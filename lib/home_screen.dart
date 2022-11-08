@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
           width: double.infinity,
           height: 40,
           decoration: BoxDecoration(
-              color: Color.fromARGB(255, 62, 62, 62),
+              color: const Color.fromARGB(255, 62, 62, 62),
               borderRadius: BorderRadius.circular(20)),
           child: const Center(
             child: TextField(
@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 32, 33, 37),
+        backgroundColor: const Color.fromARGB(255, 32, 33, 37),
         leading: Padding(
           padding: const EdgeInsets.all(4.0),
           child: Image.asset(

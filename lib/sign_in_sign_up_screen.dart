@@ -3,7 +3,7 @@ import 'package:adobe_xd/pinned.dart';
 import './sign_in.dart';
 import './sign_up_screen1.dart';
 import 'package:adobe_xd/page_link.dart';
-import './home_screen1.dart';
+import './home_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'svgs.dart' as svgs;
 
@@ -35,7 +35,7 @@ class SignInSignUpScreen extends StatelessWidget {
                 PageLinkInfo(
                   ease: Curves.easeInOut,
                   duration: 0.5,
-                  pageBuilder: () => SignInScreen(),
+                  pageBuilder: () => const SignInScreen(),
                 ),
               ],
               child: Stack(
