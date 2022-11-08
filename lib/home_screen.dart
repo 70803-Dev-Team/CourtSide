@@ -1,3 +1,4 @@
+import 'package:court_side/nav_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -33,7 +34,14 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       backgroundColor: const Color(0xffffffff),
-      body: Stack(),
+      body: Stack(
+        children: const [],
+      ),
+      bottomNavigationBar: const BottomAppBar(
+        color: Colors.transparent,
+        elevation: 0,
+        child: NavBar(),
+      ),
     );
   }
 }
