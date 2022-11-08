@@ -7,24 +7,30 @@ class NavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SvgPicture.string(
-          svgs.blueHouse,
-          allowDrawingOutsideViewBox: true,
-          fit: BoxFit.fill,
-        ),
-        const Text(
-          'Home',
-          style: TextStyle(
-            fontFamily: 'SF Pro',
-            fontSize: 18,
-            color: Color(0xff2e9eff),
-            fontWeight: FontWeight.w800,
-          ),
-          softWrap: false,
-        ),
-      ],
-    );
+    return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 10.0),
+        child: Row(
+          children: [
+            SizedBox(
+              width: 30.0,
+              height: 30.0,
+              child: Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 3.0, vertical: 2.0),
+                    child: SizedBox.expand(
+                        child: SvgPicture.string(
+                      svgs.blueHouse,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    )),
+                  ),
+                  const Text("Home"),
+                ],
+              ),
+            )
+          ],
+        ));
   }
 }
