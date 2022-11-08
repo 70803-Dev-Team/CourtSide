@@ -1263,7 +1263,7 @@ class HomeScreen extends StatelessWidget {
           ),
           Pinned.fromPins(
             Pin(start: -41.0, end: 0.0),
-            Pin(size: 96.0, middle: 0.6434),
+            Pin(size: 96.0, middle: 1.0),
             child:
                 // Adobe XD layer: 'Nav-Bar' (group)
                 Stack(
@@ -1440,8 +1440,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Pinned.fromPins(
-                  Pin(size: 42.0, middle: 0.7541),
-                  Pin(size: 42.0, start: 14.0),
+                  Pin(size: 42.0, middle: 1.0),
+                  Pin(size: 42.0, start: 100.0),
                   child:
                       // Adobe XD layer: 'Inbox-Tab' (group)
                       PageLink(
