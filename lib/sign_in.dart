@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import './home_screen1.dart';
+import './home_screen.dart';
 import 'package:adobe_xd/page_link.dart';
 import './sign_in_sign_up_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'svgs.dart' as svgs;
 
 class SignInScreen extends StatefulWidget {
+  const SignInScreen({super.key});
+
   @override
-  _State createState() => _State();
+  State createState() => _State();
 }
 
 class _State extends State<SignInScreen> {
@@ -48,13 +50,12 @@ class _State extends State<SignInScreen> {
                         Border.all(width: 1.0, color: const Color(0xff707070)),
                   ),
                 ),
-                Pinned.fromPins(
-                  Pin(size: 234.0, start: 20.0),
-                  Pin(size: 29.0, middle: 0.5128),
+                Pinned.fromPins(Pin(size: 234.0, start: 20.0),
+                    Pin(size: 29.0, middle: 0.5128),
                     child: TextField(
                       //child: const Text(
-                      scrollPadding: EdgeInsets.only(bottom:40),
-                      decoration: InputDecoration(
+                      scrollPadding: const EdgeInsets.only(bottom: 40),
+                      decoration: const InputDecoration(
                         labelText: 'Email',
                         border: OutlineInputBorder(),
                       ),
@@ -63,8 +64,7 @@ class _State extends State<SignInScreen> {
                           fullName = nameController.text;
                         });
                       },
-                    )
-                ),
+                    )),
               ],
             ),
           ),
@@ -83,38 +83,37 @@ class _State extends State<SignInScreen> {
                         Border.all(width: 1.0, color: const Color(0xff707070)),
                   ),
                 ),
-                Pinned.fromPins(
-                  Pin(size: 104.0, start: 20.0),
-                  Pin(size: 29.0, middle: 0.5128),
-                  child: TextField(
-                  //child: const Text(
-                    scrollPadding: EdgeInsets.only(bottom:40),
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      border: OutlineInputBorder(),
-                    ),
-                    onChanged: (text) {
-                      setState(() {
-                        fullName = nameController.text;
-                      });
-                    },
-                  )
+                Pinned.fromPins(Pin(size: 104.0, start: 20.0),
+                    Pin(size: 29.0, middle: 0.5128),
+                    child: TextField(
+                      //child: const Text(
+                      scrollPadding: const EdgeInsets.only(bottom: 40),
+                      decoration: const InputDecoration(
+                        labelText: 'Password',
+                        border: OutlineInputBorder(),
+                      ),
+                      onChanged: (text) {
+                        setState(() {
+                          fullName = nameController.text;
+                        });
+                      },
+                    )
 
-                  // child: const Text(
-                  //   'Password',
-                  //   style: TextStyle(
-                  //     fontFamily: 'SF Pro',
-                  //     fontSize: 24,
-                  //     color: Color(0x3c000000),
-                  //     fontWeight: FontWeight.w500,
-                  //     height: 1,
-                  //   ),
-                  //   textHeightBehavior:
-                  //       TextHeightBehavior(applyHeightToFirstAscent: false),
-                  //   textAlign: TextAlign.center,
-                  //   softWrap: false,
-                  // ),
-                ),
+                    // child: const Text(
+                    //   'Password',
+                    //   style: TextStyle(
+                    //     fontFamily: 'SF Pro',
+                    //     fontSize: 24,
+                    //     color: Color(0x3c000000),
+                    //     fontWeight: FontWeight.w500,
+                    //     height: 1,
+                    //   ),
+                    //   textHeightBehavior:
+                    //       TextHeightBehavior(applyHeightToFirstAscent: false),
+                    //   textAlign: TextAlign.center,
+                    //   softWrap: false,
+                    // ),
+                    ),
               ],
             ),
           ),
