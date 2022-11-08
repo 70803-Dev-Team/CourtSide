@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
+import './sign_in.dart';
 import './sign_up_screen1.dart';
 import 'package:adobe_xd/page_link.dart';
-import './home_screen.dart';
+import './home_screen1.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'svgs.dart' as svgs;
 
@@ -19,7 +20,7 @@ class SignInSignUpScreen extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/splash-screen-background.png'),
-                fit: BoxFit.fitHeight,
+                fit: BoxFit.fill,
               ),
             ),
           ),
@@ -34,7 +35,7 @@ class SignInSignUpScreen extends StatelessWidget {
                 PageLinkInfo(
                   ease: Curves.easeInOut,
                   duration: 0.5,
-                  pageBuilder: () => const SignUpScreen1(),
+                  pageBuilder: () => SignInScreen(),
                 ),
               ],
               child: Stack(
@@ -169,7 +170,7 @@ class SignInSignUpScreen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: const Offset(50.0, 166.0),
+            offset: const Offset(50.0, 50.0),
             child: SizedBox(
               width: 300.0,
               height: 295.0,
