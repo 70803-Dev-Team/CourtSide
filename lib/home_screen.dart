@@ -1,14 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
-import './product_page.dart';
-import 'package:adobe_xd/page_link.dart';
-import './categories_screen.dart';
-import './profile_screen.dart';
-import './reservations_screen.dart';
-import './search_screen_map_view.dart';
-import './inbox_screen.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'svgs.dart' as svgs;
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
