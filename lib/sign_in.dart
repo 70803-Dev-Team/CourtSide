@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import './home_screen.dart';
+import './home_screen1.dart';
 import 'package:adobe_xd/page_link.dart';
 import './sign_in_sign_up_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'svgs.dart' as svgs;
 
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+class SignInScreen extends StatefulWidget {
+  @override
+  _State createState() => _State();
+}
 
+class _State extends State<SignInScreen> {
+  //const SignInScreen({super.key});
+  TextEditingController nameController = TextEditingController();
+  String fullName = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xffffffff),
       body: Stack(
         children: <Widget>[
@@ -19,11 +26,11 @@ class SignInScreen extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(''),
+                image: AssetImage('assets/splash-screen-background.png'),
                 fit: BoxFit.fill,
               ),
             ),
-            margin: const EdgeInsets.fromLTRB(-1487.0, 0.0, -368.0, -218.0),
+            margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
           ),
           Container(),
           Pinned.fromPins(
@@ -44,20 +51,19 @@ class SignInScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 234.0, start: 20.0),
                   Pin(size: 29.0, middle: 0.5128),
-                  child: const Text(
-                    'Email / Phone Number',
-                    style: TextStyle(
-                      fontFamily: 'SF Pro',
-                      fontSize: 24,
-                      color: Color(0x3c000000),
-                      fontWeight: FontWeight.w500,
-                      height: 1,
-                    ),
-                    textHeightBehavior:
-                        TextHeightBehavior(applyHeightToFirstAscent: false),
-                    textAlign: TextAlign.center,
-                    softWrap: false,
-                  ),
+                    child: TextField(
+                      //child: const Text(
+                      scrollPadding: EdgeInsets.only(bottom:40),
+                      decoration: InputDecoration(
+                        labelText: 'Email',
+                        border: OutlineInputBorder(),
+                      ),
+                      onChanged: (text) {
+                        setState(() {
+                          fullName = nameController.text;
+                        });
+                      },
+                    )
                 ),
               ],
             ),
@@ -80,20 +86,34 @@ class SignInScreen extends StatelessWidget {
                 Pinned.fromPins(
                   Pin(size: 104.0, start: 20.0),
                   Pin(size: 29.0, middle: 0.5128),
-                  child: const Text(
-                    'Password',
-                    style: TextStyle(
-                      fontFamily: 'SF Pro',
-                      fontSize: 24,
-                      color: Color(0x3c000000),
-                      fontWeight: FontWeight.w500,
-                      height: 1,
+                  child: TextField(
+                  //child: const Text(
+                    scrollPadding: EdgeInsets.only(bottom:40),
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                      border: OutlineInputBorder(),
                     ),
-                    textHeightBehavior:
-                        TextHeightBehavior(applyHeightToFirstAscent: false),
-                    textAlign: TextAlign.center,
-                    softWrap: false,
-                  ),
+                    onChanged: (text) {
+                      setState(() {
+                        fullName = nameController.text;
+                      });
+                    },
+                  )
+
+                  // child: const Text(
+                  //   'Password',
+                  //   style: TextStyle(
+                  //     fontFamily: 'SF Pro',
+                  //     fontSize: 24,
+                  //     color: Color(0x3c000000),
+                  //     fontWeight: FontWeight.w500,
+                  //     height: 1,
+                  //   ),
+                  //   textHeightBehavior:
+                  //       TextHeightBehavior(applyHeightToFirstAscent: false),
+                  //   textAlign: TextAlign.center,
+                  //   softWrap: false,
+                  // ),
                 ),
               ],
             ),
@@ -178,7 +198,7 @@ class SignInScreen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: const Offset(64.0, 166.0),
+            offset: const Offset(50.0, 50.0),
             child: SizedBox(
               width: 300.0,
               height: 295.0,
