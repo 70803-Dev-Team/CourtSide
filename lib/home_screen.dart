@@ -26,6 +26,7 @@ class HomeScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(20)),
           child: const Center(
             child: TextField(
+              //search requires more implementation... remember
               decoration: InputDecoration(
                 hintText: 'Find a court, field, or equipment',
                 prefixIcon: Icon(Icons.search),
