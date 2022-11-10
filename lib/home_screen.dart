@@ -1392,7 +1392,7 @@ class HomeScreen extends StatelessWidget {
                       PageLinkInfo(
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => const SearchScreenMapView(),
+                        pageBuilder: () => const InboxScreen(),
                       ),
                     ],
                     child: Stack(
