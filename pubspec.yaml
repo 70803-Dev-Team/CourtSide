@@ -43,6 +43,8 @@ dependencies:
   intl: ^0.17.0
   time_range: ^1.0.3
   phone_form_field: ^7.0.2
+  smooth_page_indicator: ^1.0.0+2
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_test:

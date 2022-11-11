@@ -2,25 +2,25 @@ import 'package:court_side/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'svgs.dart' as svgs;
-import './booking_process1.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>{
+class _HomeScreenState extends State<HomeScreen> {
   //HomeScreen({super.key});
-  int _current =0;
-  final CarouselController _controller = CarouselController();
+  int _current = 0;
   final controller = PageController(viewportFraction: 0.8, keepPage: true);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset : false,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         toolbarHeight: 80,
         title: Container(
@@ -51,16 +51,20 @@ class _HomeScreenState extends State<HomeScreen>{
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Align(
+            const Align(
               alignment: Alignment.centerLeft,
-              child:Padding(
-                padding: EdgeInsets.fromLTRB(10,10,0,0),
-                child: const Text("Categories",
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+                child: Text(
+                  "Categories",
                   textAlign: TextAlign.left,
-                  style: TextStyle(fontFamily: 'SF Pro',
-                  fontSize: 28,
-                  color: Color(0xff000000),
-                  fontWeight: FontWeight.w800),),),
+                  style: TextStyle(
+                      fontFamily: 'SF Pro',
+                      fontSize: 28,
+                      color: Color(0xff000000),
+                      fontWeight: FontWeight.w800),
+                ),
+              ),
             ),
             GridView.count(
               shrinkWrap: true,
@@ -217,51 +221,58 @@ class _HomeScreenState extends State<HomeScreen>{
                 ),
               ],
             ),
-
-            Divider(),
+            const Divider(),
             const Align(
               alignment: Alignment.centerLeft,
-              child:Padding(
-                padding: EdgeInsets.fromLTRB(10,10,0,0),
-                child: Text("Recommendations",
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+                child: Text(
+                  "Recommendations",
                   textAlign: TextAlign.left,
-                  style: TextStyle(fontFamily: 'SF Pro',
+                  style: TextStyle(
+                      fontFamily: 'SF Pro',
                       fontSize: 28,
                       color: Color(0xff000000),
-                      fontWeight: FontWeight.w800),),),
+                      fontWeight: FontWeight.w800),
+                ),
+              ),
             ),
-            new Container(
+            SizedBox(
               height: 80.0,
-              child: new ListView(
+              child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: new List.generate(10, (int index) {
-                  return new Card(
+                children: List.generate(10, (int index) {
+                  return Card(
                     color: Colors.blue[index * 100],
-                    child: new Container(
+                    child: SizedBox(
                       width: 50.0,
                       height: 50.0,
-                      child: new Text("$index"),
+                      child: Text("$index"),
                     ),
                   );
                 }),
               ),
             ),
-            Divider(),
-            Align(
+            const Divider(),
+            const Align(
               alignment: Alignment.centerLeft,
-              child:Padding(
-                padding: EdgeInsets.fromLTRB(10,10,0,0),
-                child: const Text("New Arrivals",
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+                child: Text(
+                  "New Arrivals",
                   textAlign: TextAlign.left,
-                  style: TextStyle(fontFamily: 'SF Pro',
+                  style: TextStyle(
+                      fontFamily: 'SF Pro',
                       fontSize: 28,
                       color: Color(0xff000000),
-                      fontWeight: FontWeight.w800),),),
+                      fontWeight: FontWeight.w800),
+                ),
+              ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(20,20,20,20),
+              padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
               child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30.0),
@@ -294,7 +305,8 @@ class _HomeScreenState extends State<HomeScreen>{
                               initialPage: 0,
                               autoPlay: true,
                               autoPlayInterval: const Duration(seconds: 3),
-                              autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                              autoPlayAnimationDuration:
+                                  const Duration(milliseconds: 800),
                               autoPlayCurve: Curves.fastOutSlowIn,
                               enlargeCenterPage: true,
                               onPageChanged: (index, reason) {
@@ -304,31 +316,57 @@ class _HomeScreenState extends State<HomeScreen>{
                               },
                               scrollDirection: Axis.horizontal,
                             )),
-                          Positioned.fill(
-                            child: Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Padding(
-                              padding: EdgeInsets.only(bottom: 10),
-                                child: AnimatedSmoothIndicator(
-                                  activeIndex: _current,
-                                  count: 3,
-                                  effect: const ExpandingDotsEffect(
+                        Positioned.fill(
+                          child: Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Padding(
+                              padding: const EdgeInsets.only(bottom: 10),
+                              child: AnimatedSmoothIndicator(
+                                activeIndex: _current,
+                                count: 3,
+                                effect: const ExpandingDotsEffect(
                                     dotHeight: 10,
                                     dotWidth: 10,
                                     activeDotColor: Colors.white,
-                                    dotColor: Colors.grey
-                                  ),
-                                ),
+                                    dotColor: Colors.grey),
                               ),
                             ),
+                          ),
                         ),
                       ],
                     ),
                     //child: Image.asset('assets/boc_pool.jpg'),
                   ),
-                  const Text("Bocage Racket Club", textAlign: TextAlign.left, style: TextStyle(height: 1.3, fontFamily: 'SF Pro', fontSize: 18, color: Color(0xff000000), fontWeight: FontWeight.w800),),
-                  const Text("7600 Jefferson Hwy, Baton Rouge", textAlign: TextAlign.left, style: TextStyle(height: 1.3, fontFamily: 'SF Pro', fontSize: 18, color: Color(0xff000000), fontWeight: FontWeight.w400),),
-                  const Text("\$250 / hour", textAlign: TextAlign.left, style: TextStyle(height: 1.3, fontFamily: 'SF Pro', fontSize: 18, color: Color(0xff000000), fontWeight: FontWeight.w800),),
+                  const Text(
+                    "Bocage Racket Club",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        height: 1.3,
+                        fontFamily: 'SF Pro',
+                        fontSize: 18,
+                        color: Color(0xff000000),
+                        fontWeight: FontWeight.w800),
+                  ),
+                  const Text(
+                    "7600 Jefferson Hwy, Baton Rouge",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        height: 1.3,
+                        fontFamily: 'SF Pro',
+                        fontSize: 18,
+                        color: Color(0xff000000),
+                        fontWeight: FontWeight.w400),
+                  ),
+                  const Text(
+                    "\$250 / hour",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        height: 1.3,
+                        fontFamily: 'SF Pro',
+                        fontSize: 18,
+                        color: Color(0xff000000),
+                        fontWeight: FontWeight.w800),
+                  ),
                 ],
               ),
             ),
