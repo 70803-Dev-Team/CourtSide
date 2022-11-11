@@ -1,4 +1,3 @@
-import 'package:court_side/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'svgs.dart' as svgs;
@@ -46,174 +45,150 @@ class HomeScreen extends StatelessWidget {
               childAspectRatio: 10 / 5,
               crossAxisSpacing: 20.0,
               mainAxisSpacing: 30.0,
-              padding: EdgeInsets.fromLTRB(10,10,10,10),
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
               children: <Widget>[
-                Container(
-                  child: OutlinedButton(
-                    onPressed: () {Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const HomeScreen()));
-                    },
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0))),
-                    ),
-                    child: Column(
-                      //child: Padding(padding: EdgeInsets.only(top: 10.0),),
-                      children: [
-                        Container(
-                          child:Padding(
-                            padding: EdgeInsets.only(top:8.0),
-                            child:SvgPicture.string(
-                              svgs.blueBasketball5,
-                              allowDrawingOutsideViewBox: true,
-                              fit: BoxFit.fill,
-                            ),
-                          ),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0))),
+                  ),
+                  child: Column(
+                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: SvgPicture.string(
+                          svgs.blueBasketball5,
+                          allowDrawingOutsideViewBox: true,
+                          fit: BoxFit.fill,
                         ),
-                        Container(
-                          child:
-                          const Text("Button text"),
-                        ),
-                      ],
-                    ),
+                      ),
+                      const Text("Button text"),
+                    ],
                   ),
                 ),
-                Container(
-                  child: OutlinedButton(
-                    onPressed: () {Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const HomeScreen()));
-                    },
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0))),
-                    ),
-                    child: Column(
-                      //child: Padding(padding: EdgeInsets.only(top: 10.0),),
-                      children: [
-                        Container(
-                          child:Padding(
-                            padding: EdgeInsets.only(top:8.0),
-                            child:SvgPicture.string(
-                              svgs.blueBasketball5,
-                              allowDrawingOutsideViewBox: true,
-                              fit: BoxFit.fill,
-                            ),
-                          ),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0))),
+                  ),
+                  child: Column(
+                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: SvgPicture.string(
+                          svgs.blueBasketball5,
+                          allowDrawingOutsideViewBox: true,
+                          fit: BoxFit.fill,
                         ),
-                        Container(
-                          child:
-                          const Text("Button text"),
-                        ),
-                      ],
-                    ),
+                      ),
+                      const Text("Button text"),
+                    ],
                   ),
                 ),
-                Container(
-                  child: OutlinedButton(
-                    onPressed: () {Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const HomeScreen()));
-                    },
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0))),
-                    ),
-                    child: Column(
-                      //child: Padding(padding: EdgeInsets.only(top: 10.0),),
-                      children: [
-                        Container(
-                          child:Padding(
-                            padding: EdgeInsets.only(top:8.0),
-                            child:SvgPicture.string(
-                              svgs.blueBasketball5,
-                              allowDrawingOutsideViewBox: true,
-                              fit: BoxFit.fill,
-                            ),
-                          ),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0))),
+                  ),
+                  child: Column(
+                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: SvgPicture.string(
+                          svgs.blueBasketball5,
+                          allowDrawingOutsideViewBox: true,
+                          fit: BoxFit.fill,
                         ),
-                        Container(
-                          child:
-                          const Text("Button text"),
-                        ),
-                      ],
-                    ),
+                      ),
+                      const Text("Button text"),
+                    ],
                   ),
                 ),
-                Container(
-                  child: OutlinedButton(
-                    onPressed: () {Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const HomeScreen()));
-                    },
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0))),
-                    ),
-                    child: Column(
-                      //child: Padding(padding: EdgeInsets.only(top: 10.0),),
-                      children: [
-                        Container(
-                          child:Padding(
-                            padding: EdgeInsets.only(top:8.0),
-                            child:SvgPicture.string(
-                              svgs.blueBasketball5,
-                              allowDrawingOutsideViewBox: true,
-                              fit: BoxFit.fill,
-                            ),
-                          ),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0))),
+                  ),
+                  child: Column(
+                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: SvgPicture.string(
+                          svgs.blueBasketball5,
+                          allowDrawingOutsideViewBox: true,
+                          fit: BoxFit.fill,
                         ),
-                        Container(
-                          child:
-                          const Text("Button text"),
-                        ),
-                      ],
-                    ),
+                      ),
+                      const Text("Button text"),
+                    ],
                   ),
                 ),
-                Container(
-                  child: OutlinedButton(
-                    onPressed: () {Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const HomeScreen()));
-                    },
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0))),
-                    ),
-                    child: Column(
-                      //child: Padding(padding: EdgeInsets.only(top: 10.0),),
-                      children: [
-                        Container(
-                          child:Padding(
-                            padding: EdgeInsets.only(top:8.0),
-                            child:SvgPicture.string(
-                              svgs.blueBasketball5,
-                              allowDrawingOutsideViewBox: true,
-                              fit: BoxFit.fill,
-                            ),
-                          ),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0))),
+                  ),
+                  child: Column(
+                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: SvgPicture.string(
+                          svgs.blueBasketball5,
+                          allowDrawingOutsideViewBox: true,
+                          fit: BoxFit.fill,
                         ),
-                        Container(
-                          child:
-                          const Text("Button text"),
-                        ),
-                      ],
-                    ),
+                      ),
+                      const Text("Button text"),
+                    ],
                   ),
                 ),
-                Container(
-                  child: OutlinedButton(
-                    onPressed: () {Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const HomeScreen()));
-                    },
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0))),
-                    ),
-                    child: Column(
-                      //child: Padding(padding: EdgeInsets.only(top: 10.0),),
-                      children: [
-                        Container(
-                          child:Padding(
-                            padding: EdgeInsets.only(top:8.0),
-                            child:SvgPicture.string(
-                              svgs.blueBasketball5,
-                              allowDrawingOutsideViewBox: true,
-                              fit: BoxFit.fill,
-                            ),
-                          ),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0))),
+                  ),
+                  child: Column(
+                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: SvgPicture.string(
+                          svgs.blueBasketball5,
+                          allowDrawingOutsideViewBox: true,
+                          fit: BoxFit.fill,
                         ),
-                        Container(
-                          child:
-                          const Text("Button text"),
-                        ),
-                      ],
-                    ),
+                      ),
+                      const Text("Button text"),
+                    ],
                   ),
                 ),
               ],
@@ -223,8 +198,8 @@ class HomeScreen extends StatelessWidget {
             ),
             Center(
               child: TextButton(
-                child: Text("Button"),
-                onPressed: (){},
+                child: const Text("Button"),
+                onPressed: () {},
               ),
             )
           ],

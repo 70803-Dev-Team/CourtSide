@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'svgs.dart' as svgs;
-import './booking_process5.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:adobe_xd/gradient_xd_transform.dart';
 import 'package:adobe_xd/page_link.dart';
@@ -20,8 +19,8 @@ class BookingProcess5 extends StatelessWidget {
             width: 428.0,
             height: 447.0,
             child:
-            // Adobe XD layer: 'Top Menu' (group)
-            Stack(
+                // Adobe XD layer: 'Top Menu' (group)
+                Stack(
               children: <Widget>[
                 Container(
                   width: 428.0,
@@ -98,7 +97,7 @@ class BookingProcess5 extends StatelessWidget {
                       1.0, 0.0, 0.0, 1.0, 0.0, 0.0, Alignment(0.0, 0.0)),
                 ),
                 borderRadius:
-                BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                    BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
               ),
             ),
           ),
@@ -119,8 +118,8 @@ class BookingProcess5 extends StatelessWidget {
               width: 60.0,
               height: 60.0,
               child:
-              // Adobe XD layer: 'checkmark-circle-ou…' (group)
-              Stack(
+                  // Adobe XD layer: 'checkmark-circle-ou…' (group)
+                  Stack(
                 children: <Widget>[
                   // Adobe XD layer: 'checkmark-circle-ou…' (group)
                   Stack(
@@ -146,10 +145,10 @@ class BookingProcess5 extends StatelessWidget {
                             padding: const EdgeInsets.all(5.1),
                             child: SizedBox.expand(
                                 child: SvgPicture.string(
-                                  svgs.incompleteCircle2,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                )),
+                              svgs.incompleteCircle2,
+                              allowDrawingOutsideViewBox: true,
+                              fit: BoxFit.fill,
+                            )),
                           ),
                         ],
                       ),
@@ -163,15 +162,15 @@ class BookingProcess5 extends StatelessWidget {
             Pin(start: 30.0, end: 30.0),
             Pin(size: 120.0, end: 37.0),
             child:
-            // Adobe XD layer: 'Continue-Button' (group)
-            Stack(
+                // Adobe XD layer: 'Continue-Button' (group)
+                Stack(
               children: <Widget>[
                 Pinned.fromPins(
                   Pin(start: 0.0, end: 0.0),
                   Pin(size: 50.0, end: 0.0),
                   child:
-                  // Adobe XD layer: 'Button' (group)
-                  Stack(
+                      // Adobe XD layer: 'Button' (group)
+                      Stack(
                     children: <Widget>[
                       // Adobe XD layer: 'Button' (shape)
                       PageLink(
@@ -180,7 +179,7 @@ class BookingProcess5 extends StatelessWidget {
                             transition: LinkTransition.Fade,
                             ease: Curves.linear,
                             duration: 0.3,
-                            pageBuilder: () => HomeScreen(),
+                            pageBuilder: () => const HomeScreen(),
                           ),
                         ],
                         child: Container(
@@ -214,14 +213,14 @@ class BookingProcess5 extends StatelessWidget {
                   Pin(start: 0.0, end: 0.0),
                   Pin(size: 50.0, start: 0.0),
                   child:
-                  // Adobe XD layer: 'Button' (group)
-                  PageLink(
+                      // Adobe XD layer: 'Button' (group)
+                      PageLink(
                     links: [
                       PageLinkInfo(
                         transition: LinkTransition.Fade,
                         ease: Curves.linear,
                         duration: 0.5,
-                        pageBuilder: () => HomeScreen(),
+                        pageBuilder: () => const HomeScreen(),
                       ),
                     ],
                     child: Stack(
