@@ -24,7 +24,7 @@ class SignInSignUpScreen extends StatelessWidget {
           ),
           Container(),
           Pinned.fromPins(
-            Pin(size: 184.0, start: 0.0),
+            Pin(size: 184.0, start: 8.0),
             Pin(size: 69.0, middle: 0.6383),
             child:
                 // Adobe XD layer: 'Sign-in Button' (group)
@@ -72,7 +72,7 @@ class SignInSignUpScreen extends StatelessWidget {
             ),
           ),
           Pinned.fromPins(
-            Pin(size: 184.0, end: 20.0),
+            Pin(size: 184.0, end: 8.0),
             Pin(size: 69.0, middle: 0.6383),
             child:
                 // Adobe XD layer: 'Sign-up Button' (group)
@@ -146,7 +146,7 @@ class SignInSignUpScreen extends StatelessWidget {
                         ),
                       ),
                       Pinned.fromPins(
-                        Pin(start: 20.0, end: 20.0),
+                        Pin(start: 12.0, end: 12.0),
                         Pin(size: 29.0, middle: 0.5),
                         child:
                             // Adobe XD layer: 'Continue as guest' (text)
