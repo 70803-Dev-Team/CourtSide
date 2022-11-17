@@ -1,1611 +1,379 @@
+import 'package:court_side/nav_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
-import './product_page.dart';
-import 'package:adobe_xd/page_link.dart';
-import './categories_screen.dart';
-import './profile_screen.dart';
-import './reservations_screen.dart';
-import './search_screen_map_view.dart';
-import './inbox_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'svgs.dart' as svgs;
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  //HomeScreen({super.key});
+  int _current = 0;
+  final controller = PageController(viewportFraction: 0.8, keepPage: true);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffffffff),
-      body: Stack(
-        children: <Widget>[
-          Pinned.fromPins(
-            Pin(start: 0.0, end: 0.0),
-            Pin(size: 241.5, start: 0.0),
-            child:
-                // Adobe XD layer: 'Top-Menu' (group)
-                Stack(
-              children: <Widget>[
-                SizedBox.expand(
-                    child:
-                        // Adobe XD layer: 'Upper-Background-Rec' (shape)
-                        SvgPicture.string(
-                  _svg_zbm1zx,
-                  allowDrawingOutsideViewBox: true,
-                  fit: BoxFit.fill,
-                )),
-                Container(),
-                Pinned.fromPins(
-                  Pin(size: 60.0, start: 15.0),
-                  Pin(size: 60.0, middle: 0.3195),
-                  child:
-                      // Adobe XD layer: 'Company-Logo' (group)
-                      Stack(
-                    children: <Widget>[
-                      Transform.translate(
-                        offset: Offset(7.6, 0.0),
-                        child: SizedBox(
-                          width: 52.0,
-                          height: 60.0,
-                          child: Stack(
-                            children: <Widget>[
-                              SizedBox(
-                                width: 52.0,
-                                height: 60.0,
-                                child: SvgPicture.string(
-                                  _svg_il3nod,
-                                  allowDrawingOutsideViewBox: true,
-                                ),
-                              ),
-                              SizedBox(
-                                width: 52.0,
-                                height: 60.0,
-                                child: Stack(
-                                  children: <Widget>[
-                                    Transform.translate(
-                                      offset: Offset(-11.6, 0.0),
-                                      child: Container(
-                                        width: 68.0,
-                                        height: 67.0,
-                                        decoration: BoxDecoration(
-                                          gradient: LinearGradient(
-                                            begin: Alignment(-1.359, 1.404),
-                                            end: Alignment(1.093, -1.13),
-                                            colors: [
-                                              const Color(0xff16dbff),
-                                              const Color(0xff1cdbff),
-                                              const Color(0xff2ddeff),
-                                              const Color(0xff49e2ff),
-                                              const Color(0xff71e9ff),
-                                              const Color(0xffa3f0ff),
-                                              const Color(0xffe0faff),
-                                              const Color(0xffffffff)
-                                            ],
-                                            stops: [
-                                              0.0,
-                                              0.081,
-                                              0.189,
-                                              0.314,
-                                              0.451,
-                                              0.598,
-                                              0.751,
-                                              0.821
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 52.0,
-                                      height: 60.0,
-                                      child: SvgPicture.string(
-                                        _svg_il3nod,
-                                        allowDrawingOutsideViewBox: true,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Transform.translate(
-                        offset: Offset(0.0, 0.3),
-                        child: SizedBox(
-                          width: 52.0,
-                          height: 60.0,
-                          child: Stack(
-                            children: <Widget>[
-                              SizedBox(
-                                width: 52.0,
-                                height: 60.0,
-                                child: SvgPicture.string(
-                                  _svg_fh5mm,
-                                  allowDrawingOutsideViewBox: true,
-                                ),
-                              ),
-                              SizedBox(
-                                width: 52.0,
-                                height: 60.0,
-                                child: Stack(
-                                  children: <Widget>[
-                                    Transform.translate(
-                                      offset: Offset(-4.2, -7.4),
-                                      child: SizedBox(
-                                        width: 68.0,
-                                        height: 67.0,
-                                        child: SvgPicture.string(
-                                          _svg_gci8l7,
-                                          allowDrawingOutsideViewBox: true,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        toolbarHeight: 80,
+        title: Container(
+          width: double.infinity,
+          height: 40,
+          decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 62, 62, 62),
+              borderRadius: BorderRadius.circular(20)),
+          child: const Center(
+            child: TextField(
+              //search requires more implementation... remember
+              decoration: InputDecoration(
+                hintText: 'Find a court, field, or equipment',
+                prefixIcon: Icon(Icons.search),
+              ),
             ),
           ),
-          Pinned.fromPins(
-            Pin(start: 0.0, end: 0.0),
-            Pin(size: 794.8, start: 131.2),
-            child:
-                // Adobe XD layer: 'Background-Rec' (shape)
-                SvgPicture.string(
-              _svg_abport,
-              allowDrawingOutsideViewBox: true,
-              fit: BoxFit.fill,
-            ),
+        ),
+        backgroundColor: const Color.fromARGB(255, 32, 33, 37),
+        leading: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Image.asset(
+            "assets/company-logo.png",
           ),
-          Container(),
-          Pinned.fromPins(
-            Pin(start: 15.0, end: 15.0),
-            Pin(size: 395.0, middle: 0.6448),
-            child:
-                // Adobe XD layer: 'New Arrivals' (group)
-                Stack(
-              children: <Widget>[
-                Pinned.fromPins(
-                  Pin(size: 24.0, end: 0.0),
-                  Pin(size: 24.0, start: 5.0),
-                  child: Transform.rotate(
-                    angle: -1.5708,
-                    child: Container(
-                      color: Colors.transparent,
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: SizedBox(
-                    width: 173.0,
-                    height: 34.0,
-                    child: Text(
-                      'New Arrivals',
-                      style: TextStyle(
-                        fontFamily: 'SF Pro',
-                        fontSize: 28,
-                        color: const Color(0xff000000),
-                        fontWeight: FontWeight.w800,
-                      ),
-                      softWrap: false,
-                    ),
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(start: 1.0, end: 1.0),
-                  Pin(size: 264.0, start: 54.0),
-                  child:
-                      // Adobe XD layer: 'Product-Image' (group)
-                      PageLink(
-                    links: [
-                      PageLinkInfo(
-                        transition: LinkTransition.SlideLeft,
-                        ease: Curves.easeOut,
-                        duration: 0.5,
-                        pageBuilder: () => ProductPage(),
-                      ),
-                    ],
-                    child: Stack(
-                      children: <Widget>[
-                        // Adobe XD layer: 'tennis-court-image3' (shape)
-                        Container(
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: const AssetImage(''),
-                              fit: BoxFit.fill,
-                            ),
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 24.0, end: 4.0),
-                          Pin(size: 24.0, end: 3.0),
-                          child:
-                              // Adobe XD layer: 'heart-outline' (group)
-                              Stack(
-                            children: <Widget>[
-                              // Adobe XD layer: 'heart-outline' (group)
-                              Stack(
-                                children: <Widget>[
-                                  // Adobe XD layer: 'heart' (group)
-                                  Stack(
-                                    children: <Widget>[
-                                      Container(
-                                        color: Colors.transparent,
-                                      ),
-                                      Pinned.fromPins(
-                                        Pin(start: 2.0, end: 2.0),
-                                        Pin(size: 17.0, end: 3.0),
-                                        child: SvgPicture.string(
-                                          _svg_ke4x7,
-                                          allowDrawingOutsideViewBox: true,
-                                          fit: BoxFit.fill,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 31.0, middle: 0.3945),
-                          Pin(size: 11.0, end: 10.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: const Color(0xffffffff),
-                              borderRadius: BorderRadius.circular(100.0),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 11.0, middle: 0.4675),
-                          Pin(size: 11.0, end: 10.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: const Color(0xffffffff),
-                              borderRadius: BorderRadius.all(
-                                  Radius.elliptical(9999.0, 9999.0)),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 11.0, middle: 0.5091),
-                          Pin(size: 11.0, end: 10.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: const Color(0xffffffff),
-                              borderRadius: BorderRadius.all(
-                                  Radius.elliptical(9999.0, 9999.0)),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 11.0, middle: 0.5506),
-                          Pin(size: 11.0, end: 10.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: const Color(0xffffffff),
-                              borderRadius: BorderRadius.all(
-                                  Radius.elliptical(9999.0, 9999.0)),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 11.0, middle: 0.5922),
-                          Pin(size: 11.0, end: 10.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: const Color(0xffffffff),
-                              borderRadius: BorderRadius.all(
-                                  Radius.elliptical(9999.0, 9999.0)),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 189.0, start: 10.0),
-                  Pin(size: 21.0, end: 54.0),
-                  child: Text(
-                    'Bocage Racquet Club',
-                    style: TextStyle(
-                      fontFamily: 'SF Pro',
-                      fontSize: 18,
-                      color: const Color(0xff343a40),
-                      fontWeight: FontWeight.w800,
-                    ),
-                    softWrap: false,
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 270.0, start: 10.0),
-                  Pin(size: 21.0, end: 27.0),
-                  child: Text(
-                    '7600 Jefferson Hwy, Baton Rouge',
-                    style: TextStyle(
-                      fontFamily: 'SF Pro',
-                      fontSize: 18,
-                      color: const Color(0xff343a40),
-                      fontWeight: FontWeight.w300,
-                    ),
-                    softWrap: false,
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 103.0, start: 10.0),
-                  Pin(size: 21.0, end: 0.0),
-                  child: Text(
-                    '\$250 / hour',
-                    style: TextStyle(
-                      fontFamily: 'SF Pro',
-                      fontSize: 18,
-                      color: const Color(0xff343a40),
-                      fontWeight: FontWeight.w800,
-                    ),
-                    softWrap: false,
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 7.1, end: 7.9),
-                  Pin(size: 14.0, start: 12.0),
-                  child:
-                      // Adobe XD layer: 'arrow-ios-forward-o…' (group)
-                      PageLink(
-                    links: [
-                      PageLinkInfo(
-                        transition: LinkTransition.SlideLeft,
-                        ease: Curves.easeOut,
-                        duration: 0.5,
-                        pageBuilder: () => ProductPage(),
-                      ),
-                    ],
-                    child: Stack(
-                      children: <Widget>[
-                        // Adobe XD layer: 'arrow-ios-forward-o…' (group)
-                        Stack(
-                          children: <Widget>[
-                            // Adobe XD layer: 'arrow-ios-forward' (group)
-                            Stack(
-                              children: <Widget>[
-                                SizedBox.expand(
-                                    child: SvgPicture.string(
-                                  _svg_qtuq1,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                )),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Pinned.fromPins(
-            Pin(start: 15.0, end: 20.0),
-            Pin(size: 279.0, start: 146.0),
-            child:
-                // Adobe XD layer: 'Categories' (group)
-                Stack(
-              children: <Widget>[
-                Pinned.fromPins(
-                  Pin(size: 100.0, start: 25.0),
-                  Pin(size: 100.0, middle: 0.3017),
-                  child:
-                      // Adobe XD layer: 'Basketball' (group)
-                      Stack(
-                    children: <Widget>[
-                      Container(
-                        decoration: BoxDecoration(
-                          color: const Color(0xffffffff),
-                          borderRadius: BorderRadius.circular(20.0),
-                          border: Border.all(
-                              width: 1.5, color: const Color(0xffaaaaad)),
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment(0.007, -0.415),
-                        child: SizedBox(
-                          width: 45.0,
-                          height: 45.0,
-                          child: Stack(
-                            children: <Widget>[
-                              Pinned.fromPins(
-                                Pin(size: 11.9, start: 6.6),
-                                Pin(size: 7.7, start: 0.4),
-                                child: SvgPicture.string(
-                                  _svg_pqhi04,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                              Pinned.fromPins(
-                                Pin(size: 21.5, start: 1.3),
-                                Pin(size: 29.6, end: 3.6),
-                                child: SvgPicture.string(
-                                  _svg_sohlsc,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment(0.134, -1.0),
-                                child: SizedBox(
-                                  width: 10.0,
-                                  height: 10.0,
-                                  child: SvgPicture.string(
-                                    _svg_x4dpg3,
-                                    allowDrawingOutsideViewBox: true,
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment(-1.0, -0.292),
-                                child: SizedBox(
-                                  width: 16.0,
-                                  height: 17.0,
-                                  child: SvgPicture.string(
-                                    _svg_vc10j,
-                                    allowDrawingOutsideViewBox: true,
-                                  ),
-                                ),
-                              ),
-                              Pinned.fromPins(
-                                Pin(size: 14.8, end: 1.1),
-                                Pin(size: 25.4, end: 1.8),
-                                child: SvgPicture.string(
-                                  _svg_wsgn5x,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment(-0.069, 1.0),
-                                child: SizedBox(
-                                  width: 17.0,
-                                  height: 31.0,
-                                  child: SvgPicture.string(
-                                    _svg_dqxyyx,
-                                    allowDrawingOutsideViewBox: true,
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment(1.0, -0.413),
-                                child: SizedBox(
-                                  width: 11.0,
-                                  height: 16.0,
-                                  child: SvgPicture.string(
-                                    _svg_be6a0j,
-                                    allowDrawingOutsideViewBox: true,
-                                  ),
-                                ),
-                              ),
-                              Pinned.fromPins(
-                                Pin(size: 10.4, middle: 0.7913),
-                                Pin(size: 11.0, start: 2.6),
-                                child: SvgPicture.string(
-                                  _svg_fxxyd,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Pinned.fromPins(
-                        Pin(start: 7.0, end: 6.0),
-                        Pin(size: 21.0, end: 11.0),
-                        child: Text(
-                          'Basketball',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro',
-                            fontSize: 18,
-                            color: const Color(0xff000000),
-                            letterSpacing: 0.45,
-                          ),
-                          softWrap: false,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Align(
-                  alignment: Alignment(0.017, -0.397),
-                  child: SizedBox(
-                    width: 100.0,
-                    height: 100.0,
-                    child:
-                        // Adobe XD layer: 'Golf' (group)
-                        Stack(
-                      children: <Widget>[
-                        Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xffffffff),
-                            borderRadius: BorderRadius.circular(20.0),
-                            border: Border.all(
-                                width: 1.5, color: const Color(0xffaaaaad)),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 35.0, middle: 0.5077),
-                          Pin(size: 21.0, end: 11.0),
-                          child: Text(
-                            'Golf',
-                            style: TextStyle(
-                              fontFamily: 'SF Pro',
-                              fontSize: 18,
-                              color: const Color(0xff000000),
-                              letterSpacing: 0.45,
-                            ),
-                            softWrap: false,
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment(-0.005, -0.431),
-                          child: SizedBox(
-                            width: 56.0,
-                            height: 44.0,
-                            child: Stack(
-                              children: <Widget>[
-                                SizedBox.expand(
-                                    child: SvgPicture.string(
-                                  _svg_r94gs,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                )),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 100.0, end: 20.0),
-                  Pin(size: 100.0, middle: 0.3017),
-                  child:
-                      // Adobe XD layer: 'Tennis' (group)
-                      Stack(
-                    children: <Widget>[
-                      Container(
-                        decoration: BoxDecoration(
-                          color: const Color(0xffffffff),
-                          borderRadius: BorderRadius.circular(20.0),
-                          border: Border.all(
-                              width: 1.5, color: const Color(0xffaaaaad)),
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment(0.007, -0.329),
-                        child: SizedBox(
-                          width: 52.0,
-                          height: 52.0,
-                          child: Stack(
-                            children: <Widget>[
-                              SizedBox.expand(
-                                  child: SvgPicture.string(
-                                _svg_wphjua,
-                                allowDrawingOutsideViewBox: true,
-                                fit: BoxFit.fill,
-                              )),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Pinned.fromPins(
-                        Pin(size: 54.0, middle: 0.5),
-                        Pin(size: 21.0, end: 11.0),
-                        child: Text(
-                          'Tennis',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro',
-                            fontSize: 18,
-                            color: const Color(0xff000000),
-                            letterSpacing: 0.45,
-                          ),
-                          softWrap: false,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 100.0, start: 25.0),
-                  Pin(size: 100.0, end: 0.0),
-                  child:
-                      // Adobe XD layer: 'Baseball' (group)
-                      Stack(
-                    children: <Widget>[
-                      Container(
-                        decoration: BoxDecoration(
-                          color: const Color(0xffffffff),
-                          borderRadius: BorderRadius.circular(20.0),
-                          border: Border.all(
-                              width: 1.5, color: const Color(0xffaaaaad)),
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment(0.002, -0.36),
-                        child: SizedBox(
-                          width: 46.0,
-                          height: 50.0,
-                          child: Stack(
-                            children: <Widget>[
-                              Padding(
-                                padding:
-                                    EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 0.0),
-                                child: SizedBox.expand(
-                                    child: SvgPicture.string(
-                                  _svg_kapr0,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                )),
-                              ),
-                              Pinned.fromPins(
-                                Pin(size: 1.0, middle: 0.5293),
-                                Pin(size: 1.0, start: 9.7),
-                                child: SvgPicture.string(
-                                  _svg_me2dh,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                              Pinned.fromPins(
-                                Pin(size: 6.8, middle: 0.7493),
-                                Pin(size: 11.5, start: 0.8),
-                                child: SvgPicture.string(
-                                  _svg_bzv42,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment(0.251, -1.0),
-                                child: SizedBox(
-                                  width: 6.0,
-                                  height: 13.0,
-                                  child: SvgPicture.string(
-                                    _svg_wlrwjw,
-                                    allowDrawingOutsideViewBox: true,
-                                  ),
-                                ),
-                              ),
-                              Pinned.fromPins(
-                                Pin(size: 1.0, middle: 0.5279),
-                                Pin(size: 1.0, start: 3.2),
-                                child: SvgPicture.string(
-                                  _svg_pl478x,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                              Pinned.fromPins(
-                                Pin(size: 1.5, middle: 0.5172),
-                                Pin(size: 5.7, start: 3.9),
-                                child: SvgPicture.string(
-                                  _svg_kkma,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Pinned.fromPins(
-                        Pin(size: 71.0, end: 14.0),
-                        Pin(size: 21.0, end: 11.0),
-                        child: Text(
-                          'Baseball',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro',
-                            fontSize: 18,
-                            color: const Color(0xff000000),
-                            letterSpacing: 0.45,
-                          ),
-                          softWrap: false,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Align(
-                  alignment: Alignment(0.017, 1.0),
-                  child: SizedBox(
-                    width: 100.0,
-                    height: 100.0,
-                    child:
-                        // Adobe XD layer: 'Fottball' (group)
-                        Stack(
-                      children: <Widget>[
-                        Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xffffffff),
-                            borderRadius: BorderRadius.circular(20.0),
-                            border: Border.all(
-                                width: 1.5, color: const Color(0xffaaaaad)),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment(-0.042, -0.313),
-                          child: SizedBox(
-                            width: 58.0,
-                            height: 39.0,
-                            child: Stack(
-                              children: <Widget>[
-                                SizedBox.expand(
-                                    child: SvgPicture.string(
-                                  _svg_rdetrl,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                )),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 67.0, middle: 0.5152),
-                          Pin(size: 21.0, end: 11.0),
-                          child: Text(
-                            'Football',
-                            style: TextStyle(
-                              fontFamily: 'SF Pro',
-                              fontSize: 18,
-                              color: const Color(0xff000000),
-                              letterSpacing: 0.45,
-                            ),
-                            softWrap: false,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 100.0, end: 20.0),
-                  Pin(size: 100.0, end: 0.0),
-                  child:
-                      // Adobe XD layer: 'Soccer' (group)
-                      Stack(
-                    children: <Widget>[
-                      Container(
-                        decoration: BoxDecoration(
-                          color: const Color(0xffffffff),
-                          borderRadius: BorderRadius.circular(20.0),
-                          border: Border.all(
-                              width: 1.5, color: const Color(0xffaaaaad)),
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment(-0.088, -0.334),
-                        child: SizedBox(
-                          width: 44.0,
-                          height: 44.0,
-                          child: Stack(
-                            children: <Widget>[
-                              Align(
-                                alignment: Alignment(-1.0, -0.287),
-                                child: SizedBox(
-                                  width: 13.0,
-                                  height: 18.0,
-                                  child: SvgPicture.string(
-                                    _svg_bujgh,
-                                    allowDrawingOutsideViewBox: true,
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment(-0.078, 1.0),
-                                child: SizedBox(
-                                  width: 18.0,
-                                  height: 4.0,
-                                  child: SvgPicture.string(
-                                    _svg_e9qn75,
-                                    allowDrawingOutsideViewBox: true,
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment(-0.185, 0.438),
-                                child: SizedBox(
-                                  width: 22.0,
-                                  height: 18.0,
-                                  child: SvgPicture.string(
-                                    _svg_lkqcsg,
-                                    allowDrawingOutsideViewBox: true,
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment(0.98, 0.368),
-                                child: SizedBox(
-                                  width: 1.0,
-                                  height: 1.0,
-                                  child: SvgPicture.string(
-                                    _svg_nwlrxh,
-                                    allowDrawingOutsideViewBox: true,
-                                  ),
-                                ),
-                              ),
-                              Pinned.fromPins(
-                                Pin(size: 9.7, end: 4.4),
-                                Pin(size: 10.0, end: 3.0),
-                                child: SvgPicture.string(
-                                  _svg_v2j2at,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                              Pinned.fromPins(
-                                Pin(size: 7.2, start: 3.2),
-                                Pin(size: 9.0, end: 4.3),
-                                child: SvgPicture.string(
-                                  _svg_pqhfpm,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment(0.515, -1.0),
-                                child: SizedBox(
-                                  width: 15.0,
-                                  height: 6.0,
-                                  child: SvgPicture.string(
-                                    _svg_klz0h4,
-                                    allowDrawingOutsideViewBox: true,
-                                  ),
-                                ),
-                              ),
-                              Pinned.fromPins(
-                                Pin(size: 12.3, middle: 0.4349),
-                                Pin(size: 10.6, start: 4.9),
-                                child: SvgPicture.string(
-                                  _svg_yjes,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment(-0.563, -0.986),
-                                child: SizedBox(
-                                  width: 12.0,
-                                  height: 6.0,
-                                  child: SvgPicture.string(
-                                    _svg_q7apwy,
-                                    allowDrawingOutsideViewBox: true,
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment(1.0, -0.298),
-                                child: SizedBox(
-                                  width: 17.0,
-                                  height: 19.0,
-                                  child: SvgPicture.string(
-                                    _svg_ffgfgu,
-                                    allowDrawingOutsideViewBox: true,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Pinned.fromPins(
-                        Pin(size: 59.0, middle: 0.5122),
-                        Pin(size: 21.0, end: 11.0),
-                        child: Text(
-                          'Soccer',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro',
-                            fontSize: 18,
-                            color: const Color(0xff000000),
-                            letterSpacing: 0.45,
-                          ),
-                          softWrap: false,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 7.1, end: 0.0),
-                  Pin(size: 14.0, start: 10.0),
-                  child:
-                      // Adobe XD layer: 'arrow-ios-forward-o…' (group)
-                      PageLink(
-                    links: [
-                      PageLinkInfo(
-                        transition: LinkTransition.Fade,
-                        ease: Curves.easeOut,
-                        duration: 0.3,
-                        pageBuilder: () => CategoriesScreen(),
-                      ),
-                    ],
-                    child: Stack(
-                      children: <Widget>[
-                        // Adobe XD layer: 'arrow-ios-forward' (group)
-                        Stack(
-                          children: <Widget>[
-                            SizedBox.expand(
-                                child: SvgPicture.string(
-                              _svg_qtuq1,
-                              allowDrawingOutsideViewBox: true,
-                              fit: BoxFit.fill,
-                            )),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: SizedBox(
-                    width: 150.0,
-                    height: 34.0,
-                    child: Text(
-                      'Categories',
-                      style: TextStyle(
-                        fontFamily: 'SF Pro',
-                        fontSize: 28,
-                        color: const Color(0xff000000),
-                        fontWeight: FontWeight.w800,
-                      ),
-                      softWrap: false,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Pinned.fromPins(
-            Pin(start: 10.0, end: 0.3),
-            Pin(size: 154.0, middle: 0.3693),
-            child:
-                // Adobe XD layer: 'Recommendations' (group)
-                Stack(
-              children: <Widget>[
-                Pinned.fromPins(
-                  Pin(size: 256.0, start: 5.0),
-                  Pin(size: 34.0, start: 0.0),
-                  child: Text(
-                    'Recommendations',
-                    style: TextStyle(
-                      fontFamily: 'SF Pro',
-                      fontSize: 28,
-                      color: const Color(0xff000000),
-                      fontWeight: FontWeight.w800,
-                    ),
-                    softWrap: false,
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 7.1, end: 19.7),
-                  Pin(size: 14.0, start: 10.0),
-                  child:
-                      // Adobe XD layer: 'arrow-ios-forward-o…' (group)
-                      Stack(
-                    children: <Widget>[
-                      // Adobe XD layer: 'arrow-ios-forward' (group)
-                      Stack(
-                        children: <Widget>[
-                          SizedBox.expand(
-                              child: SvgPicture.string(
-                            _svg_qtuq1,
-                            allowDrawingOutsideViewBox: true,
-                            fit: BoxFit.fill,
-                          )),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(start: 0.0, end: 0.0),
-                  Pin(size: 100.0, end: 0.0),
-                  child: SingleChildScrollView(
-                    primary: false,
-                    scrollDirection: Axis.horizontal,
-                    child: SizedBox(
-                      width: 576.0,
-                      height: 100.0,
-                      child: Stack(
-                        children: <Widget>[
-                          Pinned.fromPins(
-                            Pin(size: 177.8, end: -158.1),
-                            Pin(start: 0.0, end: 0.0),
-                            child:
-                                // Adobe XD layer: 'baseball-field-imag…' (shape)
-                                Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: const AssetImage(''),
-                                  fit: BoxFit.fill,
-                                ),
-                                borderRadius: BorderRadius.circular(15.0),
-                              ),
-                            ),
-                          ),
-                          Pinned.fromPins(
-                            Pin(size: 178.7, end: 40.0),
-                            Pin(start: 0.0, end: 0.0),
-                            child:
-                                // Adobe XD layer: 'tennis-court-image2' (shape)
-                                Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: const AssetImage(''),
-                                  fit: BoxFit.fill,
-                                ),
-                                borderRadius: BorderRadius.circular(15.0),
-                              ),
-                            ),
-                          ),
-                          Pinned.fromPins(
-                            Pin(size: 178.7, start: 0.0),
-                            Pin(start: 0.0, end: 0.0),
-                            child:
-                                // Adobe XD layer: 'bball-court-image2' (shape)
-                                Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: const AssetImage(''),
-                                  fit: BoxFit.fill,
-                                ),
-                                borderRadius: BorderRadius.circular(15.0),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Pinned.fromPins(
-            Pin(start: 10.0, end: 0.3),
-            Pin(size: 207.0, end: 115.0),
-            child:
-                // Adobe XD layer: 'Nearby' (group)
-                Stack(
-              children: <Widget>[
-                Pinned.fromPins(
-                  Pin(size: 98.0, start: 5.0),
-                  Pin(size: 34.0, start: 0.0),
-                  child: Text(
-                    'Nearby',
-                    style: TextStyle(
-                      fontFamily: 'SF Pro',
-                      fontSize: 28,
-                      color: const Color(0xff000000),
-                      fontWeight: FontWeight.w800,
-                    ),
-                    softWrap: false,
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 7.1, end: 19.7),
-                  Pin(size: 14.0, start: 10.0),
-                  child:
-                      // Adobe XD layer: 'arrow-ios-forward-o…' (group)
-                      Stack(
-                    children: <Widget>[
-                      // Adobe XD layer: 'arrow-ios-forward' (group)
-                      Stack(
-                        children: <Widget>[
-                          SizedBox.expand(
-                              child: SvgPicture.string(
-                            _svg_qtuq1,
-                            allowDrawingOutsideViewBox: true,
-                            fit: BoxFit.fill,
-                          )),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(start: 0.0, end: 0.0),
-                  Pin(size: 154.0, middle: 1.0),
-                  child: SingleChildScrollView(
-                    primary: false,
-                    scrollDirection: Axis.horizontal,
-                    child: SizedBox(
-                      width: 573.0,
-                      height: 154.0,
-                      child: Stack(
-                        children: <Widget>[
-                          Pinned.fromPins(
-                            Pin(size: 89.0, end: -82.3),
-                            Pin(size: 29.0, end: 0.0),
-                            child: Text(
-                              '7.8 Miles',
-                              style: TextStyle(
-                                fontFamily: 'SF Pro',
-                                fontSize: 24,
-                                color: const Color(0x80000000),
-                                fontWeight: FontWeight.w300,
-                              ),
-                              softWrap: false,
-                            ),
-                          ),
-                          Align(
-                            alignment: Alignment(0.277, 1.0),
-                            child: SizedBox(
-                              width: 92.0,
-                              height: 29.0,
-                              child: Text(
-                                '5.6 Miles',
-                                style: TextStyle(
-                                  fontFamily: 'SF Pro',
-                                  fontSize: 24,
-                                  color: const Color(0x80000000),
-                                  fontWeight: FontWeight.w300,
-                                ),
-                                softWrap: false,
-                              ),
-                            ),
-                          ),
-                          Pinned.fromPins(
-                            Pin(size: 91.0, start: 5.0),
-                            Pin(size: 29.0, end: 0.0),
-                            child: Text(
-                              '3.4 Miles',
-                              style: TextStyle(
-                                fontFamily: 'SF Pro',
-                                fontSize: 24,
-                                color: const Color(0x80000000),
-                                fontWeight: FontWeight.w300,
-                              ),
-                              softWrap: false,
-                            ),
-                          ),
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child:
-                                // Adobe XD layer: 'sports-complex-imag…' (shape)
-                                Container(
-                              width: 188.0,
-                              height: 125.0,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: const AssetImage(''),
-                                  fit: BoxFit.fill,
-                                ),
-                                borderRadius: BorderRadius.circular(15.0),
-                              ),
-                            ),
-                          ),
-                          Pinned.fromPins(
-                            Pin(size: 187.4, end: 27.3),
-                            Pin(size: 125.0, start: 0.0),
-                            child:
-                                // Adobe XD layer: 'sports-complex-imag…' (shape)
-                                Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: const AssetImage(''),
-                                  fit: BoxFit.fill,
-                                ),
-                                borderRadius: BorderRadius.circular(15.0),
-                              ),
-                            ),
-                          ),
-                          Pinned.fromPins(
-                            Pin(size: 166.7, end: -154.9),
-                            Pin(size: 125.0, start: 0.0),
-                            child:
-                                // Adobe XD layer: 'volleyball-court-im…' (shape)
-                                Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: const AssetImage(''),
-                                  fit: BoxFit.fill,
-                                ),
-                                borderRadius: BorderRadius.circular(15.0),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Pinned.fromPins(
-            Pin(start: -41.0, end: 0.0),
-            Pin(size: 96.0, middle: 0.6434),
-            child:
-                // Adobe XD layer: 'Nav-Bar' (group)
-                Stack(
-              children: <Widget>[
-                // Adobe XD layer: 'Nav-Bar-Background' (shape)
-                Container(
-                  decoration: BoxDecoration(
-                    color: const Color(0xfee8e8e8),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(25.0),
-                      topRight: Radius.circular(25.0),
-                    ),
-                    border:
-                        Border.all(width: 1.0, color: const Color(0xfe707070)),
-                  ),
-                  margin: EdgeInsets.fromLTRB(41.0, 0.0, 0.0, 0.0),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 42.0, end: 22.0),
-                  Pin(size: 42.0, start: 14.0),
-                  child:
-                      // Adobe XD layer: 'Profile-Tab' (group)
-                      PageLink(
-                    links: [
-                      PageLinkInfo(
-                        ease: Curves.easeInOut,
-                        duration: 0.5,
-                        pageBuilder: () => ProfileScreen(),
-                      ),
-                    ],
-                    child: Stack(
-                      children: <Widget>[],
-                    ),
-                  ),
-                ),
-                Transform.translate(
-                  offset: Offset(233.7, 14.0),
-                  child: SizedBox(
-                    width: 42.0,
-                    height: 42.0,
-                    child:
-                        // Adobe XD layer: 'Balls Icon' (group)
-                        PageLink(
-                      links: [
-                        PageLinkInfo(
-                          ease: Curves.easeInOut,
-                          duration: 0.5,
-                          pageBuilder: () => ReservationsScreen(),
-                        ),
-                      ],
-                      child: Stack(
-                        children: <Widget>[
-                          SizedBox(
-                            width: 27.0,
-                            height: 30.0,
-                            child:
-                                // Adobe XD layer: 'Basketball' (group)
-                                Stack(
-                              children: <Widget>[
-                                SizedBox(
-                                  width: 27.0,
-                                  height: 30.0,
-                                  child: SvgPicture.string(
-                                    _svg_klwhhh,
-                                    allowDrawingOutsideViewBox: true,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Transform.translate(
-                            offset: Offset(19.4, 10.1),
-                            child: SizedBox(
-                              width: 23.0,
-                              height: 25.0,
-                              child:
-                                  // Adobe XD layer: 'Soccerball' (group)
-                                  Stack(
-                                children: <Widget>[
-                                  SizedBox(
-                                    width: 23.0,
-                                    height: 25.0,
-                                    child: SvgPicture.string(
-                                      _svg_kl5rgt,
-                                      allowDrawingOutsideViewBox: true,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Transform.translate(
-                            offset: Offset(5.9, 24.0),
-                            child: SizedBox(
-                              width: 28.0,
-                              height: 18.0,
-                              child:
-                                  // Adobe XD layer: 'Football' (group)
-                                  Stack(
-                                children: <Widget>[
-                                  SizedBox(
-                                    width: 28.0,
-                                    height: 18.0,
-                                    child: SvgPicture.string(
-                                      _svg_piv5tj,
-                                      allowDrawingOutsideViewBox: true,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 42.0, middle: 0.3443),
-                  Pin(size: 42.0, start: 14.0),
-                  child:
-                      // Adobe XD layer: 'Search-Tab' (group)
-                      PageLink(
-                    links: [
-                      PageLinkInfo(
-                        ease: Curves.easeInOut,
-                        duration: 0.5,
-                        pageBuilder: () => SearchScreenMapView(),
-                      ),
-                    ],
-                    child: Stack(
-                      children: <Widget>[
-                        // Adobe XD layer: 'compass-outline' (group)
-                        Stack(
-                          children: <Widget>[
-                            // Adobe XD layer: 'compass' (group)
-                            Stack(
-                              children: <Widget>[
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Container(
-                                    width: 24.0,
-                                    height: 24.0,
-                                    color: Colors.transparent,
-                                  ),
-                                ),
-                                Padding(
-                                  padding:
-                                      EdgeInsets.fromLTRB(1.0, 2.0, 0.0, 0.0),
-                                  child: SizedBox.expand(
-                                      child: SvgPicture.string(
-                                    _svg_vlehqa,
-                                    allowDrawingOutsideViewBox: true,
-                                    fit: BoxFit.fill,
-                                  )),
-                                ),
-                                Align(
-                                  alignment: Alignment(0.038, 0.077),
-                                  child: SizedBox(
-                                    width: 16.0,
-                                    height: 16.0,
-                                    child: SvgPicture.string(
-                                      _svg_mqaah7,
-                                      allowDrawingOutsideViewBox: true,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 42.0, middle: 0.7541),
-                  Pin(size: 42.0, start: 14.0),
-                  child:
-                      // Adobe XD layer: 'Inbox-Tab' (group)
-                      PageLink(
-                    links: [
-                      PageLinkInfo(
-                        ease: Curves.easeInOut,
-                        duration: 0.5,
-                        pageBuilder: () => InboxScreen(),
-                      ),
-                    ],
-                    child: Stack(
-                      children: <Widget>[],
-                    ),
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 52.0, start: 59.0),
-                  Pin(size: 45.0, start: 14.0),
-                  child:
-                      // Adobe XD layer: 'Home-Tab' (group)
-                      Stack(
-                    children: <Widget>[
-                      Pinned.fromPins(
-                        Pin(start: 0.0, end: 0.0),
-                        Pin(size: 21.0, end: 0.0),
-                        child: Text(
-                          'Home',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro',
-                            fontSize: 18,
-                            color: const Color(0xff2e9eff),
-                            fontWeight: FontWeight.w800,
-                          ),
-                          softWrap: false,
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.topCenter,
-                        child: SizedBox(
-                          width: 24.0,
-                          height: 24.0,
-                          child:
-                              // Adobe XD layer: 'home-outline' (group)
-                              Stack(
-                            children: <Widget>[
-                              // Adobe XD layer: 'home-outline' (group)
-                              Stack(
-                                children: <Widget>[
-                                  // Adobe XD layer: 'home' (group)
-                                  Stack(
-                                    children: <Widget>[
-                                      Container(
-                                        color: Colors.transparent,
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 3.0, vertical: 2.0),
-                                        child: SizedBox.expand(
-                                            child: SvgPicture.string(
-                                          _svg_xkzzp9,
-                                          allowDrawingOutsideViewBox: true,
-                                          fit: BoxFit.fill,
-                                        )),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Align(
-                  alignment: Alignment(-1.0, 0.425),
-                  child: SizedBox(
-                    width: 89.0,
-                    height: 9.0,
-                    child:
-                        // Adobe XD layer: 'Animated-Underline' (group)
-                        Stack(
-                      children: <Widget>[
-                        Pinned.fromPins(
-                          Pin(size: 98.0, end: -89.0),
-                          Pin(start: 0.0, end: 0.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: const Color(0xff2e9eff),
-                              borderRadius: BorderRadius.circular(100.0),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xffffffff),
-                            borderRadius: BorderRadius.circular(100.0),
-                            border: Border.all(
-                                width: 1.0, color: const Color(0xff707070)),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
+        ),
       ),
+      backgroundColor: const Color(0xffffffff),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+                child: Text(
+                  "Categories",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      fontFamily: 'SF Pro',
+                      fontSize: 28,
+                      color: Color(0xff000000),
+                      fontWeight: FontWeight.w800),
+                ),
+              ),
+            ),
+            GridView.count(
+              shrinkWrap: true,
+              primary: true,
+              crossAxisCount: 3,
+              childAspectRatio: 10 / 5,
+              crossAxisSpacing: 20.0,
+              mainAxisSpacing: 30.0,
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+              children: <Widget>[
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0))),
+                  ),
+                  child: Column(
+                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: SvgPicture.string(
+                          svgs.blueBasketball5,
+                          allowDrawingOutsideViewBox: true,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      const Text("Button text"),
+                    ],
+                  ),
+                ),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0))),
+                  ),
+                  child: Column(
+                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: SvgPicture.string(
+                          svgs.blueBasketball5,
+                          allowDrawingOutsideViewBox: true,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      const Text("Button text"),
+                    ],
+                  ),
+                ),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0))),
+                  ),
+                  child: Column(
+                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: SvgPicture.string(
+                          svgs.blueBasketball5,
+                          allowDrawingOutsideViewBox: true,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      const Text("Button text"),
+                    ],
+                  ),
+                ),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0))),
+                  ),
+                  child: Column(
+                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: SvgPicture.string(
+                          svgs.blueBasketball5,
+                          allowDrawingOutsideViewBox: true,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      const Text("Button text"),
+                    ],
+                  ),
+                ),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0))),
+                  ),
+                  child: Column(
+                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: SvgPicture.string(
+                          svgs.blueBasketball5,
+                          allowDrawingOutsideViewBox: true,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      const Text("Button text"),
+                    ],
+                  ),
+                ),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0))),
+                  ),
+                  child: Column(
+                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: SvgPicture.string(
+                          svgs.blueBasketball5,
+                          allowDrawingOutsideViewBox: true,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      const Text("Button text"),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const Divider(),
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+                child: Text(
+                  "Recommendations",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      fontFamily: 'SF Pro',
+                      fontSize: 28,
+                      color: Color(0xff000000),
+                      fontWeight: FontWeight.w800),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 80.0,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: List.generate(10, (int index) {
+                  return Card(
+                    color: Colors.blue[index * 100],
+                    child: SizedBox(
+                      width: 50.0,
+                      height: 50.0,
+                      child: Text("$index"),
+                    ),
+                  );
+                }),
+              ),
+            ),
+            const Divider(),
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+                child: Text(
+                  "New Arrivals",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      fontFamily: 'SF Pro',
+                      fontSize: 28,
+                      color: Color(0xff000000),
+                      fontWeight: FontWeight.w800),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(30.0),
+                    child: Stack(
+                      children: [
+                        CarouselSlider(
+                            items: const <Widget>[
+                              Card(
+                                color: Colors.green,
+                                child: Center(
+                                  child: Text('CarouselSlider Page 1'),
+                                ),
+                              ),
+                              Card(
+                                color: Colors.amber,
+                                child: Center(
+                                  child: Text('CarouselSlider Page 2'),
+                                ),
+                              ),
+                              Card(
+                                color: Colors.red,
+                                child: Center(
+                                  child: Text('CarouselSlider Page 3'),
+                                ),
+                              ),
+                            ],
+                            options: CarouselOptions(
+                              viewportFraction: 1.0,
+                              height: 200,
+                              initialPage: 0,
+                              autoPlay: true,
+                              autoPlayInterval: const Duration(seconds: 3),
+                              autoPlayAnimationDuration:
+                                  const Duration(milliseconds: 800),
+                              autoPlayCurve: Curves.fastOutSlowIn,
+                              enlargeCenterPage: true,
+                              onPageChanged: (index, reason) {
+                                setState(() {
+                                  _current = index;
+                                });
+                              },
+                              scrollDirection: Axis.horizontal,
+                            )),
+                        Positioned.fill(
+                          child: Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Padding(
+                              padding: const EdgeInsets.only(bottom: 10),
+                              child: AnimatedSmoothIndicator(
+                                activeIndex: _current,
+                                count: 3,
+                                effect: const ExpandingDotsEffect(
+                                    dotHeight: 10,
+                                    dotWidth: 10,
+                                    activeDotColor: Colors.white,
+                                    dotColor: Colors.grey),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    //child: Image.asset('assets/boc_pool.jpg'),
+                  ),
+                  const Text(
+                    "Bocage Racket Club",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        height: 1.3,
+                        fontFamily: 'SF Pro',
+                        fontSize: 18,
+                        color: Color(0xff000000),
+                        fontWeight: FontWeight.w800),
+                  ),
+                  const Text(
+                    "7600 Jefferson Hwy, Baton Rouge",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        height: 1.3,
+                        fontFamily: 'SF Pro',
+                        fontSize: 18,
+                        color: Color(0xff000000),
+                        fontWeight: FontWeight.w400),
+                  ),
+                  const Text(
+                    "\$250 / hour",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        height: 1.3,
+                        fontFamily: 'SF Pro',
+                        fontSize: 18,
+                        color: Color(0xff000000),
+                        fontWeight: FontWeight.w800),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: const NavBar(),
     );
   }
 }
-
-const String _svg_zbm1zx =
-    '<svg viewBox="0.0 0.0 428.0 241.5" ><path  d="M 0 0 L 428 0 L 428 241.5208740234375 L 0 241.5208740234375 L 0 0 Z" fill="#343a40" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
-const String _svg_il3nod =
-    '<svg viewBox="0.0 0.0 52.4 59.7" ><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.0" stop-color="#16dbff" /><stop offset="0.081171" stop-color="#1cdbff" /><stop offset="0.190838" stop-color="#2ddeff" /><stop offset="0.316758" stop-color="#49e2ff" /><stop offset="0.454834" stop-color="#71e9ff" /><stop offset="0.602805" stop-color="#a3f0ff" /><stop offset="0.756721" stop-color="#e0faff" /><stop offset="0.826849" stop-color="#ffffff" /></linearGradient></defs><path transform="translate(-2185.62, -2086.15)" d="M 2194.508056640625 2115.685302734375 C 2194.597412109375 2116.483642578125 2195.27685546875 2117.06103515625 2196.0263671875 2116.973876953125 C 2196.77490234375 2116.88720703125 2197.3095703125 2116.169189453125 2197.22021484375 2115.37060546875 C 2197.130859375 2114.572265625 2196.45068359375 2113.995361328125 2195.700439453125 2114.082275390625 C 2194.951171875 2114.169189453125 2194.41650390625 2114.887451171875 2194.508056640625 2115.685302734375 M 2187.6591796875 2120.78759765625 C 2187.77001953125 2121.76220703125 2188.59814453125 2122.466796875 2189.51318359375 2122.35888671875 C 2190.4267578125 2122.2529296875 2191.07861328125 2121.377197265625 2190.968505859375 2120.403564453125 C 2190.86083984375 2119.428466796875 2190.029296875 2118.725341796875 2189.11669921875 2118.8330078125 C 2188.20263671875 2118.938232421875 2187.5498046875 2119.812255859375 2187.6591796875 2120.78759765625 Z M 2217.28564453125 2086.14697265625 C 2217.467529296875 2086.221435546875 2242.17578125 2097.350341796875 2237.399658203125 2123.672607421875 C 2235.625 2131.715576171875 2230.81591796875 2135.69482421875 2227.0166015625 2136.932373046875 C 2215.70556640625 2140.6181640625 2205.406494140625 2127.61669921875 2199.09765625 2119.2626953125 C 2197.60205078125 2117.283447265625 2195.50341796875 2118.322021484375 2197.37060546875 2121.121337890625 C 2203.61669921875 2130.49072265625 2211.369384765625 2144.491943359375 2229.149658203125 2138.339599609375 C 2215.3125 2147.9189453125 2202.334228515625 2138.21533203125 2195.185791015625 2126.546630859375 C 2193.454833984375 2123.723388671875 2192.61376953125 2123.971923828125 2192.041015625 2124.445556640625 C 2191.3173828125 2125.0439453125 2192.69580078125 2127.64306640625 2194.46533203125 2130.01416015625 C 2199.9482421875 2139.2236328125 2209.822265625 2145.82763671875 2219.66259765625 2144.657958984375 C 2197.138916015625 2153.259521484375 2174.04638671875 2111.95263671875 2192.1005859375 2117.52099609375 C 2190.57568359375 2110.270263671875 2197.5732421875 2109.764892578125 2201.370849609375 2113.92333984375 C 2208.63818359375 2121.87548828125 2219.63525390625 2136.481689453125 2227.692138671875 2129.9453125 C 2228.43896484375 2129.34033203125 2229.201171875 2128.580810546875 2229.8525390625 2127.5615234375 C 2239.76904296875 2112.0615234375 2229.6376953125 2095.130859375 2217.28564453125 2086.14697265625 Z" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_gci8l7 =
-    '<svg viewBox="-4.2 -7.4 68.1 67.2" ><defs><linearGradient id="gradient" x1="0.0" y1="0.500089" x2="1.0" y2="0.500089"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2854.14)" d="M 2020.2939453125 2913.8291015625 L 2020.2939453125 2913.83349609375 L 2088.4228515625 2913.836181640625 L 2088.4228515625 2913.83203125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2850.87)" d="M 2020.2939453125 2910.695556640625 L 2020.2939453125 2910.3076171875 L 2088.4228515625 2910.31005859375 L 2088.4228515625 2910.69970703125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2847.57)" d="M 2020.2939453125 2907.13427734375 L 2020.2939453125 2906.74609375 L 2088.4228515625 2906.7470703125 L 2088.4228515625 2907.13671875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2844.24)" d="M 2020.2939453125 2903.5498046875 L 2020.2939453125 2903.16015625 L 2088.4228515625 2903.164306640625 L 2088.4228515625 2903.552734375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500006" x2="1.0" y2="0.500006"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2840.94)" d="M 2020.2939453125 2899.9873046875 L 2020.2939453125 2899.59765625 L 2088.4228515625 2899.6005859375 L 2088.4228515625 2899.98876953125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2837.61)" d="M 2020.2939453125 2896.40234375 L 2020.2939453125 2896.0126953125 L 2088.4228515625 2896.015625 L 2088.4228515625 2896.4052734375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2834.31)" d="M 2020.2939453125 2892.839599609375 L 2020.2939453125 2892.451171875 L 2088.4228515625 2892.4541015625 L 2088.4228515625 2892.84228515625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499991" x2="1.0" y2="0.499991"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2830.99)" d="M 2020.2939453125 2889.2626953125 L 2020.2939453125 2888.873046875 L 2088.4228515625 2888.877197265625 L 2088.4228515625 2889.263916015625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2827.69)" d="M 2020.2939453125 2885.700439453125 L 2020.2939453125 2885.3125 L 2088.4228515625 2885.31494140625 L 2088.4228515625 2885.703369140625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2824.38)" d="M 2020.2939453125 2882.1376953125 L 2020.2939453125 2881.75 L 2088.4228515625 2881.751220703125 L 2088.4228515625 2882.140869140625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2821.06)" d="M 2020.2939453125 2878.552001953125 L 2020.2939453125 2878.1640625 L 2088.4228515625 2878.1669921875 L 2088.4228515625 2878.55517578125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2817.75)" d="M 2020.2939453125 2874.99072265625 L 2020.2939453125 2874.6025390625 L 2088.4228515625 2874.60546875 L 2088.4228515625 2874.99365234375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500005" x2="1.0" y2="0.500005"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2814.43)" d="M 2020.2939453125 2871.40576171875 L 2020.2939453125 2871.017578125 L 2088.4228515625 2871.0205078125 L 2088.4228515625 2871.41015625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500006" x2="1.0" y2="0.500006"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2811.12)" d="M 2020.2939453125 2867.84375 L 2020.2939453125 2867.455078125 L 2088.4228515625 2867.45703125 L 2088.4228515625 2867.845947265625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500008" x2="1.0" y2="0.500008"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2807.8)" d="M 2020.2939453125 2864.264892578125 L 2020.2939453125 2863.876953125 L 2088.4228515625 2863.8798828125 L 2088.4228515625 2864.26904296875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500006" x2="1.0" y2="0.500006"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2804.5)" d="M 2020.2939453125 2860.70263671875 L 2020.2939453125 2860.314453125 L 2088.4228515625 2860.31689453125 L 2088.4228515625 2860.705322265625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2801.18)" d="M 2020.2939453125 2857.12109375 L 2020.2939453125 2856.7314453125 L 2088.4228515625 2856.73583984375 L 2088.4228515625 2857.1240234375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500006" x2="1.0" y2="0.500006"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2797.87)" d="M 2020.2939453125 2853.555908203125 L 2020.2939453125 2853.16796875 L 2088.4228515625 2853.1708984375 L 2088.4228515625 2853.558837890625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2794.55)" d="M 2020.2939453125 2849.97802734375 L 2020.2939453125 2849.5888671875 L 2088.4228515625 2849.5927734375 L 2088.4228515625 2849.98095703125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2791.24)" d="M 2020.2939453125 2846.41015625 L 2020.2939453125 2846.021484375 L 2088.4228515625 2846.0244140625 L 2088.4228515625 2846.4130859375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2787.92)" d="M 2020.2939453125 2842.8310546875 L 2020.2939453125 2842.44140625 L 2088.4228515625 2842.4443359375 L 2088.4228515625 2842.832275390625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2784.62)" d="M 2020.2939453125 2839.26708984375 L 2020.2939453125 2838.87890625 L 2088.4228515625 2838.8818359375 L 2088.4228515625 2839.269775390625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500005" x2="1.0" y2="0.500005"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2781.32)" d="M 2020.2939453125 2835.705322265625 L 2020.2939453125 2835.3173828125 L 2088.4228515625 2835.31884765625 L 2088.4228515625 2835.707275390625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2777.99)" d="M 2020.2939453125 2832.12255859375 L 2020.2939453125 2831.734375 L 2088.4228515625 2831.7373046875 L 2088.4228515625 2832.125244140625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2774.69)" d="M 2020.2939453125 2828.56005859375 L 2020.2939453125 2828.171875 L 2088.4228515625 2828.173583984375 L 2088.4228515625 2828.56298828125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2771.37)" d="M 2020.2939453125 2824.97998046875 L 2020.2939453125 2824.591796875 L 2088.4228515625 2824.59423828125 L 2088.4228515625 2824.982666015625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2768.06)" d="M 2020.2939453125 2821.4130859375 L 2020.2939453125 2821.0244140625 L 2088.4228515625 2821.02734375 L 2088.4228515625 2821.415771484375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2764.74)" d="M 2020.2939453125 2817.833251953125 L 2020.2939453125 2817.4453125 L 2088.4228515625 2817.4482421875 L 2088.4228515625 2817.83740234375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2761.44)" d="M 2020.2939453125 2814.271728515625 L 2020.2939453125 2813.8837890625 L 2088.4228515625 2813.885009765625 L 2088.4228515625 2814.2744140625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2758.11)" d="M 2020.2939453125 2810.687255859375 L 2020.2939453125 2810.298828125 L 2088.4228515625 2810.302978515625 L 2088.4228515625 2810.68994140625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2754.81)" d="M 2020.2939453125 2807.124755859375 L 2020.2939453125 2806.736328125 L 2088.4228515625 2806.7392578125 L 2088.4228515625 2807.126953125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500004" x2="1.0" y2="0.500004"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2751.49)" d="M 2020.2939453125 2803.54736328125 L 2020.2939453125 2803.158203125 L 2088.4228515625 2803.1611328125 L 2088.4228515625 2803.55029296875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2748.18)" d="M 2020.2939453125 2799.983642578125 L 2020.2939453125 2799.595703125 L 2088.4228515625 2799.59814453125 L 2088.4228515625 2799.986572265625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499992" x2="1.0" y2="0.499992"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2744.86)" d="M 2020.2939453125 2796.400390625 L 2020.2939453125 2796.0107421875 L 2088.4228515625 2796.014892578125 L 2088.4228515625 2796.401611328125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499996" x2="1.0" y2="0.499996"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2741.55)" d="M 2020.2939453125 2792.83740234375 L 2020.2939453125 2792.44921875 L 2088.4228515625 2792.4521484375 L 2088.4228515625 2792.84033203125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499994" x2="1.0" y2="0.499994"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2738.25)" d="M 2020.2939453125 2789.27490234375 L 2020.2939453125 2788.88671875 L 2088.4228515625 2788.887939453125 L 2088.4228515625 2789.2763671875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2734.93)" d="M 2020.2939453125 2785.691162109375 L 2020.2939453125 2785.302734375 L 2088.4228515625 2785.3056640625 L 2088.4228515625 2785.69384765625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499994" x2="1.0" y2="0.499994"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2731.62)" d="M 2020.2939453125 2782.12841796875 L 2020.2939453125 2781.740234375 L 2088.4228515625 2781.74169921875 L 2088.4228515625 2782.1298828125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2728.3)" d="M 2020.2939453125 2778.54833984375 L 2020.2939453125 2778.16015625 L 2088.4228515625 2778.1630859375 L 2088.4228515625 2778.55126953125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499996" x2="1.0" y2="0.499996"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2725.0)" d="M 2020.2939453125 2774.986572265625 L 2020.2939453125 2774.5986328125 L 2088.4228515625 2774.60009765625 L 2088.4228515625 2774.989501953125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2721.67)" d="M 2020.2939453125 2771.40380859375 L 2020.2939453125 2771.015625 L 2088.4228515625 2771.0185546875 L 2088.4228515625 2771.406494140625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2718.37)" d="M 2020.2939453125 2767.83984375 L 2020.2939453125 2767.453125 L 2088.4228515625 2767.454345703125 L 2088.4228515625 2767.843994140625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2715.05)" d="M 2020.2939453125 2764.26318359375 L 2020.2939453125 2763.875 L 2088.4228515625 2763.87744140625 L 2088.4228515625 2764.26611328125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500006" x2="1.0" y2="0.500006"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2711.73)" d="M 2020.2939453125 2760.678466796875 L 2020.2939453125 2760.2890625 L 2088.4228515625 2760.29296875 L 2088.4228515625 2760.681396484375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2708.42)" d="M 2020.2939453125 2757.115478515625 L 2020.2939453125 2756.7275390625 L 2088.4228515625 2756.73046875 L 2088.4228515625 2757.1181640625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2705.12)" d="M 2020.2939453125 2753.55322265625 L 2020.2939453125 2753.1650390625 L 2088.4228515625 2753.16796875 L 2088.4228515625 2753.555908203125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2701.79)" d="M 2020.2939453125 2749.9716796875 L 2020.2939453125 2749.58203125 L 2088.4228515625 2749.584716796875 L 2088.4228515625 2749.97265625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500004" x2="1.0" y2="0.500004"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2698.47)" d="M 2020.2939453125 2746.391357421875 L 2020.2939453125 2746.001953125 L 2088.4228515625 2746.005859375 L 2088.4228515625 2746.393798828125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500006" x2="1.0" y2="0.500006"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2695.17)" d="M 2020.2939453125 2742.82763671875 L 2020.2939453125 2742.439453125 L 2088.4228515625 2742.44189453125 L 2088.4228515625 2742.830078125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2691.87)" d="M 2020.2939453125 2739.264892578125 L 2020.2939453125 2738.876953125 L 2088.4228515625 2738.87939453125 L 2088.4228515625 2739.267822265625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2688.54)" d="M 2020.2939453125 2735.681640625 L 2020.2939453125 2735.2919921875 L 2088.4228515625 2735.294921875 L 2088.4228515625 2735.682861328125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2685.24)" d="M 2020.2939453125 2732.1201171875 L 2020.2939453125 2731.732421875 L 2088.4228515625 2731.7353515625 L 2088.4228515625 2732.123046875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2681.93)" d="M 2020.2939453125 2728.5546875 L 2020.2939453125 2728.16796875 L 2088.4228515625 2728.16943359375 L 2088.4228515625 2728.55908203125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2678.61)" d="M 2020.2939453125 2724.970703125 L 2020.2939453125 2724.58203125 L 2088.4228515625 2724.5849609375 L 2088.4228515625 2724.97314453125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500005" x2="1.0" y2="0.500005"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2675.3)" d="M 2020.2939453125 2721.41015625 L 2020.2939453125 2721.021484375 L 2088.4228515625 2721.022705078125 L 2088.4228515625 2721.412353515625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2671.99)" d="M 2020.2939453125 2717.831298828125 L 2020.2939453125 2717.443359375 L 2088.4228515625 2717.44580078125 L 2088.4228515625 2717.833984375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2668.66)" d="M 2020.2939453125 2714.247314453125 L 2020.2939453125 2713.859375 L 2088.4228515625 2713.863525390625 L 2088.4228515625 2714.251708984375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2665.36)" d="M 2020.2939453125 2710.6865234375 L 2020.2939453125 2710.296875 L 2088.4228515625 2710.2998046875 L 2088.4228515625 2710.687744140625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2662.03)" d="M 2020.2939453125 2707.1005859375 L 2020.2939453125 2706.7109375 L 2088.4228515625 2706.71533203125 L 2088.4228515625 2707.103515625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2658.73)" d="M 2020.2939453125 2703.538818359375 L 2020.2939453125 2703.150390625 L 2088.4228515625 2703.1533203125 L 2088.4228515625 2703.541259765625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2655.41)" d="M 2020.2939453125 2699.9599609375 L 2020.2939453125 2699.5703125 L 2088.4228515625 2699.57470703125 L 2088.4228515625 2699.96240234375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2652.1)" d="M 2020.2939453125 2696.39697265625 L 2020.2939453125 2696.0087890625 L 2088.4228515625 2696.01123046875 L 2088.4228515625 2696.39990234375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2648.8)" d="M 2020.2939453125 2692.83349609375 L 2020.2939453125 2692.4453125 L 2088.4228515625 2692.447998046875 L 2088.4228515625 2692.83642578125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2645.48)" d="M 2020.2939453125 2689.249267578125 L 2020.2939453125 2688.861328125 L 2088.4228515625 2688.8642578125 L 2088.4228515625 2689.252197265625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2642.17)" d="M 2020.2939453125 2685.68896484375 L 2020.2939453125 2685.30078125 L 2088.4228515625 2685.3037109375 L 2088.4228515625 2685.69189453125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2638.85)" d="M 2020.2939453125 2682.103515625 L 2020.2939453125 2681.71484375 L 2088.4228515625 2681.7177734375 L 2088.4228515625 2682.107421875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499994" x2="1.0" y2="0.499994"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2635.54)" d="M 2020.2939453125 2678.54150390625 L 2020.2939453125 2678.1533203125 L 2088.4228515625 2678.15625 L 2088.4228515625 2678.544189453125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2632.24)" d="M 2020.2939453125 2674.978515625 L 2020.2939453125 2674.591796875 L 2088.4228515625 2674.59326171875 L 2088.4228515625 2674.982666015625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2628.92)" d="M 2020.2939453125 2671.40185546875 L 2020.2939453125 2671.013671875 L 2088.4228515625 2671.01611328125 L 2088.4228515625 2671.404296875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2625.6)" d="M 2020.2939453125 2667.81640625 L 2020.2939453125 2667.427734375 L 2088.4228515625 2667.4306640625 L 2088.4228515625 2667.8203125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2622.29)" d="M 2020.2939453125 2664.25341796875 L 2020.2939453125 2663.865234375 L 2088.4228515625 2663.8681640625 L 2088.4228515625 2664.25634765625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2618.97)" d="M 2020.2939453125 2660.67626953125 L 2020.2939453125 2660.287109375 L 2088.4228515625 2660.291015625 L 2088.4228515625 2660.67919921875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2615.66)" d="M 2020.2939453125 2657.1083984375 L 2020.2939453125 2656.71875 L 2088.4228515625 2656.7216796875 L 2088.4228515625 2657.10986328125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2612.34)" d="M 2020.2939453125 2653.5302734375 L 2020.2939453125 2653.140625 L 2088.4228515625 2653.14453125 L 2088.4228515625 2653.53271484375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2609.04)" d="M 2020.2939453125 2649.96630859375 L 2020.2939453125 2649.578125 L 2088.4228515625 2649.5810546875 L 2088.4228515625 2649.96923828125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2605.74)" d="M 2020.2939453125 2646.403564453125 L 2020.2939453125 2646.015625 L 2088.4228515625 2646.01806640625 L 2088.4228515625 2646.4052734375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500004" x2="1.0" y2="0.500004"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2602.41)" d="M 2020.2939453125 2642.818115234375 L 2020.2939453125 2642.4296875 L 2088.4228515625 2642.4326171875 L 2088.4228515625 2642.82080078125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2599.11)" d="M 2020.2939453125 2639.25634765625 L 2020.2939453125 2638.8681640625 L 2088.4228515625 2638.8701171875 L 2088.4228515625 2639.25927734375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499993" x2="1.0" y2="0.499993"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2595.79)" d="M 2020.2939453125 2635.677978515625 L 2020.2939453125 2635.2900390625 L 2088.4228515625 2635.29248046875 L 2088.4228515625 2635.68115234375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500007" x2="1.0" y2="0.500007"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2592.48)" d="M 2020.2939453125 2632.111083984375 L 2020.2939453125 2631.72265625 L 2088.4228515625 2631.7255859375 L 2088.4228515625 2632.11376953125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2589.16)" d="M 2020.2939453125 2628.53271484375 L 2020.2939453125 2628.14453125 L 2088.4228515625 2628.1474609375 L 2088.4228515625 2628.53662109375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500006" x2="1.0" y2="0.500006"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2585.85)" d="M 2020.2939453125 2624.96826171875 L 2020.2939453125 2624.580078125 L 2088.4228515625 2624.5830078125 L 2088.4228515625 2624.970947265625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500007" x2="1.0" y2="0.500007"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2582.53)" d="M 2020.2939453125 2621.385498046875 L 2020.2939453125 2620.9970703125 L 2088.4228515625 2621 L 2088.4228515625 2621.3896484375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.46, -2579.23)" d="M 2020.2939453125 2617.82275390625 L 2020.294677734375 2617.4345703125 L 2088.4228515625 2617.4375 L 2088.4228515625 2617.8251953125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2575.91)" d="M 2020.304321289062 2614.24560546875 L 2020.304321289062 2613.8564453125 L 2088.43212890625 2613.8603515625 L 2088.43212890625 2614.24853515625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2572.6)" d="M 2020.304321289062 2610.68115234375 L 2020.304321289062 2610.29296875 L 2088.43212890625 2610.29541015625 L 2088.43212890625 2610.68408203125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2569.28)" d="M 2020.304321289062 2607.0986328125 L 2020.304321289062 2606.708984375 L 2088.43212890625 2606.712890625 L 2088.43212890625 2607.1015625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2565.97)" d="M 2020.304321289062 2603.534423828125 L 2020.304321289062 2603.146484375 L 2088.43212890625 2603.1494140625 L 2088.43212890625 2603.537353515625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500005" x2="1.0" y2="0.500005"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2562.66)" d="M 2020.304321289062 2599.95751953125 L 2020.304321289062 2599.568359375 L 2088.43212890625 2599.57080078125 L 2088.43212890625 2599.95947265625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500006" x2="1.0" y2="0.500006"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2559.35)" d="M 2020.304321289062 2596.39013671875 L 2020.304321289062 2596.001953125 L 2088.43212890625 2596.0048828125 L 2088.43212890625 2596.39306640625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500004" x2="1.0" y2="0.500004"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2556.04)" d="M 2020.304321289062 2592.827880859375 L 2020.304321289062 2592.439453125 L 2088.43212890625 2592.441162109375 L 2088.43212890625 2592.8291015625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500004" x2="1.0" y2="0.500004"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2552.72)" d="M 2020.304321289062 2589.247314453125 L 2020.304321289062 2588.859375 L 2088.43212890625 2588.8623046875 L 2088.43212890625 2589.25146484375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2549.42)" d="M 2020.304321289062 2585.684814453125 L 2020.304321289062 2585.296875 L 2088.43212890625 2585.298095703125 L 2088.43212890625 2585.6875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2546.09)" d="M 2020.304321289062 2582.100341796875 L 2020.304321289062 2581.7119140625 L 2088.43212890625 2581.71484375 L 2088.43212890625 2582.10302734375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2542.79)" d="M 2020.304321289062 2578.537353515625 L 2020.304321289062 2578.1494140625 L 2088.43212890625 2578.15234375 L 2088.43212890625 2578.5400390625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2539.47)" d="M 2020.304321289062 2574.959228515625 L 2020.304321289062 2574.5712890625 L 2088.43212890625 2574.57373046875 L 2088.43212890625 2574.96337890625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500007" x2="1.0" y2="0.500007"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2536.16)" d="M 2020.304321289062 2571.390625 L 2020.304321289062 2571.001953125 L 2088.43212890625 2571.00390625 L 2088.43212890625 2571.3935546875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2532.84)" d="M 2020.304321289062 2567.8134765625 L 2020.304321289062 2567.423828125 L 2088.43212890625 2567.427978515625 L 2088.43212890625 2567.81494140625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2529.54)" d="M 2020.304321289062 2564.251220703125 L 2020.304321289062 2563.86328125 L 2088.43212890625 2563.865966796875 L 2088.43212890625 2564.254150390625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2526.21)" d="M 2020.304321289062 2560.667724609375 L 2020.304321289062 2560.2783203125 L 2088.43212890625 2560.28125 L 2088.43212890625 2560.6708984375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499996" x2="1.0" y2="0.499996"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2522.91)" d="M 2020.304321289062 2557.10498046875 L 2020.304321289062 2556.716796875 L 2088.43212890625 2556.7197265625 L 2088.43212890625 2557.107421875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499996" x2="1.0" y2="0.499996"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2519.59)" d="M 2020.304321289062 2553.52587890625 L 2020.304321289062 2553.13671875 L 2088.43212890625 2553.140869140625 L 2088.43212890625 2553.527587890625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2516.29)" d="M 2020.304321289062 2549.964111328125 L 2020.304321289062 2549.576171875 L 2088.43212890625 2549.57861328125 L 2088.43212890625 2549.967041015625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2512.98)" d="M 2020.304321289062 2546.396240234375 L 2020.304321289062 2546.0078125 L 2088.43212890625 2546.009521484375 L 2088.43212890625 2546.3974609375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2509.66)" d="M 2020.304321289062 2542.815673828125 L 2020.304321289062 2542.427734375 L 2088.43212890625 2542.4306640625 L 2088.43212890625 2542.818359375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2506.35)" d="M 2020.304321289062 2539.25439453125 L 2020.304321289062 2538.8662109375 L 2088.43212890625 2538.867431640625 L 2088.43212890625 2539.257080078125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2503.03)" d="M 2020.304321289062 2535.669677734375 L 2020.304321289062 2535.28125 L 2088.43212890625 2535.2841796875 L 2088.43212890625 2535.67236328125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2499.73)" d="M 2020.304321289062 2532.109130859375 L 2020.304321289062 2531.720703125 L 2088.43212890625 2531.721923828125 L 2088.43212890625 2532.111572265625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2496.41)" d="M 2020.304321289062 2528.52880859375 L 2020.304321289062 2528.140625 L 2088.43212890625 2528.14306640625 L 2088.43212890625 2528.531494140625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2493.1)" d="M 2020.304321289062 2524.96435546875 L 2020.304321289062 2524.578125 L 2088.43212890625 2524.579345703125 L 2088.43212890625 2524.96923828125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500006" x2="1.0" y2="0.500006"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2489.78)" d="M 2020.304321289062 2521.381103515625 L 2020.304321289062 2520.9931640625 L 2088.43212890625 2520.99609375 L 2088.43212890625 2521.384033203125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2486.45)" d="M 2020.304321289062 2517.7998046875 L 2020.304321289062 2517.41015625 L 2088.43212890625 2517.414794921875 L 2088.43212890625 2517.802734375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2483.15)" d="M 2020.304321289062 2514.2353515625 L 2020.304321289062 2513.8466796875 L 2088.43212890625 2513.849609375 L 2088.43212890625 2514.23779296875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2479.84)" d="M 2020.304321289062 2510.673583984375 L 2020.304321289062 2510.28515625 L 2088.43212890625 2510.2880859375 L 2088.43212890625 2510.67626953125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500004" x2="1.0" y2="0.500004"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2476.52)" d="M 2020.304321289062 2507.095703125 L 2020.304321289062 2506.7060546875 L 2088.43212890625 2506.70849609375 L 2088.43212890625 2507.0966796875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500005" x2="1.0" y2="0.500005"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2473.2)" d="M 2020.304321289062 2503.5107421875 L 2020.304321289062 2503.12109375 L 2088.43212890625 2503.12548828125 L 2088.43212890625 2503.513671875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2469.92)" d="M 2020.304321289062 2499.968994140625 L 2020.304321289062 2499.58251953125 L 2088.43212890625 2499.583984375 L 2088.43212890625 2499.9716796875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500005" x2="1.0" y2="0.500005"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2466.59)" d="M 2020.304321289062 2496.385009765625 L 2020.304321289062 2495.9970703125 L 2088.43212890625 2496 L 2088.43212890625 2496.387939453125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2463.29)" d="M 2020.304321289062 2492.823486328125 L 2020.304321289062 2492.435546875 L 2088.43212890625 2492.436767578125 L 2088.43212890625 2492.826416015625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500004" x2="1.0" y2="0.500004"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2459.96)" d="M 2020.304321289062 2489.23974609375 L 2020.304321289062 2488.8515625 L 2088.43212890625 2488.8544921875 L 2088.43212890625 2489.2421875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2456.66)" d="M 2020.304321289062 2485.6767578125 L 2020.304321289062 2485.2880859375 L 2088.43212890625 2485.2900390625 L 2088.43212890625 2485.678955078125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500005" x2="1.0" y2="0.500005"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2453.34)" d="M 2020.304321289062 2482.09765625 L 2020.304321289062 2481.70947265625 L 2088.43212890625 2481.7119140625 L 2088.43212890625 2482.100341796875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500004" x2="1.0" y2="0.500004"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2450.04)" d="M 2020.304321289062 2478.535400390625 L 2020.304321289062 2478.1474609375 L 2088.43212890625 2478.148681640625 L 2088.43212890625 2478.5380859375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2446.71)" d="M 2020.304321289062 2474.951416015625 L 2020.304321289062 2474.5634765625 L 2088.43212890625 2474.56640625 L 2088.43212890625 2474.954345703125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2443.39)" d="M 2020.304321289062 2471.37353515625 L 2020.304321289062 2470.984375 L 2088.43212890625 2470.988525390625 L 2088.43212890625 2471.37646484375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2440.08)" d="M 2020.304321289062 2467.8056640625 L 2020.304321289062 2467.416015625 L 2088.43212890625 2467.4189453125 L 2088.43212890625 2467.807373046875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2436.76)" d="M 2020.304321289062 2464.22705078125 L 2020.304321289062 2463.83740234375 L 2088.43212890625 2463.841552734375 L 2088.43212890625 2464.2294921875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2433.46)" d="M 2020.304321289062 2460.663330078125 L 2020.304321289062 2460.275390625 L 2088.43212890625 2460.2783203125 L 2088.43212890625 2460.666015625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499996" x2="1.0" y2="0.499996"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2430.13)" d="M 2020.304321289062 2457.07958984375 L 2020.304321289062 2456.68994140625 L 2088.43212890625 2456.694091796875 L 2088.43212890625 2457.08251953125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2426.83)" d="M 2020.304321289062 2453.5166015625 L 2020.304321289062 2453.12841796875 L 2088.43212890625 2453.13134765625 L 2088.43212890625 2453.519287109375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2423.53)" d="M 2020.304321289062 2449.954345703125 L 2020.304321289062 2449.56640625 L 2088.43212890625 2449.5693359375 L 2088.43212890625 2449.957275390625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2420.22)" d="M 2020.304321289062 2446.39111328125 L 2020.304321289062 2446.00439453125 L 2088.43212890625 2446.005859375 L 2088.43212890625 2446.39404296875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499996" x2="1.0" y2="0.499996"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2416.9)" d="M 2020.304321289062 2442.807373046875 L 2020.304321289062 2442.4189453125 L 2088.43212890625 2442.421875 L 2088.43212890625 2442.810302734375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2413.58)" d="M 2020.304321289062 2439.22998046875 L 2020.304321289062 2438.84033203125 L 2088.43212890625 2438.84326171875 L 2088.43212890625 2439.232421875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2410.27)" d="M 2020.304321289062 2435.66650390625 L 2020.304321289062 2435.2783203125 L 2088.43212890625 2435.28125 L 2088.43212890625 2435.669189453125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2406.97)" d="M 2020.304321289062 2432.103515625 L 2020.304321289062 2431.716796875 L 2088.43212890625 2431.718017578125 L 2088.43212890625 2432.107666015625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499991" x2="1.0" y2="0.499991"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2403.65)" d="M 2020.304321289062 2428.519775390625 L 2020.304321289062 2428.13134765625 L 2088.43212890625 2428.13427734375 L 2088.43212890625 2428.522216796875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499994" x2="1.0" y2="0.499994"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2400.33)" d="M 2020.304321289062 2424.94189453125 L 2020.304321289062 2424.552734375 L 2088.43212890625 2424.556884765625 L 2088.43212890625 2424.94482421875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2397.02)" d="M 2020.304321289062 2421.379150390625 L 2020.304321289062 2420.9912109375 L 2088.43212890625 2420.99365234375 L 2088.43212890625 2421.382080078125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499994" x2="1.0" y2="0.499994"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2393.7)" d="M 2020.304321289062 2417.79638671875 L 2020.304321289062 2417.40673828125 L 2088.43212890625 2417.410888671875 L 2088.43212890625 2417.799072265625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2390.39)" d="M 2020.304321289062 2414.2333984375 L 2020.304321289062 2413.84375 L 2088.43212890625 2413.8466796875 L 2088.43212890625 2414.23486328125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499994" x2="1.0" y2="0.499994"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2387.07)" d="M 2020.304321289062 2410.654296875 L 2020.304321289062 2410.26513671875 L 2088.43212890625 2410.269287109375 L 2088.43212890625 2410.6572265625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2383.77)" d="M 2020.304321289062 2407.0859375 L 2020.304321289062 2406.69775390625 L 2088.43212890625 2406.70068359375 L 2088.43212890625 2407.0888671875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2380.46)" d="M 2020.304321289062 2403.52392578125 L 2020.304321289062 2403.1357421875 L 2088.43212890625 2403.138671875 L 2088.43212890625 2403.525390625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500009" x2="1.0" y2="0.500009"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2377.14)" d="M 2020.304321289062 2399.944091796875 L 2020.304321289062 2399.55615234375 L 2088.43212890625 2399.55908203125 L 2088.43212890625 2399.947021484375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499992" x2="1.0" y2="0.499992"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2373.84)" d="M 2020.304321289062 2396.382080078125 L 2020.304321289062 2395.994140625 L 2088.43212890625 2395.99658203125 L 2088.43212890625 2396.385009765625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2370.51)" d="M 2020.304321289062 2392.79833984375 L 2020.304321289062 2392.41015625 L 2088.43212890625 2392.4130859375 L 2088.43212890625 2392.802734375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2367.21)" d="M 2020.304321289062 2389.236572265625 L 2020.304321289062 2388.8486328125 L 2088.43212890625 2388.8515625 L 2088.43212890625 2389.239501953125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2363.89)" d="M 2020.304321289062 2385.65625 L 2020.304321289062 2385.26806640625 L 2088.43212890625 2385.2705078125 L 2088.43212890625 2385.66015625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2360.58)" d="M 2020.304321289062 2382.089599609375 L 2020.304321289062 2381.701171875 L 2088.43212890625 2381.7041015625 L 2088.43212890625 2382.092529296875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500004" x2="1.0" y2="0.500004"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2357.26)" d="M 2020.304321289062 2378.510009765625 L 2020.304321289062 2378.1220703125 L 2088.43212890625 2378.126220703125 L 2088.43212890625 2378.51416015625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2353.96)" d="M 2020.304321289062 2374.948486328125 L 2020.304321289062 2374.560546875 L 2088.43212890625 2374.5634765625 L 2088.43212890625 2374.951171875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500004" x2="1.0" y2="0.500004"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2350.63)" d="M 2020.304321289062 2371.36474609375 L 2020.304321289062 2370.97509765625 L 2088.43212890625 2370.979248046875 L 2088.43212890625 2371.36767578125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2347.33)" d="M 2020.304321289062 2367.802001953125 L 2020.304321289062 2367.41357421875 L 2088.43212890625 2367.41650390625 L 2088.43212890625 2367.80419921875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2344.01)" d="M 2020.304321289062 2364.2236328125 L 2020.304321289062 2363.83447265625 L 2088.43212890625 2363.838623046875 L 2088.43212890625 2364.2265625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500004" x2="1.0" y2="0.500004"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2340.71)" d="M 2020.304321289062 2360.660400390625 L 2020.304321289062 2360.2724609375 L 2088.43212890625 2360.27490234375 L 2088.43212890625 2360.6630859375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2337.4)" d="M 2020.304321289062 2357.093017578125 L 2020.304321289062 2356.70458984375 L 2088.43212890625 2356.706298828125 L 2088.43212890625 2357.09423828125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2334.08)" d="M 2020.304321289062 2353.513427734375 L 2020.304321289062 2353.12548828125 L 2088.43212890625 2353.12841796875 L 2088.43212890625 2353.516357421875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2330.77)" d="M 2020.304321289062 2349.951416015625 L 2020.304321289062 2349.5634765625 L 2088.43212890625 2349.56640625 L 2088.43212890625 2349.95263671875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2327.45)" d="M 2020.304321289062 2346.367919921875 L 2020.304321289062 2345.9794921875 L 2088.43212890625 2345.982421875 L 2088.43212890625 2346.3720703125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2324.14)" d="M 2020.304321289062 2342.804931640625 L 2020.304321289062 2342.41650390625 L 2088.43212890625 2342.417724609375 L 2088.43212890625 2342.807373046875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2320.82)" d="M 2020.304321289062 2339.225341796875 L 2020.304321289062 2338.83740234375 L 2088.43212890625 2338.83984375 L 2088.43212890625 2339.228271484375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2317.52)" d="M 2020.304321289062 2335.663818359375 L 2020.304321289062 2335.27587890625 L 2088.43212890625 2335.2783203125 L 2088.43212890625 2335.666748046875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2314.2)" d="M 2020.304321289062 2332.07958984375 L 2020.304321289062 2331.69189453125 L 2088.43212890625 2331.69482421875 L 2088.43212890625 2332.084228515625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2310.89)" d="M 2020.304321289062 2328.5166015625 L 2020.304321289062 2328.12841796875 L 2088.43212890625 2328.13134765625 L 2088.43212890625 2328.519287109375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2307.57)" d="M 2020.304321289062 2324.93408203125 L 2020.304321289062 2324.54443359375 L 2088.43212890625 2324.548828125 L 2088.43212890625 2324.935302734375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2304.26)" d="M 2020.304321289062 2321.371337890625 L 2020.304321289062 2320.98291015625 L 2088.43212890625 2320.98583984375 L 2088.43212890625 2321.373779296875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2300.94)" d="M 2020.304321289062 2317.79345703125 L 2020.304321289062 2317.40380859375 L 2088.43212890625 2317.40625 L 2088.43212890625 2317.7958984375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2297.64)" d="M 2020.304321289062 2314.22900390625 L 2020.304321289062 2313.8408203125 L 2088.43212890625 2313.84326171875 L 2088.43212890625 2314.231689453125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2294.32)" d="M 2020.304321289062 2310.646484375 L 2020.304321289062 2310.2568359375 L 2088.43212890625 2310.260986328125 L 2088.43212890625 2310.647705078125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499993" x2="1.0" y2="0.499993"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2291.01)" d="M 2020.304321289062 2307.082763671875 L 2020.304321289062 2306.69482421875 L 2088.43212890625 2306.69775390625 L 2088.43212890625 2307.085693359375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2287.71)" d="M 2020.304321289062 2303.521240234375 L 2020.304321289062 2303.13330078125 L 2088.43212890625 2303.134521484375 L 2088.43212890625 2303.52294921875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2284.38)" d="M 2020.304321289062 2299.936279296875 L 2020.304321289062 2299.5478515625 L 2088.43212890625 2299.55078125 L 2088.43212890625 2299.93896484375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2281.08)" d="M 2020.304321289062 2296.374267578125 L 2020.304321289062 2295.98583984375 L 2088.43212890625 2295.987548828125 L 2088.43212890625 2296.376708984375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2277.76)" d="M 2020.304321289062 2292.795654296875 L 2020.304321289062 2292.40771484375 L 2088.43212890625 2292.41015625 L 2088.43212890625 2292.7998046875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2274.46)" d="M 2020.304321289062 2289.233154296875 L 2020.304321289062 2288.84521484375 L 2088.43212890625 2288.846435546875 L 2088.43212890625 2289.236083984375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500007" x2="1.0" y2="0.500007"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2271.13)" d="M 2020.304321289062 2285.647705078125 L 2020.304321289062 2285.259765625 L 2088.43212890625 2285.2626953125 L 2088.43212890625 2285.650634765625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2267.83)" d="M 2020.304321289062 2282.08447265625 L 2020.304321289062 2281.69775390625 L 2088.43212890625 2281.70068359375 L 2088.43212890625 2282.088623046875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500006" x2="1.0" y2="0.500006"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2264.5)" d="M 2020.304321289062 2278.50341796875 L 2020.304321289062 2278.11376953125 L 2088.43212890625 2278.11669921875 L 2088.43212890625 2278.5048828125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500005" x2="1.0" y2="0.500005"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2261.18)" d="M 2020.304321289062 2274.923828125 L 2020.304321289062 2274.5341796875 L 2088.43212890625 2274.538330078125 L 2088.43212890625 2274.92626953125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500007" x2="1.0" y2="0.500007"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2257.88)" d="M 2020.304321289062 2271.360107421875 L 2020.304321289062 2270.97216796875 L 2088.43212890625 2270.97509765625 L 2088.43212890625 2271.363037109375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499992" x2="1.0" y2="0.499992"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2254.58)" d="M 2020.304321289062 2267.798583984375 L 2020.304321289062 2267.41064453125 L 2088.43212890625 2267.4130859375 L 2088.43212890625 2267.801513671875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500005" x2="1.0" y2="0.500005"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2251.25)" d="M 2020.304321289062 2264.21630859375 L 2020.304321289062 2263.82666015625 L 2088.43212890625 2263.82958984375 L 2088.43212890625 2264.217529296875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500004" x2="1.0" y2="0.500004"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2247.95)" d="M 2020.304321289062 2260.651611328125 L 2020.304321289062 2260.263671875 L 2088.43212890625 2260.2666015625 L 2088.43212890625 2260.654541015625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500006" x2="1.0" y2="0.500006"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2244.64)" d="M 2020.304321289062 2257.08984375 L 2020.304321289062 2256.70166015625 L 2088.43212890625 2256.702880859375 L 2088.43212890625 2257.09130859375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500005" x2="1.0" y2="0.500005"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2241.32)" d="M 2020.304321289062 2253.505615234375 L 2020.304321289062 2253.1171875 L 2088.43212890625 2253.1201171875 L 2088.43212890625 2253.508544921875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2238.01)" d="M 2020.304321289062 2249.943603515625 L 2020.304321289062 2249.55517578125 L 2088.43212890625 2249.556884765625 L 2088.43212890625 2249.946044921875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500005" x2="1.0" y2="0.500005"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2234.7)" d="M 2020.304321289062 2246.364501953125 L 2020.304321289062 2245.9765625 L 2088.43212890625 2245.9794921875 L 2088.43212890625 2246.367431640625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500006" x2="1.0" y2="0.500006"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2231.39)" d="M 2020.304321289062 2242.8017578125 L 2020.304321289062 2242.41357421875 L 2088.43212890625 2242.4150390625 L 2088.43212890625 2242.804443359375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2228.07)" d="M 2020.304321289062 2239.218017578125 L 2020.304321289062 2238.82958984375 L 2088.43212890625 2238.83251953125 L 2088.43212890625 2239.220458984375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500004" x2="1.0" y2="0.500004"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2224.76)" d="M 2020.304321289062 2235.656005859375 L 2020.304321289062 2235.26806640625 L 2088.43212890625 2235.269775390625 L 2088.43212890625 2235.658935546875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500004" x2="1.0" y2="0.500004"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2221.44)" d="M 2020.304321289062 2232.078125 L 2020.304321289062 2231.68896484375 L 2088.43212890625 2231.69140625 L 2088.43212890625 2232.079833984375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2218.12)" d="M 2020.304321289062 2228.4931640625 L 2020.304321289062 2228.103515625 L 2088.43212890625 2228.107666015625 L 2088.43212890625 2228.49609375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2214.81)" d="M 2020.304321289062 2224.931640625 L 2020.304321289062 2224.5419921875 L 2088.43212890625 2224.544921875 L 2088.43212890625 2224.9326171875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2211.49)" d="M 2020.304321289062 2221.35205078125 L 2020.304321289062 2220.962890625 L 2088.43212890625 2220.967041015625 L 2088.43212890625 2221.35498046875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2208.19)" d="M 2020.304321289062 2217.782958984375 L 2020.304321289062 2217.39453125 L 2088.43212890625 2217.3974609375 L 2088.43212890625 2217.785888671875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2204.88)" d="M 2020.304321289062 2214.220947265625 L 2020.304321289062 2213.83251953125 L 2088.43212890625 2213.83544921875 L 2088.43212890625 2214.223388671875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2201.56)" d="M 2020.304321289062 2210.64306640625 L 2020.304321289062 2210.25390625 L 2088.43212890625 2210.2568359375 L 2088.43212890625 2210.644775390625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2198.26)" d="M 2020.304321289062 2207.079833984375 L 2020.304321289062 2206.69189453125 L 2088.43212890625 2206.6943359375 L 2088.43212890625 2207.082763671875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2194.95)" d="M 2020.304321289062 2203.51123046875 L 2020.304321289062 2203.1240234375 L 2088.43212890625 2203.1259765625 L 2088.43212890625 2203.515380859375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2191.63)" d="M 2020.304321289062 2199.93310546875 L 2020.304321289062 2199.544921875 L 2088.43212890625 2199.5478515625 L 2088.43212890625 2199.935791015625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499996" x2="1.0" y2="0.499996"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2188.31)" d="M 2020.304321289062 2196.35546875 L 2020.304321289062 2195.96630859375 L 2088.43212890625 2195.96875 L 2088.43212890625 2196.3583984375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2185.0)" d="M 2020.304321289062 2192.787841796875 L 2020.304321289062 2192.3994140625 L 2088.43212890625 2192.40234375 L 2088.43212890625 2192.79052734375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499993" x2="1.0" y2="0.499993"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2181.7)" d="M 2020.304321289062 2189.222900390625 L 2020.304321289062 2188.8359375 L 2088.43212890625 2188.837646484375 L 2088.43212890625 2189.226806640625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2178.38)" d="M 2020.304321289062 2185.6455078125 L 2020.304321289062 2185.25732421875 L 2088.43212890625 2185.26025390625 L 2088.43212890625 2185.648193359375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499996" x2="1.0" y2="0.499996"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2175.05)" d="M 2020.304321289062 2182.06298828125 L 2020.304321289062 2181.67333984375 L 2088.43212890625 2181.677490234375 L 2088.43212890625 2182.06591796875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2171.75)" d="M 2020.304321289062 2178.499267578125 L 2020.304321289062 2178.11083984375 L 2088.43212890625 2178.11376953125 L 2088.43212890625 2178.50146484375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2168.43)" d="M 2020.304321289062 2174.921875 L 2020.304321289062 2174.53271484375 L 2088.43212890625 2174.536865234375 L 2088.43212890625 2174.9248046875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499994" x2="1.0" y2="0.499994"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2165.13)" d="M 2020.304321289062 2171.358642578125 L 2020.304321289062 2170.96923828125 L 2088.43212890625 2170.9716796875 L 2088.43212890625 2171.360107421875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2161.8)" d="M 2020.304321289062 2167.77490234375 L 2020.304321289062 2167.38525390625 L 2088.43212890625 2167.389404296875 L 2088.43212890625 2167.77783203125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2158.5)" d="M 2020.304321289062 2164.211669921875 L 2020.304321289062 2163.82373046875 L 2088.43212890625 2163.82666015625 L 2088.43212890625 2164.214599609375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2155.19)" d="M 2020.304321289062 2160.650146484375 L 2020.304321289062 2160.26220703125 L 2088.43212890625 2160.26513671875 L 2088.43212890625 2160.653076171875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2151.87)" d="M 2020.304321289062 2157.06494140625 L 2020.304321289062 2156.67626953125 L 2088.43212890625 2156.67919921875 L 2088.43212890625 2157.06884765625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2148.57)" d="M 2020.304321289062 2153.503173828125 L 2020.304321289062 2153.11474609375 L 2088.43212890625 2153.11767578125 L 2088.43212890625 2153.505615234375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2145.25)" d="M 2020.304321289062 2149.924072265625 L 2020.304321289062 2149.5361328125 L 2088.43212890625 2149.53857421875 L 2088.43212890625 2149.92822265625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2141.94)" d="M 2020.304321289062 2146.362060546875 L 2020.304321289062 2145.97412109375 L 2088.43212890625 2145.9765625 L 2088.43212890625 2146.364990234375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2138.62)" d="M 2020.304321289062 2142.776611328125 L 2020.304321289062 2142.388671875 L 2088.43212890625 2142.3916015625 L 2088.43212890625 2142.78125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500005" x2="1.0" y2="0.500005"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2135.31)" d="M 2020.304321289062 2139.214599609375 L 2020.304321289062 2138.82666015625 L 2088.43212890625 2138.82958984375 L 2088.43212890625 2139.217529296875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500006" x2="1.0" y2="0.500006"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2131.99)" d="M 2020.304321289062 2135.63232421875 L 2020.304321289062 2135.24267578125 L 2088.435546875 2135.2470703125 L 2088.43212890625 2135.63525390625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2128.68)" d="M 2020.304321289062 2132.068115234375 L 2020.304321289062 2131.6796875 L 2088.435546875 2131.6826171875 L 2088.435546875 2132.070556640625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500004" x2="1.0" y2="0.500004"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2125.36)" d="M 2020.304321289062 2128.490234375 L 2020.304321289062 2128.1005859375 L 2088.435546875 2128.104736328125 L 2088.435546875 2128.49267578125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500007" x2="1.0" y2="0.500007"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2122.06)" d="M 2020.304321289062 2124.927001953125 L 2020.304321289062 2124.5390625 L 2088.435546875 2124.54150390625 L 2088.435546875 2124.929931640625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500004" x2="1.0" y2="0.500004"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2118.74)" d="M 2020.304321289062 2121.3447265625 L 2020.304321289062 2120.955078125 L 2088.435546875 2120.959228515625 L 2088.435546875 2121.34765625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500002" x2="1.0" y2="0.500002"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2115.43)" d="M 2020.304321289062 2117.780029296875 L 2020.304321289062 2117.39208984375 L 2088.435546875 2117.39501953125 L 2088.435546875 2117.782958984375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500003" x2="1.0" y2="0.500003"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2112.13)" d="M 2020.304321289062 2114.217529296875 L 2020.304321289062 2113.82958984375 L 2088.435546875 2113.83251953125 L 2088.435546875 2114.220458984375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499998" x2="1.0" y2="0.499998"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2108.8)" d="M 2020.304321289062 2110.634521484375 L 2020.304321289062 2110.24609375 L 2088.435546875 2110.2490234375 L 2088.435546875 2110.636962890625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2105.5)" d="M 2020.304321289062 2107.072509765625 L 2020.304321289062 2106.68408203125 L 2088.435546875 2106.68701171875 L 2088.435546875 2107.074951171875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2102.18)" d="M 2020.304321289062 2103.49169921875 L 2020.304321289062 2103.103515625 L 2088.435546875 2103.10595703125 L 2088.435546875 2103.49560546875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500001" x2="1.0" y2="0.500001"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2098.88)" d="M 2020.304321289062 2099.93017578125 L 2020.304321289062 2099.5419921875 L 2088.435546875 2099.54345703125 L 2088.435546875 2099.932861328125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499996" x2="1.0" y2="0.499996"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2095.55)" d="M 2020.304321289062 2096.345947265625 L 2020.304321289062 2095.9580078125 L 2088.435546875 2095.9609375 L 2088.435546875 2096.348876953125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499999" x2="1.0" y2="0.499999"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2092.25)" d="M 2020.304321289062 2092.784423828125 L 2020.304321289062 2092.396484375 L 2088.435546875 2092.3994140625 L 2088.435546875 2092.787109375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499996" x2="1.0" y2="0.499996"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2088.92)" d="M 2020.304321289062 2089.20068359375 L 2020.304321289062 2088.81103515625 L 2088.435546875 2088.81396484375 L 2088.435546875 2089.20361328125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499994" x2="1.0" y2="0.499994"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2085.62)" d="M 2020.304321289062 2085.637939453125 L 2020.304321289062 2085.24951171875 L 2088.435546875 2085.25244140625 L 2088.435546875 2085.64013671875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2082.3)" d="M 2020.304321289062 2082.06005859375 L 2020.304321289062 2081.67041015625 L 2088.435546875 2081.674560546875 L 2088.435546875 2082.061279296875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2079.0)" d="M 2020.304321289062 2078.496337890625 L 2020.304321289062 2078.1083984375 L 2088.435546875 2078.11083984375 L 2088.435546875 2078.4990234375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499997" x2="1.0" y2="0.499997"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2075.67)" d="M 2020.304321289062 2074.9130859375 L 2020.304321289062 2074.5234375 L 2088.435546875 2074.5263671875 L 2088.435546875 2074.916015625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499994" x2="1.0" y2="0.499994"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2072.37)" d="M 2020.304321289062 2071.348876953125 L 2020.304321289062 2070.9609375 L 2088.435546875 2070.9638671875 L 2088.435546875 2071.351806640625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499994" x2="1.0" y2="0.499994"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2069.06)" d="M 2020.304321289062 2067.787353515625 L 2020.304321289062 2067.3994140625 L 2088.435546875 2067.40234375 L 2088.435546875 2067.7890625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2065.74)" d="M 2020.304321289062 2064.203857421875 L 2020.304321289062 2063.8154296875 L 2088.435546875 2063.818359375 L 2088.435546875 2064.20654296875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499992" x2="1.0" y2="0.499992"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2062.43)" d="M 2020.304321289062 2060.640625 L 2020.305908203125 2060.25244140625 L 2088.435546875 2060.25390625 L 2088.435546875 2060.643310546875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499993" x2="1.0" y2="0.499993"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.47, -2059.11)" d="M 2020.304321289062 2057.061279296875 L 2020.305908203125 2056.67333984375 L 2088.435546875 2056.67626953125 L 2088.435546875 2057.0654296875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499995" x2="1.0" y2="0.499995"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.49, -2055.81)" d="M 2020.3271484375 2053.499755859375 L 2020.3271484375 2053.11181640625 L 2088.456787109375 2053.113037109375 L 2088.456787109375 2053.502685546875" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499994" x2="1.0" y2="0.499994"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.49, -2052.49)" d="M 2020.3271484375 2049.916259765625 L 2020.3271484375 2049.52783203125 L 2088.456787109375 2049.53076171875 L 2088.456787109375 2049.92041015625" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.500008" x2="1.0" y2="0.500008"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.49, -2049.18)" d="M 2020.3271484375 2046.352416992188 L 2020.3271484375 2045.96435546875 L 2088.456787109375 2045.966186523438 L 2088.456787109375 2046.355224609375" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.499993" x2="1.0" y2="0.499993"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.49, -2045.86)" d="M 2020.3271484375 2042.77392578125 L 2020.3271484375 2042.3857421875 L 2088.456787109375 2042.38818359375 L 2088.456787109375 2042.776611328125" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="0.0" y1="0.5" x2="1.0" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2024.49, -1995.43)" d="M 2020.3271484375 1992.078491210938 L 2020.3271484375 1988.006958007812 L 2088.456787109375 1988.008544921875 L 2088.456787109375 1992.081420898438" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><defs><linearGradient id="gradient" x1="-0.190579" y1="0.5" x2="1.055651" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2078.76, -2090.35)" d="M 2122.26513671875 2120.507080078125 C 2122.17578125 2119.708740234375 2121.4970703125 2119.132080078125 2120.74755859375 2119.218505859375 C 2119.99658203125 2119.3056640625 2119.46435546875 2120.02392578125 2119.554443359375 2120.822021484375 C 2119.6435546875 2121.6201171875 2120.3212890625 2122.19775390625 2121.07421875 2122.109130859375 C 2121.82275390625 2122.022216796875 2122.357421875 2121.305419921875 2122.26513671875 2120.507080078125 M 2129.11474609375 2115.405517578125 C 2129.0029296875 2114.430419921875 2128.17578125 2113.726318359375 2127.260498046875 2113.833984375 C 2126.346435546875 2113.940185546875 2125.695068359375 2114.81591796875 2125.8037109375 2115.78955078125 C 2125.912109375 2116.7646484375 2126.74267578125 2117.467529296875 2127.65673828125 2117.359619140625 C 2128.5712890625 2117.2548828125 2129.22265625 2116.38037109375 2129.11474609375 2115.405517578125 Z M 2099.487060546875 2150.046142578125 C 2099.30615234375 2149.970947265625 2074.59716796875 2138.842529296875 2079.3740234375 2112.520263671875 C 2081.14794921875 2104.476806640625 2085.9580078125 2100.498046875 2089.755859375 2099.2607421875 C 2101.06787109375 2095.574462890625 2111.36669921875 2108.57470703125 2117.67626953125 2116.930419921875 C 2119.16845703125 2118.909423828125 2121.2685546875 2117.87060546875 2119.401611328125 2115.0712890625 C 2113.15478515625 2105.700927734375 2105.40283203125 2091.70068359375 2087.623046875 2097.853271484375 C 2101.45947265625 2088.2744140625 2114.43896484375 2097.977783203125 2121.587158203125 2109.646484375 C 2123.3173828125 2112.470703125 2124.159423828125 2112.220947265625 2124.73193359375 2111.746826171875 C 2125.456298828125 2111.14892578125 2124.078125 2108.551513671875 2122.308349609375 2106.178466796875 C 2116.82373046875 2096.969482421875 2106.951171875 2090.366455078125 2097.111328125 2091.53369140625 C 2119.6357421875 2082.93359375 2142.72607421875 2124.240234375 2124.672119140625 2118.671875 C 2126.19775390625 2125.92236328125 2119.201416015625 2126.427978515625 2115.40234375 2122.269775390625 C 2108.134765625 2114.317138671875 2097.138671875 2099.710693359375 2089.08154296875 2106.24755859375 C 2088.333984375 2106.852294921875 2087.572509765625 2107.612060546875 2086.9208984375 2108.631103515625 C 2077.00537109375 2124.131103515625 2087.13427734375 2141.061767578125 2099.487060546875 2150.046142578125 Z" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_fh5mm =
-    '<svg viewBox="0.0 0.0 52.4 59.7" ><defs><linearGradient id="gradient" x1="-0.190579" y1="0.5" x2="1.055651" y2="0.5"><stop offset="0.282487" stop-color="#2eacff" /><stop offset="0.35456" stop-color="#3a9ad9" /><stop offset="0.436699" stop-color="#468ab7" /><stop offset="0.524282" stop-color="#507c9a" /><stop offset="0.617641" stop-color="#587284" /><stop offset="0.719406" stop-color="#5d6a75" /><stop offset="0.835914" stop-color="#61666b" /><stop offset="1.0" stop-color="#626569" /></linearGradient></defs><path transform="translate(-2078.76, -2090.35)" d="M 2122.26513671875 2120.507080078125 C 2122.17578125 2119.708740234375 2121.4970703125 2119.132080078125 2120.74755859375 2119.218505859375 C 2119.99658203125 2119.3056640625 2119.46435546875 2120.02392578125 2119.554443359375 2120.822021484375 C 2119.6435546875 2121.6201171875 2120.3212890625 2122.19775390625 2121.07421875 2122.109130859375 C 2121.82275390625 2122.022216796875 2122.357421875 2121.305419921875 2122.26513671875 2120.507080078125 M 2129.11474609375 2115.405517578125 C 2129.0029296875 2114.430419921875 2128.17578125 2113.726318359375 2127.260498046875 2113.833984375 C 2126.346435546875 2113.940185546875 2125.695068359375 2114.81591796875 2125.8037109375 2115.78955078125 C 2125.912109375 2116.7646484375 2126.74267578125 2117.467529296875 2127.65673828125 2117.359619140625 C 2128.5712890625 2117.2548828125 2129.22265625 2116.38037109375 2129.11474609375 2115.405517578125 Z M 2099.487060546875 2150.046142578125 C 2099.30615234375 2149.970947265625 2074.59716796875 2138.842529296875 2079.3740234375 2112.520263671875 C 2081.14794921875 2104.476806640625 2085.9580078125 2100.498046875 2089.755859375 2099.2607421875 C 2101.06787109375 2095.574462890625 2111.36669921875 2108.57470703125 2117.67626953125 2116.930419921875 C 2119.16845703125 2118.909423828125 2121.2685546875 2117.87060546875 2119.401611328125 2115.0712890625 C 2113.15478515625 2105.700927734375 2105.40283203125 2091.70068359375 2087.623046875 2097.853271484375 C 2101.45947265625 2088.2744140625 2114.43896484375 2097.977783203125 2121.587158203125 2109.646484375 C 2123.3173828125 2112.470703125 2124.159423828125 2112.220947265625 2124.73193359375 2111.746826171875 C 2125.456298828125 2111.14892578125 2124.078125 2108.551513671875 2122.308349609375 2106.178466796875 C 2116.82373046875 2096.969482421875 2106.951171875 2090.366455078125 2097.111328125 2091.53369140625 C 2119.6357421875 2082.93359375 2142.72607421875 2124.240234375 2124.672119140625 2118.671875 C 2126.19775390625 2125.92236328125 2119.201416015625 2126.427978515625 2115.40234375 2122.269775390625 C 2108.134765625 2114.317138671875 2097.138671875 2099.710693359375 2089.08154296875 2106.24755859375 C 2088.333984375 2106.852294921875 2087.572509765625 2107.612060546875 2086.9208984375 2108.631103515625 C 2077.00537109375 2124.131103515625 2087.13427734375 2141.061767578125 2099.487060546875 2150.046142578125 Z" fill="url(#gradient)" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_abport =
-    '<svg viewBox="0.0 131.2 428.0 794.8" ><path transform="translate(0.0, 131.21)" d="M 10 0 L 418 0 C 423.5228576660156 0 428 4.998121738433838 428 11.16361808776855 L 428 794.849609375 L 0 794.849609375 L 0 11.16361808776855 C 0 4.998121738433838 4.477152347564697 0 10 0 Z" fill="#ffffff" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
-const String _svg_ke4x7 =
-    '<svg viewBox="2.0 4.0 20.0 17.0" ><path  d="M 12 21 C 11.73419666290283 21.00153732299805 11.47871875762939 20.89718627929688 11.28999996185303 20.70999908447266 L 3.519999980926514 12.92999839782715 C 1.491550445556641 10.88035297393799 1.491549968719482 7.579643249511719 3.519999504089355 5.529997825622559 C 5.565144538879395 3.490625858306885 8.874858856201172 3.490626811981201 10.92000198364258 5.529998779296875 L 12 6.610000133514404 L 13.07999992370605 5.53000020980835 C 15.12514495849609 3.490628719329834 18.43485832214355 3.49062967300415 20.48000144958496 5.530000686645508 C 22.50844955444336 7.579647064208984 22.50844955444336 10.88035583496094 20.47999954223633 12.93000030517578 L 12.70999908447266 20.71000099182129 C 12.52127933502197 20.89718627929688 12.26580238342285 21.00153541564941 12 20.99999809265137 Z M 7.21999979019165 6 C 6.364935398101807 5.996127605438232 5.543886184692383 6.334630489349365 4.939999580383301 6.939999580383301 C 3.682713508605957 8.20390796661377 3.682713985443115 10.24609375 4.940000534057617 11.51000213623047 L 12 18.57999992370605 L 19.05999946594238 11.51000022888184 C 20.31728363037109 10.24609184265137 20.31728363037109 8.20390796661377 19.05999755859375 6.940000534057617 C 17.78038215637207 5.731064319610596 15.779616355896 5.731064319610596 14.50000095367432 6.940000534057617 L 12.71000003814697 8.739999771118164 C 12.5222339630127 8.929312705993652 12.26663780212402 9.035798072814941 12 9.035798072814941 C 11.73336219787598 9.035798072814941 11.47776699066162 8.929312705993652 11.28999996185303 8.739999771118164 L 9.5 6.940000057220459 C 8.896113395690918 6.334630489349365 8.075064659118652 5.996128082275391 7.21999979019165 5.999999046325684 Z" fill="#d12424" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
-const String _svg_qtuq1 =
-    '<svg viewBox="9.0 5.0 7.1 14.0" ><path  d="M 10 19 C 9.766347885131836 19.00045585632324 9.539912223815918 18.91908073425293 9.359999656677246 18.77000045776367 C 9.155492782592773 18.6004524230957 9.026851654052734 18.35649871826172 9.002463340759277 18.09197235107422 C 8.978074073791504 17.82744407653809 9.059940338134766 17.56408309936523 9.229999542236328 17.36000061035156 L 13.71000003814697 12 L 9.390000343322754 6.630000114440918 C 9.222229957580566 6.423406600952148 9.143732070922852 6.158459186553955 9.17188549041748 5.893817901611328 C 9.200038909912109 5.629176139831543 9.332520484924316 5.386673450469971 9.539999961853027 5.220000267028809 C 9.749166488647461 5.035960674285889 10.02562808990479 4.947524547576904 10.30277442932129 4.975998401641846 C 10.57992172241211 5.004472732543945 10.83262538909912 5.147274971008301 11.00000095367432 5.369999885559082 L 15.82999992370605 11.3700008392334 C 16.13331604003906 11.73900318145752 16.13331604003906 12.27099895477295 15.82999992370605 12.64000129699707 L 10.82999992370605 18.64000129699707 C 10.62653636932373 18.88544654846191 10.31823444366455 19.01916694641113 10 19 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
-const String _svg_pqhi04 =
-    '<svg viewBox="-273.2 416.1 11.9 7.7" ><path  d="M -273.2470092773438 422.4339904785156 C -269.8840026855469 422.5610046386719 -266.4339904785156 423.0169982910156 -262.9660034179688 423.7940063476562 C -262.1329956054688 421.3139953613281 -261.6000061035156 418.7239990234375 -261.3779907226562 416.0799865722656 C -265.8670043945312 416.9450073242188 -270.0249938964844 419.1740112304688 -273.2470092773438 422.4339904785156 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_sohlsc =
-    '<svg viewBox="-278.5 427.9 21.5 29.6" ><path  d="M -269.4140014648438 457.4540100097656 C -267.1650085449219 450.7569885253906 -264.3399963378906 443.8630065917969 -261.0140075683594 436.9509887695312 C -259.7520141601562 434.322998046875 -258.4039916992188 431.6749877929688 -257.0020141601562 429.0719909667969 C -258.2900085449219 428.6159973144531 -259.5190124511719 428.2260131835938 -260.7460021972656 427.8869934082031 L -260.8510131835938 427.8590087890625 C -264.3710021972656 435.9100036621094 -270.614990234375 442.3070068359375 -278.5029907226562 445.9440002441406 C -276.8299865722656 450.6709899902344 -273.6270141601562 454.7250061035156 -269.4140014648438 457.4540100097656 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_x4dpg3 =
-    '<svg viewBox="-259.6 415.7 9.8 10.4" ><path  d="M -255.322998046875 426.0280151367188 C -253.52099609375 422.8259887695312 -251.6620025634766 419.7529907226562 -249.7879943847656 416.8779907226562 C -252.1360015869141 416.0780029296875 -254.5910034179688 415.6700134277344 -257.093994140625 415.6659851074219 C -257.3659973144531 415.6659851074219 -257.6369934082031 415.6719970703125 -257.9070129394531 415.6830139160156 C -258.1090087890625 418.7579956054688 -258.6860046386719 421.7640075683594 -259.6260070800781 424.6329956054688 C -258.1839904785156 425.0440063476562 -256.739990234375 425.5119934082031 -255.322998046875 426.0280151367188 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_vc10j =
-    '<svg viewBox="-279.8 425.8 15.6 16.8" ><path  d="M -276.0159912109375 425.8349914550781 L -276.0169982910156 425.8349914550781 C -278.4909973144531 429.5570068359375 -279.802001953125 433.8900146484375 -279.8099975585938 438.3819885253906 C -279.8080139160156 439.781005859375 -279.6730041503906 441.1900024414062 -279.4119873046875 442.5769958496094 C -272.739013671875 439.3489990234375 -267.3880004882812 433.8619995117188 -264.25 427.0280151367188 C -268.281005859375 426.1619873046875 -272.2900085449219 425.7340087890625 -276.0159912109375 425.8349914550781 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_wsgn5x =
-    '<svg viewBox="-250.3 433.9 14.8 25.4" ><path  d="M -235.5090026855469 445.4450073242188 C -237.4349975585938 441.3729858398438 -241.4429931640625 437.3030090332031 -246.8450012207031 433.9259948730469 C -249.1230010986328 438.4360046386719 -250.2779998779297 443.2909851074219 -250.2799987792969 448.3659973144531 C -250.2769927978516 452.1289978027344 -249.6280059814453 455.8160095214844 -248.3509979248047 459.3349914550781 C -242.2319946289062 456.7789916992188 -237.5769958496094 451.7489929199219 -235.5090026855469 445.4450073242188 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_dqxyyx =
-    '<svg viewBox="-266.3 430.3 16.5 30.8" ><path  d="M -251.6109924316406 460.4169921875 C -253.0050048828125 456.5509948730469 -253.7120056152344 452.5 -253.7109985351562 448.3659973144531 C -253.7109985351562 442.7669982910156 -252.3679962158203 437.1929931640625 -249.822998046875 432.2099914550781 C -251.1049957275391 431.531005859375 -252.4309997558594 430.8999938964844 -253.7779998779297 430.3259887695312 C -255.22900390625 433.0069885253906 -256.6220092773438 435.7340087890625 -257.9219970703125 438.4389953613281 C -261.2850036621094 445.4330139160156 -264.1189880371094 452.3869934082031 -266.3479919433594 459.1159973144531 C -263.4299926757812 460.4240112304688 -260.3179931640625 461.0910034179688 -257.0920104980469 461.0960083007812 C -255.2480010986328 461.0929870605469 -253.406005859375 460.864990234375 -251.6109924316406 460.4169921875 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_be6a0j =
-    '<svg viewBox="-245.1 424.2 10.8 16.3" ><path  d="M -234.3769989013672 438.3800048828125 C -234.3869934082031 433.239013671875 -236.1470031738281 428.2340087890625 -239.3430023193359 424.22900390625 C -241.5780029296875 426.1929931640625 -243.5240020751953 428.4460144042969 -245.1360015869141 430.9400024414062 C -240.6329956054688 433.7300109863281 -236.9799957275391 437.0069885253906 -234.4779968261719 440.4920043945312 C -234.4129943847656 439.7900085449219 -234.3780059814453 439.0830078125 -234.3769989013672 438.3800048828125 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_fxxyd =
-    '<svg viewBox="-252.1 418.3 10.4 11.0" ><path  d="M -252.1049957275391 427.3099975585938 C -250.7610015869141 427.8909912109375 -249.4239959716797 428.5350036621094 -248.1159973144531 429.2300109863281 C -246.3280029296875 426.4339904785156 -244.1670074462891 423.9110107421875 -241.6829986572266 421.7160034179688 C -243.1609954833984 420.3479919433594 -244.8059997558594 419.18701171875 -246.5870056152344 418.2550048828125 C -248.4519958496094 421.0910034179688 -250.3049926757812 424.1329956054688 -252.1049957275391 427.3099975585938 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_r94gs =
-    '<svg viewBox="-471.3 512.1 55.8 43.8" ><path  d="M -418.197998046875 520.6699829101562 L -423.3659973144531 518.5040283203125 L -420.6679992675781 512.06298828125 L -415.4970092773438 514.22802734375 L -418.197998046875 520.6699829101562 Z M -456.7579956054688 555.8599853515625 C -461.8900146484375 555.8499755859375 -466.0440063476562 551.697998046875 -466.052001953125 546.5689697265625 C -466.0440063476562 541.43701171875 -461.8900146484375 537.2849731445312 -456.7579956054688 537.2769775390625 C -451.6289978027344 537.2849731445312 -447.4760131835938 541.43701171875 -447.4670104980469 546.5689697265625 C -447.4760131835938 551.697998046875 -451.6289978027344 555.8499755859375 -456.7579956054688 555.8599853515625 Z M -419.68701171875 524.72802734375 C -420.5899963378906 526.8259887695312 -422.9859924316406 532.3930053710938 -429.3550109863281 547.197021484375 C -431.864990234375 549.573974609375 -437.1679992675781 550.7990112304688 -443.1679992675781 550.7730102539062 C -443.7460021972656 550.7769775390625 -444.3320007324219 550.7650146484375 -444.9209899902344 550.7429809570312 C -444.4590148925781 549.4349975585938 -444.1960144042969 548.0360107421875 -444.1960144042969 546.5689697265625 C -444.1960144042969 539.6279907226562 -449.8210144042969 534.0040283203125 -456.7579956054688 534.0040283203125 C -462.7950134277344 534.0040283203125 -467.8320007324219 538.260986328125 -469.0440063476562 543.93701171875 C -469.1430053710938 543.844970703125 -469.2579956054688 543.7550048828125 -469.3450012207031 543.666015625 C -470.6950073242188 542.3079833984375 -471.2650146484375 540.5540161132812 -471.27099609375 538.489013671875 C -471.2860107421875 535.4500122070312 -469.9119873046875 531.8759765625 -468.0639953613281 529.1710205078125 C -466.3200073242188 526.4990234375 -463.9760131835938 524.8280029296875 -462.8900146484375 524.8280029296875 C -462.8559875488281 524.8280029296875 -462.822998046875 524.8280029296875 -462.7919921875 524.8330078125 C -462.0069885253906 524.7899780273438 -459.4309997558594 525.6309814453125 -456.5029907226562 526.9769897460938 C -447.5669860839844 530.9970092773438 -433.9440002441406 539.1400146484375 -433.9219970703125 539.14599609375 L -432.5639953613281 539.958984375 L -431.9330139160156 538.5079956054688 L -424.9500122070312 522.4710083007812 L -419.68701171875 524.72802734375 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_wphjua =
-    '<svg viewBox="-229.5 187.0 52.3 52.3" ><path  d="M -208.9640045166016 221.1959991455078 C -209.4770050048828 220.7910003662109 -210.0039978027344 220.4369964599609 -210.3009948730469 220.1499938964844 L -210.3059997558594 220.1430053710938 L -210.3489990234375 220.1029968261719 C -210.6399993896484 219.8179931640625 -211.0119934082031 219.2630004882812 -211.4360046386719 218.7250061035156 C -211.8679962158203 218.2270050048828 -212.375 217.5220031738281 -213.4929962158203 217.4629974365234 C -214.0279998779297 217.4409942626953 -214.60400390625 217.7700042724609 -214.8569946289062 218.1399993896484 C -215.5579986572266 219.2039947509766 -215.4470062255859 220.1829986572266 -215.7910003662109 221.0590057373047 C -216.0700073242188 221.8970031738281 -216.4080047607422 222.7059936523438 -216.4230041503906 223.6620025634766 C -216.4340057373047 224.1109924316406 -216.3119964599609 224.6300048828125 -216.0260009765625 225.0740051269531 L -216.0260009765625 225.1569976806641 L -215.7019958496094 225.4770050048828 C -215.2109985351562 225.9709930419922 -214.5299987792969 226.1790008544922 -213.9550018310547 226.1790008544922 L -213.9089965820312 226.1779937744141 C -212.9499969482422 226.1629943847656 -212.1419982910156 225.8220062255859 -211.3000030517578 225.5469970703125 C -210.7369995117188 225.35400390625 -210.0720062255859 225.2619934082031 -209.4170074462891 225.0890045166016 C -209.0910034179688 224.9960021972656 -208.7469940185547 224.8919982910156 -208.3840026855469 224.6219940185547 C -208.0140075683594 224.3679962158203 -207.6809997558594 223.7929992675781 -207.7030029296875 223.2570037841797 C -207.7619934082031 222.1390075683594 -208.4640045166016 221.6280059814453 -208.9640045166016 221.1959991455078 Z M -212 223.4830017089844 C -212.8630065917969 223.7899932861328 -213.5850067138672 224.0160064697266 -213.9089965820312 224.0010070800781 C -214.0910034179688 223.9909973144531 -214.10400390625 223.9810028076172 -214.1540069580078 223.9400024414062 L -214.1620025634766 223.9309997558594 C -214.2259979248047 223.8549957275391 -214.2319946289062 223.8670043945312 -214.2460021972656 223.6620025634766 C -214.2610015869141 223.3390045166016 -214.0350036621094 222.6190032958984 -213.7299957275391 221.7619934082031 C -213.4909973144531 221.0449981689453 -213.3820037841797 220.3719940185547 -213.2760009765625 219.9259948730469 C -212.9720001220703 220.3040008544922 -212.4859924316406 220.9669952392578 -211.9660034179688 221.5559997558594 L -211.9649963378906 221.5590057373047 L -211.9290008544922 221.6020050048828 L -211.8910064697266 221.6399993896484 L -211.8880004882812 221.6439971923828 L -211.8880004882812 221.6439971923828 L -211.8849945068359 221.6479949951172 C -211.3470001220703 222.177001953125 -210.7409973144531 222.5579986572266 -210.3249969482422 222.89599609375 C -210.2660064697266 222.9429931640625 -210.2109985351562 222.9880065917969 -210.1629943847656 223.0319976806641 C -210.6049957275391 223.1340026855469 -211.2870025634766 223.2469940185547 -212 223.4830017089844 Z M -183.7030029296875 193.4640045166016 C -187.5559997558594 189.6049957275391 -191.8370056152344 186.9530029296875 -196.8650054931641 186.9510040283203 C -198.2960052490234 186.9510040283203 -199.7740020751953 187.1660003662109 -201.2929992675781 187.6159973144531 C -207.0399932861328 189.2830047607422 -211.5509948730469 192.593994140625 -214.3040008544922 199.1000061035156 C -217.0720062255859 205.5480041503906 -216.7859954833984 210.8399963378906 -217.1959991455078 214.3489990234375 C -218.1950073242188 222.9340057373047 -219.9940032958984 224.8249969482422 -221.1950073242188 226.0599975585938 C -222.5549926757812 227.4190063476562 -228.7879943847656 233.7409973144531 -229.0500030517578 234.0019989013672 L -229.1580047607422 234.1100006103516 L -229.2319946289062 234.2409973144531 C -229.2920074462891 234.3489990234375 -229.5119934082031 234.7749938964844 -229.5140075683594 235.4450073242188 C -229.5249938964844 236.1699981689453 -229.2039947509766 237.1450042724609 -228.3200073242188 238.0140075683594 L -227.5489959716797 237.2449951171875 L -228.3200073242188 238.0169982910156 C -227.4250030517578 238.9250030517578 -226.4239959716797 239.2409973144531 -225.6970062255859 239.2409973144531 L -225.6510009765625 239.2409973144531 C -225.0460052490234 239.2409973144531 -224.6540069580078 239.0690002441406 -224.5540008544922 239.0229949951172 L -224.3809967041016 238.9400024414062 L -224.2469940185547 238.8049926757812 C -223.9869995117188 238.5449981689453 -217.6620025634766 232.3130035400391 -216.302001953125 230.9499969482422 C -215.0659942626953 229.7519989013672 -213.1719970703125 227.9550018310547 -204.5870056152344 226.9559936523438 C -201.0780029296875 226.5480041503906 -195.7879943847656 226.8329925537109 -189.3370056152344 224.0659942626953 C -182.8300018310547 221.3079986572266 -179.5180053710938 216.7980041503906 -177.8529968261719 211.0559997558594 C -177.4040069580078 209.5339965820312 -177.1869964599609 208.0559997558594 -177.1880035400391 206.6269989013672 C -177.1880035400391 201.5959930419922 -179.8430023193359 197.3150024414062 -183.7030029296875 193.4640045166016 Z M -179.9429931640625 210.4400024414062 C -181.5489959716797 215.7649993896484 -184.2369995117188 219.4770050048828 -190.1940002441406 222.0630035400391 C -196.2120056152344 224.6369934082031 -201.0119934082031 224.3679962158203 -204.8289947509766 224.7920074462891 C -213.6029968261719 225.7429962158203 -216.3650054931641 227.8990020751953 -217.8419952392578 229.4109954833984 C -219.072998046875 230.6450042724609 -224.4250030517578 235.9170074462891 -225.5800018310547 237.0610046386719 C -225.6020050048828 237.0639953613281 -225.6260070800781 237.0639953613281 -225.6510009765625 237.0639953613281 C -225.8650054931641 237.0529937744141 -226.2120056152344 237.0260009765625 -226.7779998779297 236.4750061035156 C -227.3090057373047 235.9290008544922 -227.3249969482422 235.6210021972656 -227.3359985351562 235.4450073242188 C -227.3359985351562 235.4129943847656 -227.3339996337891 235.3849945068359 -227.3309936523438 235.3619995117188 C -226.2480010986328 234.2660064697266 -220.89599609375 228.8379974365234 -219.656005859375 227.6009979248047 C -218.1439971923828 226.1269989013672 -215.9839935302734 223.3650054931641 -215.0319976806641 214.5930023193359 C -214.6069946289062 210.7760009765625 -214.8769989013672 205.9739990234375 -212.3000030517578 199.9579925537109 C -209.7200012207031 193.9989929199219 -206.0070037841797 191.3130035400391 -200.6750030517578 189.7039947509766 C -199.3419952392578 189.3079986572266 -198.0780029296875 189.1280059814453 -196.8650054931641 189.1280059814453 C -192.6540069580078 189.1260070800781 -188.9129943847656 191.3370056152344 -185.2429962158203 195.0050048828125 C -181.5749969482422 198.6750030517578 -179.3650054931641 202.4120025634766 -179.3670043945312 206.6269989013672 C -179.3670043945312 207.8379974365234 -179.5460052490234 209.1020050048828 -179.9429931640625 210.4400024414062 Z M -200.3370056152344 196.4649963378906 C -199.6170043945312 195.7440032958984 -199.6170043945312 194.5760040283203 -200.3370056152344 193.8549957275391 C -201.0590057373047 193.1340026855469 -202.2279968261719 193.1340026855469 -202.9490051269531 193.8549957275391 C -203.6699981689453 194.5760040283203 -203.6690063476562 195.7440032958984 -202.9490051269531 196.4649963378906 C -202.2279968261719 197.1860046386719 -201.0590057373047 197.1860046386719 -200.3370056152344 196.4649963378906 Z M -196.2749938964844 200.5269927978516 C -195.5549926757812 199.8049926757812 -195.5549926757812 198.6360015869141 -196.2749938964844 197.9149932861328 C -196.9949951171875 197.1959991455078 -198.1660003662109 197.1959991455078 -198.8860015869141 197.9149932861328 C -199.6069946289062 198.6380004882812 -199.6069946289062 199.8049926757812 -198.8880004882812 200.5269927978516 C -198.1660003662109 201.2469940185547 -196.9969940185547 201.2469940185547 -196.2749938964844 200.5269927978516 Z M -192.2129974365234 201.9770050048828 C -192.9349975585938 201.2559967041016 -194.1049957275391 201.2559967041016 -194.8240051269531 201.9770050048828 C -195.5460052490234 202.697998046875 -195.5460052490234 203.8670043945312 -194.8240051269531 204.5870056152344 C -194.1049957275391 205.3079986572266 -192.9349975585938 205.3090057373047 -192.2129974365234 204.5870056152344 C -191.4929962158203 203.8670043945312 -191.4929962158203 202.6970062255859 -192.2129974365234 201.9770050048828 Z M -190.7619934082031 206.0370025634766 C -191.4830017089844 206.7610015869141 -191.4830017089844 207.9290008544922 -190.7619934082031 208.6490020751953 C -190.0440063476562 209.3699951171875 -188.8730010986328 209.3710021972656 -188.1510009765625 208.6490020751953 C -187.4320068359375 207.9290008544922 -187.4320068359375 206.7590026855469 -188.1510009765625 206.0370025634766 C -188.8730010986328 205.3190002441406 -190.0440063476562 205.3190002441406 -190.7619934082031 206.0370025634766 Z M -186.7019958496094 210.1000061035156 C -187.4219970703125 210.8200073242188 -187.4219970703125 211.9889984130859 -186.7019958496094 212.7100067138672 C -185.97900390625 213.4299926757812 -184.8110046386719 213.4309997558594 -184.0910034179688 212.7100067138672 C -183.3710021972656 211.9889984130859 -183.3710021972656 210.8190002441406 -184.0910034179688 210.1000061035156 C -184.8110046386719 209.3780059814453 -185.97900390625 209.3780059814453 -186.7019958496094 210.1000061035156 Z M -201.7059936523438 201.8719940185547 C -200.9850006103516 201.1499938964844 -200.9850006103516 199.9819946289062 -201.7059936523438 199.2619934082031 C -202.4259948730469 198.5410003662109 -203.5970001220703 198.5410003662109 -204.3170013427734 199.2619934082031 C -205.0390014648438 199.9819946289062 -205.0390014648438 201.1499938964844 -204.3170013427734 201.8730010986328 C -203.5970001220703 202.5919952392578 -202.4259948730469 202.5919952392578 -201.7059936523438 201.8719940185547 Z M -197.6450042724609 203.3220062255859 C -198.3670043945312 202.6009979248047 -199.5359954833984 202.6009979248047 -200.2570037841797 203.3220062255859 C -200.9779968261719 204.0420074462891 -200.9779968261719 205.2120056152344 -200.2570037841797 205.9329986572266 C -199.5359954833984 206.6529998779297 -198.3670043945312 206.6529998779297 -197.6450042724609 205.9329986572266 C -196.9259948730469 205.2120056152344 -196.9259948730469 204.0420074462891 -197.6450042724609 203.3220062255859 Z M -196.1959991455078 207.3809967041016 C -196.9160003662109 208.1029968261719 -196.9170074462891 209.2720031738281 -196.1959991455078 209.9920043945312 C -195.4739990234375 210.7140045166016 -194.3049926757812 210.7140045166016 -193.5859985351562 209.9920043945312 C -192.8639984130859 209.2729949951172 -192.8639984130859 208.1029968261719 -193.5859985351562 207.3809967041016 C -194.3049926757812 206.6609954833984 -195.4739990234375 206.6620025634766 -196.1959991455078 207.3809967041016 Z M -192.1340026855469 211.4440002441406 C -192.85400390625 212.1629943847656 -192.85400390625 213.3320007324219 -192.1340026855469 214.0540008544922 C -191.4129943847656 214.7740020751953 -190.2440032958984 214.7740020751953 -189.5220031738281 214.0540008544922 C -188.8029937744141 213.3329925537109 -188.8029937744141 212.1629943847656 -189.5220031738281 211.4440002441406 C -190.2440032958984 210.7220001220703 -191.4129943847656 210.7220001220703 -192.1340026855469 211.4440002441406 Z M -194.9299926757812 195.0970001220703 C -194.2079925537109 194.3760070800781 -194.2100067138672 193.2059936523438 -194.9299926757812 192.4859924316406 C -195.6490020751953 191.7660064697266 -196.8179931640625 191.7660064697266 -197.5420074462891 192.4859924316406 C -198.2619934082031 193.2059936523438 -198.2619934082031 194.3760070800781 -197.5420074462891 195.0970001220703 C -196.8179931640625 195.8179931640625 -195.6510009765625 195.8179931640625 -194.9299926757812 195.0970001220703 Z M -190.8690032958984 199.156005859375 C -190.1470031738281 198.4360046386719 -190.1490020751953 197.2669982910156 -190.8690032958984 196.5460052490234 C -191.5899963378906 195.8249969482422 -192.7570037841797 195.8249969482422 -193.4799957275391 196.5460052490234 C -194.1999969482422 197.2669982910156 -194.1999969482422 198.4360046386719 -193.4799957275391 199.156005859375 C -192.7590026855469 199.8780059814453 -191.5899963378906 199.8780059814453 -190.8690032958984 199.156005859375 Z M -186.8070068359375 203.2169952392578 C -186.0859985351562 202.4960021972656 -186.0859985351562 201.3280029296875 -186.8070068359375 200.6060028076172 C -187.5290069580078 199.8860015869141 -188.6959991455078 199.8860015869141 -189.4190063476562 200.6060028076172 C -190.1399993896484 201.3280029296875 -190.1399993896484 202.4960021972656 -189.4190063476562 203.2169952392578 C -188.697998046875 203.9369964599609 -187.5290069580078 203.9369964599609 -186.8070068359375 203.2169952392578 Z M -185.3560028076172 207.2790069580078 C -184.6360015869141 208 -183.4660034179688 208 -182.7440032958984 207.2790069580078 C -182.0240020751953 206.5570068359375 -182.0260009765625 205.3880004882812 -182.7440032958984 204.6679992675781 C -183.4660034179688 203.9470062255859 -184.6360015869141 203.9470062255859 -185.3560028076172 204.6679992675781 C -186.0780029296875 205.3880004882812 -186.0780029296875 206.5570068359375 -185.3560028076172 207.2790069580078 Z M -207.1150054931641 203.2409973144531 C -206.3939971923828 202.5200042724609 -206.3939971923828 201.3500061035156 -207.1150054931641 200.6309967041016 C -207.8350067138672 199.9100036621094 -209.0050048828125 199.9100036621094 -209.7250061035156 200.6309967041016 C -210.4470062255859 201.3500061035156 -210.4470062255859 202.5200042724609 -209.7250061035156 203.2409973144531 C -209.0050048828125 203.9620056152344 -207.8370056152344 203.9620056152344 -207.1150054931641 203.2409973144531 Z M -203.0529937744141 207.3009948730469 C -202.3329925537109 206.5809936523438 -202.3329925537109 205.4120025634766 -203.0529937744141 204.6909942626953 C -203.7720031738281 203.9709930419922 -204.9429931640625 203.9709930419922 -205.6640014648438 204.6909942626953 C -206.3840026855469 205.4120025634766 -206.3840026855469 206.5809936523438 -205.6640014648438 207.3009948730469 C -204.9429931640625 208.0240020751953 -203.7740020751953 208.0240020751953 -203.0529937744141 207.3009948730469 Z M -201.6020050048828 208.7519989013672 C -202.322998046875 209.4730072021484 -202.322998046875 210.6430053710938 -201.6020050048828 211.3630065917969 C -200.8800048828125 212.0839996337891 -199.7129974365234 212.0850067138672 -198.9909973144531 211.3630065917969 C -198.27099609375 210.6430053710938 -198.27099609375 209.4730072021484 -198.9909973144531 208.7519989013672 C -199.7129974365234 208.0319976806641 -200.8800048828125 208.0319976806641 -201.6020050048828 208.7519989013672 Z M -197.5379943847656 212.8139953613281 C -198.2619934082031 213.5339965820312 -198.2599945068359 214.7039947509766 -197.5379943847656 215.4239959716797 C -196.8179931640625 216.1450042724609 -195.6510009765625 216.14599609375 -194.9299926757812 215.4239959716797 C -194.2070007324219 214.7039947509766 -194.2070007324219 213.5339965820312 -194.9299926757812 212.8139953613281 C -195.6490020751953 212.093994140625 -196.8179931640625 212.093994140625 -197.5379943847656 212.8139953613281 Z M -193.4770050048828 216.875 C -194.197998046875 217.5959930419922 -194.197998046875 218.7649993896484 -193.4770050048828 219.4850006103516 C -192.7570037841797 220.2059936523438 -191.5879974365234 220.2059936523438 -190.8670043945312 219.4850006103516 C -190.1470031738281 218.7649993896484 -190.1470031738281 217.5959930419922 -190.8670043945312 216.875 C -191.5879974365234 216.1540069580078 -192.7570037841797 216.1540069580078 -193.4770050048828 216.875 Z M -208.4839935302734 208.6479949951172 C -207.7630004882812 207.9279937744141 -207.7630004882812 206.7579956054688 -208.4839935302734 206.0370025634766 C -209.2039947509766 205.3170013427734 -210.3730010986328 205.3170013427734 -211.0950012207031 206.0370025634766 C -211.8159942626953 206.7579956054688 -211.8159942626953 207.9279937744141 -211.0950012207031 208.6479949951172 C -210.3730010986328 209.3690032958984 -209.2039947509766 209.3690032958984 -208.4839935302734 208.6479949951172 Z M -207.0339965820312 210.0989990234375 C -207.7550048828125 210.8179931640625 -207.7550048828125 211.9869995117188 -207.0339965820312 212.7100067138672 C -206.3130035400391 213.4279937744141 -205.1450042724609 213.4279937744141 -204.4239959716797 212.7100067138672 C -203.7019958496094 211.9869995117188 -203.7019958496094 210.8179931640625 -204.4239959716797 210.0989990234375 C -205.1439971923828 209.3760070800781 -206.3130035400391 209.3760070800781 -207.0339965820312 210.0989990234375 Z M -202.9739990234375 214.1580047607422 C -203.6940002441406 214.8789978027344 -203.6940002441406 216.0489959716797 -202.9739990234375 216.7689971923828 C -202.2530059814453 217.4889984130859 -201.0820007324219 217.4889984130859 -200.3619995117188 216.7680053710938 C -199.6399993896484 216.0489959716797 -199.6399993896484 214.8789978027344 -200.3619995117188 214.1580047607422 C -201.0820007324219 213.4360046386719 -202.2530059814453 213.4369964599609 -202.9739990234375 214.1580047607422 Z M -198.9109954833984 218.2200012207031 C -199.6320037841797 218.9409942626953 -199.6320037841797 220.1100006103516 -198.9109954833984 220.8300018310547 C -198.1929931640625 221.5509948730469 -197.0200042724609 221.5509948730469 -196.3000030517578 220.8300018310547 C -195.5809936523438 220.1100006103516 -195.5800018310547 218.9409942626953 -196.3000030517578 218.2200012207031 C -197.0200042724609 217.4989929199219 -198.1889953613281 217.4989929199219 -198.9109954833984 218.2200012207031 Z M -209.8309936523438 214.0780029296875 C -209.1089935302734 213.3580017089844 -209.1089935302734 212.1880035400391 -209.8309936523438 211.4669952392578 C -210.5500030517578 210.7469940185547 -211.718994140625 210.7460021972656 -212.4409942626953 211.4669952392578 C -213.1600036621094 212.1880035400391 -213.1600036621094 213.3580017089844 -212.4409942626953 214.0780029296875 C -211.7209930419922 214.7980041503906 -210.5500030517578 214.7980041503906 -209.8309936523438 214.0780029296875 Z M -208.3800048828125 215.5290069580078 C -209.1009979248047 216.2480010986328 -209.1009979248047 217.4179992675781 -208.3800048828125 218.1399993896484 C -207.6589965820312 218.8589935302734 -206.4889984130859 218.8589935302734 -205.7680053710938 218.1399993896484 C -205.0469970703125 217.4179992675781 -205.0469970703125 216.2480010986328 -205.7680053710938 215.5290069580078 C -206.4889984130859 214.8070068359375 -207.6580047607422 214.8059997558594 -208.3800048828125 215.5290069580078 Z M -204.3170013427734 219.5899963378906 C -205.0390014648438 220.3099975585938 -205.0390014648438 221.47900390625 -204.3170013427734 222.1999969482422 C -203.5970001220703 222.9210052490234 -202.4259948730469 222.9210052490234 -201.7050018310547 222.1999969482422 C -200.9850006103516 221.47900390625 -200.9850006103516 220.3099975585938 -201.7050018310547 219.5899963378906 C -202.4259948730469 218.8679962158203 -203.5970001220703 218.8679962158203 -204.3170013427734 219.5899963378906 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_kapr0 =
-    '<svg viewBox="-319.3 190.8 46.1 46.1" ><path  d="M -273.4079895019531 230.6909942626953 C -273.5190124511719 230.5839996337891 -273.6650085449219 230.5319976806641 -273.8280029296875 230.5469970703125 C -274.1539916992188 230.5820007324219 -274.5920104980469 230.72900390625 -274.9930114746094 230.9360046386719 L -275.4020080566406 231.1390075683594 L -285.3059997558594 220.9010009765625 L -309.4309997558594 192.5379943847656 C -310.5270080566406 191.4440002441406 -311.9840087890625 190.8410034179688 -313.5329895019531 190.8399963378906 C -315.0830078125 190.8410034179688 -316.5390014648438 191.4440002441406 -317.6340026855469 192.5379943847656 C -318.7279968261719 193.6329956054688 -319.3309936523438 195.0890045166016 -319.3309936523438 196.6369934082031 C -319.3309936523438 198.1580047607422 -318.7460021972656 199.5980072021484 -317.6480102539062 200.7239990234375 L -289.2959899902344 224.8410034179688 L -279.0329895019531 234.7680053710938 L -279.2349853515625 235.1730041503906 C -279.4429931640625 235.5839996337891 -279.5889892578125 236.0200042724609 -279.625 236.3399963378906 C -279.6419982910156 236.4940032958984 -279.5899963378906 236.6479949951172 -279.4819946289062 236.7610015869141 C -279.3829956054688 236.8650054931641 -279.2449951171875 236.9230041503906 -279.1029968261719 236.9230041503906 C -279.0920104980469 236.9230041503906 -279.0790100097656 236.9230041503906 -279.0679931640625 236.9219970703125 C -278.3070068359375 236.8710021972656 -276.7120056152344 236.0130004882812 -275.4570007324219 234.7149963378906 C -274.1589965820312 233.4629974365234 -273.2999877929688 231.8679962158203 -273.2479858398438 231.1049957275391 C -273.2380065917969 230.9499969482422 -273.2959899902344 230.7980041503906 -273.4079895019531 230.6909942626953 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_me2dh =
-    '<svg viewBox="-295.5 196.6 1.0 1.0" ><path  d="M -295.3009948730469 196.6329956054688 L -295.4670104980469 196.6329956054688 C -295.4320068359375 196.6950073242188 -295.406005859375 196.7610015869141 -295.3699951171875 196.8209991455078 C -295.3450012207031 196.7610015869141 -295.3259887695312 196.6950073242188 -295.3009948730469 196.6329956054688 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_bzv42 =
-    '<svg viewBox="-289.9 187.6 6.8 11.5" ><path  d="M -288.9330139160156 189.8580017089844 C -289.0159912109375 189.9909973144531 -289.0889892578125 190.1320037841797 -289.1619873046875 190.2700042724609 C -289.1960144042969 190.3329925537109 -289.2309875488281 190.39599609375 -289.2630004882812 190.4589996337891 L -289.0400085449219 190.4589996337891 L -289.0400085449219 191.6049957275391 L -289.6969909667969 191.6049957275391 C -289.7210083007812 191.6909942626953 -289.739990234375 191.7779998779297 -289.7590026855469 191.8659973144531 C -289.7929992675781 192.0090026855469 -289.8330078125 192.1499938964844 -289.8569946289062 192.2980041503906 C -289.8789978027344 192.4349975585938 -289.8810119628906 192.5780029296875 -289.89599609375 192.7180023193359 C -289.9030151367188 192.8029937744141 -289.9150085449219 192.8869934082031 -289.9159851074219 192.9730072021484 L -289.375 192.9730072021484 L -289.375 194.1190032958984 L -289.8800048828125 194.1190032958984 C -289.8739929199219 194.1739959716797 -289.8770141601562 194.2330017089844 -289.8680114746094 194.2879943847656 C -289.8559875488281 194.3639984130859 -289.8330078125 194.4360046386719 -289.8190002441406 194.5099945068359 C -289.7760009765625 194.7440032958984 -289.72900390625 194.9770050048828 -289.6600036621094 195.2010040283203 C -289.6310119628906 195.2989959716797 -289.5880126953125 195.3919982910156 -289.5549926757812 195.4869995117188 L -288.8810119628906 195.4869995117188 L -288.8810119628906 196.6329956054688 L -289.0130004882812 196.6329956054688 C -288.9700012207031 196.7079925537109 -288.9320068359375 196.7870025634766 -288.8829956054688 196.8609924316406 C -288.8089904785156 196.9750061035156 -288.7250061035156 197.0809936523438 -288.6440124511719 197.1900024414062 C -288.5450134277344 197.3249969482422 -288.4460144042969 197.4589996337891 -288.3359985351562 197.5859985351562 C -288.239990234375 197.6970062255859 -288.1369934082031 197.7989959716797 -288.0329895019531 197.9029998779297 C -288 197.9349975585938 -287.9670104980469 197.9669952392578 -287.9339904785156 197.9980010986328 L -287.3599853515625 197.9980010986328 L -287.3599853515625 198.4969940185547 C -287.3500061035156 198.5050048828125 -287.3410034179688 198.5140075683594 -287.3299865722656 198.5220031738281 C -287.2120056152344 198.6119995117188 -287.093994140625 198.6999969482422 -286.9710083007812 198.7830047607422 C -286.8330078125 198.8739929199219 -286.6919860839844 198.9570007324219 -286.5480041503906 199.0379943847656 C -286.4739990234375 199.0789947509766 -286.3980102539062 199.1179962158203 -286.322998046875 199.1569976806641 C -284.4289855957031 198.0319976806641 -283.1409912109375 195.9909973144531 -283.0910034179688 193.6269989013672 C -283.0910034179688 193.5820007324219 -283.0880126953125 193.5319976806641 -283.0880126953125 193.4759979248047 C -283.0880126953125 190.9559936523438 -284.5150146484375 188.7559967041016 -286.6119995117188 187.6479949951172 C -286.6910095214844 187.6929931640625 -286.7690124511719 187.7359924316406 -286.8450012207031 187.7839965820312 C -286.9530029296875 187.8520050048828 -287.0599975585938 187.9210052490234 -287.1640014648438 187.9949951171875 C -287.2959899902344 188.0890045166016 -287.4219970703125 188.1900024414062 -287.5450134277344 188.2929992675781 C -287.5700073242188 188.3130035400391 -287.5929870605469 188.3339996337891 -287.6159973144531 188.3520050048828 L -287.6159973144531 189.0919952392578 L -288.3609924316406 189.0919952392578 C -288.3819885253906 189.1170043945312 -288.4049987792969 189.1390075683594 -288.4240112304688 189.1620025634766 C -288.5260009765625 189.2859954833984 -288.6199951171875 189.4160003662109 -288.7130126953125 189.5460052490234 C -288.7869873046875 189.6490020751953 -288.8630065917969 189.75 -288.9330139160156 189.8580017089844 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_wlrwjw =
-    '<svg viewBox="-294.2 186.9 5.8 13.2" ><path  d="M -293.4800109863281 196.6329956054688 C -293.4989929199219 196.697998046875 -293.5260009765625 196.7570037841797 -293.5459899902344 196.8200073242188 C -293.6270141601562 197.0720062255859 -293.7130126953125 197.3170013427734 -293.8099975585938 197.5549926757812 C -293.8729858398438 197.7089996337891 -293.9410095214844 197.8589935302734 -294.010986328125 198.0079956054688 C -294.0599975585938 198.1130065917969 -294.0989990234375 198.2270050048828 -294.1530151367188 198.3289947509766 C -293.010986328125 199.3849945068359 -291.5050048828125 200.0429992675781 -289.8299865722656 200.0800018310547 L -289.677001953125 200.0800018310547 C -289.2149963378906 200.0800018310547 -288.7650146484375 200.0319976806641 -288.3290100097656 199.9400024414062 C -288.3999938964844 199.8869934082031 -288.4630126953125 199.8249969482422 -288.531005859375 199.7689971923828 C -288.6329956054688 199.6880035400391 -288.7309875488281 199.6049957275391 -288.8280029296875 199.5189971923828 C -288.9670104980469 199.3979949951172 -289.1000061035156 199.2740020751953 -289.2300109863281 199.1439971923828 L -290.197998046875 199.1439971923828 L -290.197998046875 197.9980010986328 L -290.1900024414062 197.9980010986328 C -290.197998046875 197.9850006103516 -290.2099914550781 197.9739990234375 -290.2170104980469 197.9609985351562 C -290.2330017089844 197.9380035400391 -290.2529907226562 197.9170074462891 -290.2680053710938 197.8930053710938 C -290.4700012207031 197.5950012207031 -290.6430053710938 197.2799987792969 -290.8039855957031 196.9570007324219 C -290.8550109863281 196.8560028076172 -290.89599609375 196.75 -290.9410095214844 196.6470031738281 L -290.947998046875 196.6329956054688 L -291.718994140625 196.6329956054688 L -291.718994140625 195.4869995117188 L -291.3599853515625 195.4869995117188 C -291.4230041503906 195.2599945068359 -291.468994140625 195.0290069580078 -291.5119934082031 194.7960052490234 C -291.5329895019531 194.6860046386719 -291.5570068359375 194.5800018310547 -291.5710144042969 194.468994140625 C -291.5889892578125 194.3529968261719 -291.6000061035156 194.2359924316406 -291.6119995117188 194.1190032958984 L -292.2099914550781 194.1190032958984 L -292.2099914550781 192.9730072021484 L -291.6440124511719 192.9730072021484 C -291.6319885253906 192.6679992675781 -291.6019897460938 192.3670043945312 -291.5570068359375 192.0709991455078 C -291.5400085449219 191.9649963378906 -291.5169982910156 191.8619995117188 -291.4970092773438 191.7570037841797 C -291.4869995117188 191.7059936523438 -291.4779968261719 191.656005859375 -291.4670104980469 191.6049957275391 L -291.8770141601562 191.6049957275391 L -291.8770141601562 190.4589996337891 L -291.1449890136719 190.4589996337891 C -291.0840148925781 190.3009948730469 -291.010986328125 190.1490020751953 -290.9440002441406 189.9949951171875 C -290.9070129394531 189.9129943847656 -290.8760070800781 189.8280029296875 -290.8370056152344 189.7480010986328 C -290.718994140625 189.5059967041016 -290.5889892578125 189.2720031738281 -290.4500122070312 189.0440063476562 L -290.4500122070312 187.9470062255859 L -289.656005859375 187.9470062255859 C -289.6170043945312 187.8979949951172 -289.5669860839844 187.8580017089844 -289.5249938964844 187.8110046386719 C -289.3590087890625 187.6280059814453 -289.1860046386719 187.4530029296875 -289.0069885253906 187.2850036621094 C -288.9339904785156 187.2180023193359 -288.8630065917969 187.1499938964844 -288.7900085449219 187.0859985351562 C -288.7460021972656 187.0469970703125 -288.7059936523438 187.0030059814453 -288.6600036621094 186.9649963378906 C -288.9500122070312 186.9199981689453 -289.2479858398438 186.8939971923828 -289.5499877929688 186.8869934082031 C -289.6000061035156 186.8849945068359 -289.6449890136719 186.8849945068359 -289.68701171875 186.8849945068359 C -291.3940124511719 186.8849945068359 -292.9450073242188 187.5359954833984 -294.1199951171875 188.6069946289062 C -294.0660095214844 188.7120056152344 -294.0260009765625 188.8289947509766 -293.9760131835938 188.9369964599609 C -293.906005859375 189.0899963378906 -293.8370056152344 189.2429962158203 -293.77099609375 189.4019927978516 C -293.6719970703125 189.6499938964844 -293.5849914550781 189.906005859375 -293.5039978027344 190.1679992675781 C -293.4739990234375 190.2680053710938 -293.4309997558594 190.3580017089844 -293.4030151367188 190.4589996337891 L -292.8619995117188 190.4589996337891 L -292.8619995117188 191.6049957275391 L -293.1700134277344 191.6049957275391 C -293.1499938964844 191.7330017089844 -293.1199951171875 191.8560028076172 -293.1050109863281 191.9859924316406 C -293.0639953613281 192.3079986572266 -293.0480041503906 192.6399993896484 -293.0369873046875 192.9730072021484 L -292.6629943847656 192.9730072021484 L -292.6629943847656 194.1190032958984 L -293.0480041503906 194.1190032958984 C -293.0679931640625 194.4299926757812 -293.0880126953125 194.7400054931641 -293.1319885253906 195.0410003662109 C -293.1530151367188 195.1880035400391 -293.18701171875 195.3269958496094 -293.2120056152344 195.4709930419922 L -293.2149963378906 195.4869995117188 L -292.7019958496094 195.4869995117188 L -292.7019958496094 196.6329956054688 L -293.4800109863281 196.6329956054688 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_pl478x =
-    '<svg viewBox="-295.5 190.1 1.0 1.0" ><path  d="M -295.3429870605469 190.1009979248047 C -295.4129943847656 190.2149963378906 -295.4679870605469 190.3390045166016 -295.531005859375 190.4589996337891 L -295.2200012207031 190.4589996337891 C -295.260986328125 190.3390045166016 -295.2980041503906 190.2160034179688 -295.3429870605469 190.1009979248047 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_kkma =
-    '<svg viewBox="-296.3 190.8 1.5 5.7" ><path  d="M -295.5400085449219 195.4869995117188 L -294.9700012207031 195.4869995117188 C -294.93798828125 195.3399963378906 -294.9010009765625 195.197998046875 -294.875 195.0469970703125 C -294.8569946289062 194.9389953613281 -294.8399963378906 194.8309936523438 -294.8250122070312 194.7209930419922 C -294.8009948730469 194.5240020751953 -294.7890014648438 194.3209991455078 -294.7749938964844 194.1190032958984 L -295.5029907226562 194.1190032958984 L -295.5029907226562 192.9730072021484 L -294.760009765625 192.9730072021484 C -294.77099609375 192.7319946289062 -294.7789916992188 192.4909973144531 -294.8070068359375 192.2579956054688 C -294.8190002441406 192.1620025634766 -294.8330078125 192.0670013427734 -294.8460083007812 191.9720001220703 C -294.864990234375 191.8459930419922 -294.89599609375 191.7279968261719 -294.9200134277344 191.6049957275391 L -295.7019958496094 191.6049957275391 L -295.7019958496094 190.7859954833984 C -296.0530090332031 191.5679931640625 -296.2619934082031 192.4309997558594 -296.281005859375 193.3480072021484 C -296.2820129394531 193.3990020751953 -296.2850036621094 193.4470062255859 -296.2820129394531 193.4880065917969 C -296.2820129394531 194.5709991455078 -296.0069885253906 195.5859985351562 -295.5400085449219 196.4889984130859 L -295.5400085449219 195.4869995117188 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_rdetrl =
-    '<svg viewBox="-164.1 466.7 58.2 38.9" ><path  d="M -114.4990005493164 473.135009765625 C -119.7480010986328 469.4010009765625 -126.9489974975586 466.6839904785156 -134.9340057373047 466.6789855957031 C -142.9129943847656 466.6839904785156 -150.1130065917969 469.3299865722656 -155.3670043945312 473.0329895019531 C -160.5959930419922 476.75 -164.0090026855469 481.4949951171875 -164.0509948730469 486.1119995117188 C -164.0090026855469 490.7300109863281 -160.5959930419922 495.4750061035156 -155.3670043945312 499.1910095214844 C -150.1130065917969 502.8930053710938 -142.9129943847656 505.5409851074219 -134.9340057373047 505.5429992675781 C -126.9489974975586 505.5409851074219 -119.7480010986328 502.8240051269531 -114.4990005493164 499.0899963378906 C -109.2720031738281 495.3389892578125 -105.8639984130859 490.6130065917969 -105.8199996948242 486.1119995117188 C -105.8639984130859 481.6090087890625 -109.2720031738281 476.885986328125 -114.4990005493164 473.135009765625 Z M -115.890998840332 497.1329956054688 C -120.745002746582 500.5929870605469 -127.5009994506836 503.1470031738281 -134.9340057373047 503.1449890136719 C -142.3739929199219 503.1470031738281 -149.1309967041016 500.6520080566406 -153.9830017089844 497.2269897460938 C -158.8560028076172 493.8139953613281 -161.6920013427734 489.4469909667969 -161.6499938964844 486.1119995117188 C -161.6920013427734 482.7780151367188 -158.8560028076172 478.4079895019531 -153.9830017089844 474.9949951171875 C -149.1309967041016 471.5700073242188 -142.3739929199219 469.0780029296875 -134.9340057373047 469.0799865722656 C -127.5009994506836 469.0780029296875 -120.745002746582 471.6319885253906 -115.890998840332 475.0910034179688 C -111.0130004882812 478.5339965820312 -108.1719970703125 482.9259948730469 -108.2190017700195 486.1119995117188 C -108.1719970703125 489.2980041503906 -111.0130004882812 493.6910095214844 -115.890998840332 497.1329956054688 Z M -126.8600006103516 475.3699951171875 L -129.2610015869141 475.3699951171875 L -129.2610015869141 479.4599914550781 L -133.7359924316406 479.4599914550781 L -133.7359924316406 475.3699951171875 L -136.1349945068359 475.3699951171875 L -136.1349945068359 479.4599914550781 L -140.6100006103516 479.4599914550781 L -140.6100006103516 475.3699951171875 L -143.0110015869141 475.3699951171875 L -143.0110015869141 479.4599914550781 L -147.7070007324219 479.4599914550781 L -147.7070007324219 481.8599853515625 L -143.0110015869141 481.8599853515625 L -143.0110015869141 485.9469909667969 L -140.6100006103516 485.9469909667969 L -140.6100006103516 481.8599853515625 L -136.1349945068359 481.8599853515625 L -136.1349945068359 485.9469909667969 L -133.7359924316406 485.9469909667969 L -133.7359924316406 481.8599853515625 L -129.2610015869141 481.8599853515625 L -129.2610015869141 485.9469909667969 L -126.8600006103516 485.9469909667969 L -126.8600006103516 481.8599853515625 L -122.161003112793 481.8599853515625 L -122.161003112793 479.4599914550781 L -126.8600006103516 479.4599914550781 L -126.8600006103516 475.3699951171875 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_bujgh =
-    '<svg viewBox="-179.1 357.1 12.6 18.2" ><path  d="M -179.0460052490234 371.3370056152344 L -177.4010009765625 374.9949951171875 L -173.2010040283203 375.3269958496094 L -166.4459991455078 364.6919860839844 L -168.9660034179688 357.1300048828125 L -175.0180053710938 357.1839904785156 C -177.6829986572266 360.9490051269531 -179.0899963378906 365.3739929199219 -179.0899963378906 369.9979858398438 C -179.0899963378906 370.447998046875 -179.0720062255859 370.8940124511719 -179.0460052490234 371.3370056152344 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_e9qn75 =
-    '<svg viewBox="-166.9 388.2 17.7 4.0" ><path  d="M -149.2010040283203 390.8460083007812 L -152.156005859375 388.1610107421875 L -165.4459991455078 388.1610107421875 L -166.8860015869141 389.8330078125 C -161.4600067138672 392.5740051269531 -154.8979949951172 392.9460144042969 -149.2010040283203 390.8460083007812 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_lkqcsg =
-    '<svg viewBox="-170.0 366.9 21.7 17.9" ><path  d="M -154.6305236816406 366.8556823730469 L -163.8390197753906 366.9723815917969 L -169.9518127441406 376.5876770019531 L -165.2530212402344 384.7379760742188 L -152.6256256103516 384.7379760742188 L -148.2296142578125 377.190185546875 L -154.6305236816406 366.8556823730469 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_nwlrxh =
-    '<svg viewBox="-136.4 377.4 1.0 1.1" ><path  d="M -135.9299926757812 377.4030151367188 L -136.3659973144531 378.4049987792969 L -136.3520050048828 378.4989929199219 C -136.2010040283203 378.135986328125 -136.0610046386719 377.7720031738281 -135.9299926757812 377.4030151367188 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_v2j2at =
-    '<svg viewBox="-149.0 379.2 9.7 10.0" ><path  d="M -142.9239959716797 387.2799987792969 L -139.3399963378906 383.6210021972656 L -140.0079956054688 379.1700134277344 L -145.1519927978516 379.2909851074219 L -149.0489959716797 385.9800109863281 L -145.7209930419922 389.2070007324219 C -144.7409973144531 388.635986328125 -143.8009948730469 387.989013671875 -142.9239959716797 387.2799987792969 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_pqhfpm =
-    '<svg viewBox="-175.9 378.8 7.2 9.0" ><path  d="M -170.0839996337891 387.8529968261719 L -168.6849975585938 386.2260131835938 L -172.8009948730469 379.0870056152344 L -175.9320068359375 378.8389892578125 L -175.4149932861328 382.2309875488281 C -173.9750061035156 384.4089965820312 -172.1829986572266 386.2980041503906 -170.0839996337891 387.8529968261719 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_klz0h4 =
-    '<svg viewBox="-157.0 347.8 15.0 6.1" ><path  d="M -150.4649963378906 353.8760070800781 L -142.0189971923828 353.4819946289062 C -146.0769958496094 349.8219909667969 -151.2689971923828 347.8089904785156 -156.7700042724609 347.7839965820312 L -156.97900390625 349.3240051269531 L -150.4649963378906 353.8760070800781 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_yjes =
-    '<svg viewBox="-165.3 352.7 12.3 10.6" ><path  d="M -165.2550201416016 356.510986328125 L -163.0099182128906 363.2458801269531 L -155.4518127441406 363.1501770019531 L -152.9122161865234 356.7003784179688 L -158.6959228515625 352.6588745117188 L -165.2550201416016 356.510986328125 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_q7apwy =
-    '<svg viewBox="-172.0 348.0 11.7 5.7" ><path  d="M -160.2590026855469 348.0469970703125 C -164.6390075683594 348.7179870605469 -168.7489929199219 350.7130126953125 -172.0019989013672 353.7380065917969 L -167.8099975585938 353.7009887695312 L -160.4389953613281 349.3720092773438 L -160.2590026855469 348.0469970703125 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_ffgfgu =
-    '<svg viewBox="-152.0 356.8 17.1 18.8" ><path  d="M -139.0299987792969 356.7730102539062 L -149.1300048828125 357.2380065917969 L -152.0189971923828 364.5750122070312 L -145.2059936523438 375.5759887695312 L -138.7989959716797 375.4259948730469 L -134.9340057373047 366.5130004882812 C -135.4869995117188 363.0020141601562 -136.9010009765625 359.6419982910156 -139.0299987792969 356.7730102539062 Z" fill="#16b7ff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_klwhhh =
-    '<svg viewBox="0.0 0.0 27.1 29.7" ><path transform="translate(-4872.69, 782.48)" d="M 4886.259765625 -782.48486328125 C 4878.77587890625 -782.48486328125 4872.68701171875 -775.819091796875 4872.68701171875 -767.626708984375 C 4872.68701171875 -759.4326171875 4878.77587890625 -752.7667846679688 4886.259765625 -752.7667846679688 C 4893.74462890625 -752.7667846679688 4899.8349609375 -759.4326171875 4899.8349609375 -767.626708984375 C 4899.8349609375 -775.819091796875 4893.74462890625 -782.48486328125 4886.259765625 -782.48486328125 Z M 4894.6962890625 -777.7568969726562 C 4896.638671875 -775.817138671875 4898.02001953125 -773.2217407226562 4898.5498046875 -770.2918701171875 C 4897.7294921875 -768.8905029296875 4896.02001953125 -768.3779907226562 4894.28076171875 -769.0153198242188 C 4895.02587890625 -772.1050415039062 4895.18115234375 -775.1301879882812 4894.6962890625 -777.7568969726562 Z M 4886.259765625 -781.3424072265625 C 4888.8828125 -781.3424072265625 4891.31689453125 -780.4552001953125 4893.3310546875 -778.9417114257812 C 4894.1513671875 -776.2561645507812 4894.12353515625 -772.9425659179688 4893.326171875 -769.5206298828125 C 4891.12548828125 -770.949462890625 4889.85009765625 -773.144775390625 4888.6171875 -775.2716064453125 C 4887.35595703125 -777.4428100585938 4886.05859375 -779.6746215820312 4883.80029296875 -781.0760498046875 C 4884.595703125 -781.2505493164062 4885.41748046875 -781.3424072265625 4886.259765625 -781.3424072265625 Z M 4882.2451171875 -780.6204833984375 C 4884.94189453125 -779.4688110351562 4886.298828125 -777.130615234375 4887.73486328125 -774.6580810546875 C 4889.0791015625 -772.3400268554688 4890.46875 -769.9447631835938 4893.03515625 -768.3834838867188 C 4892.7861328125 -767.5074462890625 4892.4931640625 -766.6275634765625 4892.14794921875 -765.7513427734375 C 4887.30224609375 -768.3485717773438 4881.697265625 -771.1021118164062 4875.2080078125 -774.0796508789062 C 4876.6982421875 -777.130615234375 4879.21337890625 -779.4944458007812 4882.2451171875 -780.6204833984375 Z M 4873.73193359375 -767.626708984375 C 4873.73193359375 -769.5516357421875 4874.095703125 -771.385009765625 4874.7529296875 -773.0491333007812 C 4881.25634765625 -770.064208984375 4886.86865234375 -767.3070678710938 4891.7158203125 -764.7098999023438 C 4891.42431640625 -764.0448608398438 4891.1044921875 -763.3836669921875 4890.7587890625 -762.7316284179688 C 4890.68701171875 -762.5993041992188 4890.61669921875 -762.4671630859375 4890.5439453125 -762.3366088867188 C 4888.0693359375 -763.6039428710938 4884.8212890625 -763.1155395507812 4881.6728515625 -762.639892578125 C 4878.89404296875 -762.2208862304688 4876.265625 -761.8241577148438 4874.5654296875 -762.7060546875 C 4874.02587890625 -764.2340698242188 4873.73193359375 -765.8927612304688 4873.73193359375 -767.626708984375 Z M 4875.15625 -761.2769165039062 C 4877.01806640625 -760.7826538085938 4879.36083984375 -761.1372680664062 4881.81591796875 -761.5064086914062 C 4884.7587890625 -761.950927734375 4887.79052734375 -762.4102172851562 4889.97705078125 -761.364990234375 C 4887.72509765625 -757.6766357421875 4884.9326171875 -755.19873046875 4882.31103515625 -754.6092529296875 C 4879.21533203125 -755.7367553710938 4876.65087890625 -758.1541137695312 4875.15625 -761.2769165039062 Z M 4892.41796875 -755.6835327148438 C 4890.5966796875 -754.555908203125 4888.49560546875 -753.9093017578125 4886.259765625 -753.9093017578125 C 4885.56640625 -753.9093017578125 4884.88623046875 -753.9735717773438 4884.22314453125 -754.093017578125 C 4886.5849609375 -755.2316284179688 4888.94384765625 -757.5958862304688 4890.88623046875 -760.7992553710938 C 4892.64892578125 -759.4509887695312 4893.2548828125 -757.4672241210938 4892.41796875 -755.6835327148438 Z M 4893.79248046875 -756.6719970703125 C 4894.03662109375 -758.5455322265625 4893.1904296875 -760.44482421875 4891.4462890625 -761.763671875 C 4891.52001953125 -761.8939208984375 4891.58935546875 -762.0243530273438 4891.6611328125 -762.15673828125 C 4892.02001953125 -762.8307495117188 4892.34912109375 -763.515869140625 4892.6533203125 -764.2066040039062 C 4894.3515625 -763.2843627929688 4895.95458984375 -762.3826904296875 4897.4677734375 -761.4973754882812 C 4896.59521484375 -759.5961303710938 4895.33203125 -757.9446411132812 4893.79248046875 -756.6719970703125 Z M 4893.083984375 -765.2462158203125 C 4893.43603515625 -766.1334228515625 4893.73876953125 -767.0242919921875 4893.9912109375 -767.9151611328125 C 4894.5888671875 -767.7020263671875 4895.18408203125 -767.5990600585938 4895.75439453125 -767.5990600585938 C 4896.90380859375 -767.5990600585938 4897.9580078125 -768.01611328125 4898.74365234375 -768.7913208007812 C 4898.77294921875 -768.4072875976562 4898.78857421875 -768.01806640625 4898.78857421875 -767.626708984375 C 4898.78857421875 -765.8303833007812 4898.4716796875 -764.1148071289062 4897.89599609375 -762.5423583984375 C 4896.38525390625 -763.426025390625 4894.7822265625 -764.325927734375 4893.083984375 -765.2462158203125 Z" fill="#000000" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4863.49, 784.64)" d="M 4889.3505859375 -772.446044921875 C 4888.52978515625 -771.04443359375 4886.81982421875 -770.5321044921875 4885.08056640625 -771.16943359375 C 4885.82568359375 -774.259033203125 4885.97998046875 -777.2843017578125 4885.49609375 -779.9110107421875 C 4887.4365234375 -777.9713134765625 4888.81982421875 -775.3758544921875 4889.3505859375 -772.446044921875 Z" fill="#ffffff" fill-opacity="0.0" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4867.95, 783.01)" d="M 4888.59033203125 -770.0411376953125 C 4886.388671875 -771.4700927734375 4885.11474609375 -773.665283203125 4883.88134765625 -775.792236328125 C 4882.62060546875 -777.9632568359375 4881.3232421875 -780.1951904296875 4879.06494140625 -781.5966796875 C 4879.85986328125 -781.7711181640625 4880.68115234375 -781.8629150390625 4881.525390625 -781.8629150390625 C 4884.1484375 -781.8629150390625 4886.58251953125 -780.975830078125 4888.59716796875 -779.462158203125 C 4889.4150390625 -776.77685546875 4889.38916015625 -773.463134765625 4888.59033203125 -770.0411376953125 Z" fill="#ffffff" fill-opacity="0.0" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4871.61, 783.33)" d="M 4891.9599609375 -769.233154296875 C 4891.71240234375 -768.3570556640625 4891.41796875 -767.4771728515625 4891.07421875 -766.6009521484375 C 4886.22705078125 -769.1981201171875 4880.62255859375 -771.95166015625 4874.13232421875 -774.92919921875 C 4875.62353515625 -777.980224609375 4878.138671875 -780.3441162109375 4881.17333984375 -781.469970703125 C 4883.86767578125 -780.3184814453125 4885.22509765625 -777.980224609375 4886.66015625 -775.5076904296875 C 4888.00537109375 -773.189453125 4889.39404296875 -770.79443359375 4891.9599609375 -769.233154296875 Z" fill="#ffffff" fill-opacity="0.0" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4864.0, 788.72)" d="M 4890.0986328125 -773.8656005859375 C 4890.0986328125 -772.069091796875 4889.78125 -770.353515625 4889.2060546875 -768.781005859375 C 4887.6953125 -769.6646728515625 4886.0908203125 -770.5648193359375 4884.39453125 -771.48486328125 C 4884.7451171875 -772.3721923828125 4885.0478515625 -773.262939453125 4885.30078125 -774.15380859375 C 4885.8974609375 -773.9407958984375 4886.494140625 -773.837890625 4887.064453125 -773.837890625 C 4888.212890625 -773.837890625 4889.267578125 -774.2547607421875 4890.0537109375 -775.0301513671875 C 4890.0830078125 -774.64599609375 4890.0986328125 -774.2567138671875 4890.0986328125 -773.8656005859375 Z" fill="#ffffff" fill-opacity="0.0" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4864.69, 790.81)" d="M 4889.47509765625 -769.82470703125 C 4888.603515625 -767.923583984375 4887.34033203125 -766.2721557617188 4885.80078125 -764.9993286132812 C 4886.0439453125 -766.8729858398438 4885.19775390625 -768.7721557617188 4883.4541015625 -770.0910034179688 C 4883.52880859375 -770.2214965820312 4883.59765625 -770.3519897460938 4883.669921875 -770.4840087890625 C 4884.0283203125 -771.158203125 4884.3564453125 -771.8433227539062 4884.6611328125 -772.5341186523438 C 4886.3583984375 -771.6118774414062 4887.96142578125 -770.7100219726562 4889.47509765625 -769.82470703125 Z" fill="#ffffff" fill-opacity="0.0" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4872.24, 786.78)" d="M 4891.271484375 -769.0087890625 C 4890.978515625 -768.3438110351562 4890.6591796875 -767.6826171875 4890.3134765625 -767.0304565429688 C 4890.2421875 -766.898193359375 4890.169921875 -766.7659912109375 4890.09765625 -766.6354370117188 C 4887.623046875 -767.9030151367188 4884.3759765625 -767.4144287109375 4881.2275390625 -766.9385375976562 C 4878.447265625 -766.5198364257812 4875.8203125 -766.123046875 4874.1181640625 -767.0047607421875 C 4873.580078125 -768.5330810546875 4873.2861328125 -770.1917724609375 4873.2861328125 -771.9256591796875 C 4873.2861328125 -773.850830078125 4873.6494140625 -775.683837890625 4874.306640625 -777.3479614257812 C 4880.810546875 -774.3631591796875 4886.4228515625 -771.6060791015625 4891.271484375 -769.0087890625 Z" fill="#ffffff" fill-opacity="0.0" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4871.63, 791.82)" d="M 4888.92431640625 -770.697509765625 C 4886.6728515625 -767.0089111328125 4883.88134765625 -764.5313720703125 4881.25927734375 -763.9415283203125 C 4878.162109375 -765.0693359375 4875.59912109375 -767.4866943359375 4874.10498046875 -770.6094970703125 C 4875.96630859375 -770.1151123046875 4878.3095703125 -770.4697265625 4880.7626953125 -770.8389892578125 C 4883.70703125 -771.2833251953125 4886.73876953125 -771.7425537109375 4888.92431640625 -770.697509765625 Z" fill="#ffffff" fill-opacity="0.0" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4867.77, 792.36)" d="M 4887.5029296875 -765.5633544921875 C 4885.6806640625 -764.4356689453125 4883.580078125 -763.7889404296875 4881.3447265625 -763.7889404296875 C 4880.65087890625 -763.7889404296875 4879.970703125 -763.8534545898438 4879.30908203125 -763.9727172851562 C 4881.66943359375 -765.111572265625 4884.02880859375 -767.4756469726562 4885.97216796875 -770.6790771484375 C 4887.7333984375 -769.330810546875 4888.33837890625 -767.3470458984375 4887.5029296875 -765.5633544921875 Z" fill="#ffffff" fill-opacity="0.0" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_kl5rgt =
-    '<svg viewBox="0.0 0.0 22.6 24.8" ><path transform="translate(-4883.81, 776.97)" d="M 4906.43017578125 -764.5880126953125 C 4906.43017578125 -757.760498046875 4901.3583984375 -752.20556640625 4895.1201171875 -752.20556640625 C 4888.8837890625 -752.20556640625 4883.810546875 -757.760498046875 4883.810546875 -764.5880126953125 C 4883.810546875 -771.4154052734375 4888.8837890625 -776.969970703125 4895.1201171875 -776.969970703125 C 4901.3583984375 -776.969970703125 4906.43017578125 -771.4154052734375 4906.43017578125 -764.5880126953125 Z" fill="#000000" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4883.51, 783.53)" d="M 4887.7451171875 -762.2879028320312 C 4885.9296875 -764.02734375 4884.6513671875 -766.4205932617188 4884.22216796875 -769.1300048828125 L 4884.43310546875 -769.0012817382812 C 4885.05712890625 -767.3701782226562 4885.95361328125 -765.7886962890625 4886.95703125 -764.5617065429688 C 4887.17578125 -763.7996215820312 4887.439453125 -763.0408935546875 4887.7451171875 -762.2879028320312 Z" fill="#ffffff" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4879.87, 786.37)" d="M 4898.2861328125 -765.1656494140625 C 4896.388671875 -763.3342895507812 4893.9013671875 -762.2192993164062 4891.177734375 -762.2192993164062 C 4890.4736328125 -762.2192993164062 4889.7880859375 -762.2946166992188 4889.1220703125 -762.43603515625 L 4890.1357421875 -764.0486450195312 C 4892.0947265625 -764.074462890625 4894.3935546875 -764.728271484375 4896.04296875 -765.7330322265625 L 4898.2861328125 -765.1656494140625 Z" fill="#e8e8e8" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4875.1, 780.36)" d="M 4897.16650390625 -767.9761962890625 C 4897.16650390625 -766.3450927734375 4896.8603515625 -764.7910766601562 4896.31103515625 -763.3767700195312 L 4895.54150390625 -766.22021484375 C 4895.8427734375 -768.3875122070312 4895.8671875 -770.4778442382812 4895.6142578125 -772.4414672851562 L 4896.169921875 -772.9208374023438 C 4896.80859375 -771.4163818359375 4897.16650390625 -769.741455078125 4897.16650390625 -767.9761962890625 Z" fill="#e8e8e8" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4878.06, 779.28)" d="M 4898.0078125 -765.7225952148438 L 4894.5771484375 -764.4642944335938 L 4891.72216796875 -766.8024291992188 L 4891.55859375 -771.9033203125 L 4894.9599609375 -774.214111328125 L 4898.013671875 -771.2953491210938 C 4898.2421875 -769.5338134765625 4898.240234375 -767.6640625 4898.0078125 -765.7225952148438 Z" fill="#e8e8e8" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4880.27, 777.25)" d="M 4896.84423828125 -772.683349609375 L 4893.40869140625 -770.3467407226562 L 4889.318359375 -771.7685546875 L 4888.58056640625 -775.20166015625 L 4891.39453125 -776.6343383789062 C 4891.4560546875 -776.6361083984375 4891.51708984375 -776.6380615234375 4891.57763671875 -776.6380615234375 C 4893.2626953125 -776.6380615234375 4894.859375 -776.2100830078125 4896.279296875 -775.4512939453125 L 4896.84423828125 -772.683349609375 Z" fill="#e8e8e8" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4880.78, 782.91)" d="M 4897.001953125 -767.5814208984375 L 4896.57666015625 -762.7412109375 C 4895.00439453125 -761.813720703125 4892.8505859375 -761.21484375 4891.0126953125 -761.1983642578125 L 4887.88720703125 -764.5799560546875 L 4889.20263671875 -768.28662109375 L 4894.20556640625 -769.869873046875 L 4897.001953125 -767.5814208984375 Z" fill="#e8e8e8" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4883.26, 781.63)" d="M 4891.15234375 -767.203369140625 L 4889.84765625 -763.5225219726562 L 4887.052734375 -763.1680297851562 C 4886.0341796875 -764.4409790039062 4885.1328125 -766.0922241210938 4884.5478515625 -767.7711181640625 L 4884.5478515625 -767.7691650390625 L 4885.23486328125 -771.1802978515625 L 4888.7353515625 -771.3969116210938 L 4891.15234375 -767.203369140625 Z" fill="#e8e8e8" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4883.08, 777.99)" d="M 4891.59326171875 -772.3411865234375 L 4888.556640625 -768.3643798828125 L 4885.08203125 -768.1475830078125 L 4884.79638671875 -770.9212646484375 C 4885.6123046875 -772.67529296875 4886.81689453125 -774.1796264648438 4888.28564453125 -775.2930297851562 L 4890.85791015625 -775.7538452148438 L 4891.59326171875 -772.3411865234375 Z" fill="#e8e8e8" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_piv5tj =
-    '<svg viewBox="0.0 0.0 27.6 18.0" ><path transform="translate(-4876.05, 769.42)" d="M 4903.318359375 -759.4208374023438 C 4900.7392578125 -754.5826416015625 4895.6201171875 -751.5151977539062 4889.951171875 -751.4158935546875 C 4885.48828125 -751.3756103515625 4881.3203125 -753.1810913085938 4878.431640625 -756.2780151367188 C 4878.025390625 -756.7169799804688 4877.6435546875 -757.179931640625 4877.291015625 -757.6685180664062 L 4877.2890625 -757.6685180664062 L 4877.2890625 -757.6685180664062 C 4876.966796875 -758.113037109375 4876.666015625 -758.5758666992188 4876.3955078125 -759.0609130859375 C 4875.978515625 -759.7937622070312 4875.9375 -760.6883544921875 4876.28515625 -761.4505615234375 C 4877.4248046875 -763.950439453125 4879.35546875 -766.0079345703125 4881.8681640625 -767.4017944335938 C 4884.1708984375 -768.6822509765625 4886.890625 -769.3802490234375 4889.7333984375 -769.4225463867188 L 4889.7333984375 -769.4225463867188 C 4892.578125 -769.455322265625 4895.3154296875 -768.8309936523438 4897.6474609375 -767.6130981445312 C 4900.193359375 -766.2870483398438 4902.171875 -764.281005859375 4903.3701171875 -761.8125 C 4903.734375 -761.0592041015625 4903.7158203125 -760.1648559570312 4903.318359375 -759.4208374023438 Z" fill="#000000" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4873.84, 775.95)" d="M 4896.3681640625 -761.6239013671875 C 4893.93359375 -759.8329467773438 4890.9248046875 -758.7897338867188 4887.7333984375 -758.7347412109375 C 4884.5390625 -758.7052001953125 4881.5029296875 -759.666015625 4879.029296875 -761.3906860351562 C 4880.28515625 -760.8543701171875 4881.73828125 -760.4484252929688 4883.380859375 -760.1765747070312 C 4886.26171875 -759.6972045898438 4889.17578125 -759.7376098632812 4892.0439453125 -760.292236328125 C 4893.6806640625 -760.6082153320312 4895.1220703125 -761.0546875 4896.3681640625 -761.6239013671875 Z" fill="#e8e8e8" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4875.69, 769.78)" d="M 4902.45263671875 -761.5254516601562 C 4900.30908203125 -763.3366088867188 4897.767578125 -764.6607055664062 4895.00634765625 -765.4287719726562 C 4894.9970703125 -765.9080810546875 4894.970703125 -766.385498046875 4894.9189453125 -766.861328125 C 4894.89599609375 -767.078125 4894.71044921875 -767.2340087890625 4894.50439453125 -767.2103881835938 C 4894.2998046875 -767.1864624023438 4894.1513671875 -766.9898681640625 4894.1728515625 -766.7732543945312 C 4894.21435546875 -766.3909912109375 4894.23974609375 -766.0072631835938 4894.25244140625 -765.6234130859375 C 4894.0361328125 -765.6746826171875 4893.818359375 -765.7224731445312 4893.5986328125 -765.7685546875 C 4893.5869140625 -766.189208984375 4893.5615234375 -766.6096801757812 4893.513671875 -767.0284423828125 C 4893.4921875 -767.2452392578125 4893.30810546875 -767.4032592773438 4893.1015625 -767.37744140625 C 4892.89599609375 -767.3535766601562 4892.74609375 -767.1590576171875 4892.7705078125 -766.9421997070312 C 4892.80517578125 -766.5986938476562 4892.83056640625 -766.2532958984375 4892.84326171875 -765.9080810546875 C 4892.6142578125 -765.946533203125 4892.3837890625 -765.9814453125 4892.15283203125 -766.0127563476562 C 4892.138671875 -766.385498046875 4892.1123046875 -766.7584838867188 4892.07470703125 -767.129638671875 C 4892.05126953125 -767.3463745117188 4891.8662109375 -767.5043334960938 4891.65966796875 -767.4804077148438 C 4891.455078125 -767.45458984375 4891.30517578125 -767.2600708007812 4891.32861328125 -767.0411987304688 C 4891.36181640625 -766.7289428710938 4891.38427734375 -766.4150390625 4891.3984375 -766.09912109375 C 4891.1259765625 -766.1266479492188 4890.8544921875 -766.1467895507812 4890.58203125 -766.1634521484375 C 4890.56787109375 -766.4810791015625 4890.5517578125 -766.79345703125 4890.5244140625 -767.1001586914062 C 4890.50830078125 -767.3187255859375 4890.3251953125 -767.4786376953125 4890.119140625 -767.4602661132812 C 4889.91162109375 -767.43994140625 4889.7607421875 -767.2489624023438 4889.7783203125 -767.0302734375 C 4889.80029296875 -766.7567749023438 4889.818359375 -766.477294921875 4889.82861328125 -766.192626953125 C 4889.5546875 -766.1981811523438 4889.28076171875 -766.1947631835938 4889.00830078125 -766.1835327148438 C 4889.013671875 -766.4664916992188 4889.02392578125 -766.7474975585938 4889.0390625 -767.0211181640625 C 4889.05322265625 -767.2378540039062 4888.89404296875 -767.4271240234375 4888.689453125 -767.43994140625 C 4888.48095703125 -767.45458984375 4888.30419921875 -767.2874755859375 4888.29296875 -767.0706787109375 C 4888.2724609375 -766.7638549804688 4888.26318359375 -766.4498901367188 4888.25927734375 -766.1322021484375 C 4887.98486328125 -766.1099243164062 4887.71337890625 -766.08056640625 4887.443359375 -766.0475463867188 C 4887.44921875 -766.363525390625 4887.46484375 -766.6776123046875 4887.49072265625 -766.99169921875 C 4887.5068359375 -767.2084350585938 4887.35498046875 -767.4014282226562 4887.1484375 -767.4197998046875 C 4886.94189453125 -767.4381103515625 4886.759765625 -767.2764282226562 4886.7431640625 -767.057861328125 C 4886.7138671875 -766.6886596679688 4886.69677734375 -766.3157958984375 4886.689453125 -765.9429321289062 C 4886.4599609375 -765.90625 4886.23095703125 -765.86767578125 4886.00244140625 -765.8253784179688 C 4886.00830078125 -766.1670532226562 4886.0224609375 -766.5106811523438 4886.0517578125 -766.8521728515625 C 4886.06884765625 -767.0689697265625 4885.9140625 -767.2617797851562 4885.70947265625 -767.280029296875 C 4885.5029296875 -767.2984619140625 4885.32177734375 -767.136962890625 4885.3037109375 -766.918212890625 C 4885.27001953125 -766.5032958984375 4885.25390625 -766.0860595703125 4885.2509765625 -765.6673583984375 C 4885.033203125 -765.6177978515625 4884.81591796875 -765.56640625 4884.60107421875 -765.5111694335938 C 4884.60498046875 -765.8895263671875 4884.6201171875 -766.2680053710938 4884.6494140625 -766.6463623046875 C 4884.6689453125 -766.8630981445312 4884.5166015625 -767.0559692382812 4884.30908203125 -767.0742797851562 C 4884.10302734375 -767.0926513671875 4883.92236328125 -766.9310913085938 4883.90478515625 -766.71435546875 C 4883.86669921875 -766.244140625 4883.8486328125 -765.772216796875 4883.8505859375 -765.3001098632812 C 4881.103515625 -764.47705078125 4878.60693359375 -763.1177978515625 4876.53662109375 -761.295654296875 C 4876.5556640625 -761.3545532226562 4876.578125 -761.4115600585938 4876.6044921875 -761.4685668945312 C 4877.6728515625 -763.8139038085938 4879.48828125 -765.7481689453125 4881.857421875 -767.0634765625 C 4884.05615234375 -768.2830200195312 4886.6611328125 -768.949951171875 4889.38720703125 -768.9903564453125 C 4892.111328125 -769.0232543945312 4894.728515625 -768.4264526367188 4896.95751953125 -767.2655639648438 C 4899.35595703125 -766.0145874023438 4901.21923828125 -764.1280517578125 4902.3427734375 -761.8118286132812 C 4902.388671875 -761.7200927734375 4902.42431640625 -761.6226196289062 4902.45263671875 -761.5254516601562 Z" fill="#e8e8e8" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /><path transform="translate(-4875.7, 771.42)" d="M 4902.45361328125 -762.1387939453125 C 4902.4189453125 -762.025146484375 4902.37353515625 -761.9129638671875 4902.3154296875 -761.8045654296875 C 4902.076171875 -761.3546142578125 4901.81298828125 -760.9228515625 4901.5283203125 -760.505859375 C 4899.998046875 -758.573486328125 4897.38671875 -757.239990234375 4893.7705078125 -756.540283203125 C 4890.984375 -756.0020751953125 4888.15576171875 -755.9635009765625 4885.3564453125 -756.4283447265625 C 4881.734375 -757.0286865234375 4879.09765625 -758.2869873046875 4877.5205078125 -760.1678466796875 C 4877.220703125 -760.5830078125 4876.94384765625 -761.012939453125 4876.689453125 -761.462890625 C 4876.6181640625 -761.5897216796875 4876.5615234375 -761.7237548828125 4876.52392578125 -761.8614501953125 C 4878.56103515625 -763.8031005859375 4881.08203125 -765.25048828125 4883.884765625 -766.119384765625 C 4883.90087890625 -765.8382568359375 4883.9208984375 -765.560791015625 4883.95166015625 -765.283447265625 C 4883.95947265625 -765.191650390625 4883.9990234375 -765.1109619140625 4884.0556640625 -765.0484619140625 C 4884.134765625 -764.9656982421875 4884.24609375 -764.919677734375 4884.36376953125 -764.9327392578125 C 4884.56982421875 -764.9566650390625 4884.72021484375 -765.1531982421875 4884.69482421875 -765.369873046875 C 4884.66162109375 -765.6895751953125 4884.63916015625 -766.0108642578125 4884.625 -766.332275390625 C 4884.84130859375 -766.389404296875 4885.05712890625 -766.4462890625 4885.275390625 -766.4959716796875 C 4885.29248046875 -766.15966796875 4885.314453125 -765.8236083984375 4885.34912109375 -765.4873046875 C 4885.3583984375 -765.3955078125 4885.3994140625 -765.314697265625 4885.4541015625 -765.254150390625 C 4885.53271484375 -765.1715087890625 4885.6435546875 -765.1236572265625 4885.76513671875 -765.138427734375 C 4885.9697265625 -765.162353515625 4886.1181640625 -765.35888671875 4886.09521484375 -765.57568359375 C 4886.05859375 -765.933837890625 4886.0341796875 -766.2938232421875 4886.01953125 -766.65576171875 C 4886.24609375 -766.69970703125 4886.478515625 -766.741943359375 4886.70947265625 -766.778564453125 C 4886.72119140625 -766.39306640625 4886.74853515625 -766.0091552734375 4886.78955078125 -765.6270751953125 C 4886.7978515625 -765.53515625 4886.83740234375 -765.454345703125 4886.89404296875 -765.393798828125 C 4886.97265625 -765.309326171875 4887.083984375 -765.263427734375 4887.20166015625 -765.2779541015625 C 4887.40869140625 -765.302001953125 4887.556640625 -765.4984130859375 4887.53466796875 -765.7152099609375 C 4887.49267578125 -766.102783203125 4887.46728515625 -766.4959716796875 4887.45654296875 -766.88720703125 C 4887.7275390625 -766.9202880859375 4887.99755859375 -766.9495849609375 4888.27197265625 -766.973388671875 C 4888.28173828125 -766.5416259765625 4888.30419921875 -766.1046142578125 4888.3369140625 -765.66015625 C 4888.34326171875 -765.564697265625 4888.38330078125 -765.4783935546875 4888.4423828125 -765.4139404296875 C 4888.5205078125 -765.3331298828125 4888.6259765625 -765.287353515625 4888.740234375 -765.2962646484375 C 4888.9482421875 -765.314697265625 4889.10205078125 -765.5057373046875 4889.083984375 -765.724365234375 C 4889.05078125 -766.165283203125 4889.0302734375 -766.5987548828125 4889.02001953125 -767.0247802734375 C 4889.296875 -767.0377197265625 4889.57666015625 -767.0413818359375 4889.85400390625 -767.0357666015625 C 4889.85400390625 -766.60986328125 4889.845703125 -766.1761474609375 4889.82275390625 -765.7337646484375 C 4889.81640625 -765.6177978515625 4889.85888671875 -765.5111083984375 4889.93017578125 -765.43408203125 C 4889.99365234375 -765.3660888671875 4890.08056640625 -765.322265625 4890.17529296875 -765.316650390625 C 4890.38330078125 -765.3037109375 4890.560546875 -765.470947265625 4890.57177734375 -765.6895751953125 C 4890.59619140625 -766.1358642578125 4890.6064453125 -766.5728759765625 4890.60400390625 -767.0028076171875 C 4890.87939453125 -766.9862060546875 4891.150390625 -766.9642333984375 4891.423828125 -766.9365234375 C 4891.4208984375 -766.54736328125 4891.40478515625 -766.156005859375 4891.37353515625 -765.7666015625 C 4891.36328125 -765.6453857421875 4891.40478515625 -765.5333251953125 4891.4794921875 -765.454345703125 C 4891.54052734375 -765.3900146484375 4891.62255859375 -765.3460693359375 4891.71533203125 -765.338623046875 C 4891.919921875 -765.318359375 4892.10302734375 -765.4801025390625 4892.1201171875 -765.69873046875 C 4892.150390625 -766.080810546875 4892.16796875 -766.462646484375 4892.171875 -766.8468017578125 C 4892.404296875 -766.8155517578125 4892.6337890625 -766.778564453125 4892.86279296875 -766.7384033203125 C 4892.86181640625 -766.3802490234375 4892.84375 -766.021728515625 4892.81689453125 -765.6656494140625 C 4892.80517578125 -765.5443115234375 4892.8466796875 -765.4322509765625 4892.9228515625 -765.353515625 C 4892.98193359375 -765.2890625 4893.06396484375 -765.2449951171875 4893.15673828125 -765.237548828125 C 4893.36181640625 -765.2191162109375 4893.54296875 -765.379150390625 4893.56103515625 -765.5977783203125 C 4893.58935546875 -765.93017578125 4893.60498046875 -766.2626953125 4893.6123046875 -766.594970703125 C 4893.83056640625 -766.5489501953125 4894.048828125 -766.4976806640625 4894.26513671875 -766.4444580078125 C 4894.26025390625 -766.12841796875 4894.24462890625 -765.8125 4894.21923828125 -765.4964599609375 C 4894.20947265625 -765.377197265625 4894.25244140625 -765.26513671875 4894.3251953125 -765.1861572265625 C 4894.3857421875 -765.1199951171875 4894.4677734375 -765.0777587890625 4894.56103515625 -765.068603515625 C 4894.7666015625 -765.05029296875 4894.94873046875 -765.2119140625 4894.9658203125 -765.4305419921875 C 4894.98779296875 -765.7005615234375 4895.001953125 -765.972412109375 4895.01171875 -766.244384765625 C 4897.79833984375 -765.4398193359375 4900.34619140625 -764.0455322265625 4902.45361328125 -762.1387939453125 Z" fill="#e8e8e8" stroke="none" stroke-width="1" stroke-miterlimit="10" stroke-linecap="butt" /></svg>';
-const String _svg_vlehqa =
-    '<svg viewBox="1.0 2.0 41.0 40.0" ><path transform="translate(-1.0, 0.0)" d="M 22.50000190734863 2 C 11.17816162109375 2 2 10.95430564880371 2 22.00000190734863 C 2 33.04569625854492 11.17816352844238 42.00000381469727 22.50000190734863 42.00000381469727 C 33.82183456420898 42.00000381469727 43 33.04569244384766 43 22.00000190734863 C 43 10.95430374145508 33.82183074951172 2 22.50000190734863 2 Z M 22.50000190734863 38 C 13.44252872467041 38 6.099999904632568 30.83655738830566 6.099999904632568 22.00000190734863 C 6.099999904632568 13.16344261169434 13.44253063201904 6.000000476837158 22.50000190734863 6.000000476837158 C 31.55747032165527 6.000000476837158 38.89999771118164 13.16344451904297 38.89999771118164 22.00000190734863 C 38.89999771118164 30.83655738830566 31.55747032165527 38 22.50000190734863 38 Z" fill="#000000" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
-const String _svg_mqaah7 =
-    '<svg viewBox="13.5 14.0 16.0 16.1" ><path transform="translate(5.48, 5.95)" d="M 23.42947769165039 8.643033027648926 C 22.86628723144531 8.036139488220215 21.98859024047852 7.836663246154785 21.21841049194336 8.140517234802246 L 12.75606441497803 11.55761623382568 C 12.2534646987915 11.76183795928955 11.85475444793701 12.16054821014404 11.65053272247314 12.6631498336792 L 8.132929801940918 21.22599792480469 C 7.87879753112793 21.91193771362305 8.017369270324707 22.68178939819336 8.49474048614502 23.23605728149414 L 8.595244407653809 23.23605728149414 C 8.92281436920166 23.70480728149414 9.434535026550293 24.0118408203125 10.00228595733643 24.08028411865234 C 10.2636194229126 24.0834846496582 10.52306842803955 24.03569412231445 10.76610851287842 23.93957901000977 L 19.22845458984375 20.52248001098633 C 19.73105621337891 20.31825637817383 20.12976455688477 19.91954803466797 20.333984375 19.41694641113281 L 23.85158920288086 10.85409832000732 C 24.17546081542969 10.10001277923584 24.00836944580078 9.224772453308105 23.42947769165039 8.643034934997559 Z M 13.62039089202881 18.47221755981445 L 15.047532081604 14.97471523284912 L 18.44453430175781 13.60787487030029 L 17.01739120483398 17.10537719726562 L 13.62039089202881 18.47221755981445 Z" fill="#000000" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
-const String _svg_xkzzp9 =
-    '<svg viewBox="3.0 2.0 18.0 20.0" ><path  d="M 20.42000007629395 10.18000030517578 L 12.71000003814697 2.299999952316284 C 12.5222339630127 2.110687255859375 12.26663780212402 2.004201650619507 12 2.004201650619507 C 11.73336219787598 2.004201650619507 11.47776699066162 2.110687255859375 11.28999996185303 2.299999952316284 L 3.579999923706055 10.1899995803833 C 3.203155517578125 10.56988430023193 2.994253158569336 11.08493709564209 3 11.61999893188477 L 3 20 C 2.998391151428223 21.0629997253418 3.828607797622681 21.94153594970703 4.889999389648438 22 L 19.11000061035156 22 C 20.1713924407959 21.94153594970703 21.00160789489746 21.0629997253418 21 20 L 21 11.61999988555908 C 21.00079345703125 11.08293437957764 20.79281806945801 10.56658363342285 20.42000007629395 10.1800012588501 Z M 10 20 L 10 14 L 14 14 L 14 20 L 10 20 Z M 19 20 L 16 20 L 16 13 C 16 12.44771480560303 15.55228424072266 12 15 12 L 9 12 C 8.447714805603027 12 8 12.44771575927734 8 13 L 8 20 L 5 20 L 5 11.57999992370605 L 12 4.429999828338623 L 19 11.61999988555908 L 19 20 Z" fill="#2e9eff" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>';
