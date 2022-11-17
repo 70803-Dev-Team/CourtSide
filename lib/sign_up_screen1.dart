@@ -92,7 +92,7 @@ class SignUpScreen1 extends StatelessWidget {
                   ),
                 ),
                 Pinned.fromPins(
-                  Pin(size: 37.0, end: 20.0),
+                  Pin(size: 40.0, end: 20.0),
                   Pin(size: 24.0, middle: 0.4569),
                   child: PageLink(
                     links: [
@@ -150,7 +150,7 @@ class SignUpScreen1 extends StatelessWidget {
             ),
           ),
           Pinned.fromPins(
-            Pin(size: 281.0, start: 20.0),
+            Pin(size: 300.0, start: 20.0),
             Pin(size: 95.0, middle: 0.1889),
             child:
                 // Adobe XD layer: 'Page Titile' (group)
@@ -173,7 +173,7 @@ class SignUpScreen1 extends StatelessWidget {
                 const Align(
                   alignment: Alignment.topLeft,
                   child: SizedBox(
-                    width: 182.0,
+                    width: 210.0,
                     height: 43.0,
                     child: Text(
                       'Your goals',
