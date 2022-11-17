@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import './message_screen.dart';
 import 'package:adobe_xd/page_link.dart';
-import './profile_screen.dart';
-import './reservations_screen.dart';
-import './search_screen_map_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'svgs.dart' as svgs;
 
