@@ -3,13 +3,19 @@ import 'package:court_side/search/animated_map/map_markers.dart';
 import 'package:court_side/search/list_search/list_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+// ignore: depend_on_referenced_packages
 import 'package:latlong2/latlong.dart';
 
+// ignore: constant_identifier_names
 const MAPBOX_ACCESS_TOKEN =
     'pk.eyJ1Ijoic2VhbmNoYXBwZWxsMTciLCJhIjoiY2xhN3VuZ3dzMXprYjNxbzM1ODc4aDlobyJ9.1UldWbglZcsHVDV4KbkiUg';
+// ignore: constant_identifier_names
 const MAPBOX_STYLE = 'mapbox/dark-v10';
+// ignore: constant_identifier_names
 const MARKER_COLOR = Color.fromRGBO(22, 219, 255, 1);
+// ignore: constant_identifier_names
 const MARKER_SIZE_EXPANDED = 50.0;
+// ignore: constant_identifier_names
 const MARKER_SIZE_SHRINKED = 30.0;
 
 final _myLocation = LatLng(30.412275549754963, -91.18377338692989);
@@ -18,6 +24,7 @@ class AnimatedMarkersMap extends StatefulWidget {
   const AnimatedMarkersMap({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _AnimatedMarkersMapState createState() => _AnimatedMarkersMapState();
 }
 
@@ -28,10 +35,10 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
   int _selectedIndex = 0;
 
   List<Marker> _buildMarkers() {
-    final _markerList = <Marker>[];
+    final markerList = <Marker>[];
     for (int i = 0; i < MAP_MARKERS.length; i++) {
       final mapItem = MAP_MARKERS[i];
-      _markerList.add(
+      markerList.add(
         Marker(
           height: MARKER_SIZE_EXPANDED,
           width: MARKER_SIZE_EXPANDED,
@@ -54,7 +61,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
         ),
       );
     }
-    return _markerList;
+    return markerList;
   }
 
   @override
@@ -69,30 +76,31 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
 
   @override
   Widget build(BuildContext context) {
-    final _markers = _buildMarkers();
+    final markers = _buildMarkers();
     return Scaffold(
       appBar: AppBar(
         // Bottom Rounded Border for AppBar
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(20))),
         // Filter Button
         actions: [
           IconButton(
-            icon: Icon(Icons.filter_alt_outlined),
-            color: Color.fromRGBO(46, 158, 255, 1),
+            icon: const Icon(Icons.filter_alt_outlined),
+            color: const Color.fromRGBO(46, 158, 255, 1),
+            // ignore: avoid_returning_null_for_void
             onPressed: () => null,
           ),
         ],
         // List Button
         leading: Padding(
-            padding: EdgeInsets.only(top: 5.0),
+            padding: const EdgeInsets.only(top: 5.0),
             child: TextButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return ListSearch();
+                  return const ListSearch();
                 }));
               },
-              child: Text(
+              child: const Text(
                 'List',
                 style: TextStyle(
                   color: Color.fromRGBO(46, 158, 255, 1),
@@ -104,7 +112,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
             )),
         toolbarHeight: 55,
         backgroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           'Search',
           style: TextStyle(color: Colors.black),
         ),
@@ -123,13 +131,13 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
               TileLayer(
                 urlTemplate:
                     'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
-                additionalOptions: {
+                additionalOptions: const {
                   'accessToken': MAPBOX_ACCESS_TOKEN,
                   'id': MAPBOX_STYLE,
                 },
               ),
               MarkerLayer(
-                markers: _markers,
+                markers: markers,
               ),
               MarkerLayer(
                 markers: [
@@ -179,7 +187,7 @@ class _MyLocationMarker extends AnimatedWidget {
   Widget build(BuildContext context) {
     final value = (listenable as Animation<double>).value;
     final newValue = lerpDouble(0.5, 1.0, value)!;
-    final size = 45.0;
+    const size = 45.0;
     return Center(
       child: Stack(
         children: [
@@ -197,7 +205,7 @@ class _MyLocationMarker extends AnimatedWidget {
             child: Container(
               height: 20,
               width: 20,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: MARKER_COLOR,
                 shape: BoxShape.circle,
               ),
@@ -236,22 +244,22 @@ class _MapItemDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _styleTitle = TextStyle(
+    const styleTitle = TextStyle(
       color: Colors.black,
       fontSize: 18,
       fontWeight: FontWeight.w800,
     );
-    final _styleAddress = TextStyle(
+    final styleAddress = TextStyle(
       color: Colors.grey[800],
       fontSize: 16,
       fontWeight: FontWeight.w200,
     );
-    final _stylePrice = TextStyle(
+    const stylePrice = TextStyle(
       color: Colors.black,
       fontSize: 18,
       fontWeight: FontWeight.w800,
     );
-    final _styleRating = TextStyle(
+    const styleRating = TextStyle(
       color: Colors.black,
       fontSize: 18,
       fontWeight: FontWeight.w800,
@@ -267,7 +275,8 @@ class _MapItemDetails extends StatelessWidget {
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top: 10, left: 10, right: 10),
+                    padding:
+                        const EdgeInsets.only(top: 10, left: 10, right: 10),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: Image.asset(mapMarker.image),
@@ -275,7 +284,7 @@ class _MapItemDetails extends StatelessWidget {
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.only(left: 12),
+                      padding: const EdgeInsets.only(left: 12),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         mainAxisSize: MainAxisSize.min,
@@ -283,30 +292,31 @@ class _MapItemDetails extends StatelessWidget {
                           const SizedBox(height: 10),
                           Text(
                             mapMarker.title,
-                            style: _styleTitle,
+                            style: styleTitle,
                           ),
                           Text(
                             mapMarker.address,
-                            style: _styleAddress,
+                            style: styleAddress,
                           ),
                           Row(
                             children: [
                               Text(
                                 mapMarker.price,
-                                style: _stylePrice,
+                                style: stylePrice,
                               ),
-                              Spacer(
+                              const Spacer(
                                 flex: 1,
                               ),
-                              Icon(
+                              const Icon(
                                 Icons.star,
                                 color: Color.fromRGBO(212, 175, 55, 100),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(right: 17, left: 2),
+                                padding:
+                                    const EdgeInsets.only(right: 17, left: 2),
                                 child: Text(
                                   mapMarker.rating,
-                                  style: _styleRating,
+                                  style: styleRating,
                                 ),
                               ),
                             ],

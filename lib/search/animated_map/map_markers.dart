@@ -1,5 +1,5 @@
+// ignore: depend_on_referenced_packages
 import 'package:latlong2/latlong.dart';
-import 'package:flutter/material.dart';
 
 class MapMarker {
   const MapMarker({
@@ -31,9 +31,10 @@ final _locations = [
   LatLng(30.4241124873271, -91.10202066346085), // Basketball
 ];
 
+// ignore: constant_identifier_names
 const _path_picture = 'assets/listings-pictures/';
-const _path_icon = 'assets/animated_markers_map/';
 
+// ignore: non_constant_identifier_names
 final MAP_MARKERS = [
   MapMarker(
     sport: 'baseball',
