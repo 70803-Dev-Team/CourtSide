@@ -4,6 +4,7 @@ import 'package:court_side/search/list_search/list_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:court_side/nav_bar.dart';
 
 const MAPBOX_ACCESS_TOKEN =
     'pk.eyJ1Ijoic2VhbmNoYXBwZWxsMTciLCJhIjoiY2xhN3VuZ3dzMXprYjNxbzM1ODc4aDlobyJ9.1UldWbglZcsHVDV4KbkiUg';
@@ -26,6 +27,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
   final _pageController = PageController();
   late final AnimationController _animationController;
   int _selectedIndex = 0;
+  // int _currentIndex = 1;
 
   List<Marker> _buildMarkers() {
     final _markerList = <Marker>[];
@@ -148,7 +150,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
           Positioned(
             left: 0,
             right: 0,
-            bottom: 50, // Change y-position of Listing Description
+            bottom: 0, // Change y-position of Listing Description
             height: MediaQuery.of(context).size.height * 0.385,
             child: PageView.builder(
               controller: _pageController,
@@ -164,6 +166,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
           ),
         ],
       ),
+      bottomNavigationBar: NavBar(),
     );
   }
 }

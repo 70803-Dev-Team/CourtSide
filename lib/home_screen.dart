@@ -15,70 +15,201 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   //HomeScreen({super.key});
   int _current = 0;
+  int _currentIndex = 0;
   final controller = PageController(viewportFraction: 0.8, keepPage: true);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        toolbarHeight: 80,
+        elevation: 0,
+        toolbarHeight: 65,
         title: Container(
           width: double.infinity,
           height: 40,
           decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 62, 62, 62),
+              color: const Color.fromRGBO(118, 118, 128, .24),
               borderRadius: BorderRadius.circular(20)),
           child: const Center(
             child: TextField(
               //search requires more implementation... remember
               decoration: InputDecoration(
                 hintText: 'Find a court, field, or equipment',
-                prefixIcon: Icon(Icons.search),
+                hintStyle: TextStyle(
+                  color: Color.fromRGBO(235, 235, 245, .6),
+                ),
+                prefixIcon: Icon(Icons.search,
+                    color: Color.fromRGBO(235, 235, 245, .6)),
+                border: InputBorder.none,
               ),
             ),
           ),
         ),
-        backgroundColor: const Color.fromARGB(255, 32, 33, 37),
+        backgroundColor: const Color.fromRGBO(52, 58, 64, 1),
         leading: Padding(
           padding: const EdgeInsets.all(4.0),
           child: Image.asset(
-            "assets/company-logo.png",
+            "assets/pictures/company-logo.png",
           ),
         ),
       ),
-      backgroundColor: const Color(0xffffffff),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-                child: Text(
-                  "Categories",
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                      fontFamily: 'SF Pro',
-                      fontSize: 28,
-                      color: Color(0xff000000),
-                      fontWeight: FontWeight.w800),
+            // CATEGORIES SECTION
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 10.0, top: 10.0),
+                  child: Text(
+                    "Categories",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        fontFamily: 'SF Pro',
+                        fontSize: 28,
+                        color: Color(0xff000000),
+                        fontWeight: FontWeight.w800),
+                  ),
                 ),
-              ),
+                Spacer(
+                  flex: 1,
+                ),
+                // Forward Arrow Button
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0, right: 8.0),
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color.fromRGBO(22, 183, 255, 1),
+                  ),
+                ),
+              ],
             ),
             GridView.count(
               shrinkWrap: true,
               primary: true,
               crossAxisCount: 3,
-              childAspectRatio: 10 / 5,
-              crossAxisSpacing: 20.0,
+              childAspectRatio: 1,
+              crossAxisSpacing: 6.5,
               mainAxisSpacing: 30.0,
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+              padding: EdgeInsets.only(left: 8, right: 8, top: 10),
               children: <Widget>[
+                // BASKETBALL CATEGORY
                 OutlinedButton(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const HomeScreen()));
+                    // Navigator.of(context).push(MaterialPageRoute(
+                    //     builder: (context) => const HomeScreen()));
+                    null;
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    )),
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: 20.0),
+                        child: SvgPicture.string(
+                          svgs.blueBasketball5,
+                          color: Color.fromRGBO(22, 183, 255, 1),
+                          height: 45.43,
+                          width: 45.43,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 12),
+                        child: Text(
+                          'Basketball',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                // GOLF CATEGORY
+                OutlinedButton(
+                  onPressed: () {
+                    // Navigator.of(context).push(MaterialPageRoute(
+                    //     builder: (context) => const HomeScreen()));
+                    null;
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0))),
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20.0),
+                        child: SvgPicture.string(
+                          svgs.golfClubHead,
+                          fit: BoxFit.fill,
+                          color: Color.fromRGBO(22, 183, 255, 1),
+                          height: 45.43,
+                          width: 45.43,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10),
+                        child: Text(
+                          'Golf',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                // TENNIS CATEGORY
+                OutlinedButton(
+                  onPressed: () {
+                    // Navigator.of(context).push(MaterialPageRoute(
+                    //     builder: (context) => const HomeScreen()));
+                    null;
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0))),
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20.0),
+                        child: SvgPicture.string(
+                          svgs.racket,
+                          fit: BoxFit.fill,
+                          color: Color.fromRGBO(22, 183, 255, 1),
+                          width: 45.43,
+                          height: 45.43,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10),
+                        child: Text(
+                          'Tennis',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                // BASEBALL CATEGORY
+                OutlinedButton(
+                  onPressed: () {
+                    // Navigator.of(context).push(MaterialPageRoute(
+                    //     builder: (context) => const HomeScreen()));
+                    null;
                   },
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
@@ -88,21 +219,72 @@ class _HomeScreenState extends State<HomeScreen> {
                     //child: Padding(padding: EdgeInsets.only(top: 10.0),),
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
+                        padding: const EdgeInsets.only(top: 20.0),
                         child: SvgPicture.string(
-                          svgs.blueBasketball5,
-                          allowDrawingOutsideViewBox: true,
+                          svgs.baseballAndBat,
                           fit: BoxFit.fill,
+                          color: Color.fromRGBO(22, 183, 255, 1),
+                          width: 45.43,
+                          height: 45.43,
                         ),
                       ),
-                      const Text("Button text"),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10),
+                        child: Text(
+                          'Baseball',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                // FOOTBALL CATEGORY
+                OutlinedButton(
+                  onPressed: () {
+                    // Navigator.of(context).push(MaterialPageRoute(
+                    //     builder: (context) => const HomeScreen()));
+                    null;
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0))),
+                  ),
+                  child: Column(
+                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20.0),
+                        child: SvgPicture.string(
+                          svgs.football,
+                          fit: BoxFit.fill,
+                          color: Color.fromRGBO(22, 183, 255, 1),
+                          width: 45.43,
+                          height: 45.43,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10),
+                        child: Text(
+                          'Football',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
                 OutlinedButton(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const HomeScreen()));
+                    // Navigator.of(context).push(MaterialPageRoute(
+                    //     builder: (context) => const HomeScreen()));
+                    null;
                   },
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
@@ -112,130 +294,59 @@ class _HomeScreenState extends State<HomeScreen> {
                     //child: Padding(padding: EdgeInsets.only(top: 10.0),),
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
+                        padding: const EdgeInsets.only(top: 20.0),
                         child: SvgPicture.string(
-                          svgs.blueBasketball5,
-                          allowDrawingOutsideViewBox: true,
+                          svgs.soccerball,
                           fit: BoxFit.fill,
+                          color: Color.fromRGBO(22, 183, 255, 1),
+                          width: 45.43,
+                          height: 45.43,
                         ),
                       ),
-                      const Text("Button text"),
-                    ],
-                  ),
-                ),
-                OutlinedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const HomeScreen()));
-                  },
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30.0))),
-                  ),
-                  child: Column(
-                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
-                    children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: SvgPicture.string(
-                          svgs.blueBasketball5,
-                          allowDrawingOutsideViewBox: true,
-                          fit: BoxFit.fill,
+                        padding: EdgeInsets.only(top: 10),
+                        child: Text(
+                          'Soccer',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
-                      const Text("Button text"),
-                    ],
-                  ),
-                ),
-                OutlinedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const HomeScreen()));
-                  },
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30.0))),
-                  ),
-                  child: Column(
-                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: SvgPicture.string(
-                          svgs.blueBasketball5,
-                          allowDrawingOutsideViewBox: true,
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      const Text("Button text"),
-                    ],
-                  ),
-                ),
-                OutlinedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const HomeScreen()));
-                  },
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30.0))),
-                  ),
-                  child: Column(
-                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: SvgPicture.string(
-                          svgs.blueBasketball5,
-                          allowDrawingOutsideViewBox: true,
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      const Text("Button text"),
-                    ],
-                  ),
-                ),
-                OutlinedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const HomeScreen()));
-                  },
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30.0))),
-                  ),
-                  child: Column(
-                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: SvgPicture.string(
-                          svgs.blueBasketball5,
-                          allowDrawingOutsideViewBox: true,
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      const Text("Button text"),
                     ],
                   ),
                 ),
               ],
             ),
             const Divider(),
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-                child: Text(
-                  "Recommendations",
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                      fontFamily: 'SF Pro',
-                      fontSize: 28,
-                      color: Color(0xff000000),
-                      fontWeight: FontWeight.w800),
+            // RECOMENDATIONS SECTION
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 10.0, top: 15.0, bottom: 15),
+                  child: Text(
+                    "Recommendations",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        fontFamily: 'SF Pro',
+                        fontSize: 28,
+                        color: Color(0xff000000),
+                        fontWeight: FontWeight.w800),
+                  ),
                 ),
-              ),
+                Spacer(
+                  flex: 1,
+                ),
+                // Forward Arrow Button
+                Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color.fromRGBO(22, 183, 255, 1),
+                  ),
+                ),
+              ],
             ),
             SizedBox(
               height: 80.0,
@@ -254,20 +365,33 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const Divider(),
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-                child: Text(
-                  "New Arrivals",
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                      fontFamily: 'SF Pro',
-                      fontSize: 28,
-                      color: Color(0xff000000),
-                      fontWeight: FontWeight.w800),
+            // NEW ARRIVALS SECTION
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 10.0, top: 15.0),
+                  child: Text(
+                    "New Arrivals",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        fontFamily: 'SF Pro',
+                        fontSize: 28,
+                        color: Color(0xff000000),
+                        fontWeight: FontWeight.w800),
+                  ),
                 ),
-              ),
+                Spacer(
+                  flex: 1,
+                ),
+                // Forward Arrow Button
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0, right: 8.0),
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color.fromRGBO(22, 183, 255, 1),
+                  ),
+                ),
+              ],
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
@@ -279,24 +403,36 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Stack(
                       children: [
                         CarouselSlider(
-                            items: const <Widget>[
-                              Card(
-                                color: Colors.green,
-                                child: Center(
-                                  child: Text('CarouselSlider Page 1'),
-                                ),
+                            items: <Widget>[
+                              Container(
+                                width: MediaQuery.of(context).size.width,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/listings-pictures/tennis-court-image3.jpeg'),
+                                  fit: BoxFit.fill,
+                                )),
                               ),
-                              Card(
-                                color: Colors.amber,
-                                child: Center(
-                                  child: Text('CarouselSlider Page 2'),
-                                ),
+                              Container(
+                                width: MediaQuery.of(context).size.width,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/listings-pictures/tennis-court-image2.jpeg'),
+                                  fit: BoxFit.fill,
+                                )),
                               ),
-                              Card(
-                                color: Colors.red,
-                                child: Center(
-                                  child: Text('CarouselSlider Page 3'),
-                                ),
+                              Container(
+                                width: MediaQuery.of(context).size.width,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/listings-pictures/tennis-court-image1.jpeg'),
+                                  fit: BoxFit.fill,
+                                )),
                               ),
                             ],
                             options: CarouselOptions(
@@ -304,9 +440,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 200,
                               initialPage: 0,
                               autoPlay: true,
-                              autoPlayInterval: const Duration(seconds: 3),
+                              autoPlayInterval: const Duration(seconds: 5),
                               autoPlayAnimationDuration:
-                                  const Duration(milliseconds: 800),
+                                  const Duration(milliseconds: 1500),
                               autoPlayCurve: Curves.fastOutSlowIn,
                               enlargeCenterPage: true,
                               onPageChanged: (index, reason) {
@@ -373,7 +509,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: const NavBar(),
+      bottomNavigationBar: NavBar(),
     );
   }
 }
