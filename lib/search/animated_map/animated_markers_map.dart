@@ -6,6 +6,8 @@ import 'package:flutter_map/flutter_map.dart';
 // ignore: depend_on_referenced_packages
 import 'package:latlong2/latlong.dart';
 
+import '../../nav_bar.dart';
+
 // ignore: constant_identifier_names
 const MAPBOX_ACCESS_TOKEN =
     'pk.eyJ1Ijoic2VhbmNoYXBwZWxsMTciLCJhIjoiY2xhN3VuZ3dzMXprYjNxbzM1ODc4aDlobyJ9.1UldWbglZcsHVDV4KbkiUg';
@@ -172,6 +174,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
           ),
         ],
       ),
+      bottomNavigationBar: const NavBar(),
     );
   }
 }

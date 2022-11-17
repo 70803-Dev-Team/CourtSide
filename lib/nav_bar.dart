@@ -1,3 +1,5 @@
+import 'package:court_side/home_screen.dart';
+import 'package:court_side/search/animated_map/animated_markers_map.dart';
 import 'package:flutter/material.dart';
 
 class NavBar extends StatefulWidget {
@@ -14,6 +16,26 @@ class _NavBar extends State<NavBar> {
     setState(() {
       _selectedIndex = index;
     });
+    switch (_selectedIndex) {
+      case 0:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
+        );
+        break;
+      case 1:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const AnimatedMarkersMap()),
+        );
+        break;
+      case 2:
+        break;
+      case 3:
+        break;
+      case 4:
+        break;
+    }
   }
 
   @override
@@ -46,30 +68,5 @@ class _NavBar extends State<NavBar> {
       selectedItemColor: const Color(0xff2e9eff),
       onTap: _onItemTapped,
     );
-    /* return Padding(
-         padding: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 10.0),
-        child: Row(
-          children: [
-            SizedBox(
-              width: 30.0,
-              height: 30.0,
-              child: Stack(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 3.0, vertical: 2.0),
-                    child: SizedBox.expand(
-                        child: SvgPicture.string(
-                      svgs.blueHouse,
-                      allowDrawingOutsideViewBox: true,
-                      fit: BoxFit.fill,
-                    )),
-                  ),
-                  const Text("Home"),
-                ],
-              ),
-            )
-          ],
-        )); */
   }
 }

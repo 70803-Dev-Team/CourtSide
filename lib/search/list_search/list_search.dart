@@ -2,6 +2,8 @@ import 'package:court_side/search/animated_map/animated_markers_map.dart';
 import 'package:flutter/material.dart';
 import 'package:court_side/search/list_search/widgets.dart';
 
+import '../../nav_bar.dart';
+
 class ListSearch extends StatelessWidget {
   const ListSearch({super.key});
 
@@ -57,6 +59,7 @@ class ListSearch extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: const NavBar(),
     );
   }
 }
