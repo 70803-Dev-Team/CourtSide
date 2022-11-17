@@ -19,7 +19,8 @@ class SignInSignUpScreen extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/splash-screen-background.png'),
+                image:
+                    AssetImage('assets/pictures/splash-screen-background.png'),
                 fit: BoxFit.fill,
               ),
             ),
@@ -312,7 +313,7 @@ class SignInSignUpScreen extends StatelessWidget {
                     alignment: const Alignment(0.0, -0.538),
                     child: Container(
                       child: (Image.asset(
-                        'assets/company-logo.png',
+                        'assets/pictures/company-logo.png',
                         scale: 0.8,
                       )),
                     ),

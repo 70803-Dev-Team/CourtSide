@@ -9,6 +9,7 @@ class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _HomeScreenState createState() => _HomeScreenState();
 }
 
@@ -43,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
         leading: Padding(
           padding: const EdgeInsets.all(4.0),
           child: Image.asset(
-            "assets/company-logo.png",
+            "assets/pictures/company-logo.png",
           ),
         ),
       ),

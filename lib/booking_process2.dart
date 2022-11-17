@@ -9,13 +9,16 @@ class BookingProcess2 extends StatefulWidget {
   const BookingProcess2({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _BookingProcess2State createState() => _BookingProcess2State();
 }
 
 class _BookingProcess2State extends State<BookingProcess2> {
   DateTime date = DateTime.now();
   TimeOfDay time = TimeOfDay.now();
+  // ignore: prefer_typing_uninitialized_variables
   late var formattedDate;
+  // ignore: prefer_typing_uninitialized_variables
   late var formattedTime;
   @override
   void initState() {
@@ -236,6 +239,7 @@ class _BookingProcess2State extends State<BookingProcess2> {
               lastTime: const TimeOfDay(hour: 20, minute: 00),
               timeStep: 10,
               timeBlock: 30,
+              // ignore: avoid_print
               onRangeCompleted: (range) => setState(() => print(range)),
             ),
           ),
