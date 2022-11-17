@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import './sign_in.dart';
-import './sign_up_screen1.dart';
+import 'signup/sign_up_screen_login.dart';
 import 'package:adobe_xd/page_link.dart';
 import './home_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -19,14 +19,15 @@ class SignInSignUpScreen extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/splash-screen-background.png'),
+                image:
+                    AssetImage('assets/pictures/splash-screen-background.png'),
                 fit: BoxFit.fill,
               ),
             ),
           ),
           Container(),
           Pinned.fromPins(
-            Pin(size: 184.0, start: 0.0),
+            Pin(size: 184.0, start: 8.0),
             Pin(size: 69.0, middle: 0.6383),
             child:
                 // Adobe XD layer: 'Sign-in Button' (group)
@@ -35,7 +36,7 @@ class SignInSignUpScreen extends StatelessWidget {
                 PageLinkInfo(
                   ease: Curves.easeInOut,
                   duration: 0.5,
-                  pageBuilder: () => const SignInScreen(),
+                  pageBuilder: () => const SignInPage(),
                 ),
               ],
               child: Stack(
@@ -74,7 +75,7 @@ class SignInSignUpScreen extends StatelessWidget {
             ),
           ),
           Pinned.fromPins(
-            Pin(size: 184.0, end: 20.0),
+            Pin(size: 184.0, end: 8.0),
             Pin(size: 69.0, middle: 0.6383),
             child:
                 // Adobe XD layer: 'Sign-up Button' (group)
@@ -84,7 +85,7 @@ class SignInSignUpScreen extends StatelessWidget {
                   transition: LinkTransition.SlideRight,
                   ease: Curves.linear,
                   duration: 0.5,
-                  pageBuilder: () => const SignUpScreen1(),
+                  pageBuilder: () => const SignUpScreenLogin(),
                 ),
               ],
               child: Stack(
@@ -148,7 +149,7 @@ class SignInSignUpScreen extends StatelessWidget {
                         ),
                       ),
                       Pinned.fromPins(
-                        Pin(start: 20.0, end: 20.0),
+                        Pin(start: 12.0, end: 12.0),
                         Pin(size: 29.0, middle: 0.5),
                         child:
                             // Adobe XD layer: 'Continue as guest' (text)
@@ -312,7 +313,7 @@ class SignInSignUpScreen extends StatelessWidget {
                     alignment: const Alignment(0.0, -0.538),
                     child: Container(
                       child: (Image.asset(
-                        'assets/company-logo.png',
+                        'assets/pictures/company-logo.png',
                         scale: 0.8,
                       )),
                     ),
