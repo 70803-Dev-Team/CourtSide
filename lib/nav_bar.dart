@@ -1,4 +1,5 @@
 import 'package:court_side/home_screen.dart';
+import 'package:court_side/profile_page.dart';
 import 'package:court_side/search/animated_map/animated_markers_map.dart';
 import 'package:flutter/material.dart';
 
@@ -13,10 +14,7 @@ class _NavBar extends State<NavBar> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-    switch (_selectedIndex) {
+    switch (index) {
       case 0:
         Navigator.push(
           context,
@@ -24,18 +22,27 @@ class _NavBar extends State<NavBar> {
         );
         break;
       case 1:
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const AnimatedMarkersMap()),
-        );
+        if (_selectedIndex != 1) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const AnimatedMarkersMap()),
+          );
+        }
         break;
       case 2:
         break;
       case 3:
         break;
       case 4:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ProfilePage()),
+        );
         break;
     }
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
   @override

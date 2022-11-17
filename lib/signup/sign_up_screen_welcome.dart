@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import './sign_up_screen3.dart';
+import 'sign_up_screen_cards.dart';
 import 'package:adobe_xd/page_link.dart';
-import './home_screen.dart';
+import '../home_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'svgs.dart' as svgs;
+import '../svgs.dart' as svgs;
 
-class SignUpScreen4 extends StatelessWidget {
-  const SignUpScreen4({super.key});
+class SignUpScreenWelcome extends StatelessWidget {
+  const SignUpScreenWelcome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -143,7 +143,7 @@ class SignUpScreen4 extends StatelessWidget {
                         transition: LinkTransition.PushRight,
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => const SignUpScreen3(),
+                        pageBuilder: () => const SignUpScreenCards(),
                       ),
                     ],
                     child: Stack(

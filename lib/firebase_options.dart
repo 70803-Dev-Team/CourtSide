@@ -28,7 +28,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -48,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCuFCBxaiXVgXVfxYc9x1X9MkTtZuSESLQ',
-    appId: '1:101148815080:android:ca85ab44acab44ce38635d',
+    appId: '1:101148815080:android:7b9e53516530250f38635d',
     messagingSenderId: '101148815080',
     projectId: 'courtside-70803',
     storageBucket: 'courtside-70803.appspot.com',
@@ -60,19 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '101148815080',
     projectId: 'courtside-70803',
     storageBucket: 'courtside-70803.appspot.com',
-    iosClientId:
-        '101148815080-qfj2spbv86aq1j58sab8emhid64oo68h.apps.googleusercontent.com',
-    iosBundleId: 'com.example.courtSide',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDmHw0ub5cZGG6z9ZT5o2miFRIFUG-5PVw',
-    appId: '1:101148815080:ios:73f7a2ac68c9f5d338635d',
-    messagingSenderId: '101148815080',
-    projectId: 'courtside-70803',
-    storageBucket: 'courtside-70803.appspot.com',
-    iosClientId:
-        '101148815080-qfj2spbv86aq1j58sab8emhid64oo68h.apps.googleusercontent.com',
+    iosClientId: '101148815080-qfj2spbv86aq1j58sab8emhid64oo68h.apps.googleusercontent.com',
     iosBundleId: 'com.example.courtSide',
   );
 }
