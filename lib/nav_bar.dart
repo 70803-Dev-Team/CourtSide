@@ -1,5 +1,6 @@
 import 'package:court_side/home_screen.dart';
 import 'package:court_side/profile_page.dart';
+import 'package:court_side/reservations_screen.dart';
 import 'package:court_side/search/animated_map/animated_markers_map.dart';
 import 'package:flutter/material.dart';
 
@@ -30,6 +31,12 @@ class _NavBar extends State<NavBar> {
         }
         break;
       case 2:
+        if(_selectedIndex != 2) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const ReservationsScreen()),
+            );
+        }
         break;
       case 3:
         break;
