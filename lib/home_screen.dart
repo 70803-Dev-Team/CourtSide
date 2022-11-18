@@ -1,14 +1,17 @@
+import 'package:court_side/inbox_screen.dart';
 import 'package:court_side/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'svgs.dart' as svgs;
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _HomeScreenState createState() => _HomeScreenState();
 }
 
@@ -28,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
           width: double.infinity,
           height: 40,
           decoration: BoxDecoration(
-              color: const Color.fromRGBO(118, 118, 128, .24),
+              color: const Color.fromARGB(255, 62, 62, 62),
               borderRadius: BorderRadius.circular(20)),
           child: const Center(
             child: TextField(
@@ -102,13 +105,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    )),
+                        borderRadius: BorderRadius.circular(30.0))),
                   ),
                   child: Column(
+                    //child: Padding(padding: EdgeInsets.only(top: 10.0),),
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(top: 20.0),
+                        padding: const EdgeInsets.only(top: 8.0),
                         child: SvgPicture.string(
                           svgs.blueBasketball5,
                           color: Color.fromRGBO(22, 183, 255, 1),
@@ -127,6 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
+                      const Text("Button text"),
                     ],
                   ),
                 ),
@@ -168,10 +172,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 // TENNIS CATEGORY
+                // TENNIS CATEGORY
                 OutlinedButton(
                   onPressed: () {
-                    // Navigator.of(context).push(MaterialPageRoute(
-                    //     builder: (context) => const HomeScreen()));
+                    // // Navigator.of(context).push(MaterialPageRoute(
+                    // //     builder: (context) => const HomeScreen()));
+                    null;
                     null;
                   },
                   style: ButtonStyle(
@@ -182,9 +188,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 20.0),
+                        padding: const EdgeInsets.only(top: 20.0),
                         child: SvgPicture.string(
                           svgs.racket,
                           fit: BoxFit.fill,
+                          color: Color.fromRGBO(22, 183, 255, 1),
+                          width: 45.43,
+                          height: 45.43,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10),
+                        child: Text(
+                          'Tennis',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
                           color: Color.fromRGBO(22, 183, 255, 1),
                           width: 45.43,
                           height: 45.43,
@@ -205,10 +226,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 // BASEBALL CATEGORY
+                // BASEBALL CATEGORY
                 OutlinedButton(
                   onPressed: () {
-                    // Navigator.of(context).push(MaterialPageRoute(
-                    //     builder: (context) => const HomeScreen()));
+                    // // Navigator.of(context).push(MaterialPageRoute(
+                    // //     builder: (context) => const HomeScreen()));
+                    null;
                     null;
                   },
                   style: ButtonStyle(
@@ -237,16 +260,33 @@ class _HomeScreenState extends State<HomeScreen> {
                             fontSize: 18,
                             fontWeight: FontWeight.w600,
                           ),
+                          color: Color.fromRGBO(22, 183, 255, 1),
+                          width: 45.43,
+                          height: 45.43,
                         ),
                       ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10),
+                        child: Text(
+                          'Baseball',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      const Text("Button text"),
                     ],
                   ),
                 ),
                 // FOOTBALL CATEGORY
+                // FOOTBALL CATEGORY
                 OutlinedButton(
                   onPressed: () {
-                    // Navigator.of(context).push(MaterialPageRoute(
-                    //     builder: (context) => const HomeScreen()));
+                    // // Navigator.of(context).push(MaterialPageRoute(
+                    // //     builder: (context) => const HomeScreen()));
+                    null;
                     null;
                   },
                   style: ButtonStyle(
@@ -275,6 +315,20 @@ class _HomeScreenState extends State<HomeScreen> {
                             fontSize: 18,
                             fontWeight: FontWeight.w600,
                           ),
+                          color: Color.fromRGBO(22, 183, 255, 1),
+                          width: 45.43,
+                          height: 45.43,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10),
+                        child: Text(
+                          'Football',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ],
@@ -282,8 +336,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 OutlinedButton(
                   onPressed: () {
-                    // Navigator.of(context).push(MaterialPageRoute(
-                    //     builder: (context) => const HomeScreen()));
+                    // // Navigator.of(context).push(MaterialPageRoute(
+                    // //     builder: (context) => const HomeScreen()));
+                    null;
                     null;
                   },
                   style: ButtonStyle(
@@ -298,6 +353,20 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: SvgPicture.string(
                           svgs.soccerball,
                           fit: BoxFit.fill,
+                          color: Color.fromRGBO(22, 183, 255, 1),
+                          width: 45.43,
+                          height: 45.43,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10),
+                        child: Text(
+                          'Soccer',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
                           color: Color.fromRGBO(22, 183, 255, 1),
                           width: 45.43,
                           height: 45.43,
@@ -345,7 +414,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     Icons.arrow_forward_ios,
                     color: Color.fromRGBO(22, 183, 255, 1),
                   ),
+                  // Forward Arrow Button
+                Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color.fromRGBO(22, 183, 255, 1),
+                  ),
                 ),
+              ],
               ],
             ),
             SizedBox(
@@ -382,16 +459,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Spacer(
                   flex: 1,
-                ),
-                // Forward Arrow Button
+            // NEW ARRIVALS SECTION
+            Row(
+              children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 8.0, right: 8.0),
-                  child: Icon(
-                    Icons.arrow_forward_ios,
-                    color: Color.fromRGBO(22, 183, 255, 1),
+                  padding: EdgeInsets.only(left: 10.0, top: 15.0),
+                  child: Text(
+                    "New Arrivals",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        fontFamily: 'SF Pro',
+                        fontSize: 28,
+                        color: Color(0xff000000),
+                        fontWeight: FontWeight.w800),
                   ),
                 ),
-              ],
+                Spacer(
+                  flex: 1,
+                ),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
@@ -509,7 +595,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: NavBar(),
+      bottomNavigationBar: const NavBar(),
     );
   }
 }
