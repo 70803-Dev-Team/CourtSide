@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
-import './reservations_screen.dart';
-import 'package:adobe_xd/page_link.dart';
-import './search_screen_map_view.dart';
-import './inbox_screen.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:court_side/nav_bar.dart';
-
-import 'svgs.dart' as svgs;
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
+
+  logOut() {
+    FirebaseAuth.instance.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +21,7 @@ class ProfileScreen extends StatelessWidget {
     return ListView(
       children: [
         Container(
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           height: 50,
           width: double.infinity,
           child: const Text(
@@ -38,7 +35,7 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         Center(
-          child: Image.asset("assets/company-logo.png"),
+          child: Image.asset("assets/pictures/company-logo.png"),
         ),
         const Padding(padding: EdgeInsets.all(40)),
         _tile('Edit Profile', Icons.account_box),
@@ -53,6 +50,7 @@ class ProfileScreen extends StatelessWidget {
         ),
         const Padding(padding: EdgeInsets.all(20)),
         _tile('Technical Support', Icons.help),
+        TextButton(onPressed: logOut(), child: const Text("Sign Out")),
       ],
     );
   }

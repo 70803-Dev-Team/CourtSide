@@ -1,5 +1,5 @@
 import 'package:court_side/home_screen.dart';
-import 'package:court_side/profile_page.dart';
+import 'package:court_side/profile_screen.dart';
 import 'package:court_side/search/animated_map/animated_markers_map.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +36,7 @@ class _NavBar extends State<NavBar> {
       case 4:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const ProfilePage()),
+          MaterialPageRoute(builder: (context) => const ProfileScreen()),
         );
         break;
     }
