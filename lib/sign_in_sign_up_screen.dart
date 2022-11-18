@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:route_transitions/route_transitions.dart';
 import './sign_in.dart';
-import './sign_up_screen1.dart';
+import 'signup/sign_up_screen_login.dart';
 import 'package:adobe_xd/page_link.dart';
 import './home_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -21,7 +21,12 @@ class SignInSignUpScreen extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
+<<<<<<< .merge_file_PHB7kO
                 image: AssetImage('assets/pictures/splash-screen-background.png'),
+=======
+                image:
+                    AssetImage('assets/pictures/splash-screen-background.png'),
+>>>>>>> .merge_file_D1FtNs
                 fit: BoxFit.fill,
               ),
             ),
@@ -30,6 +35,7 @@ class SignInSignUpScreen extends StatelessWidget {
           DelayedDisplay(
             delay: Duration(milliseconds: 700),
             child:
+<<<<<<< .merge_file_PHB7kO
               Pinned.fromPins(
                 Pin(size: 184.0, start: 8.0),
                 Pin(size: 69.0, middle: 0.6383),
@@ -41,6 +47,26 @@ class SignInSignUpScreen extends StatelessWidget {
                       ease: Curves.easeInOut,
                       duration: 0.5,
                       pageBuilder: () => const SignInScreen(),
+=======
+                // Adobe XD layer: 'Sign-in Button' (group)
+                PageLink(
+              links: [
+                PageLinkInfo(
+                  ease: Curves.easeInOut,
+                  duration: 0.5,
+                  pageBuilder: () => const SignInPage(),
+                ),
+              ],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    alignment: const Alignment(-100.0, 0.0),
+                    decoration: BoxDecoration(
+                      color: const Color(0xffffffff),
+                      borderRadius: BorderRadius.circular(15.0),
+                      border: Border.all(
+                          width: 1.0, color: const Color(0xff707070)),
+>>>>>>> .merge_file_D1FtNs
                     ),
                   ],
                   child: Stack(
@@ -79,6 +105,7 @@ class SignInSignUpScreen extends StatelessWidget {
                 ),
               ),
           ),
+<<<<<<< .merge_file_PHB7kO
           // Sign Up Button
           DelayedDisplay(
             delay: Duration(milliseconds: 800),
@@ -94,6 +121,31 @@ class SignInSignUpScreen extends StatelessWidget {
                     ease: Curves.linear,
                     duration: 0.5,
                     pageBuilder: () => const SignUpScreen1(),
+=======
+          Pinned.fromPins(
+            Pin(size: 184.0, end: 8.0),
+            Pin(size: 69.0, middle: 0.6383),
+            child:
+                // Adobe XD layer: 'Sign-up Button' (group)
+                PageLink(
+              links: [
+                PageLinkInfo(
+                  transition: LinkTransition.SlideRight,
+                  ease: Curves.linear,
+                  duration: 0.5,
+                  pageBuilder: () => const SignUpScreenLogin(),
+                ),
+              ],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                      color: const Color(0xffffffff),
+                      borderRadius: BorderRadius.circular(15.0),
+                      border: Border.all(
+                          width: 1.0, color: const Color(0xff707070)),
+                    ),
+>>>>>>> .merge_file_D1FtNs
                   ),
                 ],
                 child: Stack(
@@ -314,6 +366,7 @@ class SignInSignUpScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+<<<<<<< .merge_file_PHB7kO
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 41.2, vertical: 35.4),
@@ -324,6 +377,27 @@ class SignInSignUpScreen extends StatelessWidget {
                         svgs.emptySvg,
                         allowDrawingOutsideViewBox: true,
                         fit: BoxFit.fill,
+=======
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 41.2, vertical: 35.4),
+                    child: SizedBox.expand(
+                        child:
+                            // Adobe XD layer: 'Background' (shape)
+                            SvgPicture.string(
+                      svgs.emptySvg,
+                      allowDrawingOutsideViewBox: true,
+                      fit: BoxFit.fill,
+                    )),
+                  ),
+                  Align(
+                    alignment: const Alignment(0.0, -0.538),
+                    child: Container(
+                      child: (Image.asset(
+                        'assets/pictures/company-logo.png',
+                        scale: 0.8,
+>>>>>>> .merge_file_D1FtNs
                       )),
                     ),
                     Align(

@@ -1,14 +1,17 @@
+import 'package:court_side/inbox_screen.dart';
 import 'package:court_side/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'svgs.dart' as svgs;
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _HomeScreenState createState() => _HomeScreenState();
 }
 
@@ -96,9 +99,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 // BASKETBALL CATEGORY
                 OutlinedButton(
                   onPressed: () {
+<<<<<<< .merge_file_MfnNe1
                     // Navigator.of(context).push(MaterialPageRoute(
                     //     builder: (context) => const HomeScreen()));
                     null;
+=======
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ProfileScreen()));
+>>>>>>> .merge_file_SJKzrj
                   },
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
