@@ -18,6 +18,7 @@ class ReservationsScreen extends StatefulWidget {
 }
 
 class _ReservationsScreenState extends State<ReservationsScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,6 +48,27 @@ class _ReservationsScreenState extends State<ReservationsScreen> {
                   ),
                   ),
               ),
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Card(
+                  color: Colors.white,
+                  child: Column(
+                    children: [
+                      ListTile(
+                        title: Text(
+                          "Up Next",
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                        fontFamily: 'SF Pro',
+                        fontSize: 25,
+                        color: Color(0xff000000),
+                        fontWeight: FontWeight.w800),
+                  ),
+                  ),
+                  ],
+                  ),
+                ),
+                ),
         ],
       ),
       bottomNavigationBar: const NavBar(),
