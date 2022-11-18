@@ -80,6 +80,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
   Widget build(BuildContext context) {
     final markers = _buildMarkers();
     return Scaffold(
+      backgroundColor: Colors.grey[800],
       appBar: AppBar(
         // Bottom Rounded Border for AppBar
         shape: const RoundedRectangleBorder(
@@ -99,7 +100,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
             child: TextButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const ListSearch();
+                  return ListSearch();
                 }));
               },
               child: const Text(
@@ -114,9 +115,29 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
             )),
         toolbarHeight: 55,
         backgroundColor: Colors.white,
-        title: const Text(
-          'Search',
-          style: TextStyle(color: Colors.black),
+        title: Container(
+          width: double.infinity,
+          height: 40,
+          decoration: BoxDecoration(
+            color: const Color.fromRGBO(118, 118, 128, .24),
+            borderRadius: BorderRadius.circular(20)
+          ),
+          child: const Center(
+            child: TextField(
+              //search requires more implementation... remember
+              decoration: InputDecoration(
+                hintText: 'Find a court, field, or equipment',
+                hintStyle: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500
+                ),
+                prefixIcon: Icon(Icons.search,
+                  color: Colors.black
+                ),
+                border: InputBorder.none,
+              ),
+            ),
+          ),
         ),
       ),
       body: Stack(
@@ -174,6 +195,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
           ),
         ],
       ),
+      bottomNavigationBar: NavBar(),
     );
   }
 }

@@ -29,6 +29,7 @@ final _locations = [
   LatLng(30.434899305338693, -91.16786122609433), // Tennis
   LatLng(30.43701002393548, -91.141487689171), // Golf
   LatLng(30.4241124873271, -91.10202066346085), // Basketball
+  LatLng(30.410459135475293, -91.16904868726459) // UREC
 ];
 
 const _path_picture = 'assets/listings-pictures/';
@@ -99,11 +100,21 @@ final MAP_MARKERS = [
     rating: '4.83',
   ),
   MapMarker(
-      sport: 'basketball',
-      image: '${_path_picture}bball-court-image2.jpeg',
-      title: 'Jefferson Highway Park',
-      address: '8133 Jefferson Hwy, Baton Rouge, LA 70809',
-      location: _locations[7],
-      price: '\$15 / hour',
-      rating: '2.95'),
+    sport: 'basketball',
+    image: '${_path_picture}bball-court-image2.jpeg',
+    title: 'Jefferson Highway Park',
+    address: '8133 Jefferson Hwy, Baton Rouge, LA 70809',
+    location: _locations[7],
+    price: '\$15 / hour',
+    rating: '2.95'
+  ),
+  MapMarker(
+    sport: 'basketball',
+    image: '${_path_picture}urec-bball.jpeg',
+    title: 'LSU UREC Basketball Court 1',
+    address: 'UREC, LSU 102, Baton Rouge, LA 70803',
+    location: _locations[8],
+    price: '\$35 / hour',
+    rating: '4.2'
+  ),
 ];

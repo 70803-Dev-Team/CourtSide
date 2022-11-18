@@ -13,7 +13,7 @@ class Courtside extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: AnimatedMarkersMap(),
+      home: SignInSignUpScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

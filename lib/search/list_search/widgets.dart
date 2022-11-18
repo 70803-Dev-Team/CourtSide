@@ -84,6 +84,14 @@ final LISTING = [
     price: '\$15 / hour',
     rating: '2.95',
   ),
+  Listing(
+    sport: 'basketball',
+    image: '${_path_picture}urec-bball.jpeg',
+    title: 'LSU UREC Basketball Court 1',
+    address: 'Student Recreation Complex, LSU 102, Baton Rouge, LA 70803',
+    price: '\$35 / hour',
+    rating: '4.2',
+  )
 ];
 
 final _styleTitle = TextStyle(
@@ -168,7 +176,7 @@ class ListingCard extends StatelessWidget {
                                 color: Color.fromRGBO(212, 175, 55, 100),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(right: 17, left: 2),
+                                padding: EdgeInsets.only(right: 6, left: 2),
                                 child: Text(
                                   listing.rating,
                                   style: _styleRating,
