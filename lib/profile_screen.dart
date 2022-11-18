@@ -24,7 +24,7 @@ class ProfileScreen extends StatelessWidget {
     return ListView(
       children: [
         Container(
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           height: 50,
           width: double.infinity,
           child: const Text(
