@@ -28,7 +28,7 @@ class _State extends State<SignInScreen> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/splash-screen-background.png'),
+                image: AssetImage('assets/pictures/splash-screen-background.png'),
                 fit: BoxFit.fill,
               ),
             ),

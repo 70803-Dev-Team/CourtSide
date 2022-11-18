@@ -1,5 +1,5 @@
+import 'package:court_side/search/animated_map/animated_markers_map.dart';
 import 'package:flutter/material.dart';
-//import 'splash_screen.dart';
 import 'sign_in_sign_up_screen.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class Courtside extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: SignInSignUpScreen(),
+      home: AnimatedMarkersMap(),
       debugShowCheckedModeBanner: false,
     );
   }
