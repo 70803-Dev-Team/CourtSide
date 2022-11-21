@@ -28,7 +28,7 @@ class SignInSignUpScreen extends StatelessWidget {
           ),
           // SIGN IN BUTTON
           DelayedDisplay(
-            delay: Duration(milliseconds: 700),
+            delay: const Duration(milliseconds: 700),
             child: Pinned.fromPins(
               Pin(size: 184.0, start: 8.0),
               Pin(size: 69.0, middle: 0.6383),
@@ -66,8 +66,8 @@ class SignInSignUpScreen extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                             height: 1,
                           ),
-                          textHeightBehavior:
-                              TextHeightBehavior(applyHeightToFirstAscent: false),
+                          textHeightBehavior: TextHeightBehavior(
+                              applyHeightToFirstAscent: false),
                           textAlign: TextAlign.center,
                           softWrap: false,
                         ),
@@ -81,7 +81,7 @@ class SignInSignUpScreen extends StatelessWidget {
 
           // SIGN UP BUTTON
           DelayedDisplay(
-            delay: Duration(milliseconds: 800),
+            delay: const Duration(milliseconds: 800),
             child: Pinned.fromPins(
               Pin(size: 184.0, end: 8.0),
               Pin(size: 69.0, middle: 0.6383),
@@ -119,8 +119,8 @@ class SignInSignUpScreen extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                             height: 1,
                           ),
-                          textHeightBehavior:
-                              TextHeightBehavior(applyHeightToFirstAscent: false),
+                          textHeightBehavior: TextHeightBehavior(
+                              applyHeightToFirstAscent: false),
                           textAlign: TextAlign.center,
                           softWrap: false,
                         ),
@@ -133,7 +133,7 @@ class SignInSignUpScreen extends StatelessWidget {
           ),
           // CONTINUE AS GUESS BUTTON
           DelayedDisplay(
-            delay: Duration(milliseconds: 1000),
+            delay: const Duration(milliseconds: 1000),
             child: Pinned.fromPins(
               Pin(size: 250.0, middle: 0.5),
               Pin(size: 49.0, end: 87.0),
@@ -184,7 +184,7 @@ class SignInSignUpScreen extends StatelessWidget {
             ),
           ),
           DelayedDisplay(
-            delay: Duration(milliseconds: 420),
+            delay: const Duration(milliseconds: 420),
             child: Transform.translate(
               offset: const Offset(50.0, 60.0),
               child: SizedBox(

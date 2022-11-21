@@ -1,4 +1,3 @@
-import 'package:court_side/search/animated_map/animated_markers_map.dart';
 import 'package:flutter/material.dart';
 import 'sign_in_sign_up_screen.dart';
 

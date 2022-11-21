@@ -1,5 +1,5 @@
+// ignore: depend_on_referenced_packages
 import 'package:latlong2/latlong.dart';
-import 'package:flutter/material.dart';
 
 class MapMarker {
   const MapMarker({
@@ -32,9 +32,10 @@ final _locations = [
   LatLng(30.410459135475293, -91.16904868726459) // UREC
 ];
 
+// ignore: constant_identifier_names
 const _path_picture = 'assets/listings-pictures/';
-const _path_icon = 'assets/animated_markers_map/';
 
+// ignore: non_constant_identifier_names
 final MAP_MARKERS = [
   MapMarker(
     sport: 'baseball',
@@ -100,21 +101,19 @@ final MAP_MARKERS = [
     rating: '4.83',
   ),
   MapMarker(
-    sport: 'basketball',
-    image: '${_path_picture}bball-court-image2.jpeg',
-    title: 'Jefferson Highway Park',
-    address: '8133 Jefferson Hwy, Baton Rouge, LA 70809',
-    location: _locations[7],
-    price: '\$15 / hour',
-    rating: '2.95'
-  ),
+      sport: 'basketball',
+      image: '${_path_picture}bball-court-image2.jpeg',
+      title: 'Jefferson Highway Park',
+      address: '8133 Jefferson Hwy, Baton Rouge, LA 70809',
+      location: _locations[7],
+      price: '\$15 / hour',
+      rating: '2.95'),
   MapMarker(
-    sport: 'basketball',
-    image: '${_path_picture}urec-bball.jpeg',
-    title: 'LSU UREC Basketball Court 1',
-    address: 'UREC, LSU 102, Baton Rouge, LA 70803',
-    location: _locations[8],
-    price: '\$35 / hour',
-    rating: '4.2'
-  ),
+      sport: 'basketball',
+      image: '${_path_picture}urec-bball.jpeg',
+      title: 'LSU UREC Basketball Court 1',
+      address: 'UREC, LSU 102, Baton Rouge, LA 70803',
+      location: _locations[8],
+      price: '\$35 / hour',
+      rating: '4.2'),
 ];
