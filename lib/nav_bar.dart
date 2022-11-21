@@ -1,5 +1,6 @@
 import 'package:court_side/home_screen.dart';
 import 'package:court_side/profile_screen.dart';
+import 'package:court_side/reservations.dart';
 import 'package:court_side/search/animated_map/animated_markers_map.dart';
 import 'package:flutter/material.dart';
 
@@ -29,6 +30,10 @@ class _NavBar0 extends State<NavBar0> {
         }
         break;
       case 2:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const Reservations()),
+        );
         break;
       case 3:
         break;
@@ -108,6 +113,10 @@ class _NavBar1 extends State<NavBar1> {
         }
         break;
       case 2:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const Reservations()),
+        );
         break;
       case 3:
         break;
@@ -186,6 +195,10 @@ class _NavBar2 extends State<NavBar2> {
         }
         break;
       case 2:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const Reservations()),
+        );
         break;
       case 3:
         break;
@@ -264,6 +277,10 @@ class _NavBar3 extends State<NavBar3> {
         }
         break;
       case 2:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const Reservations()),
+        );
         break;
       case 3:
         break;
@@ -342,6 +359,10 @@ class _NavBar4 extends State<NavBar4> {
         }
         break;
       case 2:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const Reservations()),
+        );
         break;
       case 3:
         break;
