@@ -40,9 +40,14 @@ dependencies:
   adobe_xd: ^2.0.1
   flutter_lints: ^2.0.1
   flutter_svg: ^1.1.5
+  smooth_page_indicator: ^1.0.0+2
+  carousel_slider: ^4.1.1
+  flutter_datetime_picker: ^1.5.1
   intl: ^0.17.0
   time_range: ^1.0.3
   phone_form_field: ^7.0.2
+  expandable_text: ^2.3.0
+  cloud_firestore: ^3.5.1
 
 dev_dependencies:
   flutter_test:

@@ -128,7 +128,7 @@ class _State extends State<SignInScreen> {
                   transition: LinkTransition.Fade,
                   ease: Curves.easeIn,
                   duration: 0.5,
-                  pageBuilder: () => const HomeScreen(),
+                  pageBuilder: () => HomeScreen(),
                 ),
               ],
               child: Stack(

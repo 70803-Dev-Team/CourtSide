@@ -100,7 +100,7 @@ class SignUpScreen1 extends StatelessWidget {
                         transition: LinkTransition.SlideUp,
                         ease: Curves.easeInOut,
                         duration: 0.5,
-                        pageBuilder: () => const HomeScreen(),
+                        pageBuilder: () => HomeScreen(),
                       ),
                     ],
                     child: const Text(

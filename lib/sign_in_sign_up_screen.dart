@@ -132,7 +132,7 @@ class SignInSignUpScreen extends StatelessWidget {
                   transition: LinkTransition.Fade,
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => const HomeScreen(),
+                  pageBuilder: () => HomeScreen(),
                 ),
               ],
               child: Stack(
