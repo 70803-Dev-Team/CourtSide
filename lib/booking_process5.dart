@@ -179,7 +179,7 @@ class BookingProcess5 extends StatelessWidget {
                             transition: LinkTransition.Fade,
                             ease: Curves.linear,
                             duration: 0.3,
-                            pageBuilder: () => const HomeScreen(),
+                            pageBuilder: () => HomeScreen(),
                           ),
                         ],
                         child: Container(
@@ -220,7 +220,7 @@ class BookingProcess5 extends StatelessWidget {
                         transition: LinkTransition.Fade,
                         ease: Curves.linear,
                         duration: 0.5,
-                        pageBuilder: () => const HomeScreen(),
+                        pageBuilder: () => HomeScreen(),
                       ),
                     ],
                     child: Stack(
