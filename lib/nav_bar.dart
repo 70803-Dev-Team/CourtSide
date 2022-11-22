@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-=======
 import 'package:court_side/home_screen.dart';
 import 'package:court_side/profile_screen.dart';
 import 'package:court_side/search/animated_map/animated_markers_map.dart';
->>>>>>> main
 import 'package:flutter/material.dart';
 
 class NavBar extends StatefulWidget {
@@ -17,8 +14,6 @@ class _NavBar extends State<NavBar> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
-<<<<<<< HEAD
-=======
     switch (index) {
       case 0:
         Navigator.push(
@@ -45,7 +40,6 @@ class _NavBar extends State<NavBar> {
         );
         break;
     }
->>>>>>> main
     setState(() {
       _selectedIndex = index;
     });
