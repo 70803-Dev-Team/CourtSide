@@ -22,7 +22,7 @@ class ProfileScreen extends StatelessWidget {
       children: [
         Container(
           padding: const EdgeInsets.all(8),
-          height: 50,
+          height: 60,
           width: double.infinity,
           child: const Text(
             "Profile",
@@ -38,10 +38,31 @@ class ProfileScreen extends StatelessWidget {
           child: Image.asset("assets/pictures/company-logo.png"),
         ),
         const Padding(padding: EdgeInsets.all(40)),
-        _tile('Edit Profile', Icons.account_box),
-        _tile('Linked Cards', Icons.credit_card),
-        _tile('Linked Acounts', Icons.link),
-        _tile('Settings', Icons.settings),
+        OutlinedButton(
+            style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: Color(0xfafafafa))),
+            onPressed: null,
+            child: _tile('Edit Profile', Icons.account_box)),
+        OutlinedButton(
+            style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: Color(0xfafafafa))),
+            onPressed: null,
+            child: _tile('Linked Cards', Icons.credit_card)),
+        OutlinedButton(
+            style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: Color(0xfafafafa))),
+            onPressed: null,
+            child: _tile('Linked Acounts', Icons.link)),
+        OutlinedButton(
+            style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: Color(0xfafafafa))),
+            onPressed: null,
+            child: _tile('Settings', Icons.settings)),
+        OutlinedButton(
+            style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: Color(0xfafafafa))),
+            onPressed: logOut(),
+            child: _tile('Log Out', Icons.logout)),
         const Padding(padding: EdgeInsets.all(20)),
         const Divider(
           thickness: 3.2,
@@ -49,8 +70,11 @@ class ProfileScreen extends StatelessWidget {
           endIndent: 55,
         ),
         const Padding(padding: EdgeInsets.all(20)),
-        _tile('Technical Support', Icons.help),
-        TextButton(onPressed: logOut(), child: const Text("Sign Out")),
+        OutlinedButton(
+            style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: Color(0xfafafafa))),
+            onPressed: null,
+            child: _tile('Technical Support', Icons.help)),
       ],
     );
   }

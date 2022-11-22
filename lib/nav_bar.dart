@@ -1,5 +1,6 @@
 import 'package:court_side/home-screen/home_screen.dart';
 import 'package:court_side/profile_screen.dart';
+import 'package:court_side/reservations/reservations_screen.dart';
 import 'package:court_side/search/animated_map/animated_markers_map.dart';
 import 'package:flutter/material.dart';
 
@@ -29,6 +30,10 @@ class _NavBar0 extends State<NavBar0> {
         }
         break;
       case 2:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const Reservations()),
+        );
         break;
       case 3:
         break;
@@ -108,6 +113,10 @@ class _NavBar1 extends State<NavBar1> {
         }
         break;
       case 2:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const Reservations()),
+        );
         break;
       case 3:
         break;
@@ -186,6 +195,10 @@ class _NavBar2 extends State<NavBar2> {
         }
         break;
       case 2:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const Reservations()),
+        );
         break;
       case 3:
         break;
@@ -264,6 +277,10 @@ class _NavBar3 extends State<NavBar3> {
         }
         break;
       case 2:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const Reservations()),
+        );
         break;
       case 3:
         break;
@@ -342,6 +359,10 @@ class _NavBar4 extends State<NavBar4> {
         }
         break;
       case 2:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const Reservations()),
+        );
         break;
       case 3:
         break;
@@ -390,30 +411,5 @@ class _NavBar4 extends State<NavBar4> {
         onTap: onItemTapped,
       ),
     );
-    /* return Padding(
-         padding: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 10.0),
-        child: Row(
-          children: [
-            SizedBox(
-              width: 30.0,
-              height: 30.0,
-              child: Stack(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 3.0, vertical: 2.0),
-                    child: SizedBox.expand(
-                        child: SvgPicture.string(
-                      svgs.blueHouse,
-                      allowDrawingOutsideViewBox: true,
-                      fit: BoxFit.fill,
-                    )),
-                  ),
-                  const Text("Home"),
-                ],
-              ),
-            )
-          ],
-        )); */
   }
 }
