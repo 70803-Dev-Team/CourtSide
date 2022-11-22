@@ -100,7 +100,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
             child: TextButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return ListSearch();
+                  return const ListSearch();
                 }));
               },
               child: const Text(
@@ -119,21 +119,16 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
           width: double.infinity,
           height: 40,
           decoration: BoxDecoration(
-            color: const Color.fromRGBO(118, 118, 128, .24),
-            borderRadius: BorderRadius.circular(20)
-          ),
+              color: const Color.fromRGBO(118, 118, 128, .24),
+              borderRadius: BorderRadius.circular(20)),
           child: const Center(
             child: TextField(
               //search requires more implementation... remember
               decoration: InputDecoration(
                 hintText: 'Find a court, field, or equipment',
-                hintStyle: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500
-                ),
-                prefixIcon: Icon(Icons.search,
-                  color: Colors.black
-                ),
+                hintStyle:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
+                prefixIcon: Icon(Icons.search, color: Colors.black),
                 border: InputBorder.none,
               ),
             ),
@@ -195,7 +190,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
           ),
         ],
       ),
-      bottomNavigationBar: NavBar(),
+      bottomNavigationBar: const NavBar(),
     );
   }
 }

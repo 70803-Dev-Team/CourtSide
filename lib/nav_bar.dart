@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import '../svgs.dart' as svgs;
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
