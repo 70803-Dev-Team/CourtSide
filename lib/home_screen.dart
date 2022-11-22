@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 //import 'package:court_side/inbox_screen.dart';
 import 'package:court_side/categories/categories.dart';
+=======
+>>>>>>> main
 import 'package:court_side/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

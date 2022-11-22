@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+import 'package:court_side/home_screen.dart';
+import 'package:court_side/profile_screen.dart';
+import 'package:court_side/search/animated_map/animated_markers_map.dart';
+>>>>>>> main
 import 'package:flutter/material.dart';
 
 class NavBar extends StatefulWidget {
@@ -11,6 +17,35 @@ class _NavBar extends State<NavBar> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
+<<<<<<< HEAD
+=======
+    switch (index) {
+      case 0:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
+        );
+        break;
+      case 1:
+        if (_selectedIndex != 1) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const AnimatedMarkersMap()),
+          );
+        }
+        break;
+      case 2:
+        break;
+      case 3:
+        break;
+      case 4:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ProfileScreen()),
+        );
+        break;
+    }
+>>>>>>> main
     setState(() {
       _selectedIndex = index;
     });
