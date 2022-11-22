@@ -1,3 +1,7 @@
+import 'package:court_side/home-screen/home_screen.dart';
+import 'package:court_side/profile-tab/profile_screen.dart';
+import 'package:court_side/reservations/reservations_screen.dart';
+import 'package:court_side/search/animated_map/animated_markers_map.dart';
 import 'package:flutter/material.dart';
 
 class NavBar extends StatefulWidget {

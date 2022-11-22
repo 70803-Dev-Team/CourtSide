@@ -1,5 +1,5 @@
 //import 'package:court_side/inbox_screen.dart';
-import 'package:court_side/categories/categories.dart';
+// import 'package:court_side/categories/categories.dart';
 import 'package:court_side/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -85,10 +85,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: const Color.fromRGBO(22, 183, 255, 1),
                     onPressed: () {
                       setState(() {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return const CategoriesScreen();
-                        }));
+                        // Navigator.push(context,
+                        //     MaterialPageRoute(builder: (context) {
+                        //   return const CategoriesScreen();
+                        // }));
                       });
                     },
                   ),
