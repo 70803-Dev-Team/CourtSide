@@ -56,7 +56,7 @@ final LISTING = [
   ),
   const Listing(
     sport: 'golf',
-    image: '${_path_picture}golf-image2.jpeg',
+    image: '${_path_picture}LSU-Golf-Course.jpeg',
     title: 'LSU Golf Course',
     address: '3668 Gourrier Ave, Baton Rouge, LA 70820',
     price: '\$25 / round',
@@ -72,7 +72,7 @@ final LISTING = [
   ),
   const Listing(
     sport: 'golf',
-    image: '${_path_picture}golf-image3.jpeg',
+    image: '${_path_picture}BREC-Golf-Course.jpeg',
     title: 'BREC Web Memorial Golf Course',
     address: '1351 Country Club Dr, Baton Rouge, LA 70806',
     price: '\$37 / round',
@@ -86,6 +86,14 @@ final LISTING = [
     price: '\$15 / hour',
     rating: '2.95',
   ),
+  const Listing(
+    sport: 'basketball',
+    image: '${_path_picture}urec-bball.jpeg',
+    title: 'LSU UREC Basketball Court 1',
+    address: 'Student Recreation Complex, LSU 102, Baton Rouge, LA 70803',
+    price: '\$35 / hour',
+    rating: '4.2',
+  )
 ];
 
 const _styleTitle = TextStyle(
@@ -169,7 +177,7 @@ class ListingCard extends StatelessWidget {
                             color: Color.fromRGBO(212, 175, 55, 100),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(right: 17, left: 2),
+                            padding: const EdgeInsets.only(right: 6, left: 2),
                             child: Text(
                               listing.rating,
                               style: _styleRating,

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'svgs.dart' as svgs;
+import '../svgs.dart' as svgs;
 import 'package:adobe_xd/pinned.dart';
 import 'package:adobe_xd/gradient_xd_transform.dart';
 import 'package:adobe_xd/page_link.dart';
-import './home_screen.dart';
+import 'home-screen/home_screen.dart';
 
 class BookingProcess5 extends StatelessWidget {
   const BookingProcess5({super.key});

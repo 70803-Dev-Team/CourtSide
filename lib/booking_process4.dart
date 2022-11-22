@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'svgs.dart' as svgs;
+import '../svgs.dart' as svgs;
 import './booking_process5.dart';
 
 class BookingProcess4 extends StatelessWidget {
