@@ -23,7 +23,7 @@ class _ReservationWidget extends State<ReservationWidget> {
       children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
-          child: Text(widget.model!.user!),
+          child: Text(widget.model!.email!),
         ),
         Padding(
             padding: const EdgeInsets.fromLTRB(20, 60, 20, 60),
