@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import './sign_up_screen4.dart';
+import 'sign_up_screen4.dart';
 import 'package:adobe_xd/page_link.dart';
-import './sign_up_screen2.dart';
+import 'sign_up_screen2.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'svgs.dart' as svgs;
+import '../../svgs.dart' as svgs;
 
 class SignUpScreen3 extends StatelessWidget {
   const SignUpScreen3({super.key});

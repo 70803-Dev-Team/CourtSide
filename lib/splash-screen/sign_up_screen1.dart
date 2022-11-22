@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import './home_screen.dart';
+import '../home-screen/home_screen.dart';
 import 'package:adobe_xd/page_link.dart';
-import './sign_in_sign_up_screen.dart';
-import './sign_up_screen2.dart';
+import 'sign_in_sign_up_screen.dart';
+import 'sign_up_screen2.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'svgs.dart' as svgs;
+import '../../svgs.dart' as svgs;
 
 class SignUpScreen1 extends StatelessWidget {
   const SignUpScreen1({super.key});
@@ -123,7 +123,7 @@ class SignUpScreen1 extends StatelessWidget {
                       PageLink(
                     links: [
                       PageLinkInfo(
-                        transition: LinkTransition.PushDown,
+                        transition: LinkTransition.SlideRight,
                         ease: Curves.linear,
                         duration: 0.5,
                         pageBuilder: () => const SignInSignUpScreen(),
@@ -228,9 +228,9 @@ class SignUpScreen1 extends StatelessWidget {
                             ),
                           ),
                           const Align(
-                            alignment: Alignment(-0.489, 0.045),
+                            alignment: Alignment(-0.425, 0.045),
                             child: SizedBox(
-                              width: 145.0,
+                              width: 160.0,
                               height: 21.0,
                               child: Text(
                                 'Rent Field / Court',
@@ -291,7 +291,7 @@ class SignUpScreen1 extends StatelessWidget {
                           const Align(
                             alignment: Alignment(-0.513, 0.045),
                             child: SizedBox(
-                              width: 134.0,
+                              width: 140.0,
                               height: 21.0,
                               child: Text(
                                 'Rent Equipment',
@@ -337,7 +337,7 @@ class SignUpScreen1 extends StatelessWidget {
                             ),
                           ),
                           Pinned.fromPins(
-                            Pin(size: 257.0, end: 54.0),
+                            Pin(size: 257.0, end: 28.0),
                             Pin(size: 21.0, middle: 0.5227),
                             child: const Text(
                               'Rent Field / Court & Equipment',
@@ -404,7 +404,7 @@ class SignUpScreen1 extends StatelessWidget {
                           const Align(
                             alignment: Alignment(-0.576, 0.045),
                             child: SizedBox(
-                              width: 99.0,
+                              width: 105.0,
                               height: 21.0,
                               child: Text(
                                 'Be a Lender',
@@ -485,7 +485,7 @@ class SignUpScreen1 extends StatelessWidget {
                           const Align(
                             alignment: Alignment(-0.403, 0.045),
                             child: SizedBox(
-                              width: 177.0,
+                              width: 185.0,
                               height: 21.0,
                               child: Text(
                                 'Have not decided yet',

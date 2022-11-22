@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -46,9 +43,19 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyDvb9gliJyyhWOdzmjdrBi7vP1dOorU43c',
+    appId: '1:101148815080:web:df5b952c52a5155538635d',
+    messagingSenderId: '101148815080',
+    projectId: 'courtside-70803',
+    authDomain: 'courtside-70803.firebaseapp.com',
+    storageBucket: 'courtside-70803.appspot.com',
+    measurementId: 'G-37GY07N1BQ',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCuFCBxaiXVgXVfxYc9x1X9MkTtZuSESLQ',
-    appId: '1:101148815080:android:ca85ab44acab44ce38635d',
+    appId: '1:101148815080:android:7b9e53516530250f38635d',
     messagingSenderId: '101148815080',
     projectId: 'courtside-70803',
     storageBucket: 'courtside-70803.appspot.com',
@@ -60,8 +67,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '101148815080',
     projectId: 'courtside-70803',
     storageBucket: 'courtside-70803.appspot.com',
-    iosClientId:
-        '101148815080-qfj2spbv86aq1j58sab8emhid64oo68h.apps.googleusercontent.com',
+    iosClientId: '101148815080-qfj2spbv86aq1j58sab8emhid64oo68h.apps.googleusercontent.com',
     iosBundleId: 'com.example.courtSide',
   );
 
@@ -71,8 +77,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '101148815080',
     projectId: 'courtside-70803',
     storageBucket: 'courtside-70803.appspot.com',
-    iosClientId:
-        '101148815080-qfj2spbv86aq1j58sab8emhid64oo68h.apps.googleusercontent.com',
+    iosClientId: '101148815080-qfj2spbv86aq1j58sab8emhid64oo68h.apps.googleusercontent.com',
     iosBundleId: 'com.example.courtSide',
   );
 }

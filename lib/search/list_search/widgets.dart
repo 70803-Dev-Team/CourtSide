@@ -54,7 +54,7 @@ final LISTING = [
   ),
   Listing(
     sport: 'golf',
-    image: '${_path_picture}golf-image2.jpeg',
+    image: '${_path_picture}LSU-Golf-Course.jpeg',
     title: 'LSU Golf Course',
     address: '3668 Gourrier Ave, Baton Rouge, LA 70820',
     price: '\$25 / round',
@@ -70,7 +70,7 @@ final LISTING = [
   ),
   Listing(
     sport: 'golf',
-    image: '${_path_picture}golf-image3.jpeg',
+    image: '${_path_picture}BREC-Golf-Course.jpeg',
     title: 'BREC Web Memorial Golf Course',
     address: '1351 Country Club Dr, Baton Rouge, LA 70806',
     price: '\$37 / round',

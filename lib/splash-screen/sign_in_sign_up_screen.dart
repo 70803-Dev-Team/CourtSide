@@ -1,11 +1,11 @@
-import 'package:court_side/sign_up_screen1.dart';
+import 'package:court_side/splash-screen/sign_up_screen1.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import './sign_in.dart';
+import 'sign_in.dart';
 import 'package:adobe_xd/page_link.dart';
-import './home_screen.dart';
+import '../home-screen/home_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'svgs.dart' as svgs;
+import '../../svgs.dart' as svgs;
 import 'package:delayed_display/delayed_display.dart';
 
 class SignInSignUpScreen extends StatelessWidget {
@@ -90,7 +90,7 @@ class SignInSignUpScreen extends StatelessWidget {
                   PageLink(
                 links: [
                   PageLinkInfo(
-                    transition: LinkTransition.SlideRight,
+                    transition: LinkTransition.SlideLeft,
                     ease: Curves.linear,
                     duration: 0.5,
                     pageBuilder: () => const SignUpScreen1(),
@@ -131,7 +131,7 @@ class SignInSignUpScreen extends StatelessWidget {
               ),
             ),
           ),
-          // CONTINUE AS GUESS BUTTON
+          // CONTINUE AS GUEST BUTTON
           DelayedDisplay(
             delay: Duration(milliseconds: 1000),
             child: Pinned.fromPins(

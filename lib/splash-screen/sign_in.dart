@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import './home_screen.dart';
+import '../home-screen/home_screen.dart';
 import 'package:adobe_xd/page_link.dart';
-import './sign_in_sign_up_screen.dart';
+import 'sign_in_sign_up_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'svgs.dart' as svgs;
+import '../../svgs.dart' as svgs;
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -53,11 +53,15 @@ class _State extends State<SignInScreen> {
                 Pinned.fromPins(Pin(size: 234.0, start: 20.0),
                     Pin(size: 29.0, middle: 0.5128),
                     child: TextField(
+                      style: TextStyle(
+                        color: Color.fromRGBO(22, 183, 255, 1),
+                        fontWeight: FontWeight.w600,
+                      ),
                       //child: const Text(
-                      scrollPadding: const EdgeInsets.only(bottom: 40),
+                      scrollPadding: const EdgeInsets.only(bottom: 0),
                       decoration: const InputDecoration(
-                        labelText: 'Email',
-                        border: OutlineInputBorder(),
+                        hintText: 'Email',
+                        border: InputBorder.none,
                       ),
                       onChanged: (text) {
                         setState(() {
@@ -86,11 +90,15 @@ class _State extends State<SignInScreen> {
                 Pinned.fromPins(Pin(size: 104.0, start: 20.0),
                     Pin(size: 29.0, middle: 0.5128),
                     child: TextField(
+                      style: TextStyle(
+                        color: Color.fromRGBO(22, 183, 255, 1),
+                        fontWeight: FontWeight.w600,
+                      ),
                       //child: const Text(
                       scrollPadding: const EdgeInsets.only(bottom: 40),
                       decoration: const InputDecoration(
-                        labelText: 'Password',
-                        border: OutlineInputBorder(),
+                        hintText: 'Password',
+                        border: InputBorder.none,
                       ),
                       onChanged: (text) {
                         setState(() {
@@ -146,7 +154,7 @@ class _State extends State<SignInScreen> {
                       const Align(
                         alignment: Alignment(0.0, 0.048),
                         child: SizedBox(
-                          width: 106.0,
+                          width: 120.0,
                           height: 29.0,
                           child: Text(
                             'Continue',
@@ -197,7 +205,7 @@ class _State extends State<SignInScreen> {
             ),
           ),
           Transform.translate(
-            offset: const Offset(50.0, 50.0),
+            offset: const Offset(50.0, 60.0),
             child: SizedBox(
               width: 300.0,
               height: 295.0,
@@ -325,7 +333,7 @@ class _State extends State<SignInScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 41.2, vertical: 35.4),
+                        horizontal: 41.2, vertical: 100.4),
                     child: SizedBox.expand(
                         child:
                             // Adobe XD layer: 'Background' (shape)
@@ -337,121 +345,11 @@ class _State extends State<SignInScreen> {
                   ),
                   Align(
                     alignment: const Alignment(0.0, -0.538),
-                    child: SizedBox(
-                      width: 100.0,
-                      height: 100.0,
-                      child:
-                          // Adobe XD layer: 'Company-Logo' (group)
-                          Stack(
-                        children: <Widget>[
-                          Transform.translate(
-                            offset: const Offset(12.7, 0.0),
-                            child: SizedBox(
-                              width: 87.0,
-                              height: 99.0,
-                              child: Stack(
-                                children: <Widget>[
-                                  SizedBox(
-                                    width: 87.0,
-                                    height: 99.0,
-                                    child: SvgPicture.string(
-                                      svgs.logoBottom5,
-                                      allowDrawingOutsideViewBox: true,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 87.0,
-                                    height: 99.0,
-                                    child: Stack(
-                                      children: <Widget>[
-                                        Transform.translate(
-                                          offset: const Offset(-19.3, 0.0),
-                                          child: Container(
-                                            width: 114.0,
-                                            height: 112.0,
-                                            decoration: const BoxDecoration(
-                                              gradient: LinearGradient(
-                                                begin: Alignment(-1.359, 1.404),
-                                                end: Alignment(1.093, -1.13),
-                                                colors: [
-                                                  Color(0xff16dbff),
-                                                  Color(0xff1cdbff),
-                                                  Color(0xff2ddeff),
-                                                  Color(0xff49e2ff),
-                                                  Color(0xff71e9ff),
-                                                  Color(0xffa3f0ff),
-                                                  Color(0xffe0faff),
-                                                  Color(0xffffffff)
-                                                ],
-                                                stops: [
-                                                  0.0,
-                                                  0.081,
-                                                  0.189,
-                                                  0.314,
-                                                  0.451,
-                                                  0.598,
-                                                  0.751,
-                                                  0.821
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 87.0,
-                                          height: 99.0,
-                                          child: SvgPicture.string(
-                                            svgs.logoBottom5,
-                                            allowDrawingOutsideViewBox: true,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Transform.translate(
-                            offset: const Offset(0.0, 0.5),
-                            child: SizedBox(
-                              width: 87.0,
-                              height: 99.0,
-                              child: Stack(
-                                children: <Widget>[
-                                  SizedBox(
-                                    width: 87.0,
-                                    height: 99.0,
-                                    child: SvgPicture.string(
-                                      svgs.logoTop5,
-                                      allowDrawingOutsideViewBox: true,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 87.0,
-                                    height: 99.0,
-                                    child: Stack(
-                                      children: <Widget>[
-                                        Transform.translate(
-                                          offset: const Offset(-6.9, -12.4),
-                                          child: SizedBox(
-                                            width: 114.0,
-                                            height: 112.0,
-                                            child: SvgPicture.string(
-                                              svgs.logoBackgroundTop4,
-                                              allowDrawingOutsideViewBox: true,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                    child: Container(
+                      child: (Image.asset(
+                          'assets/pictures/company-logo.png',
+                          scale: 0.8,
+                        )),
                     ),
                   ),
                 ],
