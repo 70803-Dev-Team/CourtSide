@@ -29,6 +29,7 @@ final _locations = [
   LatLng(30.434899305338693, -91.16786122609433), // Tennis
   LatLng(30.43701002393548, -91.141487689171), // Golf
   LatLng(30.4241124873271, -91.10202066346085), // Basketball
+  LatLng(30.410459135475293, -91.16904868726459) // UREC
 ];
 
 // ignore: constant_identifier_names
@@ -74,7 +75,7 @@ final MAP_MARKERS = [
   ),
   MapMarker(
     sport: 'golf',
-    image: '${_path_picture}golf-image2.jpeg',
+    image: '${_path_picture}LSU-Golf-Course.jpeg',
     title: 'LSU Golf Course',
     address: '3668 Gourrier Ave, Baton Rouge, LA 70820',
     location: _locations[4],
@@ -92,7 +93,7 @@ final MAP_MARKERS = [
   ),
   MapMarker(
     sport: 'golf',
-    image: '${_path_picture}golf-image3.jpeg',
+    image: '${_path_picture}BREC-Golf-Course.jpeg',
     title: 'BREC Web Memorial Golf Course',
     address: '1351 Country Club Dr, Baton Rouge, LA 70806',
     location: _locations[6],
@@ -107,4 +108,12 @@ final MAP_MARKERS = [
       location: _locations[7],
       price: '\$15 / hour',
       rating: '2.95'),
+  MapMarker(
+      sport: 'basketball',
+      image: '${_path_picture}urec-bball.jpeg',
+      title: 'LSU UREC Basketball Court 1',
+      address: 'UREC, LSU 102, Baton Rouge, LA 70803',
+      location: _locations[8],
+      price: '\$35 / hour',
+      rating: '4.2'),
 ];
