@@ -8,6 +8,7 @@ import 'package:court_side/home-screen/categories/sports/soccer.dart';
 import 'package:court_side/home-screen/categories/sports/tennis.dart';
 import 'package:court_side/nav_bar.dart';
 import 'package:court_side/home-screen/new-arrivals.dart';
+import 'package:court_side/profile_screen.dart';
 import 'package:court_side/search/search-function/search-page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -544,7 +545,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: const NavBar(),
+      bottomNavigationBar: const NavBar0(),
     );
   }
 }
