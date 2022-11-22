@@ -1,8 +1,7 @@
+import 'package:court_side/nav_bar.dart';
 import 'package:court_side/search/animated_map/animated_markers_map.dart';
 import 'package:flutter/material.dart';
 import 'package:court_side/search/list_search/widgets.dart';
-
-import '../../nav_bar.dart';
 
 class ListSearch extends StatelessWidget {
   const ListSearch({super.key});
@@ -42,9 +41,24 @@ class ListSearch extends StatelessWidget {
             )),
         toolbarHeight: 55,
         backgroundColor: Colors.white,
-        title: const Text(
-          'Search',
-          style: TextStyle(color: Colors.black),
+        title: Container(
+          width: double.infinity,
+          height: 40,
+          decoration: BoxDecoration(
+              color: const Color.fromRGBO(118, 118, 128, .24),
+              borderRadius: BorderRadius.circular(20)),
+          child: const Center(
+            child: TextField(
+              //search requires more implementation... remember
+              decoration: InputDecoration(
+                hintText: 'Find a court, field, or equipment',
+                hintStyle:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
+                prefixIcon: Icon(Icons.search, color: Colors.black),
+                border: InputBorder.none,
+              ),
+            ),
+          ),
         ),
       ),
       backgroundColor: const Color.fromRGBO(52, 58, 64, 100),

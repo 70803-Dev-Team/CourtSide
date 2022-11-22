@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 // ignore: depend_on_referenced_packages
 import 'package:latlong2/latlong.dart';
-
-import '../../nav_bar.dart';
+import 'package:court_side/nav_bar.dart';
 
 // ignore: constant_identifier_names
 const MAPBOX_ACCESS_TOKEN =
@@ -35,6 +34,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
   final _pageController = PageController();
   late final AnimationController _animationController;
   int _selectedIndex = 0;
+  // int _currentIndex = 1;
 
   List<Marker> _buildMarkers() {
     final markerList = <Marker>[];
@@ -80,6 +80,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
   Widget build(BuildContext context) {
     final markers = _buildMarkers();
     return Scaffold(
+      backgroundColor: Colors.grey[800],
       appBar: AppBar(
         // Bottom Rounded Border for AppBar
         shape: const RoundedRectangleBorder(
@@ -114,9 +115,24 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
             )),
         toolbarHeight: 55,
         backgroundColor: Colors.white,
-        title: const Text(
-          'Search',
-          style: TextStyle(color: Colors.black),
+        title: Container(
+          width: double.infinity,
+          height: 40,
+          decoration: BoxDecoration(
+              color: const Color.fromRGBO(118, 118, 128, .24),
+              borderRadius: BorderRadius.circular(20)),
+          child: const Center(
+            child: TextField(
+              //search requires more implementation... remember
+              decoration: InputDecoration(
+                hintText: 'Find a court, field, or equipment',
+                hintStyle:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
+                prefixIcon: Icon(Icons.search, color: Colors.black),
+                border: InputBorder.none,
+              ),
+            ),
+          ),
         ),
       ),
       body: Stack(
@@ -158,7 +174,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
           Positioned(
             left: 0,
             right: 0,
-            bottom: 50, // Change y-position of Listing Description
+            bottom: 0, // Change y-position of Listing Description
             height: MediaQuery.of(context).size.height * 0.385,
             child: PageView.builder(
               controller: _pageController,

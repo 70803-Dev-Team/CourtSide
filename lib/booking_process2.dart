@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'svgs.dart' as svgs;
+import '../svgs.dart' as svgs;
 import './booking_process3.dart';
 import 'package:intl/intl.dart';
 import 'package:time_range/time_range.dart';
