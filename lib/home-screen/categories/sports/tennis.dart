@@ -28,13 +28,13 @@ class _TennisListingsState extends State<TennisListings> {
   Widget build(BuildContext context) {
     initSearchLisiting('Tennis');
     return Scaffold(
-      backgroundColor: Color.fromARGB(232, 232, 232, 232),
+      backgroundColor: const Color.fromARGB(232, 232, 232, 232),
       appBar: AppBar(
         elevation: 0,
         toolbarHeight: 65,
-        backgroundColor: Color.fromRGBO(52, 58, 64, 1),
-        iconTheme: IconThemeData(color: Color.fromRGBO(12, 183, 255, 1)),
-        title: Align(
+        backgroundColor: const Color.fromRGBO(52, 58, 64, 1),
+        iconTheme: const IconThemeData(color: Color.fromRGBO(12, 183, 255, 1)),
+        title: const Align(
           alignment: Alignment.topLeft,
           child: Text(
             'Tennis',
