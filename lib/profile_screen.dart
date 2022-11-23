@@ -2,14 +2,16 @@ import 'package:court_side/add_listing.dart';
 import 'package:flutter/material.dart';
 import 'package:court_side/nav_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'splash-screen/sign_in_sign_up_screen.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({Key? key}) : super(key: key);
 
-  logOut() {
-    FirebaseAuth.instance.signOut();
-  }
+  @override
+  State<ProfileScreen> createState() => _ProfileScreen();
+}
 
+class _ProfileScreen extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +64,14 @@ class ProfileScreen extends StatelessWidget {
         OutlinedButton(
             style: OutlinedButton.styleFrom(
                 side: const BorderSide(color: Color(0xfafafafa))),
-            onPressed: logOut(),
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const SignInSignUpScreen()),
+              );
+            },
             child: _tile('Log Out', Icons.logout)),
         OutlinedButton(
             style: OutlinedButton.styleFrom(
