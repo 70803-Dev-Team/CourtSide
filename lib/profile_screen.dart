@@ -1,3 +1,4 @@
+import 'package:court_side/add_listing.dart';
 import 'package:flutter/material.dart';
 import 'package:court_side/nav_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -14,12 +15,12 @@ class _ProfileScreen extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _buildList(),
+      body: _buildList(context),
       bottomNavigationBar: const NavBar4(),
     );
   }
 
-  Widget _buildList() {
+  Widget _buildList(BuildContext context) {
     return ListView(
       children: [
         Container(
@@ -72,6 +73,16 @@ class _ProfileScreen extends State<ProfileScreen> {
               );
             },
             child: _tile('Log Out', Icons.logout)),
+        OutlinedButton(
+            style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: Color(0xfafafafa))),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AddListing()),
+              );
+            },
+            child: _tile('Add Listing', Icons.square)),
         const Padding(padding: EdgeInsets.all(20)),
         const Divider(
           thickness: 3.2,
