@@ -28,7 +28,8 @@ class _State extends State<SignInScreen> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/pictures/splash-screen-background.png'),
+                image:
+                    AssetImage('assets/pictures/splash-screen-background.png'),
                 fit: BoxFit.fill,
               ),
             ),
@@ -53,7 +54,7 @@ class _State extends State<SignInScreen> {
                 Pinned.fromPins(Pin(size: 234.0, start: 20.0),
                     Pin(size: 29.0, middle: 0.5128),
                     child: TextField(
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Color.fromRGBO(22, 183, 255, 1),
                         fontWeight: FontWeight.w600,
                       ),
@@ -90,7 +91,7 @@ class _State extends State<SignInScreen> {
                 Pinned.fromPins(Pin(size: 104.0, start: 20.0),
                     Pin(size: 29.0, middle: 0.5128),
                     child: TextField(
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Color.fromRGBO(22, 183, 255, 1),
                         fontWeight: FontWeight.w600,
                       ),
@@ -347,9 +348,9 @@ class _State extends State<SignInScreen> {
                     alignment: const Alignment(0.0, -0.538),
                     child: Container(
                       child: (Image.asset(
-                          'assets/pictures/company-logo.png',
-                          scale: 0.8,
-                        )),
+                        'assets/pictures/company-logo.png',
+                        scale: 0.8,
+                      )),
                     ),
                   ),
                 ],

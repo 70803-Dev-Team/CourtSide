@@ -24,7 +24,7 @@ class CategoriesScreen extends StatelessWidget {
         toolbarHeight: 65,
         backgroundColor: Colors.white,
         iconTheme: const IconThemeData(color: Color.fromRGBO(12, 183, 255, 1)),
-        title: Container(
+        title: SizedBox(
           width: double.infinity,
           height: 40,
           child: Transform(
@@ -59,15 +59,17 @@ class CategoriesScreen extends StatelessWidget {
 }
 
 @override
+// ignore: camel_case_types
 class categoryButton extends StatelessWidget {
   final Sport category;
-  categoryButton({super.key, required this.category});
+  const categoryButton({super.key, required this.category});
 
+  @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => category.className));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => category.className));
       },
       child: Container(
         decoration: BoxDecoration(
@@ -130,11 +132,14 @@ class Sport {
   final String svg;
   final double width;
   final double height;
+  // ignore: prefer_typing_uninitialized_variables
   final className;
 }
 
+// ignore: constant_identifier_names
 const _path_svgs = 'assets/icons/';
 
+// ignore: non_constant_identifier_names
 final SPORTS = [
   const Sport(
     sport: 'Baseball',

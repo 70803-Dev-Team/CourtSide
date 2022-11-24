@@ -8,16 +8,13 @@ import 'package:court_side/home-screen/categories/sports/soccer.dart';
 import 'package:court_side/home-screen/categories/sports/tennis.dart';
 import 'package:court_side/nav_bar.dart';
 import 'package:court_side/home-screen/new-arrivals.dart';
-import 'package:court_side/search/list_search/widgets.dart';
+import 'package:court_side/profile_screen.dart';
 import 'package:court_side/search/search-function/search-page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import '../../svgs.dart' as svgs;
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 //import 'profile_screen.dart';
 
@@ -32,7 +29,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   //HomeScreen({super.key});
   int _current = 0;
-  int _currentIndex = 0;
   final controller = PageController(viewportFraction: 0.8, keepPage: true);
 
   @override
@@ -51,15 +47,16 @@ class _HomeScreenState extends State<HomeScreen> {
             child: TextButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return SearchScreen();
+                  return const SearchScreen();
                 }));
               },
               child: Row(
                 children: const [
                   Padding(
                     padding: EdgeInsets.only(right: 5.0),
-                    child: Icon(Icons.search,
-                      color:Color.fromRGBO(235, 235, 245, .6),
+                    child: Icon(
+                      Icons.search,
+                      color: Color.fromRGBO(235, 235, 245, .6),
                     ),
                   ),
                   Text(
@@ -114,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       setState(() {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-                          return CategoriesScreen();
+                          return const CategoriesScreen();
                         }));
                       });
                     },
@@ -425,7 +422,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       setState(() {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-                          return NewArrivalsScreen();
+                          return const NewArrivalsScreen();
                         }));
                       });
                     },
@@ -548,7 +545,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: NavBar(),
+      bottomNavigationBar: const NavBar0(),
     );
   }
 }

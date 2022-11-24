@@ -190,7 +190,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
           ),
         ],
       ),
-      bottomNavigationBar: const NavBar(),
+      bottomNavigationBar: const NavBar1(),
     );
   }
 }

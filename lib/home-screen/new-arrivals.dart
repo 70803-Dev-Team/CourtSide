@@ -1,21 +1,26 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:court_side/search/list_search/widgets.dart';
 
 class NewArrivalsScreen extends StatelessWidget {
+  const NewArrivalsScreen({super.key});
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 232, 232, 232),
+      backgroundColor: const Color.fromARGB(255, 232, 232, 232),
       appBar: AppBar(
         elevation: 0,
         toolbarHeight: 65,
         backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Color.fromRGBO(12, 183, 255, 1)),
-        title: Container(
+        iconTheme: const IconThemeData(color: Color.fromRGBO(12, 183, 255, 1)),
+        title: SizedBox(
           width: double.infinity,
           height: 40,
           child: Transform(
               transform: Matrix4.translationValues(-20, 0, 0),
-              child: Text(
+              child: const Text(
                 'New Arrivals',
                 style: TextStyle(
                   color: Colors.black,

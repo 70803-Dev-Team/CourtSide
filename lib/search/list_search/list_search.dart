@@ -73,7 +73,7 @@ class ListSearch extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: const NavBar(),
+      bottomNavigationBar: const NavBar1(),
     );
   }
 }

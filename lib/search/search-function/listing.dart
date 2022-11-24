@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Listing {
   String? sport;
   String? image;
@@ -27,7 +25,7 @@ class Listing {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
 
     data['sport'] = sport;
     data['image'] = image;
