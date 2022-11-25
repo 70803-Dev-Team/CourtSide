@@ -3,9 +3,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../svgs.dart' as svgs;
 import './booking_process2.dart';
 
-class BookingProcess1 extends StatelessWidget {
+class BookingProcess1 extends StatefulWidget {
   const BookingProcess1({super.key});
 
+  @override
+  State<BookingProcess1> createState() => _BookingProcess1();
+}
+
+class _BookingProcess1 extends State<BookingProcess1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,15 +20,22 @@ class BookingProcess1 extends StatelessWidget {
         toolbarHeight: 120,
         title: SizedBox(
           width: double.infinity,
-          height: 100,
+          height: 140,
           child: Column(
             children: <Widget>[
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: const EdgeInsets.all(0.0),
-                  child: SvgPicture.string(
-                    svgs.lessThan,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                        side: const BorderSide(color: Color(0x20212500))),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: SvgPicture.string(
+                      svgs.lessThan,
+                    ),
                   ),
                 ),
               ),

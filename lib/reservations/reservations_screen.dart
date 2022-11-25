@@ -4,6 +4,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:court_side/reservations/reservation.dart';
 import 'package:court_side/reservations/reservation_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:court_side/svgs.dart' as svgs;
 
 class Reservations extends StatefulWidget {
   const Reservations({Key? key}) : super(key: key);
@@ -35,19 +37,33 @@ class _Reservations extends State<Reservations> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(children: [
-        Container(
-          padding: const EdgeInsets.fromLTRB(8, 60, 0, 0),
-          height: 100,
-          width: double.infinity,
-          child: const Text(
-            "Reservations",
-            textAlign: TextAlign.left,
-            style: TextStyle(
-                fontFamily: 'SF Pro',
-                fontSize: 35,
-                color: Colors.black,
-                fontWeight: FontWeight.w800),
-          ),
+        Row(
+          children: [
+            const Align(
+              alignment: Alignment.topLeft,
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(10, 30, 0, 0),
+                child: Text(
+                  "Reservations",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      fontFamily: 'SF Pro',
+                      fontSize: 30,
+                      color: Color(0xff000000),
+                      fontWeight: FontWeight.w800),
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.topRight,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(160, 30, 10, 0),
+                child: SvgPicture.string(
+                  svgs.notificationBell,
+                ),
+              ),
+            ),
+          ],
         ),
         Container(
           padding: const EdgeInsets.fromLTRB(8, 60, 0, 0),
