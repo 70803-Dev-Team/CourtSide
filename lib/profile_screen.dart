@@ -1,13 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
-import './reservations_screen.dart';
-import 'package:adobe_xd/page_link.dart';
-import './search_screen_map_view.dart';
-import './inbox_screen.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:court_side/nav_bar.dart';
-
-import 'svgs.dart' as svgs;
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -24,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
     return ListView(
       children: [
         Container(
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           height: 50,
           width: double.infinity,
           child: const Text(
