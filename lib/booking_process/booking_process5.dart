@@ -34,7 +34,7 @@ class BookingProcess5 extends StatelessWidget {
                     'Bocage Racquet Club',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
-                      fontSize: 36,
+                      fontSize: 32,
                       color: Color(0xff000000),
                       letterSpacing: 0.018000000000000002,
                       fontWeight: FontWeight.w800,
@@ -53,7 +53,7 @@ class BookingProcess5 extends StatelessWidget {
                       'Congratulations!',
                       style: TextStyle(
                         fontFamily: 'SF Pro',
-                        fontSize: 36,
+                        fontSize: 32,
                         color: Color(0xff000000),
                         letterSpacing: 0.018000000000000002,
                         fontWeight: FontWeight.w800,
@@ -69,7 +69,7 @@ class BookingProcess5 extends StatelessWidget {
                     'You’re booked for your time at',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
-                      fontSize: 28,
+                      fontSize: 26,
                       color: Color(0xff000000),
                       letterSpacing: 0.014,
                     ),
@@ -209,7 +209,7 @@ class BookingProcess5 extends StatelessWidget {
                               'Go to Reservations',
                               style: TextStyle(
                                 fontFamily: 'SF Pro',
-                                fontSize: 24,
+                                fontSize: 22,
                                 color: Color(0xffe8e8e8),
                                 fontWeight: FontWeight.w800,
                               ),
@@ -255,7 +255,7 @@ class BookingProcess5 extends StatelessWidget {
                               'Go to Home Page',
                               style: TextStyle(
                                 fontFamily: 'SF Pro',
-                                fontSize: 24,
+                                fontSize: 22,
                                 color: Color(0xff2e9eff),
                                 fontWeight: FontWeight.w800,
                               ),

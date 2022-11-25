@@ -15,15 +15,22 @@ class BookingProcess4 extends StatelessWidget {
         toolbarHeight: 120,
         title: SizedBox(
           width: double.infinity,
-          height: 100,
+          height: 140,
           child: Column(
             children: <Widget>[
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: const EdgeInsets.all(0.0),
-                  child: SvgPicture.string(
-                    svgs.lessThan,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                        side: const BorderSide(color: Color(0x20212500))),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: SvgPicture.string(
+                      svgs.lessThan,
+                    ),
                   ),
                 ),
               ),
