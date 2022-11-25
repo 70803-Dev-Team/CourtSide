@@ -1,4 +1,5 @@
 //import 'package:court_side/inbox_screen.dart';
+import 'package:court_side/booking_process/booking_process1.dart';
 import 'package:court_side/home-screen/categories/categories.dart';
 import 'package:court_side/home-screen/categories/sports/baseball.dart';
 import 'package:court_side/home-screen/categories/sports/basketball.dart';
@@ -431,114 +432,125 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30.0),
-                    child: Stack(
-                      children: [
-                        CarouselSlider(
-                            items: <Widget>[
-                              Container(
-                                width: MediaQuery.of(context).size.width,
-                                height: 100,
-                                decoration: const BoxDecoration(
-                                    image: DecorationImage(
-                                  image: AssetImage(
-                                      'assets/listings-pictures/tennis-court-image3.jpeg'),
-                                  fit: BoxFit.fill,
-                                )),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width,
-                                height: 100,
-                                decoration: const BoxDecoration(
-                                    image: DecorationImage(
-                                  image: AssetImage(
-                                      'assets/listings-pictures/tennis-court-image2.jpeg'),
-                                  fit: BoxFit.fill,
-                                )),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width,
-                                height: 100,
-                                decoration: const BoxDecoration(
-                                    image: DecorationImage(
-                                  image: AssetImage(
-                                      'assets/listings-pictures/tennis-court-image1.jpeg'),
-                                  fit: BoxFit.fill,
-                                )),
-                              ),
-                            ],
-                            options: CarouselOptions(
-                              viewportFraction: 1.0,
-                              height: 200,
-                              initialPage: 0,
-                              autoPlay: true,
-                              autoPlayInterval: const Duration(seconds: 5),
-                              autoPlayAnimationDuration:
-                                  const Duration(milliseconds: 1500),
-                              autoPlayCurve: Curves.fastOutSlowIn,
-                              enlargeCenterPage: true,
-                              onPageChanged: (index, reason) {
-                                setState(() {
-                                  _current = index;
-                                });
-                              },
-                              scrollDirection: Axis.horizontal,
-                            )),
-                        Positioned.fill(
-                          child: Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Padding(
-                              padding: const EdgeInsets.only(bottom: 10),
-                              child: AnimatedSmoothIndicator(
-                                activeIndex: _current,
-                                count: 3,
-                                effect: const ExpandingDotsEffect(
-                                    dotHeight: 10,
-                                    dotWidth: 10,
-                                    activeDotColor: Colors.white,
-                                    dotColor: Colors.grey),
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                    side: const BorderSide(color: Color(0xfafafafa))),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const BookingProcess1()),
+                  );
+                },
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(30.0),
+                      child: Stack(
+                        children: [
+                          CarouselSlider(
+                              items: <Widget>[
+                                Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 100,
+                                  decoration: const BoxDecoration(
+                                      image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/listings-pictures/tennis-court-image3.jpeg'),
+                                    fit: BoxFit.fill,
+                                  )),
+                                ),
+                                Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 100,
+                                  decoration: const BoxDecoration(
+                                      image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/listings-pictures/tennis-court-image2.jpeg'),
+                                    fit: BoxFit.fill,
+                                  )),
+                                ),
+                                Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 100,
+                                  decoration: const BoxDecoration(
+                                      image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/listings-pictures/tennis-court-image1.jpeg'),
+                                    fit: BoxFit.fill,
+                                  )),
+                                ),
+                              ],
+                              options: CarouselOptions(
+                                viewportFraction: 1.0,
+                                height: 200,
+                                initialPage: 0,
+                                autoPlay: true,
+                                autoPlayInterval: const Duration(seconds: 5),
+                                autoPlayAnimationDuration:
+                                    const Duration(milliseconds: 1500),
+                                autoPlayCurve: Curves.fastOutSlowIn,
+                                enlargeCenterPage: true,
+                                onPageChanged: (index, reason) {
+                                  setState(() {
+                                    _current = index;
+                                  });
+                                },
+                                scrollDirection: Axis.horizontal,
+                              )),
+                          Positioned.fill(
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Padding(
+                                padding: const EdgeInsets.only(bottom: 10),
+                                child: AnimatedSmoothIndicator(
+                                  activeIndex: _current,
+                                  count: 3,
+                                  effect: const ExpandingDotsEffect(
+                                      dotHeight: 10,
+                                      dotWidth: 10,
+                                      activeDotColor: Colors.white,
+                                      dotColor: Colors.grey),
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                  const Text(
-                    "Bocage Racket Club",
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                        height: 1.3,
-                        fontFamily: 'SF Pro',
-                        fontSize: 18,
-                        color: Color(0xff000000),
-                        fontWeight: FontWeight.w800),
-                  ),
-                  const Text(
-                    "7600 Jefferson Hwy, Baton Rouge",
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                        height: 1.3,
-                        fontFamily: 'SF Pro',
-                        fontSize: 18,
-                        color: Color(0xff000000),
-                        fontWeight: FontWeight.w400),
-                  ),
-                  const Text(
-                    "\$250 / hour",
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                        height: 1.3,
-                        fontFamily: 'SF Pro',
-                        fontSize: 18,
-                        color: Color(0xff000000),
-                        fontWeight: FontWeight.w800),
-                  ),
-                ],
+                    const Text(
+                      "Bocage Racket Club",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          height: 1.3,
+                          fontFamily: 'SF Pro',
+                          fontSize: 18,
+                          color: Color(0xff000000),
+                          fontWeight: FontWeight.w800),
+                    ),
+                    const Text(
+                      "7600 Jefferson Hwy, Baton Rouge",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          height: 1.3,
+                          fontFamily: 'SF Pro',
+                          fontSize: 18,
+                          color: Color(0xff000000),
+                          fontWeight: FontWeight.w400),
+                    ),
+                    const Text(
+                      "\$250 / hour",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          height: 1.3,
+                          fontFamily: 'SF Pro',
+                          fontSize: 18,
+                          color: Color(0xff000000),
+                          fontWeight: FontWeight.w800),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
