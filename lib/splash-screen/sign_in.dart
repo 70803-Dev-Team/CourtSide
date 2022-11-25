@@ -146,20 +146,21 @@ class _State extends State<SignInScreen> {
                     FirebaseAuth.instance
                         .signInWithEmailAndPassword(
                             email: email, password: password)
-                        .whenComplete(() => null);
-                    if (FirebaseAuth.instance.currentUser?.email != null) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const HomeScreen()),
-                      );
-                    } else {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SignInFailedScreen()),
-                      );
-                    }
+                        .whenComplete(() {
+                      if (FirebaseAuth.instance.currentUser?.email != null) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeScreen()),
+                        );
+                      } else {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SignInFailedScreen()),
+                        );
+                      }
+                    });
                   },
                   child: Stack(
                     children: <Widget>[

@@ -43,7 +43,7 @@ class _ReservationWidget extends State<ReservationWidget> {
                     Row(
                       children: [
                         const Text(
-                          "Reserved For:                ",
+                          "Reserved For:              ",
                           textAlign: TextAlign.left,
                           style: TextStyle(
                               fontFamily: 'SF Pro',
@@ -85,7 +85,7 @@ class _ReservationWidget extends State<ReservationWidget> {
                                           .bookingEnd!
                                           .microsecondsSinceEpoch))
                               ? ""
-                              : "          - ${DateFormat.yMMMd().format(DateTime.fromMicrosecondsSinceEpoch(widget.model!.bookingEnd!.microsecondsSinceEpoch))}",
+                              : "        - ${DateFormat.yMMMd().format(DateTime.fromMicrosecondsSinceEpoch(widget.model!.bookingEnd!.microsecondsSinceEpoch))}",
                           style: const TextStyle(
                               fontFamily: 'SF Pro',
                               fontSize: 21,
@@ -123,7 +123,7 @@ class _ReservationWidget extends State<ReservationWidget> {
                           widget.model!.nameOfPlace!,
                           style: const TextStyle(
                               fontFamily: 'SF Pro',
-                              fontSize: 20,
+                              fontSize: 18,
                               color: Color(0xff000000),
                               fontWeight: FontWeight.w800),
                         ),
@@ -149,7 +149,7 @@ class _ReservationWidget extends State<ReservationWidget> {
                                     textAlign: TextAlign.left,
                                     style: const TextStyle(
                                         fontFamily: 'SF Pro',
-                                        fontSize: 16,
+                                        fontSize: 14,
                                         color: Color(0xff000000),
                                         fontWeight: FontWeight.w600),
                                   )
