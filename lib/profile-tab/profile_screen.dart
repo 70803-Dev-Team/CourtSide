@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:court_side/nav_bar.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   logOut() {
-    // FirebaseAuth.instance.signOut();
+     FirebaseAuth.instance.signOut();
   }
 
   @override
