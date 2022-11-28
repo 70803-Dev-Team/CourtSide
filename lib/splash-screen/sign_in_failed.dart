@@ -1,4 +1,3 @@
-import 'package:court_side/splash-screen/sign_in_failed.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
@@ -8,14 +7,14 @@ import 'sign_in_sign_up_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../svgs.dart' as svgs;
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+class SignInFailedScreen extends StatefulWidget {
+  const SignInFailedScreen({super.key});
 
   @override
   State createState() => _State();
 }
 
-class _State extends State<SignInScreen> {
+class _State extends State<SignInFailedScreen> {
   String email = "";
   String password = "";
 
@@ -40,7 +39,19 @@ class _State extends State<SignInScreen> {
             ),
             margin: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
           ),
-          Container(),
+          Pinned.fromPins(
+            Pin(start: 35, end: 35),
+            Pin(size: 60, middle: 0.5),
+            child: const Text(
+              "Invalid Email/Password",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontFamily: 'SF Pro',
+                  fontSize: 20,
+                  color: Colors.red,
+                  fontWeight: FontWeight.w800),
+            ),
+          ),
           Pinned.fromPins(
             Pin(start: 35.0, end: 35.0),
             Pin(size: 68.0, middle: 0.5629),
@@ -112,23 +123,7 @@ class _State extends State<SignInScreen> {
                           password = text;
                         });
                       },
-                    )
-
-                    // child: const Text(
-                    //   'Password',
-                    //   style: TextStyle(
-                    //     fontFamily: 'SF Pro',
-                    //     fontSize: 24,
-                    //     color: Color(0x3c000000),
-                    //     fontWeight: FontWeight.w500,
-                    //     height: 1,
-                    //   ),
-                    //   textHeightBehavior:
-                    //       TextHeightBehavior(applyHeightToFirstAscent: false),
-                    //   textAlign: TextAlign.center,
-                    //   softWrap: false,
-                    // ),
-                    ),
+                    )),
               ],
             ),
           ),

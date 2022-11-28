@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../svgs.dart' as svgs;
@@ -20,11 +22,15 @@ class _BookingProcess2State extends State<BookingProcess2> {
   late var formattedDate;
   // ignore: prefer_typing_uninitialized_variables
   late var formattedTime;
+
+  TimeOfDay timeStart = TimeOfDay.now();
+  TimeOfDay timeEnd = TimeOfDay.now();
+
   @override
   void initState() {
     super.initState();
-    formattedTime = DateFormat('hh:mma').format(date);
-    formattedDate = DateFormat('d-MMM-yy').format(date);
+    formattedTime = DateFormat('hh:mm aaa').format(date);
+    formattedDate = DateFormat('yyyy-MM-dd').format(date);
   }
 
   @override
@@ -36,15 +42,22 @@ class _BookingProcess2State extends State<BookingProcess2> {
         toolbarHeight: 120,
         title: SizedBox(
           width: double.infinity,
-          height: 100,
+          height: 140,
           child: Column(
             children: <Widget>[
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: const EdgeInsets.all(0.0),
-                  child: SvgPicture.string(
-                    svgs.lessThan,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                        side: const BorderSide(color: Color(0x20212500))),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: SvgPicture.string(
+                      svgs.lessThan,
+                    ),
                   ),
                 ),
               ),
@@ -186,7 +199,7 @@ class _BookingProcess2State extends State<BookingProcess2> {
                       setState(() {
                         date = selectedDate;
                         formattedDate =
-                            DateFormat('d-MMM-yy').format(selectedDate);
+                            DateFormat('yyyy-MM-dd').format(selectedDate);
                       });
                     }
                   });
@@ -235,12 +248,15 @@ class _BookingProcess2State extends State<BookingProcess2> {
                   fontWeight: FontWeight.bold, color: Colors.white),
               backgroundColor: Colors.transparent,
               activeBackgroundColor: const Color(0xff2e9eff),
-              firstTime: const TimeOfDay(hour: 14, minute: 30),
-              lastTime: const TimeOfDay(hour: 20, minute: 00),
+              firstTime: const TimeOfDay(hour: 0, minute: 00),
+              lastTime: const TimeOfDay(hour: 24, minute: 50),
               timeStep: 10,
               timeBlock: 30,
               // ignore: avoid_print
-              onRangeCompleted: (range) => setState(() => print(range)),
+              onRangeCompleted: (range) => setState(() {
+                timeStart = range!.start;
+                timeEnd = range.end;
+              }),
             ),
           ),
         ]),
@@ -285,6 +301,16 @@ class _BookingProcess2State extends State<BookingProcess2> {
                 ),
                 TextButton(
                   onPressed: () {
+                    FirebaseFirestore.instance.collection("reservations").add({
+                      "email": FirebaseAuth.instance.currentUser?.email,
+                      "nameOfPlace": "Bocage Racket Club",
+                      "bookingStart": Timestamp.fromDate(
+                          DateFormat("yyyy-MM-dd HH:mm").parse(
+                              '${date.year}-${date.month}-${date.day} ${timeStart.hour}:${timeStart.minute}')),
+                      "bookingEnd": Timestamp.fromDate(
+                          DateFormat("yyyy-MM-dd HH:mm").parse(
+                              '${date.year}-${date.month}-${date.day} ${timeEnd.hour}:${timeEnd.minute}')),
+                    });
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => const BookingProcess3()));
                   },

@@ -1,10 +1,11 @@
+import 'package:court_side/reservations/reservations_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../svgs.dart' as svgs;
 import 'package:adobe_xd/pinned.dart';
 import 'package:adobe_xd/gradient_xd_transform.dart';
 import 'package:adobe_xd/page_link.dart';
-import 'home-screen/home_screen.dart';
+import 'package:court_side/home-screen/home_screen.dart';
 
 class BookingProcess5 extends StatelessWidget {
   const BookingProcess5({super.key});
@@ -33,7 +34,7 @@ class BookingProcess5 extends StatelessWidget {
                     'Bocage Racquet Club',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
-                      fontSize: 36,
+                      fontSize: 32,
                       color: Color(0xff000000),
                       letterSpacing: 0.018000000000000002,
                       fontWeight: FontWeight.w800,
@@ -52,7 +53,7 @@ class BookingProcess5 extends StatelessWidget {
                       'Congratulations!',
                       style: TextStyle(
                         fontFamily: 'SF Pro',
-                        fontSize: 36,
+                        fontSize: 32,
                         color: Color(0xff000000),
                         letterSpacing: 0.018000000000000002,
                         fontWeight: FontWeight.w800,
@@ -68,7 +69,7 @@ class BookingProcess5 extends StatelessWidget {
                     'You’re booked for your time at',
                     style: TextStyle(
                       fontFamily: 'SF Pro',
-                      fontSize: 28,
+                      fontSize: 26,
                       color: Color(0xff000000),
                       letterSpacing: 0.014,
                     ),
@@ -170,43 +171,54 @@ class BookingProcess5 extends StatelessWidget {
                   Pin(size: 50.0, end: 0.0),
                   child:
                       // Adobe XD layer: 'Button' (group)
-                      Stack(
-                    children: <Widget>[
-                      // Adobe XD layer: 'Button' (shape)
-                      PageLink(
-                        links: [
-                          PageLinkInfo(
-                            transition: LinkTransition.Fade,
-                            ease: Curves.linear,
-                            duration: 0.3,
-                            pageBuilder: () => const HomeScreen(),
-                          ),
-                        ],
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xff2e9eff),
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                        ),
-                      ),
-                      const Align(
-                        alignment: Alignment(0.007, -0.048),
-                        child: SizedBox(
-                          width: 219.0,
-                          height: 29.0,
-                          child: Text(
-                            'Go to Reservations',
-                            style: TextStyle(
-                              fontFamily: 'SF Pro',
-                              fontSize: 24,
-                              color: Color(0xffe8e8e8),
-                              fontWeight: FontWeight.w800,
+                      OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                        side: const BorderSide(color: Color(0xfafafafa))),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Reservations()),
+                      );
+                    },
+                    child: Stack(
+                      children: <Widget>[
+                        // Adobe XD layer: 'Button' (shape)
+                        PageLink(
+                          links: [
+                            PageLinkInfo(
+                              transition: LinkTransition.Fade,
+                              ease: Curves.linear,
+                              duration: 0.3,
+                              pageBuilder: () => const Reservations(),
                             ),
-                            softWrap: false,
+                          ],
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: const Color(0xff2e9eff),
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                        const Align(
+                          alignment: Alignment(0.007, -0.048),
+                          child: SizedBox(
+                            width: 219.0,
+                            height: 29.0,
+                            child: Text(
+                              'Go to Reservations',
+                              style: TextStyle(
+                                fontFamily: 'SF Pro',
+                                fontSize: 22,
+                                color: Color(0xffe8e8e8),
+                                fontWeight: FontWeight.w800,
+                              ),
+                              softWrap: false,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Pinned.fromPins(
@@ -243,7 +255,7 @@ class BookingProcess5 extends StatelessWidget {
                               'Go to Home Page',
                               style: TextStyle(
                                 fontFamily: 'SF Pro',
-                                fontSize: 24,
+                                fontSize: 22,
                                 color: Color(0xff2e9eff),
                                 fontWeight: FontWeight.w800,
                               ),
