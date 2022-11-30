@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:expandable_text/expandable_text.dart';
 import 'svgs.dart' as svgs;
-import './booking_process1.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
+import './booking_process/booking_process1.dart';
 
 class ProductPage extends StatelessWidget {
   const ProductPage({super.key});
@@ -21,18 +19,18 @@ class ProductPage extends StatelessWidget {
           decoration: const BoxDecoration(
             image: DecorationImage(
                 //alignment: Alignment(-.2, 0),
-                image: ExactAssetImage('assets/boc_pool.jpg'),
+                image: ExactAssetImage('assets/listings-pictures/tennis-court-image1.jpeg'),
                 fit: BoxFit.cover),
           ),
           width: double.infinity,
           height: 300,
           child: Stack(
             children: <Widget>[
-              //Image.asset('assets/boc_pool.jpg'),
+              //Image.asset('assets/listings-pictures/tennis-court-image1.jpeg'),
               Divider(color: Color.fromARGB(255, 32, 33, 37)),
               Align(
                 alignment: Alignment.topLeft,
-                child:const Text("Bocage Racket Club", textAlign: TextAlign.left, style: TextStyle(height: 1.3, fontFamily: 'SF Pro', fontSize: 30, color: Color(0x7cffffff), letterSpacing: 0.015, fontWeight: FontWeight.w600),),
+                child:const Text(" Bocage Racket Club", textAlign: TextAlign.left, style: TextStyle(height: 1.3, fontFamily: 'SF Pro', fontSize: 30, color: Color(0xffffffff), letterSpacing: 0.015, fontWeight: FontWeight.w600),),
               ),
             ],
           ),
@@ -167,7 +165,7 @@ class ProductPage extends StatelessWidget {
                 const Text("Description", textAlign: TextAlign.left, style: TextStyle(fontFamily: 'SF Pro', fontSize: 16, color: Color(0xff343a40), fontWeight: FontWeight.w900),),
                 //const Text("Located just 3 miles away from LSU, is this wonderful private tennis court! Just recently had a resurfacing ", textAlign: TextAlign.left, style: TextStyle(fontFamily: 'SF Pro', fontSize: 16, color: Color(0xff343a40), fontWeight: FontWeight.w500),),
                 ExpandableText(
-                  "Located just 3 miles away from LSU, is this wonderful private tennis court! Just recently had a resurfacing ",
+                  "Located just 3 miles away from LSU, is this wonderful private tennis court! Just recently had a resurfacing  done on the court, and a new net installed. Take in the wonderful views of campus while playing your favorite game!",
                   style: TextStyle(
                     fontFamily: 'SF Pro',
                     fontSize: 16,
@@ -188,7 +186,7 @@ class ProductPage extends StatelessWidget {
         bottomNavigationBar: Container(
 
           child: Padding(
-            padding: EdgeInsets.fromLTRB(40,0,40,0),
+            padding: EdgeInsets.fromLTRB(40,0,20,0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,

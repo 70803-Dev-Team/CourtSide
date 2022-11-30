@@ -1,5 +1,5 @@
 //import 'package:court_side/inbox_screen.dart';
-import 'package:court_side/booking_process/booking_process1.dart';
+import 'package:court_side/product_page.dart';
 import 'package:court_side/home-screen/categories/categories.dart';
 import 'package:court_side/home-screen/categories/sports/baseball.dart';
 import 'package:court_side/home-screen/categories/sports/basketball.dart';
@@ -456,7 +456,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const BookingProcess1()),
+                        builder: (context) => const ProductPage()),
                   );
                 },
                 child: Column(
