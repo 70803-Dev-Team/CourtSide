@@ -177,7 +177,7 @@ class SignUpScreen4 extends StatelessWidget {
                   transition: LinkTransition.SlideUp,
                   ease: Curves.easeInOut,
                   duration: 0.5,
-                  pageBuilder: () => HomeScreen(),
+                  pageBuilder: () => const HomeScreen(),
                 ),
               ],
               child: Stack(

@@ -71,7 +71,59 @@ class AddListing extends StatelessWidget {
                   ),
                   hintText: 'Name of space',
                 ),
-              ))
+              )),
+          Padding(
+              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
+              child: TextField(
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                      size: 18, color: Colors.blue, Icons.arrow_forward_ios),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.blue,
+                      width: 3.0,
+                      style: BorderStyle.solid,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
+                  hintText: 'Category',
+                ),
+              )),
+          Padding(
+              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
+              child: TextField(
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                      size: 18, color: Colors.blue, Icons.arrow_forward_ios),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.blue,
+                      width: 3.0,
+                      style: BorderStyle.solid,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
+                  hintText: 'Descirption',
+                ),
+              )),
+          Center(
+            child: Padding(
+                padding: EdgeInsets.all(10),
+                child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStatePropertyAll<Color>(Colors.blue),
+                    ),
+                    onPressed: null,
+                    child: Center(
+                      child: Text('Add Your Space!',
+                          style: TextStyle(
+                              fontFamily: 'SF Pro',
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w800)),
+                    ))),
+          )
         ],
       )
     ]);
