@@ -2,8 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:court_side/search-function/listing.dart';
 import 'package:flutter/material.dart';
 import 'package:court_side/reservations/reservation.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:court_side/svgs.dart' as svgs;
 import 'package:intl/intl.dart';
 
 // ignore: must_be_immutable
@@ -70,18 +68,18 @@ class _ReservationWidget extends State<ReservationWidget> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Text(
-                              DateFormat.yMMMd().format(
-                                  DateTime.fromMicrosecondsSinceEpoch(widget
-                                      .model!
-                                      .bookingStart!
-                                      .microsecondsSinceEpoch)),
-                              textAlign: TextAlign.left,
-                              style: const TextStyle(
-                                  fontFamily: 'SF Pro',
-                                  fontSize: 20,
-                                  color: Color.fromRGBO(46, 158, 255, 1),
-                                  fontWeight: FontWeight.w600),
-                            ),
+                            DateFormat.yMMMd().format(
+                                DateTime.fromMicrosecondsSinceEpoch(widget
+                                    .model!
+                                    .bookingStart!
+                                    .microsecondsSinceEpoch)),
+                            textAlign: TextAlign.left,
+                            style: const TextStyle(
+                                fontFamily: 'SF Pro',
+                                fontSize: 20,
+                                color: Color.fromRGBO(46, 158, 255, 1),
+                                fontWeight: FontWeight.w600),
+                          ),
                           Text(
                               "${DateFormat.jm().format(DateTime.fromMicrosecondsSinceEpoch(widget.model!.bookingStart!.microsecondsSinceEpoch))} - ${DateFormat.jm().format(DateTime.fromMicrosecondsSinceEpoch(widget.model!.bookingEnd!.microsecondsSinceEpoch))}"),
                           // *** THE CODE COMMENTED OUT BELOW LOOKS LIKE A DUPLICATE FROM LINES 72 - 84 ***
@@ -121,8 +119,7 @@ class _ReservationWidget extends State<ReservationWidget> {
                     builder: (context, snapshot) {
                       return Column(children: [
                         Padding(
-                          padding:
-                              const EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(20),
                             child: Image.network(Listing.fromJson(
@@ -151,12 +148,11 @@ class _ReservationWidget extends State<ReservationWidget> {
                             const Padding(
                               padding: EdgeInsets.only(left: 5, right: 5),
                               child: Align(
-                                alignment: Alignment.topLeft,
-                                child: Icon(
-                                  Icons.pin_drop_outlined,
-                                  color: Color.fromRGBO(22, 183, 255, 1),
-                                )
-                              ),
+                                  alignment: Alignment.topLeft,
+                                  child: Icon(
+                                    Icons.pin_drop_outlined,
+                                    color: Color.fromRGBO(22, 183, 255, 1),
+                                  )),
                             ),
                             snapshot.hasData
                                 ? Text(
@@ -178,10 +174,11 @@ class _ReservationWidget extends State<ReservationWidget> {
                         ),
                         snapshot.hasData
                             ? Align(
-                              alignment: Alignment.topLeft,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 8.0, top: 5),
-                                child: Text(
+                                alignment: Alignment.topLeft,
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.only(left: 8.0, top: 5),
+                                  child: Text(
                                     Listing.fromJson(snapshot.data!.docs[0]
                                             .data()! as Map<String, dynamic>)
                                         .price!,
@@ -191,8 +188,8 @@ class _ReservationWidget extends State<ReservationWidget> {
                                         color: Color(0xff000000),
                                         fontWeight: FontWeight.w800),
                                   ),
-                              ),
-                            )
+                                ),
+                              )
                             : const Text(
                                 "Price not found",
                                 textAlign: TextAlign.left,

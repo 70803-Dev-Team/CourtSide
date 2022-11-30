@@ -130,6 +130,15 @@ class ProductPage extends StatelessWidget {
                       color: Color(0xff343a40),
                       fontWeight: FontWeight.w900),
                 ),
+=======
+              const Text(
+                "Amenities",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    fontFamily: 'SF Pro',
+                    fontSize: 16,
+                    color: Color(0xff343a40),
+                    fontWeight: FontWeight.w900),
               ),
               const Divider(color: Colors.white),
               Padding(

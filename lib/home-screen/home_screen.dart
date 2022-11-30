@@ -1,5 +1,5 @@
 //import 'package:court_side/inbox_screen.dart';
-import 'package:court_side/booking_process/booking_process1.dart';
+import 'package:court_side/booking_process/product_page.dart';
 import 'package:court_side/home-screen/categories/categories.dart';
 import 'package:court_side/home-screen/categories/sports/baseball.dart';
 import 'package:court_side/home-screen/categories/sports/basketball.dart';
@@ -379,32 +379,38 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SizedBox(
               height: 115.0,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Card(
-                      elevation: 0,
-                      child: ClipRRect(borderRadius: BorderRadius.circular(30), child: Image.asset('assets/listings-pictures/baseball-field-image2.jpeg')),
-                    ),
+              child: ListView(scrollDirection: Axis.horizontal, children: [
+                Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Card(
+                    elevation: 0,
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(30),
+                        child: Image.asset(
+                            'assets/listings-pictures/baseball-field-image2.jpeg')),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Card(
-                      elevation: 0,
-                      child: ClipRRect(borderRadius: BorderRadius.circular(30), child: Image.asset('assets/listings-pictures/LSU-Golf-Course.jpeg')),
-                    ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Card(
+                    elevation: 0,
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(30),
+                        child: Image.asset(
+                            'assets/listings-pictures/LSU-Golf-Course.jpeg')),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Card(
-                      elevation: 0,
-                      child: ClipRRect(borderRadius: BorderRadius.circular(30), child: Image.asset('assets/listings-pictures/urec-bball.jpeg')),
-                    ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Card(
+                    elevation: 0,
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(30),
+                        child: Image.asset(
+                            'assets/listings-pictures/urec-bball.jpeg')),
                   ),
-                ]
-              ),
+                ),
+              ]),
             ),
             const Divider(
               color: Colors.white,
@@ -456,7 +462,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const BookingProcess1()),
+                        builder: (context) => const ProductPage()),
                   );
                 },
                 child: Column(
@@ -611,23 +617,19 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Expanded(
-                            child:
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(30),
-                              child: Image.asset(
-                                'assets/listings-pictures/tennis-court-image7.jpeg',
-                                fit: BoxFit.contain,
-                              ),
-                            )
-                          ),
+                              child: ClipRRect(
+                            borderRadius: BorderRadius.circular(30),
+                            child: Image.asset(
+                              'assets/listings-pictures/tennis-court-image7.jpeg',
+                              fit: BoxFit.contain,
+                            ),
+                          )),
                           const Padding(
                             padding: EdgeInsets.only(left: 5.0, top: 10),
                             child: Text(
                               '3.7 Miles',
                               style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500
-                              ),
+                                  fontSize: 18, fontWeight: FontWeight.w500),
                             ),
                           )
                         ],
@@ -639,23 +641,19 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Expanded(
-                            child:
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(30),
-                              child: Image.asset(
-                                'assets/listings-pictures/BREC-Golf-Course.jpeg',
-                                fit: BoxFit.contain,
-                              ),
-                            )
-                          ),
+                              child: ClipRRect(
+                            borderRadius: BorderRadius.circular(30),
+                            child: Image.asset(
+                              'assets/listings-pictures/BREC-Golf-Course.jpeg',
+                              fit: BoxFit.contain,
+                            ),
+                          )),
                           const Padding(
                             padding: EdgeInsets.only(left: 5.0, top: 10),
                             child: Text(
                               '4.2 Miles',
                               style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500
-                              ),
+                                  fontSize: 18, fontWeight: FontWeight.w500),
                             ),
                           )
                         ],
@@ -667,51 +665,43 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Expanded(
-                            child:
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(30),
-                              child: Image.asset(
-                                'assets/listings-pictures/sports-complex-image2.jpeg',
-                                fit: BoxFit.contain,
-                              ),
-                            )
-                          ),
+                              child: ClipRRect(
+                            borderRadius: BorderRadius.circular(30),
+                            child: Image.asset(
+                              'assets/listings-pictures/sports-complex-image2.jpeg',
+                              fit: BoxFit.contain,
+                            ),
+                          )),
                           const Padding(
                             padding: EdgeInsets.only(left: 5.0, top: 10),
                             child: Text(
                               '5.6 Miles',
                               style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500
-                              ),
+                                  fontSize: 18, fontWeight: FontWeight.w500),
                             ),
                           )
                         ],
                       ),
                     ),
-                                        Padding(
+                    Padding(
                       padding: const EdgeInsets.only(right: 15.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Expanded(
-                            child:
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(30),
-                              child: Image.asset(
-                                'assets/listings-pictures/urec-bball.jpeg',
-                                fit: BoxFit.contain,
-                              ),
-                            )
-                          ),
+                              child: ClipRRect(
+                            borderRadius: BorderRadius.circular(30),
+                            child: Image.asset(
+                              'assets/listings-pictures/urec-bball.jpeg',
+                              fit: BoxFit.contain,
+                            ),
+                          )),
                           const Padding(
                             padding: EdgeInsets.only(left: 5.0, top: 10),
                             child: Text(
                               '7.9 Miles',
                               style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500
-                              ),
+                                  fontSize: 18, fontWeight: FontWeight.w500),
                             ),
                           )
                         ],

@@ -65,10 +65,11 @@ class _Reservations extends State<Reservations> {
                 child: IconButton(
                   icon: const Icon(Icons.notifications),
                   iconSize: 30,
-                  color: Color.fromRGBO(22, 183, 255, 1),
+                  color: const Color.fromRGBO(22, 183, 255, 1),
                   onPressed: () {
                     showModalBottomSheet(
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
                       context: context,
                       builder: (context) {
                         return const SizedBox(
@@ -80,10 +81,9 @@ class _Reservations extends State<Reservations> {
                               child: Text(
                                 'No new notifications.',
                                 style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black
-                                ),
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.black),
                               ),
                             ),
                           ),
