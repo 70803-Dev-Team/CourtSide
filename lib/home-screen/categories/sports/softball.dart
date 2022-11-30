@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:court_side/search/search-function/search-widget.dart';
+import 'package:court_side/search-function/search-widget.dart';
 import 'package:flutter/material.dart';
-import 'package:court_side/search/search-function/listing.dart';
+import 'package:court_side/search-function/listing.dart';
 
 class SoftballListings extends StatefulWidget {
   const SoftballListings({Key? key}) : super(key: key);

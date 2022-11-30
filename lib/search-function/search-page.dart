@@ -2,8 +2,8 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:court_side/search/search-function/listing.dart';
-import 'package:court_side/search/search-function/search-widget.dart';
+import 'package:court_side/search-function/listing.dart';
+import 'package:court_side/search-function/search-widget.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -30,7 +30,7 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(232, 232, 232, 232),
+      backgroundColor: Colors.grey[350],
       appBar: AppBar(
           elevation: 0,
           toolbarHeight: 65,

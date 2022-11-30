@@ -1,7 +1,8 @@
 // ignore_for_file: file_names
 
+import 'package:court_side/nav_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:court_side/search/list_search/widgets.dart';
+import 'package:court_side/search-tab/search/list_search/widgets.dart';
 
 class NewArrivalsScreen extends StatelessWidget {
   const NewArrivalsScreen({super.key});
@@ -44,6 +45,7 @@ class NewArrivalsScreen extends StatelessWidget {
           )
         ],
       ),
+      bottomNavigationBar: const NavBar0(),
     );
   }
 }

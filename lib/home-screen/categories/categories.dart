@@ -9,6 +9,7 @@ import 'package:court_side/home-screen/categories/sports/soccer.dart';
 import 'package:court_side/home-screen/categories/sports/softball.dart';
 import 'package:court_side/home-screen/categories/sports/tennis.dart';
 import 'package:court_side/home-screen/categories/sports/volleyball.dart';
+import 'package:court_side/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
@@ -19,6 +20,7 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[350],
       appBar: AppBar(
         elevation: 0,
         toolbarHeight: 65,
@@ -54,6 +56,7 @@ class CategoriesScreen extends StatelessWidget {
           )
         ],
       ),
+      bottomNavigationBar: const NavBar0(),
     );
   }
 }
@@ -71,12 +74,13 @@ class categoryButton extends StatelessWidget {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (context) => category.className));
       },
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.only(bottom: 15.0),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 10, right: 10, left: 10, bottom: 10),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            color: Colors.white,
+          ),
           child: ConstrainedBox(
               constraints: const BoxConstraints(minWidth: 350),
               child: Row(

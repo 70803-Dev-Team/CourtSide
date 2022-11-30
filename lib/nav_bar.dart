@@ -1,7 +1,10 @@
 import 'package:court_side/home-screen/home_screen.dart';
-import 'package:court_side/profile_screen.dart';
+import 'package:court_side/profile-tab/profile_screen.dart';
 import 'package:court_side/reservations/reservations_screen.dart';
-import 'package:court_side/search/animated_map/animated_markers_map.dart';
+import 'package:court_side/search-tab/search/animated_map/animated_markers_map.dart';
+import 'package:court_side/chat-tab/chat_page.dart';
+import 'package:court_side/profile-tab/profile_screen.dart';
+// import 'package:court_side/reservations/reservations_screen.dart';
 import 'package:flutter/material.dart';
 
 class NavBar0 extends StatefulWidget {
@@ -36,6 +39,10 @@ class _NavBar0 extends State<NavBar0> {
         );
         break;
       case 3:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ChatPage()),
+        );
         break;
       case 4:
         Navigator.push(
@@ -55,6 +62,10 @@ class _NavBar0 extends State<NavBar0> {
       borderRadius: BorderRadius.circular(30),
       child: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        selectedLabelStyle: const TextStyle(
+          fontWeight: FontWeight.w700,
+          fontSize: 16,
+        ),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
@@ -119,6 +130,10 @@ class _NavBar1 extends State<NavBar1> {
         );
         break;
       case 3:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ChatPage()),
+        );
         break;
       case 4:
         Navigator.push(
@@ -138,6 +153,10 @@ class _NavBar1 extends State<NavBar1> {
       borderRadius: BorderRadius.circular(30),
       child: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        selectedLabelStyle: const TextStyle(
+          fontWeight: FontWeight.w700,
+          fontSize: 16,
+        ),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
@@ -201,6 +220,10 @@ class _NavBar2 extends State<NavBar2> {
         );
         break;
       case 3:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ChatPage()),
+        );
         break;
       case 4:
         Navigator.push(
@@ -220,6 +243,10 @@ class _NavBar2 extends State<NavBar2> {
       borderRadius: BorderRadius.circular(30),
       child: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        selectedLabelStyle: const TextStyle(
+          fontWeight: FontWeight.w700,
+          fontSize: 16,
+        ),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
@@ -258,7 +285,7 @@ class NavBar3 extends StatefulWidget {
 }
 
 class _NavBar3 extends State<NavBar3> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 3;
 
   void onItemTapped(int index) {
     switch (index) {
@@ -283,6 +310,10 @@ class _NavBar3 extends State<NavBar3> {
         );
         break;
       case 3:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ChatPage()),
+        );
         break;
       case 4:
         Navigator.push(
@@ -302,6 +333,10 @@ class _NavBar3 extends State<NavBar3> {
       borderRadius: BorderRadius.circular(30),
       child: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        selectedLabelStyle: const TextStyle(
+          fontWeight: FontWeight.w700,
+          fontSize: 15,
+        ),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
@@ -365,6 +400,10 @@ class _NavBar4 extends State<NavBar4> {
         );
         break;
       case 3:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ChatPage()),
+        );
         break;
       case 4:
         Navigator.push(
@@ -384,6 +423,10 @@ class _NavBar4 extends State<NavBar4> {
       borderRadius: BorderRadius.circular(30),
       child: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        selectedLabelStyle: const TextStyle(
+          fontWeight: FontWeight.w700,
+          fontSize: 16,
+        ),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
