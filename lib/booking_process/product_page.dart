@@ -1,3 +1,4 @@
+import 'package:court_side/home-screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:expandable_text/expandable_text.dart';
@@ -15,32 +16,44 @@ class ProductPage extends StatelessWidget {
         automaticallyImplyLeading: false,
         toolbarHeight: 300,
         titleSpacing: 0,
-        title: Container(
+        flexibleSpace: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-                //alignment: Alignment(-.2, 0),
                 image: ExactAssetImage(
-                    'assets/listings-pictures/tennis-court-image1.jpeg'),
+                    'assets/listings-pictures/tennis-court-image3.jpeg'),
                 fit: BoxFit.cover),
           ),
           width: double.infinity,
-          height: 300,
           child: Stack(
-            children: const <Widget>[
-              //Image.asset('assets/listings-pictures/tennis-court-image1.jpeg'),
-              Divider(color: Color.fromARGB(255, 32, 33, 37)),
+            children: <Widget>[
               Align(
                 alignment: Alignment.topLeft,
-                child: Text(
-                  " Bocage Racket Club",
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                      height: 1.3,
-                      fontFamily: 'SF Pro',
-                      fontSize: 30,
-                      color: Color(0xffffffff),
-                      letterSpacing: 0.015,
-                      fontWeight: FontWeight.w600),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 65.0),
+                  child: Row(
+                    children: [
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop(MaterialPageRoute(
+                                builder: (context) => const HomeScreen()));
+                          },
+                          icon: const Icon(
+                            Icons.arrow_back_ios,
+                            color: Colors.white,
+                          )),
+                      const Text(
+                        " Bocage Racket Club",
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                            height: 1.3,
+                            fontFamily: 'SF Pro',
+                            fontSize: 30,
+                            color: Color(0xffffffff),
+                            letterSpacing: 0.015,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -69,15 +82,32 @@ class ProductPage extends StatelessWidget {
                       fontWeight: FontWeight.w300),
                 ),
               ),
-              const Text(
-                "7600 Jefferson Hwy, Baton Rouge",
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    fontFamily: 'SF Pro',
-                    fontSize: 18,
-                    color: Color(0xff2e9eff),
-                    letterSpacing: 0.015,
-                    fontWeight: FontWeight.w500),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 5.0),
+                child: Row(
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.only(right: 5.0),
+                      child: Icon(
+                        Icons.pin_drop,
+                        color: Color.fromRGBO(22, 183, 255, 1),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 10.0),
+                      child: Text(
+                        "7600 Jefferson Hwy, Baton Rouge",
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                            fontFamily: 'SF Pro',
+                            fontSize: 18,
+                            color: Colors.black,
+                            letterSpacing: 0.015,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               const Text(
                 "\$250 / hour",
@@ -89,6 +119,18 @@ class ProductPage extends StatelessWidget {
                     fontWeight: FontWeight.w800),
               ),
               const Divider(color: Colors.white),
+              const Padding(
+                padding: EdgeInsets.only(top: 10.0),
+                child: Text(
+                  "Amenities",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      fontFamily: 'SF Pro',
+                      fontSize: 16,
+                      color: Color(0xff343a40),
+                      fontWeight: FontWeight.w900),
+                ),
+              ),
               const Text(
                 "Amenities",
                 textAlign: TextAlign.left,
@@ -194,7 +236,10 @@ class ProductPage extends StatelessWidget {
                       const Spacer(),
                     ]),
               ),
-              const Divider(color: Colors.white),
+              const Padding(
+                padding: EdgeInsets.only(bottom: 15.0),
+                child: Divider(color: Colors.white),
+              ),
               const Text(
                 "Description",
                 textAlign: TextAlign.left,
@@ -223,51 +268,52 @@ class ProductPage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.fromLTRB(40, 0, 20, 0),
-        child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              const Divider(color: Color(0xffffffff)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const BookingProcess1()));
-                    },
-                    style: ButtonStyle(
-                      backgroundColor: const MaterialStatePropertyAll<Color>(
-                        Color(0xff2e9eff),
+      bottomNavigationBar: Container(
+        color: const Color(0x00ffffff),
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 35.0),
+          child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const BookingProcess1()));
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: const MaterialStatePropertyAll<Color>(
+                          Color(0xff2e9eff),
+                        ),
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0))),
                       ),
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.0))),
+                      child: const Text(
+                        "Book Now!",
+                        style: TextStyle(
+                            fontFamily: 'SF Pro',
+                            fontSize: 20,
+                            color: Colors.white,
+                            letterSpacing: 0.01,
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
-                    child: const Text(
-                      "Book Now!",
-                      style: TextStyle(
-                          fontFamily: 'SF Pro',
-                          fontSize: 20,
-                          color: Color(0xffe8e8e8),
-                          letterSpacing: 0.01,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                  // TextButton(
-                  //   child: const Text("Book Now!", style: TextStyle(fontFamily: 'SF Pro', fontSize: 20, color: Color(0xffe8e8e8), letterSpacing: 0.01, fontWeight: FontWeight.w500),),
-                  //   onPressed: () {Navigator.of(context).push(MaterialPageRoute(builder: (context)=> BookingProcess1()));
-                  //   },
-                  //   style: ButtonStyle(
-                  //     backgroundColor: MaterialStatePropertyAll<Color>(Color(0xff2e9eff),),
-                  //     shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0))),
-                  //   ),
-                  // ),
-                ],
-              ),
-              const Divider(color: Color(0x76aaaaad)),
-            ]),
+                    // TextButton(
+                    //   child: const Text("Book Now!", style: TextStyle(fontFamily: 'SF Pro', fontSize: 20, color: Color(0xffe8e8e8), letterSpacing: 0.01, fontWeight: FontWeight.w500),),
+                    //   onPressed: () {Navigator.of(context).push(MaterialPageRoute(builder: (context)=> BookingProcess1()));
+                    //   },
+                    //   style: ButtonStyle(
+                    //     backgroundColor: MaterialStatePropertyAll<Color>(Color(0xff2e9eff),),
+                    //     shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0))),
+                    //   ),
+                    // ),
+                  ],
+                ),
+              ]),
+        ),
       ),
     );
   }
