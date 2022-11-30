@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-//import 'splash_screen.dart';
-import 'sign_in_sign_up_screen.dart';
+import 'splash-screen/sign_in_sign_up_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
   runApp(const Courtside());
 }
 
