@@ -9,7 +9,7 @@ import 'package:court_side/home-screen/categories/sports/soccer.dart';
 import 'package:court_side/home-screen/categories/sports/tennis.dart';
 import 'package:court_side/nav_bar.dart';
 import 'package:court_side/home-screen/new-arrivals.dart';
-import 'package:court_side/search/search-function/search-page.dart';
+import 'package:court_side/search-function/search-page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../svgs.dart' as svgs;
@@ -103,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 // Forward Arrow Button
                 Padding(
-                  padding: const EdgeInsets.only(top: 8.0, right: 8.0),
+                  padding: const EdgeInsets.only(top: 8.0, right: 0.0),
                   child: IconButton(
                     icon: const Icon(Icons.arrow_forward_ios),
                     color: const Color.fromRGBO(22, 183, 255, 1),
@@ -346,7 +346,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            const Divider(),
+            const Divider(
+              color: Colors.white,
+            ),
             // RECOMENDATIONS SECTION
             Row(
               children: const [
@@ -367,7 +369,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 // Forward Arrow Button
                 Padding(
-                  padding: EdgeInsets.only(right: 8.0),
+                  padding: EdgeInsets.only(right: 14.0),
                   child: Icon(
                     Icons.arrow_forward_ios,
                     color: Color.fromRGBO(22, 183, 255, 1),
@@ -376,22 +378,37 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             SizedBox(
-              height: 80.0,
+              height: 115.0,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: List.generate(10, (int index) {
-                  return Card(
-                    color: Colors.blue[index * 100],
-                    child: SizedBox(
-                      width: 50.0,
-                      height: 50.0,
-                      child: Text("$index"),
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Card(
+                      elevation: 0,
+                      child: ClipRRect(borderRadius: BorderRadius.circular(30), child: Image.asset('assets/listings-pictures/baseball-field-image2.jpeg')),
                     ),
-                  );
-                }),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Card(
+                      elevation: 0,
+                      child: ClipRRect(borderRadius: BorderRadius.circular(30), child: Image.asset('assets/listings-pictures/LSU-Golf-Course.jpeg')),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Card(
+                      elevation: 0,
+                      child: ClipRRect(borderRadius: BorderRadius.circular(30), child: Image.asset('assets/listings-pictures/urec-bball.jpeg')),
+                    ),
+                  ),
+                ]
               ),
             ),
-            const Divider(),
+            const Divider(
+              color: Colors.white,
+            ),
             // NEW ARRIVALS SECTION
             Row(
               children: [
@@ -412,7 +429,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 // Forward Arrow Button
                 Padding(
-                  padding: const EdgeInsets.only(top: 8.0, right: 8.0),
+                  padding: const EdgeInsets.only(top: 8.0, right: 4.0),
                   child: IconButton(
                     icon: const Icon(
                       Icons.arrow_forward_ios,
@@ -431,7 +448,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
               child: OutlinedButton(
                 style: OutlinedButton.styleFrom(
                     side: const BorderSide(color: Color(0xfafafafa))),
@@ -553,6 +570,157 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
+            // NEARBY SECTION
+            Row(
+              children: const [
+                Padding(
+                  padding: EdgeInsets.only(left: 10.0, top: 15.0, bottom: 15),
+                  child: Text(
+                    "Nearby",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        fontFamily: 'SF Pro',
+                        fontSize: 28,
+                        color: Color(0xff000000),
+                        fontWeight: FontWeight.w800),
+                  ),
+                ),
+                Spacer(
+                  flex: 1,
+                ),
+                // Forward Arrow Button
+                Padding(
+                  padding: EdgeInsets.only(right: 20.0),
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color.fromRGBO(22, 183, 255, 1),
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20.0, left: 10),
+              child: SizedBox(
+                height: 150,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 15.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child:
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(30),
+                              child: Image.asset(
+                                'assets/listings-pictures/tennis-court-image7.jpeg',
+                                fit: BoxFit.contain,
+                              ),
+                            )
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(left: 5.0, top: 10),
+                            child: Text(
+                              '3.7 Miles',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 15.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child:
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(30),
+                              child: Image.asset(
+                                'assets/listings-pictures/BREC-Golf-Course.jpeg',
+                                fit: BoxFit.contain,
+                              ),
+                            )
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(left: 5.0, top: 10),
+                            child: Text(
+                              '4.2 Miles',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 15.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child:
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(30),
+                              child: Image.asset(
+                                'assets/listings-pictures/sports-complex-image2.jpeg',
+                                fit: BoxFit.contain,
+                              ),
+                            )
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(left: 5.0, top: 10),
+                            child: Text(
+                              '5.6 Miles',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                                        Padding(
+                      padding: const EdgeInsets.only(right: 15.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child:
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(30),
+                              child: Image.asset(
+                                'assets/listings-pictures/urec-bball.jpeg',
+                                fit: BoxFit.contain,
+                              ),
+                            )
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(left: 5.0, top: 10),
+                            child: Text(
+                              '7.9 Miles',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),

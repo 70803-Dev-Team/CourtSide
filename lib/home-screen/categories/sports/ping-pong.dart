@@ -1,9 +1,9 @@
 // ignore_for_file: file_names
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:court_side/search/search-function/search-widget.dart';
+import 'package:court_side/search-function/search-widget.dart';
 import 'package:flutter/material.dart';
-import 'package:court_side/search/search-function/listing.dart';
+import 'package:court_side/search-function/listing.dart';
 
 class PingPongListings extends StatefulWidget {
   const PingPongListings({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:court_side/search/search-function/listing.dart';
+import 'package:court_side/search-function/listing.dart';
 
 // ignore: must_be_immutable
 class ListingDesignWidget extends StatefulWidget {
@@ -19,11 +19,13 @@ class ListingDesignWidget extends StatefulWidget {
 }
 
 class _ListingDesignWidgetState extends State<ListingDesignWidget> {
+  
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         color: Colors.white,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -33,7 +35,7 @@ class _ListingDesignWidgetState extends State<ListingDesignWidget> {
                 Padding(
                   padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(30),
                     child: Image.network(
                       widget.model!.image!, // Listing Image
                       loadingBuilder: (context, child, loadingProgress) {

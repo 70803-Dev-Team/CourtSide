@@ -1,6 +1,6 @@
 import 'dart:ui';
-import 'package:court_side/search/animated_map/map_markers.dart';
-import 'package:court_side/search/list_search/list_search.dart';
+import 'package:court_side/search-tab/search/animated_map/map_markers.dart';
+import 'package:court_side/search-tab/search/list_search/list_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 // ignore: depend_on_referenced_packages
@@ -286,6 +286,7 @@ class _MapItemDetails extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         color: Colors.white,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -1,7 +1,7 @@
 import 'package:court_side/nav_bar.dart';
-import 'package:court_side/search/animated_map/animated_markers_map.dart';
+import 'package:court_side/search-tab/search/animated_map/animated_markers_map.dart';
 import 'package:flutter/material.dart';
-import 'package:court_side/search/list_search/widgets.dart';
+import 'package:court_side/search-tab/search/list_search/widgets.dart';
 
 class ListSearch extends StatelessWidget {
   const ListSearch({super.key});

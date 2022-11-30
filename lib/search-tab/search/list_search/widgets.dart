@@ -129,6 +129,7 @@ class ListingCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         color: Colors.white,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
