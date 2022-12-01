@@ -220,7 +220,7 @@ class _BookingProcess3State extends State<BookingProcess3> {
               alignment: Alignment.centerLeft,
               child: RichText(
                 text: const TextSpan(
-                    text: "Social Security Number",
+                    text: "Email",
                     style: TextStyle(
                         fontFamily: 'SF Pro',
                         fontSize: 18,
@@ -277,7 +277,7 @@ class _BookingProcess3State extends State<BookingProcess3> {
               shouldFormat: true, // default
               defaultCountry: IsoCode.US, // default
               decoration: const InputDecoration(
-                  labelText: 'Phone', // default to null
+                  // default to null
                   border: OutlineInputBorder(
                       gapPadding: 0,
                       borderRadius: BorderRadius.all(Radius.circular(15.0)),
