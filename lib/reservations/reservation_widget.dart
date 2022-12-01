@@ -26,7 +26,7 @@ class _ReservationWidget extends State<ReservationWidget> {
       padding: const EdgeInsets.all(10),
       child: SizedBox(
         width: 420,
-        height: 400,
+        height: 425,
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25.0),
